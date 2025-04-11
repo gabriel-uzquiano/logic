@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="7 Translation | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>7 Translation | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="translation" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Translation</h1>
+<p>We want to use the language of quantificational logic for the evaluation of natural language arguments. That will require us to be able to translate from natural language into the formal language of quantificational logic. We proceed in stages. We will briefly consider the case of predications, which are some of the simplest natural language sentences, and we will pay special attention to the translation of quantifier phrases.</p>
+<div id="a-translation-method-1" class="section level2 unnumbered">
+<h2>A Translation Method</h2>
+<p>We build on the translation method we used for propositional logic. That is, we will first indicate how natural language sentences are constructed from simpler sentences by means of the usual propositional connectives. The difference is that we will now look for further structure into the sentences we would have formalized with the help of a propositional variable in propositional logic.</p>
+<dl>
+<dt>Predication</dt>
+<dd>
+<p>We use predications to translate the most basic parts of the target sentence.</p>
+</dd>
+</dl>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Alice talked to the King, and the King talked to the Queen.</p>
+</div>
+<p>The translation method for propositional logic generates:</p>
+<div class="argument">
+<p>(Alice looked at the King <span class="math inline">\(\wedge\)</span> the King looked at the Queen.)</p>
+</div>
+<p>In a further step, we now make use of predicates and constants to translate the simplest sentences:</p>
+<p><label for="tufte-mn-71" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-71" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: Alice<br />
+<span class="math inline"><span class="math inline">\(b\)</span></span>: The King<br />
+<span class="math inline"><span class="math inline">\(c\)</span></span>: The Queen<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ talked to _</span></span></p>
+<div class="argument">
+<p><span class="math inline">\(Rab \wedge Rbc\)</span></p>
+</div>
+<p>Quantifier phrases require more discussion. We will look at the case of simple quantifier expressions such as ‘something’ and ‘everything’ and we will then move to more complex quantifier phrases such as ‘some apple’ and ‘every computer’, which require separate discussion.</p>
+<dl>
+<dt>Quantifiers</dt>
+<dd>
+<p>We paraphrase the relevant sentences to make clear how they may be built from simpler constituents with the help of quantifiers such as ‘something’ and ‘everything’.</p>
+</dd>
+</dl>
+<p>One may rephrase ‘Something is heavy’ as ‘Some <em>thing</em> is such that <em>it</em> is heavy’. The pronoun ‘it’ will rendered as a variable, which will be bound by the existential quantifier that corresponds to ‘something’. Consider the sentence:</p>
+<div class="argument">
+<p>Something is heavy.</p>
+</div>
+<p>We rephrase it with the help of a pronoun, which will eventually be replaced with a variable:</p>
+<p><label for="tufte-mn-72" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-72" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is heavy.</span></span></p>
+<div class="argument">
+<p>Some <em>thing</em> is such that <em>it</em> is heavy.<br />
+<span class="math inline">\(\exists x Px\)</span></p>
+</div>
+<p>Similarly for the sentence:</p>
+<div class="argument">
+<p>Everything is a material object.</p>
+</div>
+<p>We now rephrase it with the help of a pronoun, which will eventually be replaced with a variable:</p>
+<p><label for="tufte-mn-73" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-73" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a material object.</span></span></p>
+<div class="argument">
+<p>Every <em>thing</em> is such that <em>it</em> is a material object.<br />
+<span class="math inline">\(\forall x Qx\)</span></p>
+</div>
+<p>Similarly for predicates with more than one argument place:</p>
+<p><label for="tufte-mn-74" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-74" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: San Francisco<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is south of _</span></span></p>
+<div class="argument">
+<p>Something is south of San Francisco<br />
+Some <em>thing</em> is such that <em>it</em> is soutn of San Francisco.<br />
+<span class="math inline">\(\exists x Rxa\)</span></p>
+</div>
+<dl>
+<dt>Common quantifier phrases</dt>
+<dd>
+<p>Common quantifier phrases combine a quantifier such as ‘some’ or ‘a’ and ‘all’ or ‘every’ with a monadic predicate such as ‘apple’ or ‘student’ as in ‘some apples’ or ‘every city’.</p>
+</dd>
+</dl>
+<p>There are two main types of natural language sentence to consider:</p>
+<div class="argument">
+<p>Some apples are delicious.<br />
+All computers are expensive.</p>
+</div>
+<p>When the quantifier phrase combines ‘some’ with a monadic predicate, then we proceed as follows:</p>
+<p><label for="tufte-mn-75" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-75" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is an apple</span></span></p>
+<div class="argument">
+<p>‘Some apples <span class="math inline">\(\dots\)</span>’<br />
+‘Some <em>thing</em> is such that <em>it</em> is an a apple <em>and</em> <span class="math inline">\(\dots\)</span> <em>it</em> <span class="math inline">\(\dots\)</span>’<br />
+<span class="math inline">\(\exists x (Px \wedge \dots x \dots)\)</span></p>
+</div>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Some apples are delicious.</p>
+</div>
+<p>We now rephrase it with the help of a pronoun, which will eventually be replaced with a variable:</p>
+<p><label for="tufte-mn-76" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-76" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is an apple<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is delicious</span></span></p>
+<div class="argument">
+<p>Some <em>thing</em> is such that <em>it</em> is an apple and <em>it</em> is delicious.<br />
+<span class="math inline">\(\exists x (Px \wedge Qx)\)</span></p>
+</div>
+<p>Similarly for the sentence:</p>
+<p><label for="tufte-mn-77" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-77" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: San Francisco<br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a city<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is south of _</span></span></p>
+<div class="argument">
+<p>Some city is south of San Francisco<br />
+Some <em>thing</em> is such that <em>it</em> is a city and <em>it</em> is south of San Francisco.<br />
+<span class="math inline">\(\exists x (Px \wedge Rxa)\)</span></p>
+</div>
+<p>When the quantifier phrase combines ‘every’ or ‘all’ with a monadic predicate, then we proceed as follows:</p>
+<p><label for="tufte-mn-78" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-78" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a computer<br />
+</span></span></p>
+<div class="argument">
+<p>Every computer <span class="math inline">\(\dots\)</span><br />
+Every <em>thing</em> is such that <em>if</em> <em>it</em> is a computer, <em>then</em> <span class="math inline">\(\dots\)</span> <em>it</em> <span class="math inline">\(\dots\)</span><br />
+<span class="math inline">\(\forall x (Px \to \dots x \dots)\)</span></p>
+</div>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Every computer is expensive</p>
+</div>
+<p>We now rephrase it with the help of a pronoun, which will eventually be replaced with a variable:</p>
+<p><label for="tufte-mn-79" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-79" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a computer<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is expensive</span></span></p>
+<div class="argument">
+<p>Every <em>thing</em> is such that if <em>it</em> is a computer, then <em>it</em> is expensive.<br />
+<span class="math inline">\(\forall x (Px \to Qx)\)</span></p>
+</div>
+<p>Similarly for the sentence:</p>
+<p><label for="tufte-mn-80" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-80" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a computer<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is connected to _<br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: The network</span></span></p>
+<div class="argument">
+<p>Every computer is connected to the network.<br />
+Every <em>thing</em> is such that if <em>it</em> is a computer, then <em>it</em> is connected to the network.<br />
+<span class="math inline">\(\forall x (Px \to Rxa)\)</span></p>
+</div>
+<dl>
+<dt>Multiple Generality</dt>
+<dd>
+<p>Some predicates with multiple argument places may combine with more than one quantifier phrase:</p>
+</dd>
+</dl>
+<div class="argument">
+<p>Something is is south of San Francisco<br />
+Something is south of something<br />
+Some city is south of something<br />
+Some city is south of some city</p>
+</div>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Something is south of something</p>
+</div>
+<p>We now paraphrase the sentence:</p>
+<p><label for="tufte-mn-81" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-81" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is south of _</span></span></p>
+<div class="argument">
+<p>Some <em>thing<span class="math inline">\(_x\)</span></em> is such that some <em>thing<span class="math inline">\(_y\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is south of <em>it<span class="math inline">\(_y\)</span></em>.<br />
+<span class="math inline">\(\exists x \exists  y  Rxy\)</span></p>
+</div>
+<p>Consider now the sentence:</p>
+<div class="argument">
+<p>Some city is south of something.</p>
+</div>
+<p>We now paraphrase the sentence:</p>
+<p><label for="tufte-mn-82" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-82" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a city<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is south of _</span></span></p>
+<div class="argument">
+<p>Some <em>thing<span class="math inline">\(_x\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is a city and some <em>thing<span class="math inline">\(_y\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is south of <em>it<span class="math inline">\(_y\)</span></em>.<br />
+<span class="math inline">\(\exists x (Px \wedge  \exists  y  Rxy)\)</span></p>
+</div>
+<p>For yet another example, consider the sentence:</p>
+<div class="argument">
+<p>Some city is south of some city.</p>
+</div>
+<p>We now paraphrase the sentence:</p>
+<p><label for="tufte-mn-83" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-83" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a city<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is south of _</span></span></p>
+<div class="argument">
+<p>Some <em>thing<span class="math inline">\(_x\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is a city and some <em>thing<span class="math inline">\(_y\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is a city and <em>it<span class="math inline">\(_x\)</span></em> is south of <em>it<span class="math inline">\(_y\)</span></em>.<br />
+<span class="math inline">\(\exists x (Px \wedge  \exists  y  (Py \wedge Rxy))\)</span></p>
+</div>
+<p>Some sentences combine a universal and existential quantifier phrases.</p>
+<div class="argument">
+<p>Every student takes some course<br />
+Some student takes every course<br />
+Some course is taken by every student</p>
+</div>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Every student takes some course</p>
+</div>
+<p>We now paraphrase the sentence in stages:</p>
+<p><label for="tufte-mn-84" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-84" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a course<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ takes _</span></span></p>
+<div class="argument">
+<p>Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then <em>it<span class="math inline">\(_x\)</span></em> takes some course.<br />
+Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then some <em>thing<span class="math inline">\(_y\)</span></em> is such that <em>it<span class="math inline">\(_y\)</span></em> is a course and <em>it<span class="math inline">\(_x\)</span></em> takes <em>it<span class="math inline">\(_y\)</span></em><br />
+<span class="math inline">\(\forall x (Px \to \exists y (Qy \wedge Rxy))\)</span></p>
+</div>
+<p>Consider now the sentence:</p>
+<div class="argument">
+<p>Every student takes every course</p>
+</div>
+<p>We now paraphrase the sentence in stages:</p>
+<p><label for="tufte-mn-85" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-85" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a course<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ takes _</span></span></p>
+<div class="argument">
+<p>Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then <em>it<span class="math inline">\(_x\)</span></em> takes every course.<br />
+Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then every <em>thing<span class="math inline">\(_y\)</span></em> is such that if <em>it<span class="math inline">\(_y\)</span></em> is a course, then <em>it<span class="math inline">\(_x\)</span></em> takes <em>it<span class="math inline">\(_y\)</span></em>.<br />
+<span class="math inline">\(\forall x (Px \to \forall y (Qy \to Rxy))\)</span>.</p>
+</div>
+<p>For another example, consider the sentence:</p>
+<div class="argument">
+<p>Some course is taken by every student.</p>
+</div>
+<p>We now paraphrase the sentence in stages:</p>
+<p><label for="tufte-mn-86" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-86" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a course<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ takes _</span></span></p>
+<div class="argument">
+<p>Some <em>thing<span class="math inline">\(_x\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is a course and every student takes <em>it<span class="math inline">\(_x\)</span></em>.<br />
+Some <em>thing<span class="math inline">\(_x\)</span></em> is such that <em>it<span class="math inline">\(_x\)</span></em> is a course and every <em>thing<span class="math inline">\(_y\)</span></em> is such that if <em>it<span class="math inline">\(_y\)</span></em> is a student, then <em>it<span class="math inline">\(_x\)</span></em> takes <em>it<span class="math inline">\(_y\)</span></em><br />
+<span class="math inline">\(\exists x (Qx \wedge \forall y (Py \to Rxy))\)</span></p>
+</div>
+</div>
+<div id="issues-with-translation-1" class="section level2 unnumbered">
+<h2>Issues with Translation</h2>
+<p>Translation into quantificational logic is subject to its own special difficulties. We distinguish at least two families of problems.</p>
+<dl>
+<dt>Special Quantifier Phrases</dt>
+<dd>
+<p>Some quantificational structures pose special problems.</p>
+</dd>
+<dt>A</dt>
+<dd>
+<p>A whale lives underwater</p>
+</dd>
+</dl>
+<p>Quantifier phrases of the form ‘a <span class="math inline">\(P\)</span>’ may on occasion be translated with the help of a universal quantifier and they may on other occasions be translated with the help of an existential quantifier. Consider the contrast between typical utterances of the sentences below:</p>
+<div class="argument">
+<p>A whale lives underwater.<br />
+A student aced the midterm.</p>
+</div>
+<p>The first sentence is generally used to express a universal claim:</p>
+<p><label for="tufte-mn-87" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-87" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a whale<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ lives underwater</span></span></p>
+<div class="argument">
+<p>A whale lives underwater.<br />
+Every <em>thing</em> is such that if <em>it</em> is a whale, then <em>it</em> lives underwater.<br />
+<span class="math inline">\(\forall x (Px \to Qx)\)</span></p>
+</div>
+<p><strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(P\)</span> _ : _ whale<br />
+<span class="math inline">\(Q\)</span> _ : _ lives underwater</p>
+</div>
+<p>On the other hand, the second sentence is generally used to express an existential claim:</p>
+<p><label for="tufte-mn-88" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-88" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ aces _<br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: The Midterm</span></span></p>
+<div class="argument">
+<p>A student aced the midterm.<br />
+Some <em>thing</em> is such that <em>it</em> is a student and <em>it</em> aced the midterm.<br />
+<span class="math inline">\(\exists x (Px \wedge Rxa)\)</span>.</p>
+</div>
+<dl>
+<dt>Any</dt>
+<dd>
+<p>Any philosopher thinks.</p>
+</dd>
+</dl>
+<p>The quantifier phrase ‘any’ may be translated with the help of a universal or an existential quantifier in different cases.</p>
+<p>Compare the sentences:</p>
+<div class="argument">
+<p>Any philosopher thinks.<br />
+If any philosopher thinks, then Hegel does.</p>
+</div>
+<p>The first sentence invites the use of a universal quantifier.</p>
+<p><label for="tufte-mn-89" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-89" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a philosophert<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ thinks</span></span></p>
+<div class="argument">
+<ul>
+<li>Any philosopher thinks.</li>
+<li>Every <em>thing</em> is such that if <em>it</em> is a philosopher, then <em>it</em> thinks.</li>
+<li><span class="math inline">\(\forall x (Px \to Qx)\)</span></li>
+</ul>
+</div>
+<p>On the other hand, the second sentence suggests an existential quantifier:</p>
+<p><label for="tufte-mn-90" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-90" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a philosophert<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ thinks<br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: Hegel</span></span></p>
+<div class="argument">
+<p>If any philosopher thinks, then Hegel does.<br />
+If some <em>thing</em> is such that <em>it</em> is a philosopher and <em>it</em> thinks, then Hegel thinks.<br />
+<span class="math inline">\(\exists x (Px \wedge Qx) \to Qa\)</span></p>
+</div>
+<dl>
+<dt>Only</dt>
+<dd>
+<p>Only seniors are eligible for the prize</p>
+</dd>
+</dl>
+<p>How should we paraphrase this sentence? Here is a suggestion:</p>
+<p><label for="tufte-mn-91" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-91" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a senior<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is eligible for the
+prize</span></span></p>
+<div class="argument">
+<p>All eligible for the prize are students<br />
+Every <em>thing</em> is such that if <em>it</em> is eligible for the prize, then <em>it</em> is a senior<br />
+<span class="math inline">\(\forall x (Qx \to Px)\)</span></p>
+</div>
+<p>The interaction between quantification and negation requires some care as well:</p>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>No student is eligible for the prize.</p>
+</div>
+<p>There is a choice between two equivalent interpretations. Consider, first, the sentence:</p>
+<p><label for="tufte-mn-92" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-92" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a senior<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is eligible for the
+prize</span></span></p>
+<div class="argument">
+<p>Every student is not eligible for the prize.<br />
+Every <em>thing</em> is such that if <em>it</em> is a student, then <em>it</em> is <em>not</em> eligible for the prize.<br />
+<span class="math inline">\(\forall x (Px \to \neg Qx)\)</span></p>
+</div>
+<p>For an alternative interpretation of the original sentence, consider:</p>
+<div class="argument">
+<p>It is not the case that some student is eligible for the prize.<br />
+It is not the case that some <em>thing</em> is such that <em>it</em> is a student and <em>it</em> is eligible for the prize.<br />
+<span class="math inline">\(\neg \exists x (Px \wedge Qx)\)</span></p>
+</div>
+<dl>
+<dt>Structural Ambiguity</dt>
+<dd>
+<p>A sentence may be structurally ambiguous.</p>
+</dd>
+</dl>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Everything has a cause</p>
+</div>
+<p>There is a choice between two non-equivalent interpretations:</p>
+<p><label for="tufte-mn-93" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-93" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ : _ is a cause of _</span></span></p>
+<div class="argument">
+<p>Every <em>thing</em> is such that <em>it<span class="math inline">\(_1\)</span></em> has some cause.<br />
+Every *thing<span class="math inline">\(_x\)</span> is such that some thing<span class="math inline">\(_y\)</span> is such that it<span class="math inline">\(_y\)</span> causes it<span class="math inline">\(_x\)</span>.<br />
+<span class="math inline">\(\forall x \exists y Ryx\)</span></p>
+</div>
+<p>The alternative interpretation proceeds as follows:</p>
+<p><label for="tufte-mn-94" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-94" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ : _ is a cause of _</span></span></p>
+<div class="argument">
+<p>Some thing<span class="math inline">\(_x\)</span> is such that it<span class="math inline">\(_x\)</span> causes everything.<br />
+Some thing<span class="math inline">\(_x\)</span> is such that every thing<span class="math inline">\(_y\)</span> is such that it<span class="math inline">\(_x\)</span> causes <span class="math inline">\(t_y\)</span>.<br />
+<span class="math inline">\(\exists x \forall y Rxy\)</span></p>
+</div>
+<p>The distinction is specially important when it comes to the evaluation of an argument such as the following:</p>
+<ol style="list-style-type: decimal">
+<li>Everything has a cause.</li>
+<li>If everything has a cause, then God is the cause of everything.</li>
+<li>God is the cause of everything.</li>
+</ol>
+<p>The crucial observation is that premise two is plausible on one but not the other interpretation of the first premise.</p>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Every student registers for some course</p>
+</div>
+<p>There is a choice between two <em>non-equivalent</em> interpretations:</p>
+<p><label for="tufte-mn-95" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-95" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a course<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ registers for _</span></span></p>
+<div class="argument">
+<p>Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then <em>it<span class="math inline">\(_x\)</span></em> registers for some course.<br />
+Every <em>thing<span class="math inline">\(_x\)</span></em> is such that if <em>it<span class="math inline">\(_x\)</span></em> is a student, then some thing<span class="math inline">\(_y\)</span> is such that <em>it<span class="math inline">\(_y\)</span></em> is a course and <em>it<span class="math inline">\(_x\)</span></em> registers for <em>it<span class="math inline">\(_y\)</span></em>.<br />
+<span class="math inline">\(\forall x (Px \to \exists y (Qy \wedge Rxy))\)</span></p>
+</div>
+<p>The alternative interpretation is this:</p>
+<p><label for="tufte-mn-96" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-96" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a student<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a course<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ registers for _</span></span></p>
+<div class="argument">
+<p>Some thing<span class="math inline">\(_x\)</span> is such that it<span class="math inline">\(_x\)</span> is a course and every student registers for <em>it<span class="math inline">\(_x\)</span></em>.<br />
+Some thing<span class="math inline">\(_x\)</span> is such that it<span class="math inline">\(_x\)</span> is a course and every thing<span class="math inline">\(_y\)</span> is such that if <em>it<span class="math inline">\(_y\)</span></em> is a student, then <em>it<span class="math inline">\(_y\)</span></em> registers for <em>it<span class="math inline">\(_x\)</span></em>.<br />
+<span class="math inline">\(\exists x (Q(x) \wedge \forall y (Py \to  Ryx))\)</span></p>
+</div>
+<p>We are in a position to combine the skills we have gained in order to determine whether an argumnet formulated in English exemplifies a valid quantificational form.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 7.1  </strong></span>Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>All physicists admire Newton.</li>
+<li>Newton admires some mathematicians.</li>
+<li>So, some physicists admire some mathematicians.</li>
+</ol>
+<p>We first translate the argument into the language of quantificational logic:</p>
+<p><label for="tufte-mn-97" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-97" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is a physicist<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a mathematician<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ admires _</span></span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall x (P(x) \to R(x,a))\)</span></li>
+<li><span class="math inline">\(\exists x (Q(x) \wedge R(a,x))\)</span></li>
+<li><span class="math inline">\(\exists x (P(x) \wedge \exists y (Q(y) \wedge R(x,y)))\)</span></li>
+</ol>
+<p>The next step is to search for a model in which the premises are true and the conclusion false:</p>
+<p><label for="tufte-mn-98" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-98" class="margin-toggle"><span class="marginnote"><span style="display: block;"><span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is enclosed by a
+circle<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is enclosed by a
+diamond<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ points to _<br />
+<span class="math inline"><span class="math inline">\(a : p_1\)</span></span></span></span></p>
+<p><img src="images/7.13.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 7.2  </strong></span>Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Some LA landmark is moore beautiful than some NY landmark.</li>
+<li>The Griffith Observatory is an LA landmark and Times Square is a NY landmark.</li>
+<li>So, the Griffith Observatory is more beautiful than Time Square.</li>
+</ol>
+<p>We first translate the argument into the language of quantificational logic:</p>
+<p><label for="tufte-mn-99" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-99" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ is an LA landmark<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is a NY landmark<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ is more beautiful than
+_</span></span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\exists x (Px \wedge \exists y (Qy \wedge Rxy))\)</span></li>
+<li><span class="math inline">\(Pa \wedge Qb\)</span></li>
+<li><span class="math inline">\(Rab\)</span></li>
+</ol>
+<p>The next step is to search for a model in which the premises are true and the conclusion false:</p>
+<p><label for="tufte-mn-100" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-100" class="margin-toggle"><span class="marginnote"><span style="display: block;"><span class="math inline"><span class="math inline">\(P\)</span></span> _ : _ enclosed by a
+circle<br />
+<span class="math inline"><span class="math inline">\(Q\)</span></span> _ : _ is enclosed by a
+diamond<br />
+<span class="math inline"><span class="math inline">\(R\)</span></span> _ _ : _ points to _<br />
+<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
+<span class="math inline"><span class="math inline">\(b: p_2\)</span></span></span></span></p>
+<p><img src="images/7.14.png" style="display:block; margin: 0 auto;"></p>
+</div>
+</div>
+<div id="exercises-6" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Translate the following sentences into the language of quantificational logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Some Trojans fear Achilles, but Achilles fears every Trojan.</p></li>
+<li><p>All Trojans are courageous.</p></li>
+<li><p>Only Trojans come from Troy.</p></li>
+<li><p>No Greek comes from Troy.</p></li>
+<li><p>Achilles fears Paris, but Paris fears no one.</p></li>
+<li><p>Some Greeks fears some Trojans, and some Trojans fear some Greeks.</p></li>
+</ol></li>
+<li><p>Assess the following arguments for quantificational validity.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>All poisonous frogs are amphibians. Kermit is a posisonous amphibian. Therefore, Kermit is a frog.</p></li>
+<li><p>Aristotle admired anyone who taught for free. Socrates taught for free, but no sophist did ever teach for free. So, Aristotle did not admire a sophist.</p></li>
+<li><p>No weekday comes after Saturday. Monday is a weekday, but Sunday is not. Therefore, Monday does not come after Sunday.</p></li>
+<li><p>Some cube is green all over and some cube is red all over. No cube is both green all over and red all over. Some sphere is green all over. So, some sphere is not red all over.</p></li>
+<li><p>No Trojan fears Achilles, but Achilles fears some Trojans. Paris is a Trojan. So, Achilles fears Paris but Paris does not fear Achilles.</p></li>
+<li><p>Some stadium is close to University Park. The Coliseum is a stadium. Therefore, the Coliseum is close to University Park.</p></li>
+<li><p>Los Angeles is connected by direct flight to London. London is connected by direct flight to every major European city. Barcelona is a major European city. Therefore, Los Angeles is connected by direct flight to Barcelona.</p></li>
+<li><p>All Greeks feared Hector or Paris. Paris feared no Greek who feared Hector. Therefore, some Greeks feared Paris.</p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="formal-language.html"><button class="btn btn-default">Previous</button></a>
+<a href="natural-deduction.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

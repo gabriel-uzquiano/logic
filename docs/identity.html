@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="9 Identity | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>9 Identity | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="identity" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Identity</h1>
+<p>We begin with a distinction between two important binary relations: numerical and qualitative identity. The relation of numerical identity is one an object bears to itself and to nothing else, and it is generally expressed by means of the predicate ‘is’ or ‘is identical to’. Unfortunately, that predicate is sometimes used to express a different relation, one that obtains between two objects if they are similar in every respect that may be relevant for the purposes of a conversation. We use the label ‘numerical identity’ for the first relation and the label ‘qualitative identity’ for the second.</p>
+<dl>
+<dt>Qualitative Identity</dt>
+<dd>
+<p>Two objects are qualitatively identical when they share all of the same qualities.</p>
+</dd>
+</dl>
+<p>If Alex and Beth bought two computers of the same make and with the same specifications and even the same color, we may be inclined to say:</p>
+<ul>
+<li>Alex and Beth bought (qualitative) identical computers.</li>
+<li>The computer Alex bought is identical to the computer Beth bought.</li>
+<li>Alex and Beth bought the same computer.</li>
+</ul>
+<dl>
+<dt>Numerical Identity</dt>
+<dd>
+<p>We speak of numerical identity when two objects are one and the same.</p>
+</dd>
+</dl>
+<p>If Alex and Beth do not own different computers but rather happen to share one and the same machine, we may be inclined to say:</p>
+<ul>
+<li>The computer Alex uses is (numerically) identical to the computer Beth uses.</li>
+<li>Alex and Beth use (one and) the same computer.</li>
+<li>Alex and Beth share (one and) the same computer.</li>
+</ul>
+<p>Unfortunately, a variety of sentences are ambiguous between two interpretations of the relevant predicates:</p>
+<ul>
+<li>I have always used the same computer.</li>
+<li>The computer I bought last year is the same you bought now.</li>
+</ul>
+<p>On the interpretation of the predicate ‘the same’ in terms of numerical identity, one and the same computer has been used throughout the years and one and the same computer had been bought by me one year ago and has been bought by you now. On the alternative interpretation in terms of qualitative identity, I have always used computers of the same make and specifications even if more than one, and the computer you bought now is of the same make and specifications as the one I had bought one year ago.</p>
+<div id="syntax-2" class="section level2 unnumbered">
+<h2>Syntax</h2>
+<p>Quantificational logic with identity expands the vocabulary of quantificational logic with a predicate <span class="math inline">\(=\)</span> for numerical identity, which is interpreted to mean: <em>one and the same object</em>. All formulas of quantificational logic are formulas of quantificational logic with identity, but the definition of atomic formula of the latter is now expanded:</p>
+<dl>
+<dt>Atomic Formula</dt>
+<dd>
+<p>All atomic formulas of quantificational logic remain atomic formulas of quantificational logic with identity. Furthermore, if <span class="math inline">\(\tau_1\)</span> and <span class="math inline">\(\tau_2\)</span> are two constants or variables, then
+<span class="math display">\[
+\tau_1 = \tau_2
+\]</span>
+is an <em>atomic formula</em> of quantificational logic and identity.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 9.1  </strong></span>Each of the expressions below are atomic formulas of quantificational logic with identity:
+<span class="math display">\[
+\begin{array}{c}
+x = y \\ a = x\\ a = b\\ \dots
+\end{array}
+\]</span></p>
+</div>
+<dl>
+<dt>Formula</dt>
+<dd>
+<p>We now define what is for an expression to be a formula of quantificational logic with identity.</p>
+</dd>
+</dl>
+<div class="info">
+<ol style="list-style-type: decimal">
+<li>All atomic formulas are <em>formulas</em>.<br />
+</li>
+<li>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are <em>formulas</em>, then each of
+<span class="math display">\[
+\neg  \varphi, (\varphi \wedge \psi), (\varphi \vee \psi), (\varphi \to \psi)
+\]</span>
+is a <em>formula</em>.<br />
+</li>
+<li>If <span class="math inline">\(\varphi\)</span> is a formula and <span class="math inline">\(x\)</span> is a variable, then each of <span class="math inline">\(\forall x \varphi\)</span> and <span class="math inline">\(\exists x \varphi\)</span> is a formula.<br />
+</li>
+<li>Nothing else is a <em>formula</em>.</li>
+</ol>
+</div>
+<p>All other definitions carry over without incident to the language of quantificational logic with identity.</p>
+</div>
+<div id="semantics-2" class="section level2 unnumbered">
+<h2>Semantics</h2>
+<p>The semantics for quantificational logic with identity requires a minimal modification of the semantics for quantificational logic. We retain the definition of a model, an assignment for a model, and that of the denotation of a singular term relative to an assignment. We modify the definition of truth in a model relative to an assignment in order to accommodate atomic formulas of quantificational logic with identity.</p>
+<p>Atomic Formulas</p>
+<p><span class="math inline">\(\tau_1 = \tau_2\)</span> is true in a model <span class="math inline">\(M\)</span> under an assignment <span class="math inline">\(\alpha\)</span> if the denotation of <span class="math inline">\(\tau_1\)</span> relative to <span class="math inline">\(\alpha\)</span> is one and the same object as the denotation of <span class="math inline">\(\tau_2\)</span> relative to <span class="math inline">\(\alpha\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-90" class="example"><strong>Example 9.2  </strong></span><label for="tufte-mn-105" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-105" class="margin-toggle"><span class="marginnote"><span style="display: block;"><span class="math inline"><span class="math inline">\(D = \{1, 2\}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(I(P) = \{1, 2\}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(I(Q) = \{2\}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(I(R) = \{\langle 1,
+2\rangle\}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(I(a) = 1\)</span></span><br />
+<span class="math inline"><span class="math inline">\(I(b) = 2\)</span></span></span></span></p>
+<p>Let <span class="math inline">\(\alpha\)</span> be an assignment for the model <span class="math inline">\(M\)</span>:
+<span class="math display">\[
+\begin{array}{cccccccccc}
+x  &amp; y &amp; z &amp; x_1 &amp;  y_1 &amp; z_1 &amp;  \dots  \\
+\hline
+1 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 1  &amp;  \dots \\
+\end{array}
+\]</span>
+Then:</p>
+<ul>
+<li><span class="math inline">\(b = y\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(I(b)\)</span> is one and the same object as <span class="math inline">\(\alpha(y)\)</span>, namely, <span class="math inline">\(2\)</span>.</li>
+<li><span class="math inline">\(x = y\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(\alpha(x)\)</span> is <em>not</em> the same object as <span class="math inline">\(\alpha(y)\)</span>.</li>
+<li><span class="math inline">\(a = b\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(I(a)\)</span> is <em>not</em> the same object as <span class="math inline">\(I(b)\)</span>.</li>
+</ul>
+</div>
+<p>The rest of the definition of truth in a model relative to an assignment and truth in a model carries over to quantificational logic with identity without incident. So do the definitions of logical truth, equivalence, consistency, and validity.</p>
+<p><label for="tufte-mn-106" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-106" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.4.png" style="display:block; margin: 0 auto;"><br />
+</span>
+<span style="display: block;"><span class="math inline"><span class="math inline">\(P: \text{enclosed by a
+circle}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
+<span class="math inline"><span class="math inline">\(b: p_2\)</span></span></span></span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 9.3  </strong></span>The formula <span class="math inline">\((Pa \to Pb) \to \forall x (x = a \to x = b))\)</span> is <em>not</em> a logical truth.</p>
+<p>The model depicted by the diagram verifies the antecedent of the conditional but not the consequent.</p>
+<ul>
+<li><p>The formula <span class="math inline">\(Pa \to Pb\)</span> is true in the model because <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> are each enclosed by a circle.</p></li>
+<li><p>The formula <span class="math inline">\(\forall x (x = a \to x = b)\)</span> is not true in the model because <span class="math inline">\(x = a \to x = b\)</span> is not true no matter what we assign to <span class="math inline">\(x\)</span>. That is because <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote different objects in the model.</p></li>
+</ul>
+</div>
+<p><label for="tufte-mn-107" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-107" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.6.png" style="display:block; margin: 0 auto;"><br />
+</span>
+<span style="display: block;"><span class="math inline"><span class="math inline">\(P: \text{enclosed by a
+circle}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
+<span class="math inline"><span class="math inline">\(b: p_1\)</span></span></span></span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 9.4  </strong></span>Consider the following argument:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall x (x = a \to Px)\)</span></li>
+<li><span class="math inline">\(a = b\)</span></li>
+<li><span class="math inline">\(\forall x (Px \to x = b)\)</span></li>
+</ol>
+<p>The model depicted by the diagram verifies the premises but falsifies the conclusion.</p>
+<ul>
+<li><p>The formula <span class="math inline">\(\forall x (x = a \to Px)\)</span> is true in the model because <span class="math inline">\((x = a \to P^1x)\)</span> is true no matter what we assign to <span class="math inline">\(x\)</span>: if we assign <span class="math inline">\(p_1\)</span> to <span class="math inline">\(x\)</span>, then both antecedent and consequent come out true, but if we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>, the antecedent is false making the conditional true.</p></li>
+<li><p>The formula <span class="math inline">\(a =b\)</span> is true in the model because the denotation of <span class="math inline">\(a\)</span> in the model is one and the same object as the denotation of <span class="math inline">\(b\)</span> in the model.</p></li>
+<li><p>The formula <span class="math inline">\(\forall x (Px \to x = b)\)</span> is false in the model because <span class="math inline">\((Px \to x = a)\)</span> is not true when we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>: <span class="math inline">\(p_2\)</span> is enclosed by a circle, but it is not one and the same object as the denotation of <span class="math inline">\(a\)</span>. We conclude that the argument is invalid.</p></li>
+</ul>
+</div>
+<p><label for="tufte-mn-108" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-108" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.7.png" style="display:block; margin: 0 auto;"><br />
+</span>
+<span style="display: block;"><span class="math inline"><span class="math inline">\(R: \text{points to}\)</span></span><br />
+<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
+<span class="math inline"><span class="math inline">\(b: p_2\)</span></span><br />
+<span class="math inline"><span class="math inline">\(c: p_3\)</span></span><br />
+<span class="math inline"><span class="math inline">\(d: p_1\)</span></span></span></span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-93" class="example"><strong>Example 9.5  </strong></span>Consider the following argument:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Rab \wedge \neg Rac\)</span></li>
+<li><span class="math inline">\(\exists x Rcx \wedge \neg Rad\)</span></li>
+<li><span class="math inline">\(\neg a = d\)</span></li>
+</ol>
+<p>This model depicted by the diagram verifies the premises but not the conclusion.</p>
+<ul>
+<li><p>The formula <span class="math inline">\(Rab \wedge \neg Rac\)</span> is true in thhe model because the denotation of <span class="math inline">\(a\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>, points to the denotation of <span class="math inline">\(b\)</span> in the model, namely, <span class="math inline">\(p_2\)</span>, but <span class="math inline">\(p_1\)</span>, does <em>not</em> point to the denotation of <span class="math inline">\(c\)</span> in the model, namely, <span class="math inline">\(p_3\)</span>.</p></li>
+<li><p>The formula <span class="math inline">\(\exists x Rcx \wedge \neg Rad\)</span> is true in the model because the denotation of <span class="math inline">\(c\)</span> in the model, namely, <span class="math inline">\(p_3\)</span>, points to something but the denotation of <span class="math inline">\(a\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>, does not point to the denotation of <span class="math inline">\(d\)</span> in the model, namely <span class="math inline">\(p_1\)</span>.</p></li>
+<li><p>The formula <span class="math inline">\(\neg a = d\)</span> is false in the model because the denotation of <span class="math inline">\(a\)</span> in the model is one and the same object as the denotation of <span class="math inline">\(d\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>.</p></li>
+</ul>
+<p>We conclude that the argument is invalid.</p>
+</div>
+</div>
+<div id="natural-deduction-1" class="section level2 unnumbered">
+<h2>Natural Deduction</h2>
+<p>We now expand the natural deduction system for quantificational logic with introduction and elimination rules for identity.</p>
+<p>There is a simple introduction rule for identity:</p>
+<p><label for="tufte-mn-109" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-109" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/idi.png"><br />
+Identity Introduction</span></span></p>
+<dl>
+<dt>Identity Introduction</dt>
+<dd>
+<p>You may write an identity <span class="math inline">\(\tau = \tau\)</span> by itself on a line.</p>
+</dd>
+</dl>
+<p>The rationale for this rule is that since as a matter of logic, all objects are self-identical, whatevery <span class="math inline">\(\tau\)</span> may be, it will likewise identical to itself.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 9.6  </strong></span><span class="math inline">\(\forall x (x = x \to x = b) \vdash \forall x \ x = b\)</span>.</p>
+<p><img src="images/ex%209.11.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<p><label for="tufte-mn-110" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-110" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ide.png"><br />
+Identity Elimination</span></span></p>
+<dl>
+<dt>Identity Elimination</dt>
+<dd>
+<p>You may substitute every occurrence of <span class="math inline">\(\tau_2\)</span> for <span class="math inline">\(\tau_1\)</span> in a formula <span class="math inline">\(\varphi\)</span> when both that formula and an identity <span class="math inline">\(\tau_1 = \tau_2\)</span> occur at prior available lines of a proof</p>
+</dd>
+</dl>
+<p>The rationale for the elimination rule is that given <span class="math inline">\(\tau_1 = \tau_2\)</span>, <span class="math inline">\(\tau_1\)</span> is one the same object as <span class="math inline">\(\tau_2\)</span>, which means that whatever is true of one should remain true of the other.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 9.7  </strong></span><span class="math inline">\(\forall x (\neg Rbx \to (Px \to x = b)), Rab \wedge \neg Raa, Rba \to \neg Rab \vdash \neg Pa\)</span></p>
+<p><img src="images/ex%209.10.png" style="display:block; margin: 0 auto;"></p>
+</div>
+</div>
+<div id="uses-of-identity" class="section level2 unnumbered">
+<h2>Uses of Identity</h2>
+<p>We will use identity to translate overt identity statements such as ‘Mark Twain is Samuel Clemens’, which becomes <span class="math inline">\(a = b\)</span> relative to a translation key on which <span class="math inline">\(a\)</span> translates ‘Mark Twain’ and <span class="math inline">\(b\)</span> translates ‘Samuel Clemens’. That use of the word ‘is’ to express numerical identity is to be contrasted with uses of the word on which it expresses a predication, e.g., ‘Mark Twain is a writer’ which would be translated <span class="math inline">\(P^1a\)</span> relative to a translation key on which <span class="math inline">\(a\)</span> translates ‘Mark Twain’ and <span class="math inline">\(P\)</span> translates ‘is a writer’.</p>
+<p>We now look at less overt uses of identity in natural language.</p>
+<dl>
+<dt>Only</dt>
+<dd>
+<p>Only you arrived on time</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-111" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-111" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span>: arrived on time<br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: you</span></span></p>
+<div class="argument">
+<p>Every <em>thing</em> is such that <em>it</em> arrived on time only if <em>it</em> is identical to you.<br />
+<span class="math inline">\(\forall x (Px \to x =  a)\)</span></p>
+</div>
+<dl>
+<dt>Else</dt>
+<dd>
+<p>You arrived on time, but someone else did as well.</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-112" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-112" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(P\)</span></span>: arrived on time<br />
+<span class="math inline"><span class="math inline">\(a\)</span></span>: you</span></span></p>
+<div class="argument">
+<p>You arrived on time, and some <em>thing</em> is such that <em>it</em> is not identical to you and <em>it</em> arrived on time.<br />
+<span class="math inline">\(Pa \wedge \exists x (\neg  x =  a \wedge Px)\)</span></p>
+</div>
+<dl>
+<dt>Number</dt>
+<dd>
+<p>Identity enables us to translate a variety of statements of number.</p>
+</dd>
+</dl>
+<p>Some statements of number say that there is at least a certain number of objects of a certain type:</p>
+<ul>
+<li>There are <em>at least</em> two books.</li>
+<li>There are <em>at least</em> three books.</li>
+</ul>
+<p>Others tell us that there are at most a certain number of such objects:</p>
+<ul>
+<li>There is <em>at most</em> one book.</li>
+<li>There are <em>at most</em> two books.</li>
+</ul>
+<p>There is of course no reason to use identity to translate ‘there is at least one book’ as <span class="math inline">\(\exists x Px\)</span> relative to a translation key on which <span class="math inline">\(P\)</span> translates ‘book’. On the other hand, neither <span class="math inline">\(\exists x \exists y (Px \wedge Py)\)</span> nor <span class="math inline">\(\exists x Px \wedge \exists y Py\)</span> are adequate translations of the statement ‘there are at least two books’ relative to that translation key. For they merely state that something is a book and something is a book, which is compatible with one and the same witness for each existential generalization. We do better with the help of identity, since we are able to offer the following translations for sentences in the first group:</p>
+<ul>
+<li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge \neg x =y)\)</span></li>
+<li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge Pz \wedge \neg x =y \wedge \neg x = z \wedge \neg y = z)\)</span></li>
+</ul>
+<p>It is not difficult to generalize to other numbers, e.g., ‘there are at least four books’, etc. We are similarly able to offer the following translations for the sentences in the second group:</p>
+<ul>
+<li><span class="math inline">\(\forall x \forall y (Px \wedge Py \to x = y)\)</span></li>
+<li><span class="math inline">\(\forall x \forall y \forall z (Px \wedge Py \wedge Pz \to x = y \vee x = z \vee y = z)\)</span></li>
+</ul>
+<p>The generalization to other numbers is similarly straightforward.</p>
+<p>We are now in a position to translate numerical statements whereby we state the existence of an exact number of objects of a certain type:</p>
+<ul>
+<li>There is <em>exactly</em> one book.</li>
+<li>There are <em>exactly</em> two books.</li>
+</ul>
+<p>The crucial observation at this point is that each of these statements is equivalent to a conjunction of two statements we already know how to translate:</p>
+<ul>
+<li>There is at least one book and there is at most one book.</li>
+<li>There are at least two books and there are at most two books.</li>
+</ul>
+<p>The translation of each of these conjunctions becomes:</p>
+<ul>
+<li><span class="math inline">\(\exists x Px \wedge \forall x \forall y (Px \wedge Py \to x = y)\)</span></li>
+<li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge \neg x =y) \wedge \forall x \forall y \forall z (Px \wedge Py \wedge Pz \to x = y \vee x = z \vee y = z)\)</span></li>
+</ul>
+<p>But each of these formulas is equivalent to a more concise version:</p>
+<ul>
+<li><span class="math inline">\(\exists x (Px \wedge \forall y (Py \to x = y))\)</span></li>
+<li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge \neg x =y \wedge \forall z (Pz \to x = z \vee y = z))\)</span></li>
+</ul>
+<dl>
+<dt>Definite Descriptions</dt>
+<dd>
+<p>The author of <em>Huckleberry Finn</em> is American</p>
+</dd>
+</dl>
+<p>We now focus on phrases such as ‘the author of <em>Huckleberry Finn</em>’ or ‘instructor’, which combine the expression ‘the’ with a predicate. In quantificational logic, we treated all such expressions as designators, whose primary semantic function is to designate an object. But Bertrand Russell famously suggested that they should instead be treated as quantifier phrases. He offered the following style of paraphrase for sentences involving definite descriptions:</p>
+<ul>
+<li><p>The instructor arrived on time.</p></li>
+<li><p>Exactly one individual is an instructor and she arrived on time.</p></li>
+<li><p>The author of <em>Huckleberry Finn</em> is American</p></li>
+<li><p>Exactly one individual is author of <em>Huckleberry Finn</em> and he is American.</p></li>
+</ul>
+<p>Given Russell’s paraphrase method, the first sentence translates as:</p>
+<ul>
+<li><span class="math inline">\(\exists x (Px \wedge \forall y (Py \to x =y) \wedge Qx)\)</span>,</li>
+</ul>
+<p>relative to a translation key on which <span class="math inline">\(P^1\)</span> translates ‘instructor’ and <span class="math inline">\(Q^1\)</span> translates ‘arrived on time’. Similarly, the second sentence now translates:</p>
+<ul>
+<li><span class="math inline">\(\exists x (Rxa \wedge \forall y (Rya \to x =y) \wedge Px)\)</span>,</li>
+</ul>
+<p>relative to a translation key on which <span class="math inline">\(a\)</span> tranlates ‘<em>Huckleberry Finn</em>’, <span class="math inline">\(R\)</span> translates ‘authors’ and <span class="math inline">\(P\)</span> translates ‘American’.</p>
+</div>
+<div id="exercises-8" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>For each set of formulas below, find a model we can use to justify the fact that the set is consistent. Please justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\{\forall x (Px \leftrightarrow Qx), Pa, Qb, \neg a = b\}\)</span></p></li>
+<li><p><span class="math inline">\(\{\forall x (Rax \to Rbx, \neg Raa, Rba \}\)</span></p></li>
+</ol></li>
+<li><p>For each argument below, find a model we can use to justify the fact that the argument is invalid. Please justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa \vdash a = b \to Rab\)</span></p></li>
+<li><p><span class="math inline">\(\exists x Px, \exists x Qx \vdash \exists x \exists y \neg x = y\)</span></p></li>
+</ol></li>
+<li><p>Provide a natural deduction proof to justify each of the claims below:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa, Pb \vdash a = b \to Rab\)</span></p></li>
+<li><p><span class="math inline">\(\exists x \forall y (Px \leftrightarrow y = x), Pa \vdash \forall x (Px \to x = a)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x Px, \exists x Qx, \neg \exists x (Px \wedge Qx) \vdash \exists x \exists y \neg x = y\)</span></p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+
+
+
+<p style="text-align: center;">
+<a href="natural-deduction.html"><button class="btn btn-default">Previous</button></a>
+<a href="solutions-to-selected-exercises.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

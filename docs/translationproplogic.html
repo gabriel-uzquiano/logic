@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3 Translation | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>3 Translation | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="translationproplogic" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Translation</h1>
+<p>The framework of propositional logic will enable us to isolate a family of valid argument forms underwritten by the behavior of certain truth functional connectives of English. To that end, we will have to be able to translate from English into the formal language we have just introduced.</p>
+<div id="a-translation-method" class="section level2 unnumbered">
+<h2>A Translation Method</h2>
+<p>We will now develop the skill of translation from natural language to propositional logic. To that end, we break down the task into three main steps.</p>
+<p><label for="tufte-mn-16" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-16" class="margin-toggle"><span class="marginnote"><span style="display: block;">Step 1. Find a paraphrase</span></span></p>
+<dl>
+<dt>Paraphrase</dt>
+<dd>
+<p>We paraphrase the relevant English sentence in order to make clear how the target sentence may be built from simpler constituents by means of connectives such as ‘not’, ‘and’, ‘or’, and ‘if <span class="math inline">\(\dots\)</span>, then <span class="math inline">\(\dots\)</span>’</p>
+</dd>
+</dl>
+<p>This first step will often require us to rewrite the sentence to include these connectives as opposed to some of their stylistic variants. We will use parentheses in order to highlight how the sentence has been constructed from simpler sentences.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 3.1  </strong></span>Consider the English sentence:</p>
+<div class="argument">
+<p>Although Smith is not a flexible negotiator, she will come to an agreement if we lower our demand.</p>
+</div>
+<p>We substitute ‘and’ for the stylistic variant ‘although’, and we rewrite the second part of the sentence to reveal how it is constructed from simpler sentences with the help of a conditional:</p>
+<div class="argument">
+<p>(It is not the case that Smith is a flexible negotiator, <em>and</em> (<em>if</em> we lower our demands, <em>then</em> she will come to an agreement)).</p>
+</div>
+</div>
+<p><label for="tufte-mn-17" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-17" class="margin-toggle"><span class="marginnote"><span style="display: block;">Step 2. Substitute the connectives:</span>
+<span style="display: block;">Substitute <span class="math inline"><span class="math inline">\(\neg\)</span></span> for ‘not’</span>
+<span style="display: block;">Substitute <span class="math inline"><span class="math inline">\(\wedge\)</span></span> for ‘and’</span>
+<span style="display: block;">Substitute <span class="math inline"><span class="math inline">\(\vee\)</span></span> for ‘or’</span>
+<span style="display: block;">Substitute <span class="math inline"><span class="math inline">\(\to\)</span></span> for ‘if <span class="math inline"><span class="math inline">\(\dots\)</span></span>, then <span class="math inline"><span class="math inline">\(\dots\)</span></span>.’</span></span></p>
+<dl>
+<dt>Substitute the connectives for their counterparts</dt>
+<dd>
+<p>We replace the occurrences of the connectives we have identified above with the symbols for their counterparts in propositional logic.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 3.2  </strong></span>Consider the outcome of the first step above:</p>
+<div class="argument">
+<p>(It is not the case that Smith is a flexible negotiator, and (if we lower our demands, she will come to an agreement))</p>
+</div>
+<p>We replace each occurrence of a connective with an occurrence of its formal counterpart:</p>
+<div class="argument">
+<p>(<span class="math inline">\(\neg\)</span> Smith is a flexible negotiator <span class="math inline">\(\wedge\)</span> (we lower our demands <span class="math inline">\(\to\)</span> she will come to an agreement)).</p>
+</div>
+</div>
+<p><label for="tufte-mn-18" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-18" class="margin-toggle"><span class="marginnote"><span style="display: block;">Step 3. Substitute a propositional variable for each simple
+sentence</span></span></p>
+<dl>
+<dt>Replace each simple sentence with a propositional variable</dt>
+<dd>
+<p>We choose a propositional variable for each simple sentence and we proceed to substitute an occurrence of the propositional variable for each occurrence of the simple sentence in the target sentence.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 3.3  </strong></span>Consider the outcome of the second step above:</p>
+<div class="argument">
+<p>(It is not the case that Smith is a flexible negotiator, and (if Jones lowers her demands, she will come to an agreement))<br />
+</p>
+</div>
+<p><label for="tufte-mn-19" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-19" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Smith is a flexible
+negotiator.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: We lower our demands.<br />
+<span class="math inline"><span class="math inline">\(r\)</span></span>: Smith will come to an
+agreement.</span></span></p>
+<p>We replace each simple sentence with a propositional variable in accordance with a suitable translation key.</p>
+<div class="{argument}">
+<p><span class="math inline">\((\neg p \wedge ((q \to r))\)</span>.</p>
+</div>
+</div>
+<p>It will be helpful to look at a more complex example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 3.4  </strong></span>Our target now is the English sentence below:</p>
+<div class="{argument}">
+<p>If cobalt is present, then either there is no nickel present or there is manganese present and a brown color appears.</p>
+</div>
+<p>We proceed in three steps:</p>
+<dl>
+<dt>Step 1</dt>
+<dd>
+<p><em>If</em> Cobalt is present, <em>then</em> (it is <em>not</em> the case that there is nickel present <em>or</em> (there is manganese present <em>and</em> a brown color appears))</p>
+</dd>
+<dt>Step 2</dt>
+<dd>
+<p>(Cobalt is present <span class="math inline">\(\to\)</span> (<span class="math inline">\(\neg\)</span> there is nickel <span class="math inline">\(\vee\)</span> (there is managanese <span class="math inline">\(\wedge\)</span> a brown color appears))))</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-20" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-20" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Cobalt is present.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: There is nickel present.<br />
+<span class="math inline"><span class="math inline">\(r\)</span></span>: There is manganese
+present.<br />
+<span class="math inline"><span class="math inline">\(s\)</span></span>: A brown color appears.</span></span></p>
+<dl>
+<dt>Step 3</dt>
+<dd>
+<p><span class="math inline">\(((p \to (\neg  q \vee (r \wedge s))))\)</span></p>
+</dd>
+</dl>
+</div>
+</div>
+<div id="issues-with-translation" class="section level2 unnumbered">
+<h2>Issues with Translation</h2>
+<p>Some of the examples above seem deceptively simple. We often find unexpected difficulties when we translate more idiomatic English sentences into the language of propositional logic. Let us distinguish a few different types of problems.</p>
+<dl>
+<dt>Non-Truth-Functional Connectives</dt>
+<dd>
+<p>Some connectives resist paraphrase into a truth-functional connective.</p>
+</dd>
+</dl>
+<p>Consider the English sentence:</p>
+<div class="argument">
+<p>My coffee had a sweet taste because I put sugar into it.</p>
+</div>
+<p>We may be tempted to paraphrase the sentence as a conjunction:</p>
+<div class="argument">
+<p>My coffee had a sweet taste <em>and</em> I put sugar into it.</p>
+</div>
+<p>But the paraphrase does not faithfully capture the truth conditions of the original sentence. More to the point, there is no reason to think the connective ‘because’ is truth-functional. In fact, we obtain a sentence with a different truth value when we replace one of its simpler parts, e.g., ‘I put sugar into my coffee’, with another sentence with the same truth value, e.g., ‘Los Angeles is south of San Francisco’:</p>
+<div class="argument">
+<p>My coffee had a sweet taste because Los Angeles is south of San Francisco.</p>
+</div>
+<p>To complicate matters even further, some uses of ‘if <span class="math inline">\(\dots\)</span>, then <span class="math inline">\(\dots\)</span>’ in the subjunctive are not truth-functional.</p>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>If I had put motor oil in my coffee, it would have had a sweet taste.</p>
+</div>
+<p>Even if the sentence is false, notice that we may obtain a true sentence when we replace ‘I had put motor oil in my coffee’ with a sentence with the same truth value, e.g., ‘I had put saccharine in my coffee’.</p>
+<dl>
+<dt>Structural Ambiguity</dt>
+<dd>
+<p>A sentence may be structurally ambiguous, since there is more than one interpretation on which the sentence is built differently from different simpler sentences.</p>
+</dd>
+</dl>
+<p>Consider the sentence:</p>
+<div class="argument">
+<p>Jones is at the office and Smith is on zoom or the deal will not be completed.</p>
+</div>
+<p>There are at least two different readings of this sentence depending on whether we regard it as a conjunction or as a disjunction:</p>
+<div class="argument">
+<p>Jones is at the office and (Smith is on zoom or the deal will not be completed)<br />
+(Jones is a the office and Smith is on zoom) or the deal will not be completed.</p>
+</div>
+<p>These two sentences come with different truth conditions, e.g., only the second sentence is true if Jones is <em>not</em> at the office but the deal is not completed.</p>
+<dl>
+<dt>Special Phrases</dt>
+<dd>
+<p>Some English phrases present special challenges of their own.</p>
+</dd>
+</dl>
+<p>The next issue arises from the question of how much force to apply to the original sentence in order to find a paraphrase constructed from more familiar truth-functional connectives with the same truth conditions as the original. We now look at several problem cases.</p>
+<p><label for="tufte-mn-21" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-21" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong><span class="math inline"><span class="math inline">\(\dots\)</span></span> only if <span class="math inline"><span class="math inline">\(\dots\)</span></span></strong></span></span></p>
+<dl>
+<dt><span class="math inline">\(\dots\)</span> only if <span class="math inline">\(\dots\)</span></dt>
+<dd>
+<p>I will win the lottery only if I buy a ticket.</p>
+</dd>
+</dl>
+<p>Despite the superficial similarity between ‘only if’ and ‘if’, they achieve very different effects. Compare the sentence above with the conditional:</p>
+<div class="argument">
+<p>I will win the lottery <em>if</em> I buy a ticket.</p>
+</div>
+<p>This sentence tells us that the purchase of a ticket is a <em>sufficient</em> condition for a win and it may be paraphrased:</p>
+<div class="argument">
+<p>If I buy a ticket, then I will win the lottery.</p>
+</div>
+<p>The target sentence is quite different: it states that I must buy a ticket in order to have a chance to win the lottery. Otherwise put, the <em>only if</em> sentences says that the purchase is in fact a <em>necessary</em> condition for a win, and it should be paraphrased:</p>
+<p><label for="tufte-mn-22" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-22" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: I will win the lottery.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: I buy a ticket.<br />
+</span></span></p>
+<div class="argument">
+<p>If I will win the lottery, then I will have bought a ticket.<br />
+<span class="math inline">\(p \to q\)</span></p>
+</div>
+<p><label for="tufte-mn-23" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-23" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong><span class="math inline"><span class="math inline">\(\dots\)</span></span> if and only if
+<span class="math inline"><span class="math inline">\(\dots\)</span></span></strong></span></span></p>
+<dl>
+<dt><span class="math inline">\(\dots\)</span> if and only if <span class="math inline">\(\dots\)</span></dt>
+<dd>
+<p>The deal will be completed if, and only if, both parties agree to it.</p>
+</dd>
+</dl>
+<p>It is not uncommon to combine ‘if’ and ‘only if’ into ‘if and only if’, which we should be able to parse as a conjunction:</p>
+<p><label for="tufte-mn-24" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-24" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: The deal will be
+completed.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: Both parties agree to it.<br />
+</span></span></p>
+<div class="argument">
+<p>The deal will be completed if both parties agree to it, <em>and</em> the deal will be completed only if both partiess agree to it.<br />
+<span class="math inline">\((q \to p) \wedge (p \to q)\)</span></p>
+</div>
+<p>That means that the signature of the contract in the afternoon is both a <em>necessary</em> and <em>sufficient</em> condition for the deal to be completed.</p>
+<p>We will sometimes use the symbol <span class="math inline">\(\leftrightarrow\)</span> in order to abbreviate formulas of that form. In general:
+<span class="math display">\[
+(\varphi \leftrightarrow \psi) := (\psi \to \varphi) \wedge (\varphi \to \psi).
+\]</span>
+It would be acceptable to use that symbol as an abbreviation as we translate from English into the language of propositional logic:</p>
+<div class="argument">
+<p>The deal will be completed if both parties agree to it, <em>and</em> the deal will be completed only if both partiess agree to it.<br />
+<span class="math inline">\((q \to p) \wedge (p \to q)\)</span>.<br />
+<span class="math inline">\((p \leftrightarrow q)\)</span></p>
+</div>
+<p><label for="tufte-mn-25" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-25" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Neither <span class="math inline"><span class="math inline">\(\dots\)</span></span> nor <span class="math inline"><span class="math inline">\(\dots\)</span></span></strong></span></span></p>
+<dl>
+<dt>Neither <span class="math inline">\(\dots\)</span> nor <span class="math inline">\(\dots\)</span></dt>
+<dd>
+<p>Neither Jones nor Smith is in the office.</p>
+</dd>
+</dl>
+<p>The goal now is to find a paraphrase constructed from familiar truth-functional connectives that is true if, and only if, the original sentence is true. There is more than one option at this point:</p>
+<div class="argument">
+<p>Jones is not in the office and Smith is not in the office.</p>
+</div>
+<div class="argument">
+<p>It is not the case that Jones is in the office or Smith is in the office</p>
+</div>
+<p>In the first case, we turn the original sentence into a conjunction of two negations:</p>
+<p><label for="tufte-mn-26" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-26" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Jones is in the office.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: Smith is in the office.<br />
+</span></span></p>
+<div class="argument">
+<p>(It is not the case that Jones is in the office and it is not the case that Smith is in the office).<br />
+<span class="math inline">\((\neg p \wedge \neg q)\)</span></p>
+</div>
+<p>In the second case, we paraphrase the original sentence into the negation of a disjunction:</p>
+<div class="argument">
+<p>It is not the case that (Jones is in the office or Smith is in the office).<br />
+<span class="math inline">\(\neg (p \vee q)\)</span></p>
+</div>
+<p>Both paraphrases are true in exactly the same circumstances, which coincide with the circumstances in which the target sentence is true. That is why both are adequate paraphrases of the original sentence.</p>
+<p><label for="tufte-mn-27" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-27" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Unless</strong></span></span></p>
+<dl>
+<dt>Unless</dt>
+<dd>
+<p>The deal will fall through unless Smith is in attendance.</p>
+</dd>
+</dl>
+<p>The problem is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. We have at least two options:</p>
+<p><label for="tufte-mn-28" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-28" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: The deal will fall
+through.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: Smith is in attendance.<br />
+</span></span></p>
+<div class="argument">
+<p>If Smith is not in attendance, then the deal will fall through.<br />
+<span class="math inline">\(\neg q \to p\)</span></p>
+</div>
+<div class="argument">
+<p>The deal will fall through or Smith is in attendance.<br />
+<span class="math inline">\(p \vee q\)</span></p>
+</div>
+<p>In the first case, we translate ‘unless’ as ‘if not’, whereas in the second case we translate it as ‘or’. The paraphrases turn out to be equivalent in that they are true in exactly the same circumstances, which is what is wanted.</p>
+<p><label for="tufte-mn-29" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-29" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Otherwise</strong></span></span></p>
+<dl>
+<dt>Otherwise</dt>
+<dd>
+<p>Smith will be in attendance; otherwise, the deal will fall through.</p>
+</dd>
+</dl>
+<p>The task now is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. For example:</p>
+<p><label for="tufte-mn-30" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-30" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Smith is in attendance.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: The deal will fall
+through.<br />
+</span></span></p>
+<div class="argument">
+<p>Smith will be in attendance, and if Smith is not in attendance, then the deal will fall through.<br />
+<span class="math inline">\(p \wedge (\neg p \to q)\)</span></p>
+</div>
+</div>
+<div id="application" class="section level2 unnumbered">
+<h2>Application</h2>
+<p>The point of translation is to be able to discern valid argument forms in arguments formulated in English. In particular, we will often be interested in the question of whether a natural language argument exhibits a valid propositional form.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 3.5  </strong></span>Consider the natural language argument:</p>
+<blockquote>
+<p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule. I cannot rule out that the animal in the pen is not a cleverly painted mule. Therefore, I cannot be certain that the animal in the pen is a zebra.</p>
+</blockquote>
+<p>To assess the argument, we follow three steps.</p>
+<p><em>First</em>, we put the argument into premise-conclusion form:</p>
+<ol style="list-style-type: decimal">
+<li><p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule.<br />
+</p></li>
+<li><p>I cannot rule out that the animal in the pen is a cleverly painted mule.<br />
+</p></li>
+<li><p>Therefore, I cannot be certain that the aninal in the pen is a zebra.</p></li>
+</ol>
+<p><em>Second</em>, we translate the premises and conclusion of the argument into the language of propositional logic.
+<label for="tufte-mn-31" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-31" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: I can be certain that the animal
+in the pen is a zebra.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: I can rule out that the animal
+in the pen is a cleverly painted mule.</span></span></p>
+<p><em>First premise</em>:</p>
+<div class="argument">
+<p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule.<br />
+</p>
+</div>
+<div class="argument">
+<p><em>If</em> I can<em>not</em> rule out that the animal in the pen is a cleverly painted mule, <em>then</em> I can<em>not</em> be certain that the animal in the pen is a zebra.</p>
+</div>
+<div class="argument">
+<p>(<span class="math inline">\(\neg\)</span> I can rule out that the animal in the pen is a cleverly painted mule <span class="math inline">\(\to\)</span> <span class="math inline">\(\neg\)</span> I can be certain that the animal in the pen is a zebra).</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg q \to \neg p\)</span></p>
+</div>
+<p><em>Second Premise</em>:</p>
+<div class="argument">
+<p>I can<em>not</em> rule out that the animal in the pen is a cleverly painted mule.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg\)</span> I can rule out that the animal in the pen is a cleverly painted mule</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg q\)</span></p>
+</div>
+<p><em>Conclusion</em>:</p>
+<div class="argument">
+<p>I can<em>not</em> be certain that the animal in the pen is a zebra.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg\)</span> I can be certain that the animal in the pen is a zebra.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg p\)</span></p>
+</div>
+<p>We arrive at the translation of the argument into propositional logic:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\neg q \to \neg p\)</span></li>
+<li><span class="math inline">\(\neg  q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p><em>Third</em>, we now use the search-for-counterexample method to determine whether the argument is valid in propositional logic:</p>
+<p>We aim for an assignment that makes the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; \neg q \to \neg p &amp; \neg q &amp; \neg p \\
+\hline
+T &amp;   &amp;  &amp;  &amp;     \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+In order to make the second premise true, we make <span class="math inline">\(q\)</span> false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; \neg q \to \neg p &amp; \neg q &amp; \neg p \\
+\hline
+T &amp;  F &amp;  &amp; T &amp;     \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+Unfortunately, the first premise comes out false under that assigment, which means that we cannot provide an assignment under which the premises come out true and the conclusion false.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; \neg q \to \neg p &amp; \neg q &amp; \neg p \\
+\hline
+T &amp;  F &amp; ! &amp; T &amp;     \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<p>Let us move to an even more complex argument.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 3.6  </strong></span>Consider the natural language argument:</p>
+<blockquote>
+<p>You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join. Applying for club membership is regarded as a sign of eagerness. That is, if you apply for club membership, you will be perceived to be eager to join. So, you will not be admitted into the club.</p>
+</blockquote>
+<p>In order to assess the argument, we follow the same steps as before.</p>
+<p><em>First</em>, we put the argument into premise-conclusion form:</p>
+<ol style="list-style-type: decimal">
+<li><p>You will be admitted into the club just in case you apply for club membership and you are not peceived to be eager to join.</p></li>
+<li><p>If you apply for club membership, you will be perceived to be eager to join.</p></li>
+<li><p>You will not be admitted into the club.</p></li>
+</ol>
+<p><em>Second</em>, we translate the premises and conclusion of the argument into the language of propositional logic.</p>
+<p><label for="tufte-mn-32" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-32" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: You will be admitted into the
+club.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: You will apply for club
+membership.<br />
+<span class="math inline"><span class="math inline">\(r\)</span></span>: You will be perceived to be
+eager to join.</span></span></p>
+<p><em>First premise</em>:</p>
+<div class="argument">
+<p>You will be admitted into the club if, and only if, (you apply for club membership and you are not peceived to be eager to join).</p>
+</div>
+<div class="argument">
+<p>((you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are peceived to be eager to join) <span class="math inline">\(\to\)</span> you will be admitted to the club) <span class="math inline">\(\wedge\)</span> (you will be admitted into the club <span class="math inline">\(\to\)</span> (you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are peceived to be eager to join)).</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\((p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)\)</span></p>
+</div>
+<p><em>Second Premise:</em></p>
+<div class="argument">
+<p>If you apply for club membership, you will be perceived to be eager to join.</p>
+</div>
+<div class="argument">
+<p>You apply for club membership <span class="math inline">\(\to\)</span> you will be perceived to be eager to join.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(q \to r\)</span></p>
+</div>
+<p><em>Conclusion</em>:</p>
+<div class="argument">
+<p>You will not be admitted into the club.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg\)</span> You will be admitted into the club.</p>
+</div>
+<div class="argument">
+<p><span class="math inline">\(\neg p\)</span></p>
+</div>
+<p>We arrive at the translation:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p \leftrightarrow (q \wedge \neg r)\)</span></li>
+<li><span class="math inline">\(p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)\)</span></li>
+<li><span class="math inline">\(q \to r\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p><em>Third</em>, we use the search-for-counterexample method to determine whether the argument is valid in propositional logic:</p>
+<p>We aim for an assignment that makes the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; \neg  p \\
+\hline
+T &amp;   &amp;  &amp;  &amp;  &amp;   \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+In order to make the first premise true, we must make <span class="math inline">\(q \wedge \neg r\)</span> true, which requires <span class="math inline">\(q\)</span> to be true and <span class="math inline">\(r\)</span> to be false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; p \\
+\hline
+T &amp;  T &amp; F  &amp; T &amp;  &amp;   \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+Unfortunately, that makes the second premise false, which means that we cannot find an assignment under which the premises come out true and the conclusion false.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; p \\
+\hline
+F &amp;  T &amp; F  &amp; T &amp;  ! &amp;   \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="exercises-2" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Translate the following sentences into the language of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If interest rates fall, then we will be able to borrow more money and inflation will rise.</p></li>
+<li><p>Your computer will not start unless you turn it on and the battery is fully charged.</p></li>
+<li><p>The mayor’s office made the decision, even though it did not sit well with its constituents.</p></li>
+<li><p>You will carry an umbrella outside just in case it is raining or you are under the impression that it is raining.</p></li>
+<li><p>The deal will be completed if all parties agree to it and the deal is found to be in compliance with current regulations.</p></li>
+</ol></li>
+<li><p>Assess the following arguments for propositional validity.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The car will not start unless you turn the ignition and press the accelerator. You turned the ignition but the car failed to start. So, you did not press the accelerator.</p></li>
+<li><p>The mind is a simple substance only if it is not made of further parts. If the mind is material, then it is is made of further parts. So, if the mind is a simple substance, then it is not material.</p></li>
+<li><p>My client is not the burglar. For the doors show no signs of forced entry. If the doors show no signs of forced entry, then if my client is the burglar, he must have climbed to the unlocked window on the second floor. However, my client is arthritic and could not climb to that unlocked window on the second floor.</p></li>
+<li><p>If the British are coming, then they are coming by land or by sea. Paul Revere will light only one lamp, if they are coming by land. He will light two lamps, if they are coming by sea. Paul Revere will light only one lamp. So, the British are coming.</p></li>
+<li><p>The insurance company will cover your expenses only if you are current with your monthly payments. But if you are current with your monthly payments, then you can afford to cover the expenses yourself. So, the insurance company will not cover your expenses unless you can afford to cover them yourself.</p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="proplogic.html"><button class="btn btn-default">Previous</button></a>
+<a href="natdedprop.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

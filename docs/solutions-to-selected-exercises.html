@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="10 Solutions to Selected Exercises | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>10 Solutions to Selected Exercises | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="solutions-to-selected-exercises" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Solutions to Selected Exercises</h1>
+<div id="reason-and-argument" class="section level2 unnumbered">
+<h2>1. Reason and Argument</h2>
+<ol style="list-style-type: decimal">
+<li><p>Identify the premises and conclusion of each of the following arguments.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>You did not turn the ignition. The car starts when you turn the ignition and the tank is full. But the tank is full and the car did not start.</p></li>
+<li><p>If the mind is the same as the brain, then whatever is true of one is true of the other. The brain is a physically extended object but the mind is not. So, the mind is not the same as the brain.<br/> <strong>Solution</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><span style="color:green;">If the mind is the same as the brain, then whatever is true of one is true of the other.</span></li>
+<li><span style="color:green;">The brain is a physically extended object but the mind is not.</span></li>
+<li><span style="color:green;">The mind is not the same as the brain.</span></li>
+</ol></li>
+<li><p>The deal will fall through unless Smith is part of the negotiation. So, the deal will not be completed. For Smith just phoned to let us know she cannot join the negotiation.<br/> <strong>Solution</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><span style="color:green;">The deal will fall through unless Smith is part of the negotiation.</span></li>
+<li><span style="color:green;">Smith just phoned to let us know she cannot join the negotiation.</span></li>
+<li><span style="color:green;">The deal will not be completed.</span></li>
+</ol></li>
+<li><p>You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join. Applying for club membership is regarded as a sign of eagerness. That is, if you apply for club membership, you will be perceived to be eager to join. So, you will not be admitted into the club.<br/>
+<strong>Solution</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><span style="color:green;">You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join.</span></li>
+<li><span style="color:green;">If you apply for club membership, you will be perceived to be eager to join.</span></li>
+<li><span style="color:green;">You will not be admitted into the club.</span></li>
+</ol></li>
+</ol></li>
+<li><p>Which of the following arguments are valid?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>It today is Tuesday, then today is not Wednesday.
+Today is Tuesday.
+So, today is not Wednesday.<br/>
+<strong>Solution</strong>:<br/>
+<span style="color:green;">This is a valid argument because it is an instance of a valid argument pattern:<br/>
+If <span class="math inline">\(p\)</span>, then not-<span class="math inline">\(q\)</span><br/>
+<span class="math inline">\(p\)</span><br/>
+Not-<span class="math inline">\(q\)</span><br/>
+and none of its instances has true premises and a false conclusion.</span></p></li>
+<li><p>Today is Tuesday or Thursday.
+So, today is Tuesday
+<strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>not</em> a valid argument because it is not an instance of a valid argument pattern. It is, for example, an instance of the pattern:<br/>
+<span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span><br/>
+<span class="math inline">\(p\)</span><br/>
+To appreciate its invalidity, notice that there are instances with true premises and a false conclusion, e.g.</br>
+Snow is black or snow is white (<em>true</em>)<br/>
+Snow is black (<em>false</em>).</span></p></li>
+<li><p>Today is Tuesday or Thursday.
+Today is not Thursday.
+So, today is Tuesday</p></li>
+<li><p>I’m late on Tuesdays.
+I’m late again today.
+So, today is Tuesday</p></li>
+</ol></li>
+<li><p>Justify the invalidity of each of the argument patterns below by providing an instance with true premises and a false conclusion.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span> or <span class="math inline">\(r\)</span>.<br />
+Not <span class="math inline">\(q\)</span>.<br />
+Therefore, <span class="math inline">\(r\)</span>.</p></li>
+<li><p><span class="math inline">\(p\)</span> unless <span class="math inline">\(q\)</span>.<br />
+<span class="math inline">\(q\)</span>.<br />
+<span class="math inline">\(p\)</span>.<br/>
+<strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>not</em> a valid argument pattern because some of its instances have true premises and a false conclusion, e.g.,<br/>1. The commute to campus will take over an hour unless I find a way to live nearby campus. (<em>true</em>)<br/>2. I will find a way to live nearby campus (<em>true</em>)<br/>3.The commute to campus will take over an hour (<em>false</em>).</span></p></li>
+<li><p><span class="math inline">\(p\)</span> if, and only if, both <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span>.<br />
+<span class="math inline">\(r\)</span>.<br />
+<span class="math inline">\(q\)</span>.</p></li>
+</ol></li>
+<li><p>True or false? Justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>There are valid arguments with false premises and a true conclusion.<br/>
+<strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>true</em>. The following is a valid argument with false premises and a true conclusion:<br/>1. Snow is white and snow is black (<em>false</em>)<br/>2. Snow is white (<em>true</em>).<br/>It is a valid argument because it is an instance of a valid argument pattern:<br/><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>.<br/><span class="math inline">\(p\)</span>.</span></p></li>
+<li><p>There are invalid arguments with true premises and a true conclusion.</p></li>
+<li><p>There are valid arguments with a false conclusion.</p></li>
+<li><p>There are sound arguments with a false conclusion.<br/><strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>false</em>: a sound argument is a valid argument with true premises. But if a valid argument has true premises, then it must have a true conclusion. It follows that a sound argument must have a true conclusion.</span></p></li>
+<li><p>If an argument is valid, then at least one of its premises is true.<br/><strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>false</em>. The argument we deployed in response to part a has <em>no</em> true premises at all.</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="propositional-logic" class="section level2 unnumbered">
+<h2>2. Propositional Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Add quotation marks to the following sentences in order to obtain a true sentence of Enlglish. If there is more than one solution, make sure to explain why.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Los Angeles names a city in Southern California.</p></li>
+<li><p>Los is part of Los Angeles.
+<br/><strong>Solution</strong>:<br/>
+<span style="color:green;">‘Los’ is part of ‘Los Angeles’</span></p></li>
+<li><p>Snow is white is a grammatical sentence of English.
+<br/><strong>Solution</strong>:<br/>
+<span style="color:green;">‘Snow is white’ is a grammatical sentence of English.</span></p></li>
+<li><p>What is monosyllabic but whatever is polysyllabic.
+<br/><strong>Solution</strong>:<br/>
+<span style="color:green;">‘What’ is monosyllabic but ‘whatever’ is polysyllabic..</span></p></li>
+</ol></li>
+<li><p>Determine whether each of the following expressions is a sentence of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\neg \neg A\)</span></li>
+</ol>
+<p><br/><strong>Solution</strong>:<br/>
+<label for="tufte-mn-113" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-113" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/exex%202.2a.png"></span>
+<span style="display: block;">No construction tree is available.</span></span>
+<span style="color:green;">This is <em>not</em> a sentence of propositional logic.<br/>
+By rule 2, <span class="math inline">\(\neg \neg A\)</span> is a sentence if <span class="math inline">\(\neg A\)</span> is a sentence.<br/>
+By rule 2, <span class="math inline">\(\neg A\)</span> is a sentence if <span class="math inline">\(A\)</span> is a sentence.<br/>
+By rule 3, since <span class="math inline">\(A\)</span> is <em>not</em> a propositional variable, <span class="math inline">\(A\)</span> is not a sentence.<br/> So, it follows that <span class="math inline">\(\neg \neg A\)</span> is <em>not</em> a sentence.</span></p>
+<ol>
+<li><p><span class="math inline">\((p \to (\neg q))\)</span></p></li>
+<li><p><span class="math inline">\((p)\)</span></p></li>
+<li><p><span class="math inline">\((q \to (\neg  \neg  p \vee r))\)</span></p></li>
+</ol>
+<p><br/><strong>Solution</strong>:<br/>
+<label for="tufte-mn-114" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-114" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/exex%202.2d.png"></span>
+<span style="display: block;">A construction tree for the formula.</span></span>
+<span style="color:green;">This <em>is</em> a sentence of propositional logic.<br/>
+By rule 2, <span class="math inline">\((q \to (\neg  \neg  p \vee r))\)</span> is a sentence if both <span class="math inline">\(q\)</span> and <span class="math inline">\((\neg \neg p \vee r)\)</span> is a sentence.<br/>
+By rule 1, <span class="math inline">\(q\)</span> is a sentence.<br/>
+By rule 2, <span class="math inline">\((\neg \neg  p  \vee r)\)</span> is a sentence if both <span class="math inline">\(\neg \neg p\)</span> and <span class="math inline">\(r\)</span> are sentences.<br/>
+By rule 2, <span class="math inline">\(\neg  \neg p\)</span> is a sentence if <span class="math inline">\(\neg p\)</span> is a sentence.<br/>
+By rule 2, <span class="math inline">\(\neg  p\)</span> is a sentence if <span class="math inline">\(p\)</span> is a sentence.<br/>
+By rule 1, both <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span> are sentences. <br/> So, we conclude that <span class="math inline">\((q \to (\neg  \neg  p \vee r))\)</span> is a sentence.</span></p></li>
+<li><p>Determine whether each of the following expressions is an <em>abbreviation</em> for a sentence of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to (q \wedge r)\)</span><br/><strong>Solution</strong>:<br/>
+<span style="color:green;">By convention 3, this is an abbreviation for <span class="math inline">\((p \to (q \wedge r))\)</span>.</span></p></li>
+<li><p><span class="math inline">\(p \to q \to r\)</span></p></li>
+<li><p><span class="math inline">\(p \vee (q \wedge r)\)</span></p></li>
+<li><p><span class="math inline">\(p \to (q\wedge r \to q)\)</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether each of the following formulas is a <em>tautology</em>, a <em>contradiction</em>, or neither a tautology or a contradiction.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(((p \vee q) \to \neg (p \to q))\)</span><br/><strong>Solution</strong>:<br/>
+<span style="color:green;">This sentence is <em>neither</em> a tautology <em>nor</em> a contradiction because it is true under some assignments, e.g., rows 2 and 4, and false under others, e.g., rows 1 and 3.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; (p \vee q) &amp;  \neg  (p \to q)  &amp; ((p \vee q) \to \neg (p \to q)) \\
+\hline
+T &amp; T  &amp; T &amp; F &amp;\color{red}{F} \\
+T &amp; F  &amp; T &amp; T  &amp; \color{red}{T}\\
+F &amp; T  &amp; T &amp; F  &amp; \color{red}{F}\\
+F &amp; F  &amp; F &amp; F &amp; \color{red}{T} \\
+\hline
+\end{array}
+\]</span></span></li>
+<li><span class="math inline">\(p \to (q \to p)\)</span></li>
+<li><span class="math inline">\(q \to (q \to p)\)</span></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following pairs of sentences are logically equivalent.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \wedge \neg (p \vee q)\)</span></p></li>
+<li><p><span class="math inline">\(p \to p\)</span>, <span class="math inline">\(q \to q\)</span><br/>
+<strong>Solution</strong>:<br/>
+<span style="color:green;">These sentence are logically equivalent because they have the same truth value under every assignment.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline
+p  &amp; q &amp; p \to p &amp;  q \to q  \\
+\hline
+T &amp; T  &amp; T &amp; T  \\
+T &amp; F  &amp; T &amp; T \\
+F &amp; T  &amp; T &amp; T \\
+F &amp; F  &amp; T &amp; T  \\
+\hline
+\end{array}
+\]</span>
+</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following sets of sentences are consistent.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\{ p, q, \neg (p \wedge q)\}\)</span></p></li>
+<li><p><span class="math inline">\(\{p \vee q, q \to r, \neg (p \wedge r)\}\)</span><br/>
+<strong>Solution</strong>:<br/>
+<span style="color:green;">This is a consistent set of sentences, since every sentence in the set is true under some assignments, e.g., rows 4 and 5.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \vee  q &amp; q \to r &amp; \neg (p \wedge r) \\
+\hline
+T &amp; T  &amp; T  &amp; T &amp; T  &amp;  F\\
+T &amp; T &amp; F  &amp; T &amp; F &amp;  T\\
+T &amp; F &amp; T &amp; T &amp; T &amp;  F\\
+T &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
+F &amp; T &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
+F &amp; T &amp; F &amp; T &amp; F  &amp; T\\
+F &amp; F &amp; T &amp; F &amp; T   &amp; T\\
+F &amp; F &amp; F &amp; F &amp; T &amp; T\\
+\hline
+\end{array}
+\]</span> </span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following arguments are valid.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to q\)</span><br />
+<span class="math inline">\(q \to r\)</span><br />
+<span class="math inline">\(r\)</span></p></li>
+<li><p><span class="math inline">\(q \vee (p \wedge r)\)</span><br />
+<span class="math inline">\(\neg q\)</span><br />
+<span class="math inline">\(r\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This argument is <em>valid</em> since there is no assignment, that is, no row of the truth table, on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp;q \vee (p \wedge r) &amp; \neg q &amp; r \\
+\hline
+T &amp; T  &amp; T  &amp; T &amp; F  &amp;  T\\
+T &amp; T &amp; F  &amp; T &amp; F &amp;  F\\
+T &amp; F &amp; T &amp; T &amp; T &amp;  T\\
+T &amp; F &amp; F &amp; F &amp; T  &amp; F\\
+F &amp; T &amp; T &amp;  T &amp; F  &amp; T\\
+F &amp; T &amp; F &amp; T &amp; F  &amp; F\\
+F &amp; F &amp; T &amp; F &amp; T   &amp; T\\
+F &amp; F &amp; F &amp; F &amp; T &amp; F\\
+\hline
+\end{array}
+\]</span></span></p></li>
+</ol></li>
+<li><p>Use the search-for-counterexample method to determine whether the following arguments are valid.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to (q \vee r)\)</span><br />
+<span class="math inline">\(r \to (p \to q)\)</span><br />
+<span class="math inline">\(p\)</span><br />
+<span class="math inline">\(q\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">The argument is <em>invalid</em>, since we are able to build an assignment under which the premises come out true and the conclusion false, e.g., one on which <span class="math inline">\(p\)</span> is true but both <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> are false.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp;p \to (q \vee r) &amp; r \to (p \to q) &amp; p &amp; q \\
+\hline
+T &amp; F  &amp; F  &amp; \color{red}{T} &amp; \color{red}{T}  &amp;  \color{red}{T} &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span></span></p></li>
+<li><p><span class="math inline">\((p \to q) \wedge (q \to p)\)</span><br />
+<span class="math inline">\(\neg (p \wedge r)\)</span><br />
+<span class="math inline">\(\neg (r \to s)\)</span><br />
+<span class="math inline">\(s \to q\)</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="translation-into-propositional-logic" class="section level2 unnumbered">
+<h2>3. Translation into Propositional Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Translate the following sentences into the language of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If interest rates fall, then we will be able to borrow more money and inflation will rise.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<label for="tufte-mn-115" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-115" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Interest rates fall.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: We will be able to borrow more
+money.<br />
+<span class="math inline"><span class="math inline">\(r\)</span></span>: Inflation will rise.<br />
+</span></span>
+We proceed in three steps:<br/>
+<br/>
+If interest rates fall, then (we will be able to borrow more money and inflation will rise)<br/>
+<br/>
+Interest rates fall <span class="math inline">\(\to\)</span> (we will be able to borrow more money <span class="math inline">\(\wedge\)</span> inflation will rise)<br/>
+<br/>
+<span class="math inline">\(p \to (q \wedge r)\)</span><br/>
+</span></p></li>
+<li><p>Your computer will not start unless you turn it on and the battery is fully charged.</p></li>
+<li><p>The mayor’s office made the decision, even though it did not sit well with its constituents.</p></li>
+<li><p>You will carry an umbrella outside just in case it is raining or you are under the impression that it is raining.<br/> <strong>Solution</strong>:
+<br/>
+<span style="color:green;">
+<label for="tufte-mn-116" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-116" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<span class="math inline"><span class="math inline">\(p\)</span></span>: Interest rates fall.<br />
+<span class="math inline"><span class="math inline">\(q\)</span></span>: We will be able to borrow more
+money.<br />
+<span class="math inline"><span class="math inline">\(r\)</span></span>: Inflation will rise.<br />
+</span></span>
+We proceed in three steps:<br/>
+<br/>
+You carry an umbrella outside if, and only if, (it is raining or you are under the impression that it is raining)<br/>
+<br/>
+You carry an umbrella outside <span class="math inline">\(\leftrightarrow\)</span> (it is raining <span class="math inline">\(\vee\)</span> you are under the impression that it is raining)<br/>
+<br/>
+<span class="math inline">\(p \leftrightarrow (q \vee r)\)</span><br/><br/>
+</span></p></li>
+<li><p>The deal will be completed if all parties agree to it and the deal is found to be in compliance with current regulations.</p></li>
+</ol></li>
+<li><p>Assess the following arguments for propositional validity.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The car will not start unless you turn the ignition and press the accelerator. You turned the ignition but the car failed to start. So, you did not press the accelerator. <br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">First, we rephrase the argument in premise conclusion form:<br/><br/> 1. If it is not the case that you turn the ignition and press the accelerator, then the car will not start.<br/><br/> 2. You turned the ignition and the car did not start.<br/><br/> 3. You did not press the accelerator.<br/>
+<br/><br/>
+Second, we translate the argument into the language of propositional logic:<br/><br/>1. <span class="math inline">\(\neg (p \wedge  q) \to \neg r\)</span><br/><br/>2. <span class="math inline">\(p \wedge \neg r\)</span><br/><br/> 3. <span class="math inline">\(\neg q\)</span><br/><br/>
+Third, we use the search for counterexample method to check whether there is an assignment on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp;\neg (p \wedge q) \to \neg r &amp; p \wedge \neg r &amp; \neg q \\
+\hline
+T &amp; T  &amp; F  &amp; T &amp; T  &amp; F \\
+\hline
+\end{array}
+\]</span>
+Since we have identified one such assignment, we conclude that the argument is propositionally invalid.</span></p></li>
+<li><p>The mind is a simple substance only if it is not made of further parts. If the mind is material, then it is is made of further parts. So, if the mind is a simple substance, then it is not material.</p></li>
+<li><p>My client is not the burglar. For the doors show no signs of forced entry. If the doors show no signs of forced entry, then if my client is the burglar, he must have climbed to the unlocked window on the second floor. However, my client is arthritic and could not climb to that unlocked window on the second floor.</p></li>
+<li><p>If the British are coming, then they are coming by land or by sea. Paul Revere will light only one lamp, if they are coming by land. He will light two lamps, if they are coming by sea. Paul Revere will light only one lamp. So, the British are coming.</p></li>
+<li><p>The insurance company will cover your expenses only if you are current with your monthly payments. But if you are current with your monthly payments, then you can afford to cover the expenses yourself. So, the insurance company will not cover your expenses unless you can afford to cover them yourself.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">First, we rephrase the argument in premise conclusion form:<br/><br/> 1. The insurance company will cover your expenses only if you are current with your monthly payments.<br/><br/> 2. If you are current with your monthly payments, then you can afford to cover the expenses yourself.<br/><br/> 3. The insurance company will not cover your expenses unless you can afford to cover them yourself.<br/><br/>
+<br/>
+Second, we translate the argument into the language of propositional logic:<br/><br/> 1. <span class="math inline">\(p \to q\)</span><br/><br/>2. <span class="math inline">\(q \to r\)</span><br/><br/> 3. <span class="math inline">\(\neg r \to \neg p\)</span><br/><br/>
+Third, we use the search for counterexample method to check whether there is an assignment on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp;p \to q &amp; q \to r &amp; \neg r \to \neg p \\
+\hline
+T &amp; T  &amp; F  &amp; T &amp; !  &amp; F \\
+\hline
+\end{array}
+\]</span>
+Since no such assignment exists, we conclude that the argument is propositionally valid.</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="natural-deduction-for-propositional-logic" class="section level2 unnumbered">
+<h2>4. Natural Deduction for Propositional Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p, \neg q \vdash p \to (\neg q \vee r)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%204.2a.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+<li><p><span class="math inline">\(p \leftrightarrow (q \vee r), \neg q, \neg r \vdash \neg p\)</span></p></li>
+<li><p><span class="math inline">\(p \to \neg(q \wedge r), q, \neg r \to \neg q \vdash \neg p\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%204.2c.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+<li><p><span class="math inline">\(p \leftrightarrow q, q \vee r, r \to (p \vee q) \vdash q\)</span></p></li>
+<li><p><span class="math inline">\((p \wedge q) \leftrightarrow (q \vee r), \neg r \to (\neg p \to q) \vdash p\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%204.2e.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="natural-language-and-propositional-logic-1" class="section level2 unnumbered">
+<h2>5. Natural Language and Propositional Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Determine whether the following English sentences are tautologies, contradictions, or neither tautologies nor contradictions:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Someone is a logician and not a logician.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">We translate the sentence into the language of propositional logic:<br/> <span class="math inline">\(p\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(p\)</span>: Someone is a logician and not a logician.<br/>
+<br/>
+There is a simple an assignment on the sentence is false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; p\\
+\hline
+F &amp; F  \\
+\hline
+\end{array}
+\]</span>
+We conclude it is not a logical truth.
+</span></li>
+<li>Some logicians are philosophers but some logicians are not philosophers.</li>
+<li>If all logicians are philosophers, then if some philosophers are logicians, then all logicians are philosophers.</li>
+<li>Someone is a logician and someone is not a logician.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">We translate the sentence into the language of propositional logic:<br/> <span class="math inline">\(p \wedge q\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(p\)</span>: Someone is a logician.<br/>
+<span class="math inline">\(q\)</span>: Someone is not a logician.<br/>
+<br/>
+There is a simple an assignment on the sentence is false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; p \wedge q\\
+\hline
+F &amp; F &amp; F \\
+\hline
+\end{array}
+\]</span>
+We conclude it is not a logical truth.
+</span></li>
+<li>All logicians are philosophers but no philosophers are logicians.</li>
+</ol></li>
+<li><p>Determine whether the following arguments are propositionally valid:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The deal will be completed only if Smith or Jones are in attendance. If Smith attends, then Jones will too. Jones will not be in attendance. Therefore, the deal will not be completed.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">First, we rephrase the argument in premise conclusion form:<br/> 1. The deal will be completed only if Smith or Jones are in attendance.<br/> 2. If Smith attends, then Jones will too.<br/> 3. Jones will not be in attendance.<br/> 4. The deal will not be completed.<br/>
+<br/>
+Second, we translate the argument into the language of propositional logic:<br/> 1. <span class="math inline">\(p \to (q_1 \vee q_2)\)</span><br/>2. <span class="math inline">\(q_1 \to q_2\)</span><br/> 3. <span class="math inline">\(\neg q_2\)</span><br/>4. <span class="math inline">\(\neg p\)</span>.<br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(p\)</span>: The deal will be completed.<br/>
+<span class="math inline">\(q_1\)</span>: Smith is in attendance.<br/>
+<span class="math inline">\(q_2\)</span>: Jones is in attendance.<br/>
+<br/>
+Third, we use the search for counterexample method to check whether there is an assignment on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q_1 &amp; q_2 &amp; p \to (q_1 \vee q_2) &amp;  q_1 \to q_2  &amp; \neg q_2 &amp; \neg p \\
+\hline
+T &amp; F  &amp; F &amp; !  &amp; T  &amp; T  &amp; F \\
+\hline
+\end{array}
+\]</span>
+Since there is no assignment on which the premises come out true and the conclusion false, we conclude that the argument is propositionally valid.</span></p></li>
+<li><p>All logicians are philosophers. All logicians learn propositional logic at some point. So, some philosophers learn propositional logic at some point.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">First, we rephrase the argument in premise conclusion form:<br/> 1. All logicians are philosophers.<br/> 2. All logicians learn propositional logic at some point.<br/> 3. Some philosophers learn propositional logic at some point.<br/>
+<br/>
+Second, we translate the argument into the language of propositional logic:<br/> 1. <span class="math inline">\(p\)</span><br/>2. <span class="math inline">\(q\)</span><br/> 3. <span class="math inline">\(r\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(p\)</span>: All logicians are philosophers.<br/>
+<span class="math inline">\(q\)</span>: All logicians learn propositional logic at some point.<br/>
+<span class="math inline">\(r\)</span>: Some philosophers learn propositional logic at some point. <br/>
+<br/>
+Third, we note that there is a simple an assignment on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p &amp; q &amp; r\\
+\hline
+T &amp; T  &amp; F &amp; T &amp;  T &amp; F  \\
+\hline
+\end{array}
+\]</span> </span></p></li>
+<li><p>The deal will not be completed unless someone is in attendance. Neither Smith nor Jones will be in attendance. Therefore, the deall will not be completed.</p></li>
+</ol></li>
+<li><p>Identify occurrences of designators, predicates, and quantifier expressions in the following sentences:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>USC is located in Los Angeles.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math inline">\(\underbrace{\text{USC}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{is located in}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}}\)</span>
+</span></p></li>
+<li><p>Some private university is located in NYC.</p></li>
+<li><p>Some critic admires every critic.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math inline">\(\underbrace{\text{Some critic}}_{\text{quantifier phrase}}\)</span>   <span class="math inline">\(\underbrace{\text{admires}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{every critic}}_{\text{quantifier phrase}}\)</span>
+</span></p></li>
+<li><p>Mark Twain wrote <em>Tom Sawyer</em>.</p></li>
+<li><p>Every students owns a computer.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math inline">\(\underbrace{\text{Every student}}_{\text{quantifier phrase}}\)</span>   <span class="math inline">\(\underbrace{\text{owns}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{a computer}}_{\text{quantifier phrase}}\)</span>
+</span></p></li>
+<li><p>Everyone admires someone.</p></li>
+<li><p>Some workday comes after a weekend day.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math inline">\(\underbrace{\text{Some workday}}_{\text{quantifier phrase}}\)</span>   <span class="math inline">\(\underbrace{\text{comes after}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{a weekend day}}_{\text{quantifier phrase}}\)</span>
+</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="quantificational-logic" class="section level2 unnumbered">
+<h2>6. Quantificational Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Determine whether each of the following expressions is an atomic formula of quantificational logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\neg R^2(x,y)\)</span></p></li>
+<li><p><span class="math inline">\(R^2(x,y)\)</span></p></li>
+<li><p><span class="math inline">\(A^3(a,b,x)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This <em>is</em> an atomic formula of quantificational logic.<br/>
+<span class="math inline">\(A^3\)</span> is a three-place predicate and while <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants, <span class="math inline">\(x\)</span> is a variable.</span></p></li>
+<li><p><span class="math inline">\(Q^1(e)\)</span></p></li>
+<li><p><span class="math inline">\(P^4(x,y,z,a)\)</span></p></li>
+<li><p><span class="math inline">\(R^2(P^1,a)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>not</em> an atomic formula of quantificational logic.<br/>
+<span class="math inline">\(R^2\)</span> is a two-place predicate but <span class="math inline">\(P^1\)</span> is neither a constant nor a variable.</span></p></li>
+</ol></li>
+<li><p>Determine whether each of the following expressions is a formula of quantificational logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\neg \neg R^2(x,y)\)</span></p></li>
+<li><p><span class="math inline">\((P^1(a) \to (A^2(x,y) \wedge \exists x Q^1(x))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This <em>is</em> a formula of quantificational logic.<br/>
+By rule 2, <span class="math inline">\((P^1(a) \to (A^2(x,y) \wedge \exists x Q^1(x))\)</span> is a formula if <span class="math inline">\(P^1(a)\)</span> and <span class="math inline">\((A^2(x,y) \wedge \exists x Q^1(x))\)</span> are each a formula.<br/>
+By rule 1, <span class="math inline">\(P^1(a)\)</span> is a formula because it is an atomic formula.<br/>
+By rule 2, <span class="math inline">\((P^1(a) \to (A^2(x,y) \wedge \exists x Q^1(x))\)</span> is a formula if both <span class="math inline">\(A^2(x,y)\)</span> and <span class="math inline">\(\exists x Q^1(x)\)</span> are formulas.<br/>
+By rule 1, <span class="math inline">\(A^2(x,y)\)</span> is a formula because it is an atomic formula.<br/>
+By rule 3, <span class="math inline">\(\exists x Q^1(x)\)</span> is a formula if <span class="math inline">\(Q^1(x)\)</span> is a formula.<br/>
+By rule 1, both <span class="math inline">\(Q^1(x)\)</span> is a formula because it is an atomic formula. <br/> So, we conclude that <span class="math inline">\((P^1(a) \to (A^2(x,y) \wedge \exists x Q^1(x))\)</span> is a formula.</span></p></li>
+<li><p><span class="math inline">\(\forall x R^2(y,y)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x y (P^1 \wedge P^1(y))\)</span></p></li>
+<li><p><span class="math inline">\(\forall \forall x R^2(y,x)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>not</em> a formula of quantificational logic.<br/>
+It is neither an atomic formula nor a negation, conjunction, disjunction, conditional or biconditional. It is finally <em>not</em> of the form <span class="math inline">\(\forall v \varphi\)</span> as the first quantifier is not followed by a variable. By rule 4, we conclude that it is not a formula of quantificational logic.</span></p></li>
+<li><p><span class="math inline">\(\exists x \exists y R(x,y)\)</span></p></li>
+</ol></li>
+<li><p>Determine whether each of the following expressions is an <em>abbreviation</em> for a formula of quantificational logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\exists x \exists y R(x,y) \to P(x)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is an abbreviation for the formula <span class="math inline">\((\exists x \exists y R^2(x,y) \to P^1(x))\)</span>.</span></p></li>
+<li><p><span class="math inline">\(\forall x R(x) \vee \exists y Q(y,y)\)</span></p></li>
+<li><p><span class="math inline">\(P^1(x) \wedge Q^1(x) \vee R^2(x,y)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is <em>not</em> an abbreviation for a formula of quantificational logic.</span></p></li>
+<li><p><span class="math inline">\(P^1(x) \wedge Q^1(x) \to R^2(x,y)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x P(x) \wedge \exists y Q(y) \wedge \exists z R(z)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x \forall y \exists z (P(x) \wedge Q(y) \wedge R(x,y,z))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is an abbreviation for the formula <span class="math inline">\(\exists x \forall y \exists z ((P^1(x) \wedge Q^1(y) \wedge R^3(x,y,z))\)</span>.</span></p></li>
+</ol></li>
+<li><p>Determine whether the following formulas contain a free occurrence of the variable <span class="math inline">\(x\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x (R(x,y)  \wedge R(y,x))\)</span></p></li>
+<li><p><span class="math inline">\(\forall x R(x,y) \wedge R(y,x)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+By rule 1, the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(R(y,x)\)</span> is free.<br/>
+By rule 2, the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(R(y,x)\)</span> remains free in the conjunction <span class="math inline">\(\forall x R(x,y) \wedge R(y,x)\)</span>.</span></p></li>
+<li><p><span class="math inline">\((\exists x (P(x) \wedge Q(x)) \to \forall y R(x,y))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+By rule 1, the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(R(x,y)\)</span> is free.<br/>
+By rule 2, the occurrence of <span class="math inline">\(x\)</span> in <span class="math inline">\(\forall y R(x,y)\)</span> remains free in the conditional <span class="math inline">\(\exists x (P(x) \wedge Q(x) \to \forall y R(x,y)\)</span>.</span></p></li>
+<li><p><span class="math inline">\(\forall x \exists y  R(x,y) \to \exists x \forall y  R(y,x)\)</span></p></li>
+<li><p><span class="math inline">\((\forall x \exists y R(x,y) \to \forall y  R(y,x))\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (\exists y R(x,y) \to \forall y  R(y,x))\)</span></p></li>
+</ol></li>
+<li><p>Determine whether the following formulas are <em>open</em> or <em>closed</em>. Justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x R(x,y)  \wedge R(y,x,z)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is an <em>open</em> formula as the occurrences of the variables <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> as well as the last occurrence of the variable <span class="math inline">\(x\)</span> are all free.</span></p></li>
+<li><p><span class="math inline">\(R(a,b)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is a <em>closed</em> formula, since no variables occur, much less freely, in it.</span></p></li>
+<li><p><span class="math inline">\((\exists x (P(a,x) \wedge Q(x,a)) \to \forall y R(x,y))\)</span></p></li>
+<li><p><span class="math inline">\(\forall x R(y,y)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This is an <em>open</em> formula as the two occurrences of the variables <span class="math inline">\(y\)</span> both free.</span></p></li>
+<li><p><span class="math inline">\(\forall x \exists y \forall z R(x,y,x)\)</span></p></li>
+<li><p><span class="math inline">\((R(a,x) \to \forall x R(x,x))\)</span></p></li>
+</ol></li>
+<li><p>Determine which of the following formulas are true in the following model:</p></li>
+</ol>
+<p><img src="images/prob%206.png" style="display:block; margin: 0 auto;"></p>
+<ul>
+<li><p><span class="math inline">\(D = \{p_1, p_2, p_3, p_4\}\)</span></p></li>
+<li><p><span class="math inline">\(a : p_1\)</span></p></li>
+<li><p><span class="math inline">\(b : p_2\)</span></p></li>
+<li><p><span class="math inline">\(P_1 :  \text{enclosed by a circle}\)</span></p></li>
+<li><p><span class="math inline">\(Q : \text{enclosed by a dark grey figure}\)</span></p></li>
+<li><p><span class="math inline">\(P_2: \text{enclosed by a diamond}\)</span></p></li>
+<li><p><span class="math inline">\(R : \text{points to}\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(R(a,b)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This <em>not</em> true in the model because it is true relative to all assignments. Whatever the assignment, the denotation of <span class="math inline">\(a\)</span> in the model, i.e., <span class="math inline">\(p_1\)</span>, does <em>not</em> point to the denotation of <span class="math inline">\(b\)</span> in the model, i.e., <span class="math inline">\(p_2\)</span>.</span></p></li>
+<li><p><span class="math inline">\(R(a,b) \to R(b,b)\)</span></p></li>
+<li><p><span class="math inline">\(P(a) \wedge  Q(b)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x P_1(x) \wedge \exists x P_2(x)\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (\exists y  R(x,y) \vee \exists y R(y,x))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">This formula is true in the model because it is true relative to all assignments.
+Given an assignment <span class="math inline">\(\alpha\)</span>, we verify that for every <span class="math inline">\(p \in D\)</span>, the formula <span class="math inline">\(\exists y  R(x,y) \vee \exists y R(y,x)\)</span> is true relative to <span class="math inline">\(\alpha[x/p]\)</span>. There are four cases to consider:<br/>
+<span class="math inline">\(\alpha[x/p_1]\)</span>: <span class="math inline">\(\exists y R(x,y)\)</span> is true in the model relative to this assignment because there is a member of the domain, <span class="math inline">\(p_3\)</span>, such that <span class="math inline">\(R(x,y)\)</span> is true relative to the assignment <span class="math inline">\(\alpha[x/p_1][y/p_3]\)</span>. This is because the denotation of <span class="math inline">\(x\)</span> relative to this assignment, <span class="math inline">\(p_1\)</span>, points to the denotation of <span class="math inline">\(y\)</span> under the assignment, <span class="math inline">\(p_3\)</span>. Therefore, the disjunction <span class="math inline">\(\exists y  R(x,y) \vee \exists y R(y,x)\)</span> is true relative to <span class="math inline">\(\alpha[x/p_1]\)</span>.<br/>
+<span class="math inline">\(\alpha[x/p_2]\)</span>: <span class="math inline">\(\exists y R(x,y)\)</span> is true in the model relative to this assignment because there is a member of the domain, <span class="math inline">\(p_4\)</span>, such that <span class="math inline">\(R(x,y)\)</span> is true relative to the assignment <span class="math inline">\(\alpha[x/p_2][y/p_4]\)</span>. This is because the denotation of <span class="math inline">\(x\)</span> relative to this assignment, <span class="math inline">\(p_2\)</span>, points to the denotation of <span class="math inline">\(y\)</span> under the assignment, <span class="math inline">\(p_4\)</span>. Therefore, the disjunction <span class="math inline">\(\exists y  R(x,y) \vee \exists y R(y,x)\)</span> is true relative to <span class="math inline">\(\alpha[x/p_2]\)</span>.<br/>
+<span class="math inline">\(\alpha[x/p_3]\)</span>: <span class="math inline">\(\exists y R(y,x)\)</span> is true in the model relative to this assignment because there is a member of the domain, <span class="math inline">\(p_1\)</span>, such that <span class="math inline">\(R(y,x)\)</span> is true relative to the assignment <span class="math inline">\(\alpha[x/p_3][y/p_1]\)</span>. This is because the denotation of <span class="math inline">\(y\)</span> relative to this assignment, <span class="math inline">\(p_1\)</span>, points to the denotation of <span class="math inline">\(x\)</span> under the assignment, <span class="math inline">\(p_3\)</span>. Therefore, the disjunction <span class="math inline">\(\exists y  R(x,y) \vee \exists y R(y,x)\)</span> is true relative to <span class="math inline">\(\alpha[x/p_3]\)</span>.<br/>
+<span class="math inline">\(\alpha[x/p_4]\)</span>: <span class="math inline">\(\exists y R(y,x)\)</span> is true in the model relative to this assignment because there is a member of the domain, <span class="math inline">\(p_2\)</span>, such that <span class="math inline">\(R(y,x)\)</span> is true relative to the assignment <span class="math inline">\(\alpha[x/p_4][y/p_2]\)</span>. This is because the denotation of <span class="math inline">\(y\)</span> relative to this assignment, <span class="math inline">\(p_2\)</span>, points to the denotation of <span class="math inline">\(x\)</span> under the assignment, <span class="math inline">\(p_4\)</span>. Therefore, the disjunction <span class="math inline">\(\exists y  R(x,y) \vee \exists y R(y,x)\)</span> is true relative to <span class="math inline">\(\alpha[x/p_4]\)</span>.</span></p></li>
+<li><p><span class="math inline">\(\forall x (P_1(x)  \to \exists y (Q(y) \wedge R(x,y)))\)</span></p></li>
+</ol></li>
+</ul>
+</div>
+<div id="translation-into-quantificational-logic" class="section level2 unnumbered">
+<h2>7. Translation into Quantificational Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Translate the following sentences into the language of quantificational logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Some Trojans fear Achilles, but Achilles fears every Trojan.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math display">\[
+   \exists x (P(x) \wedge R(x,a)) \wedge \forall x (P(x) \to R(a,x))
+   \]</span>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Achiles<br/>
+<span class="math inline">\(P\)</span>: Trojan<br/>
+<span class="math inline">\(R\)</span>: fears<br/>
+</span></p></li>
+<li><p>All Trojans are courageous.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math display">\[
+   \forall x (P(x) \to Q(x))
+   \]</span>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(P\)</span>: Trojan<br/>
+<span class="math inline">\(Q\)</span>: courageous.<br/>
+</span></p></li>
+<li><p>Only Trojans come from Troy.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math display">\[
+   \forall x (R(x,a) \to P(x))
+   \]</span>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Troy<br/>
+<span class="math inline">\(P\)</span>: Trojan<br/>
+<span class="math inline">\(R\)</span>: comes from<br/>
+</span></p></li>
+<li><p>No Greek comes from Troy.</p></li>
+<li><p>Achilles fears Paris, but Paris fears no one.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<span class="math display">\[
+   R(a,b) \wedge \forall x \neg R(b,x)
+   \]</span>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Achiles<br/>
+<span class="math inline">\(b\)</span>: Paris<br/>
+<span class="math inline">\(R\)</span>: fears<br/>
+</span></p></li>
+<li><p>Some Greeks fears some Trojans, and some Trojans fear some Greeks.</p></li>
+</ol></li>
+<li><p>Assess the following arguments for quantificational validity.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>All poisonous frogs are amphibians. Kermit is a poisonous amphibian. Therefore, Kermit is a frog.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">The argument is quantificationally <em>invalid</em>.<br/>1. <span class="math inline">\(\forall x ((P(x) \wedge Q(x)) \to R(x))\)</span><br/>2. <span class="math inline">\(P(a) \wedge R(a)\)</span><br/>3. <span class="math inline">\(Q(a)\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Kermit<br/>
+<span class="math inline">\(P\)</span>: poisonous<br/>
+<span class="math inline">\(Q\)</span>: frog<br/>
+<span class="math inline">\(R\)</span>: amphibian<br/>The following model makes the premises true and the conclusion false.<br/>
+<img src="images/prob 7.2a.png" style="display:block; margin: 0 auto;"><br/><span class="math inline">\(D\)</span>: <span class="math inline">\(\{p_1, p_2\}\)</span><br/><span class="math inline">\(a\)</span>: <span class="math inline">\(p_1\)</span><br/>
+<span class="math inline">\(P\)</span>: enclosed by a circle<br/>
+<span class="math inline">\(Q\)</span>: enclosed by a diamond<br/>
+<span class="math inline">\(R\)</span>: grey<br/>
+</span></p></li>
+<li><p>Aristotle admired anyone who taught for free. Socrates taught for free, but no sophist did ever teach for free. So, Aristotle did not admire a sophist.</p></li>
+<li><p>No weekday comes after Saturday. Monday is a weekday, but Sunday is not. Therefore, Monday does not come after Sunday.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">The argument is quantificationally <em>invalid</em>.<br/>1. <span class="math inline">\(\forall x (P(x) \to \neg R(x,a))\)</span><br/>2. <span class="math inline">\(P(b) \wedge \neg P(c)\)</span><br/>3. <span class="math inline">\(\neg R(c,b)\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Saturday<br/>
+<span class="math inline">\(b\)</span>: Monday<br/>
+<span class="math inline">\(c\)</span>: Sunday<br/>
+<span class="math inline">\(P\)</span>: weekday<br/>
+<span class="math inline">\(R\)</span>: comes after<br/>The following model makes the premises true and the conclusion false.<br/>
+<img src="images/prob 7.2c.png" style="display:block; margin: 0 auto;"><br/><span class="math inline">\(D\)</span>: <span class="math inline">\(\{p_1, p_2, p_3\}\)</span><br/><span class="math inline">\(a\)</span>: <span class="math inline">\(p_1\)</span><br/>
+<span class="math inline">\(P\)</span>: enclosed by a circle<br/>
+<span class="math inline">\(R\)</span>: points to<br/>
+</span></p></li>
+<li><p>Some cube is green all over and some cube is red all over. No cube is both green all over and red all over. Some sphere is green all over. So, some sphere is not red all over.</p></li>
+<li><p>No Trojan fears Achilles, but Achilles fears some Trojans. Paris is a Trojan. So, Achilles fears Paris but Paris does not fear Achilles.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">The argument is quantificationally <em>invalid</em>.<br/>1. <span class="math inline">\(\forall x (P(x) \to \neg R(x,a)) \wedge \exists x (P(x) \wedge R(a,x))\)</span><br/>2. <span class="math inline">\(P(b)\)</span><br/>3. <span class="math inline">\(R(a,b) \wedge \neg R(b,a)\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Achilles<br/>
+<span class="math inline">\(b\)</span>: Paris<br/>
+<span class="math inline">\(P^1\)</span>: Trojan<br/>
+<span class="math inline">\(R^2\)</span>: fears<br/><br/>The following model makes the premises true and the conclusion false.<br/>
+<img src="images/prob 7.2e.png" style="display:block; margin: 0 auto;"><br/><span class="math inline">\(D\)</span>: <span class="math inline">\(\{p_1, p_2\}\)</span><br/><span class="math inline">\(a\)</span>: <span class="math inline">\(p_1\)</span><br/><span class="math inline">\(b\)</span>: <span class="math inline">\(p_2\)</span><br/><span class="math inline">\(P\)</span>: enclosed by a circle<br/><span class="math inline">\(R\)</span>: points to<br/>
+</span></p></li>
+<li><p>Some stadium is close to University Park. The Coliseum is a stadium. Therefore, the Coliseum is close to University Park.</p></li>
+<li><p>Los Angeles is connected by direct flight to London. London is connected by direct flight to every major European city. Barcelona is a major European city. Therefore, Los Angeles is connected by direct flight to Barcelona.
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">The argument is quantificationally <em>invalid</em>.<br/>1. <span class="math inline">\(R(a,b)\)</span><br/>2. <span class="math inline">\(\forall x (P(x) \to  R(b,x))\)</span><br/>3. <span class="math inline">\(P(c)\)</span><br/>4. <span class="math inline">\(R(a,c)\)</span><br/>
+<strong>Translation key</strong>:<br/>
+<span class="math inline">\(a\)</span>: Los Angeles<br/>
+<span class="math inline">\(b\)</span>: London<br/>
+<span class="math inline">\(c\)</span>: Barcelona<br/>
+<span class="math inline">\(P\)</span>: major European city<br/>
+<span class="math inline">\(R\)</span>: connected by direct flight<br/><br/>The following model makes the premises true and the conclusion false.<br/>
+<img src="images/prob 7.2g.png" style="display:block; margin: 0 auto;"><br/><span class="math inline">\(D\)</span>: <span class="math inline">\(\{p_1, p_2, p_3\}\)</span><br/><span class="math inline">\(a\)</span>: <span class="math inline">\(p_1\)</span><br/><span class="math inline">\(b\)</span>: <span class="math inline">\(p_2\)</span><br/><span class="math inline">\(c\)</span>: <span class="math inline">\(p_3\)</span><br/><span class="math inline">\(P\)</span>: enclosed by a circle<br/><span class="math inline">\(R\)</span>: points to<br/>
+</span></p></li>
+<li><p>All Greeks feared Hector or Paris. Paris feared no Greek who feared Hector. Therefore, some Greeks feared Paris.</p></li>
+</ol></li>
+</ol>
+</div>
+<div id="natural-deduction-for-quantificational-logic" class="section level2 unnumbered">
+<h2>8. Natural Deduction for Quantificational Logic</h2>
+<ol style="list-style-type: decimal">
+<li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\exists x P(x) \to \exists x Q(x), \forall x P(x) \vdash \exists x Q(x)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x P(x) \wedge \exists x Q(x), \neg \exists x(P(x) \wedge Q(x)), \forall x (R(x) \to P(x)) \vdash \exists x \neg R(x)\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%208.1b.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+<li><p><span class="math inline">\(\forall x (P(x) \to \neg Q(x)), \forall x (R(x) \to Q(x)) \vdash \forall x (R(x) \to \neg P(x))\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (P(x) \to (\exists y R(x,y) \to Q(x))), \neg \exists y Q(y) \vdash \forall y (P(y) \to \forall z \neg R(y,z))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%208.1d.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+<li><p><span class="math inline">\(\forall x (P(x) \to \forall y (R(x,y) \to P(y))), \exists x (Q(x) \wedge P(x)) \vdash \exists x (Q(x) \wedge \forall y (R(x,y) \to P(y)))\)</span>
+<br/> <strong>Solution</strong>:<br/>
+<span style="color:green;">
+<img src="images/prob%208.1e.png" style="display:block; margin: 0 auto;">
+</span></p></li>
+</ol></li>
+</ol>
+</div>
+<div id="identity-1" class="section level2 unnumbered">
+<h2>10. Identity</h2>
+<ol style="list-style-type: decimal">
+<li><p>For each set of formulas below, find a model we can use to justify the fact that the set is consistent. Please justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\{\forall x (P(x) \leftrightarrow Q(x)), P(a), Q(b), \neg a = b\}\)</span></p></li>
+<li><p><span class="math inline">\(\{\forall x (R(a,x) \to R(b,x), \neg R(a,a), R(b,a) \}\)</span></p></li>
+</ol></li>
+<li><p>For each argument below, find a model we can use to justify the fact that the argument is invalid. Please justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x (P(x) \to Q(x)), \neg Q(a) \vdash a = b \to R(a,b)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x P(x), \exists x Q(x) \vdash \exists x \exists y \neg x = y\)</span></p></li>
+</ol></li>
+<li><p>Provide a natural deduction proof to justify each of the claims below:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\forall x (P(x) \to Q(x)), \neg Q(a), P(b) \vdash a = b \to R(a,b)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x \forall y (P(x) \leftrightarrow y = x), P(a) \vdash \forall x (P(x) \to x = a)\)</span></p></li>
+<li><p><span class="math inline">\(\exists x P(x), \exists x Q(x), \neg \exists x (P(x) \wedge Q(x)) \vdash \exists x \exists y \neg x = y\)</span></p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="identity.html"><button class="btn btn-default">Previous</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

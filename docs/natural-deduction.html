@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="8 Natural Deduction | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>8 Natural Deduction | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="natural-deduction" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Natural Deduction</h1>
+<p>We have effective means to determine, in a finite number of steps, whether an argument formulated in propositional logic is valid. We may, for example, devise a complete truth table for the argument and look for an assignment corresponding to one of the rows of the truth table on which the premises are true and the conclusion is false. If no such assignment is found, then the argument is valid; otherwise, the argument is invalid. The procedure may be overly complex in certain cases, especially when the argument in question happens to involve a high number of propositional variables, but it will nevertheless produce a verdict in a <em>finite</em> number of steps.</p>
+<p>Matters are more complicated for quantificational logic. For we are not of course in a position to survey <em>every</em> model for the relevant fragment of the language in order to determine wether or not there is one on which the premises true and the conclusion false. There is an infinite number of them, and there is no effective procedure we can use to survey them all in a finite number of steps. To be sure, if the argument is invalid, we should be able to find a model in which the premises are true and the conclusion is false, but we may not be sure at times whether a temporary failure to find such a model may be due to a lack of imagination rather than to the invalidity of the argument.</p>
+<p>Instead, we will develop a natural deduction system for quantificational logic, one which adapts and extends the framework we developed for propositional logic. Once the natural deduction system is in place, we will establish the validity of an argument in the language of quantificational logic by means of a proof of the conclusion from the premises of the argument.</p>
+<p>Since quantificational logic includes the usual propositional connectives, we will just import and adapt the introduction and elimination rules we devised for them to the new framework. That is enough to enable us to establish the validity of <em>some</em> arguments in the language of quantificational logic.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-77" class="example"><strong>Example 8.1  </strong></span><span class="math inline">\(\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px\)</span>.</p>
+<p><img src="images/qex%201.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<p>Notice that it suffices in this case to deploy natural deduction rules for negation and the conditional, which we adapt from the natural deduction system for propositional logic.</p>
+<p>On the other hand, we are not yet in a position to provide derivations that exploit the behavior of the quantifiers. We require additional natural deduction rules for that purpose.</p>
+<div id="universal-quantification" class="section level2 unnumbered">
+<h2>Universal Quantification</h2>
+<p>We will introduce introduction and elimination rules for the universal and the existential quantifiers. But in order to even be able to state the rules, we must explain what we mean by an <em>instance</em> of a quantified formula of the form <span class="math inline">\(\forall x \varphi\)</span> or <span class="math inline">\(\exists x \varphi\)</span>.</p>
+<dl>
+<dt>Instance</dt>
+<dd>
+<p>If <span class="math inline">\(a\)</span> is a constant, we let <span class="math inline">\(\varphi(a/x)\)</span> be the formula that results from <span class="math inline">\(\varphi\)</span> when we substitute <span class="math inline">\(a\)</span> for every <em>free</em> occurrence of the variable <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi\)</span>. The formula <span class="math inline">\(\varphi(a/x)\)</span> is an <em>instance</em> of the quantified formulas <span class="math inline">\(\forall x \varphi\)</span> and <span class="math inline">\(\exists x \varphi\)</span>, respectively.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 8.2  </strong></span>Some examples:</p>
+<ul>
+<li><span class="math inline">\(Pc\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Px\)</span>.</li>
+<li><span class="math inline">\(Ray\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Rxy\)</span>.</li>
+<li><span class="math inline">\(Rzbb\)</span> is an instance of the universal quantification <span class="math inline">\(\forall y Rzyy\)</span>.</li>
+<li><span class="math inline">\(Pb \to \exists x Qx\)</span> is an instance of the existential quantification <span class="math inline">\(\exists x (Px \to \exists x Qx)\)</span>.</li>
+</ul>
+</div>
+<p>We start now with the elimination rule for the universal quantifier.</p>
+<p><label for="tufte-mn-101" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-101" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ue.png"><br />
+Universal Elimination</span></span></p>
+<dl>
+<dt>Universal Elimination</dt>
+<dd>
+<p>You may write an instance <span class="math inline">\(\varphi(a/x)\)</span> of a universally quantified formula <span class="math inline">\(\forall x \varphi\)</span> if the latter is available on a prior line of the derivation.</p>
+</dd>
+</dl>
+<p>The rationale for universal elimination is that we are entitled to write that an individual <span class="math inline">\(a\)</span> satisfies a given condition if we are given that <em>all</em> individuals do.</p>
+<p>Let us look at the universal elimination rule in action.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 8.3  </strong></span><span class="math inline">\(\forall x \forall y(Px \to Qy), Pa, \vdash Qb\)</span>.</p>
+<p><img src="images/qex%20ue1.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 8.4  </strong></span><span class="math inline">\(\forall x \forall y Rxy \vdash Raa\)</span>.</p>
+<p><img src="images/qex%20ue2.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<p>The introduction rule for the universal quantifier requires more care. In order to be able to write <span class="math inline">\(\forall x \varphi(x)\)</span> by itself on a line, we should convince ourselves we have the means to establish some <em>arbitrary</em> instance <span class="math inline">\(\varphi(a/x)\)</span> where the constant <span class="math inline">\(a\)</span> does not occur in an undischarged assumption.</p>
+<p><label for="tufte-mn-102" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-102" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ui.png"><br />
+Universal Introduction</span></span></p>
+<dl>
+<dt>Universal Introduction</dt>
+<dd>
+<p>You may write a universally quantified formula <span class="math inline">\(\forall x \varphi\)</span> if some instance <span class="math inline">\(\varphi(a/x)\)</span> is available on a prior line and <span class="math inline">\(a\)</span> occurs neither in <span class="math inline">\(\varphi\)</span> nor in an undischarged assumption.</p>
+</dd>
+</dl>
+<p>Let us look at some applications of the rule.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 8.5  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)\)</span>.</p>
+<p><img src="images/qex%20ui1.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 8.6  </strong></span><span class="math inline">\(\forall x (Px \to \neg Px) \vdash \forall x \neg Px)\)</span></p>
+<p><img src="images/qex%20ui2.png" style="display:block; margin: 0 auto;"></p>
+</div>
+</div>
+<div id="existential-quantification" class="section level2 unnumbered">
+<h2>Existential Quantification</h2>
+<p>We now introduce introduction and elimination rules for the existential quantifier.</p>
+<p><label for="tufte-mn-103" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-103" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ei.png"><br />
+Existential Introduction</span></span></p>
+<dl>
+<dt>Existential Introduction</dt>
+<dd>
+<p>You may write an existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> provided an instance <span class="math inline">\(\varphi(a/v)\)</span> is available on a prior line of the derivation</p>
+</dd>
+</dl>
+<p>The rationale for existential introduction is that we are entitled to write that something satisfies a condition if we are given that an individual <span class="math inline">\(a\)</span> does.</p>
+<p>Here is the rule of existential introduction in action.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 8.7  </strong></span><span class="math inline">\(Rab \vdash \exists x\exists y Rxy\)</span></p>
+<p><img src="images/qex%20ei1.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 8.8  </strong></span><span class="math inline">\(\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)\)</span></p>
+<p><img src="images/qex%20ei2.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<p>The elimination rule for the existential quantifier is more subtle. Suppose we want to reason from an existential generalization of the form <span class="math inline">\(\exists x \varphi(x)\)</span> to some formula <span class="math inline">\(\psi\)</span>. The elimination rule for the existential tells us that the step is justified if we have the means to establish a conditional <span class="math inline">\(\varphi(a/v) \to \psi\)</span> where <span class="math inline">\(a\)</span> is a constant that occurs neither in <span class="math inline">\(\psi\)</span> nor <span class="math inline">\(\exists x \varphi\)</span> nor in an earlier open assumption.</p>
+<p><label for="tufte-mn-104" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-104" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ee.png"><br />
+Existential Elimination</span></span></p>
+<dl>
+<dt>Existential Elimination</dt>
+<dd>
+<p>You may write <span class="math inline">\(\psi\)</span> if the existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> and the conditional <span class="math inline">\(\varphi(a/x) \to \psi\)</span> are available at prior lines provided that <span class="math inline">\(a\)</span> occurs neither in neither in <span class="math inline">\(\psi\)</span> nor in <span class="math inline">\(\exists x \varphi\)</span> nor in an undischarged assumption.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 8.9  </strong></span><span class="math inline">\(\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)\)</span></p>
+<p><img src="images/qex%20ee1.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 8.10  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz\)</span></p>
+<p><img src="images/qex%20ee2.png" style="display:block; margin: 0 auto;"></p>
+</div>
+</div>
+<div id="common-mistakes-and-strategies" class="section level2 unnumbered">
+<h2>Common Mistakes and Strategies</h2>
+<p>Much of the advice for the construction of proofs in propositional logic carries over to quantificational logic. In order to prove a universal or existential generalization from a set of premises, it helps to work backwards and with a view to being in a position to use the relevant introduction rule. And to reason forward from a universal or existential generalization, we should use the relevant elimination rules.</p>
+<p>One important observation is that the elimination rule for the universal quantifier should not be applied to formulas that are <em>not</em> universally quantified formulas. The rule may be applied, for example, to the universal quantification <span class="math inline">\(\forall x (Px \to Qx)\)</span> to obtain an instance such as <span class="math inline">\(Pa \to Qa\)</span>. It would, however, be a mistake to attempt to apply the rule to the formula <span class="math inline">\(\forall x Px \to \forall x Qx\)</span>, which, unlike the first, is just a conditional. The key is to be aware of what is the main connective in the relevant formula and to make sure to apply the rule that corresponds to it.</p>
+<p>One more potential pitfall is the failure to apply the rules for quantification once at a time. The elimination rule for the universal quantifier does <em>not</em> allow an immediate transition from a formula such as <span class="math inline">\(\forall x \forall y Rxy\)</span> to <span class="math inline">\(Rab\)</span>. We should instead distinguish two steps: one from the original formula to <span class="math inline">\(\forall y Rxy\)</span> and a further one from this formula to the instance <span class="math inline">\(Rab\)</span>.</p>
+<p>Let us now look at some further examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 8.11  </strong></span><span class="math inline">\(\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx\)</span></p>
+<p><img src="images/qex%20cex1.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 8.12  </strong></span><span class="math inline">\(\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px \to Rxb)\)</span></p>
+<p><img src="images/qex%20cex2.png" style="display:block; margin: 0 auto;"></p>
+</div>
+</div>
+<div id="exercises-7" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\exists x Px \to \exists x Qx, \forall x Px \vdash \exists x Qx\)</span></p></li>
+<li><p><span class="math inline">\(\exists x Px \wedge \exists x Qx, \neg \exists x(Px \wedge Qx), \forall x (Rx \to Px) \vdash \exists x \neg Rx\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (Px \to \neg Qx), \forall x (Rx \to Qx) \vdash \forall x (Rx \to \neg Px)\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (Px \to (\exists y Rxy \to Qx)), \neg \exists y Qy \vdash \forall y (Py \to \forall z \neg Ryz)\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (Px \to \forall y (Rxy \to Py), \exists x (Qx \wedge Px) \vdash \exists x (Qx \wedge \forall y (Rxy \to Py))\)</span></p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="translation.html"><button class="btn btn-default">Previous</button></a>
+<a href="identity.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="1 Reason and Argument | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>1 Reason and Argument | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<ul>
+<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="reason" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Reason and Argument</h1>
+<p>When we reason, we generally move from a body of statements, which we call <em>premises</em>, to another statement they support, which we call the <em>conclusion</em>. We will eventually refer to these inferences as <em>arguments</em>. We begin with the observation that some arguments appear to display a special feature: there is <em>no risk</em> that the conclusion may be false if the premises are true; given the form of the argument, the truth of the premises guarantees the truth of the conclusion. That seems to be the case with the first and fourth arguments below, but not with the others.</p>
+<div class="argument">
+<p>All Spanish citizens are EU citizens. No EU citizen requires a visa to enter Switzerland. Therefore, no Spanish citizen requires a visa to enter Switzerland.</p>
+</div>
+<div class="argument">
+<p>Whales live underwater. Few mammals live underwater. Therefore, whales are not mammals.</p>
+</div>
+<div class="argument">
+<p>Someone is carrying an umbrella on the street. So, it is raining.</p>
+</div>
+<div class="argument">
+<p>No one carries an umbrella on the street unless it is raining.  Someone is carrying an umbrella on the street.  So, it is raining.</p>
+</div>
+<p>It is often difficult to tell whether the conclusion follows from the premises or the extent to which the argument is risk-free:</p>
+<div class="argument">
+<p>No human observer is able to observe more than a finite number of stars. So, humanity as a whole is only able to observe a finite number of stars.</p>
+</div>
+<div class="argument">
+<p>If cobalt but no nickel is present in the sample, then a brown color should eventually appear. Either nickel or manganese is absent. Cobalt is present but only a green color appears. Therefore, nickel must be present.</p>
+</div>
+<div class="argument">
+<p>The statue did not come into existence until we molded the clay of which it is made into one. However, the clay of which it is made existed well before we did that. If the statue is the same object as the clay, then whatever is true of one is true of the other. Therefore, the statue is not the same object as the clay; they are two distinct material objects occupying the same space at the same time.</p>
+</div>
+<div id="arguments" class="section level2 unnumbered">
+<h2>Arguments</h2>
+<p>Arguments are composed of <em>declarative sentences</em>, which are sentences we use to make statements that are either true or false. We will be exclusively concerned with inferences from some declarative sentences, which are its premises, to a declarative sentence marked as its conclusion. More precisely:</p>
+<p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote"><span style="display: block;">What is an argument?</span></span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>An <em>argument</em> is a sequence of declarative sentences. The last sentence in the sequence is its <em>conclusion</em>, and the sentences that precede the conclusion are its <em>premises</em>.</p>
+</div>
+<p>To avoid confusion, it is important to distinguish the technical use of the term in logic from more colloquial uses of the word.<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> Monty Python’s <a href="https://youtu.be/ohDB5gbtaEQ">Argument Clinic</a> illustrates the difference.</span>. It will be helpful to consider some examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>Consider the argument:</p>
+<div class="argument">
+<p>The laptop will not work if the battery is dead. The battery is dead. Therefore, the laptop will not work.</p>
+</div>
+<p>We represent the argument by means of a numbered sequence of statements. The last statement is the conclusion of the argument, and the statements that precede the conclusion are its premises.</p>
+<ol style="list-style-type: decimal">
+<li>The laptop will not work if the battery is dead.</li>
+<li>The battery is dead.</li>
+<li>The laptop will not work.</li>
+</ol>
+</div>
+<p>The conclusion of an argument is often preceded by transitional phrases such as ‘therefore’, ‘thus’, ‘it follows that’, etc. These phrases indicate that the statement in question is supported by other premises. Notice, however, that while it is perhaps usual for the conclusion of the argument to appear last in the argument, it is not uncommon for it to appear elsewhere in the argument.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 1.2  </strong></span>Consider the argument:</p>
+<div class="argument">
+<p>We do not know that the animal in the pen is a zebra. For if we did, then we would know it is not a cleverly painted mule. But we cannot be sure it is not a cleverly painted mule.</p>
+</div>
+<p>We represent the argument with the help of a list of premises followed by a conclusion:</p>
+<ol style="list-style-type: decimal">
+<li>If we knew that the animal in the pen is a zebra, then we would know it is not a cleverly painted mule</li>
+<li>We cannot be sure it is not a cleverly painted mule.</li>
+<li>We do not know that the animal in the pen is a zebra.</li>
+</ol>
+</div>
+<p>More generally, there is more than one way in which one and the same argument may be given in natural language:</p>
+<div class="argument">
+<p>The laptop will not work if the battery is dead. So, the laptop will not work. For the battery is dead.</p>
+</div>
+<div class="argument">
+<p>The laptop will not work. After all, the battery is dead, and the laptop will not work if the battery is dead.</p>
+</div>
+</div>
+<div id="validity-and-form" class="section level2 unnumbered">
+<h2>Validity and Form</h2>
+<p>We aim for a better characterization of validity, which we have tentatively characterized in terms of risk. On a first approximation, a valid argument is one where there is no risk that the premises may be true while the conclusion is false. That suggests a crude characterization of validity in terms of possibility:</p>
+<p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;">A false start</span></span></p>
+<div class="warning">
+<p>An argument is valid if and only if it is <em>impossible</em> for the premises to be true while the conclusion is false.</p>
+</div>
+<p>That would be a false start, since the characterization would misclassify each of the two arguments below as valid:</p>
+<div class="argument">
+<p>The battery is dead. Therefore, the laptop will work or <span class="math inline">\(\sqrt{2}\)</span> is irrational.</p>
+</div>
+<div class="argument">
+<p>The animal in the pen is a zebra. Therefore, there are infinitely many numbers.</p>
+</div>
+<p>While there is no risk for the premises to be true and the conclusion to be false in these cases, the reason has nothing to do with the form of the arguments but rather to the subject matter of the statements. Instead, we will be concerned with cases in which it is the form of the argument that explains the fact that there is no risk that the premises may be true and the conclusion false.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.3  </strong></span>We may discern a common valid <em>argument form</em> in the three arguments given below:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If there is gas in the tank, then the engine will start.<br />
+</li>
+<li>There is gas in the tank.<br />
+</li>
+<li>Therefore, the engine will start.</li>
+</ol>
+</div>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If today is Thursday, then tomorrow will be Friday.<br />
+</li>
+<li>Today is Thursday.<br />
+</li>
+<li>Therefore, tomorrow will be Friday.</li>
+</ol>
+</div>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If the animal in the pen is a zebra, then it is not a cleverly painted mule.<br />
+</li>
+<li>The animal in the pen is a zebra.<br />
+</li>
+<li>Therefore, the animal in the pen is not a cleverly painted mule.</li>
+</ol>
+</div>
+<p>Here is the argument form in question:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span>.<br />
+</li>
+<li><span class="math inline">\(p\)</span><br />
+</li>
+<li><span class="math inline">\(q\)</span><br />
+</li>
+</ol>
+</div>
+</div>
+<p>Other inferences exemplify different valid argument forms.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 1.4  </strong></span>The three arguments given below exemplify a common valid <em>argument form</em>:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>The battery is dead or the laptop is broken. </li>
+<li>The battery is not dead.<br />
+</li>
+<li>Therefore, the laptop is broken.</li>
+</ol>
+</div>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>Either the butler did it or the gardener did it. </li>
+<li>The gardener did not do it. </li>
+<li>So, the butler did it.</li>
+</ol>
+</div>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>Either interest rates will be cut or inflation will continue to rise. </li>
+<li>Interest rates will not be cut. </li>
+<li>Therefore, interest rates will continue to rise.</li>
+</ol>
+</div>
+<p>Here is the form in question:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span><br />
+</li>
+<li>Not-<span class="math inline">\(p\)</span><br />
+</li>
+<li><span class="math inline">\(q\)</span></li>
+</ol>
+</div>
+</div>
+<p>We turn this observation into a crude definition of validity.</p>
+<p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote"><span style="display: block;">What is a valid argument?</span></span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 1.2  </strong></span>An argument is <em>valid</em> if, and only if, it is an instance of a valid argument form.</p>
+</div>
+<p>One concern is that we have explained what is for an argument to be valid in terms of the exemplification of a valid <em>argument form</em>. But that just seems to postpone the question. Not much progress has been made unless we are in a positiont to find a catalogue of valid argument forms. That, however, is the one of the goals of the introduction of the formal languages we will subsequently study. They will provide us with the ability to identify and characterize a broad family of valid argument forms, and we will be able to explain their validity in terms of the behavior of their logical connectives, which are formal counterparts of subsentential expressions in English. In the meantime, we will content ourselves with the fact that valid argument forms exemplify the following features:</p>
+<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Two features of valid argument forms</strong></span></span></p>
+<div class="info">
+<ol style="list-style-type: decimal">
+<li>A valid form has <em>no</em> instances with true premises and a false conclusion.</li>
+<li>A valid form preserves truth regardless of the subject matter of its instances.</li>
+</ol>
+</div>
+<p>Let us look at further examples of valid arguments:</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 1.5  </strong></span>Consider the argument:</p>
+<div class="argument">
+<p>If the mind the same thing as the brain, then the mind is mortal. The mind is immortal. Thefore, the mind is not the same thing as the brain.</p>
+</div>
+<p>In premise-conclusion form:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If the mind the same thing as the brain, then the mind is mortal.<br />
+</li>
+<li>The mind is immortal.<br />
+</li>
+<li>The mind is not the same thing as the brain.</li>
+</ol>
+</div>
+<p>This argument is an instance of a valid argument form:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span><br />
+</li>
+<li>Not <span class="math inline">\(q\)</span><br />
+</li>
+<li>Not <span class="math inline">\(p\)</span></li>
+</ol>
+</div>
+</div>
+<p>A valid argument is not the same as a persuasive one. How persuasive a valid argument may be depends on how persuasive we find the premises of the argument. If the argument is valid, then the conclusion is guaranteed to be true if the premises are true. But a valid argument may contain false, and even utterly unpersuasive premises. That being said, we are especially interested in valid arguments with true premises, which is why we introduce a special label for those valid arguments.</p>
+<p><label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote"><span style="display: block;">What is a sound argument?</span></span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 1.3  </strong></span>An argument is <em>sound</em> if, and only if, it is a valid argument and its premises are all true.</p>
+</div>
+<p>If an argument is sound, then the truth of the conclusion is guaranteed by the fact that the premises are all true and validity preserves truth.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 1.6  </strong></span>Compare the two arguments given below:</p>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>All cities in Southern California enjoy a warm weather.<br />
+</li>
+<li>Los Angeles is a city in Southern California.</li>
+<li>Therefore, Los Angeles enjoys a warm weather.</li>
+</ol>
+</div>
+<div class="argument">
+<ol style="list-style-type: decimal">
+<li>All cities in Northern Europe enjoy a warm weather. </li>
+<li>Barcelona is a city in Northern Europe.<br />
+</li>
+<li>Therefore, Barcelona enjoys a warm weather.</li>
+</ol>
+</div>
+<p>Both arguments are valid as they exemplify one and the same valid form, yet only the first is a candidate for being a sound argument, since it consists of true premises and a true conclusion. The second argument, in contrast, is valid but <em>unsound</em> since not all of its premises are true.</p>
+</div>
+</div>
+<div id="formal-languages" class="section level2 unnumbered">
+<h2>Formal Languages</h2>
+<p>The question of validity boils down to the question of which argument forms are valid. The validity of certain argument forms is in turn connected to the behavior of certain expressions in English, e.g., connectives such as ‘not’, ‘and’, ‘or’ or ’if <span class="math inline">\(\dots\)</span>, then <span class="math inline">\(\dots\)</span>. So, the study of logic will require us to make inroads in the study of natural language.</p>
+<p>We will introduce two formal languages in order to be able to isolate and study valid argument forms connected to the semantic behavior of different sets of expressions. These formal languages are in some respects less complicated than natural languages such as English and Spanish. You may even conceive of them as models of natural languages in which we can isolate and study the semantic behavior of selected natural language expressions.</p>
+<p>We should distinguish three different aspects of a language, whether natural or formal: syntax, semantics, and pragmatics.</p>
+<ul>
+<li><p>Syntax is concerned with the formal features of the expressions of a language regardless of what they mean. In a spoken natural language like English, certain sounds are combined into syllables and words, which are in turn parts of larger syntactic items such as sentences. The grammar of the language specifies what counts as word and how words may be combined into well-formed sentences of the language.</p></li>
+<li><p>Semantics is concerned with the interpretation of the language. In order to be a competent user of a natural language, one must not only be able to recognize a word or a sentence of the language, one must know what they mean.</p></li>
+<li><p>Pragmatics studies the role of context in communication. In order to understand what is communicated by the use of a sentence, one must acknowledge know not only what the sentence literally means, but how that meaning interacts with the intentions of the speaker and the common ground of the context in which it is uttered.</p></li>
+</ul>
+<p>Pragmatics will not be relevant for the study of the formal languages we will subsequently introduce, but it will play a role in our discussion of the semantic behavior of connectives such as ‘or’ and ‘if …, then …’ in natural language and the extent to which they are captured by the semantics of the formal language.</p>
+</div>
+<div id="exercises" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Identify the premises and conclusion of each of the following arguments.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>You did not turn the ignition. The car starts when you turn the ignition and the tank is full. But the tank is full and the car did not start.</p></li>
+<li><p>If the mind is the same as the brain, the whatever is true of one is true of the other. The brain is a physically extended object but the mind is not. So, the mind is not the same as the brain.</p></li>
+<li><p>The deal will fall through unless Smith is part of the negotiation. So, the deal will not be completed. For Smith just phoned to let us know she cannot join the negotiation.</p></li>
+<li><p>You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join. Applying for club membership is regarded as a sign of eagerness. That is, if you apply for club membership, you will be perceived to be eager to join. So, you will not be admitted into the club.</p></li>
+</ol></li>
+<li><p>Which of the following arguments are valid?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>It today is Tuesday, then today is not Wednesday.
+Today is Tuesday.
+So, today is not Wednesday.</p></li>
+<li><p>Today is Tuesday or Thursday.
+So, today is Tuesday</p></li>
+<li><p>Today is Tuesday or Thursday.
+Today is not Thursday.
+So, today is Tuesday</p></li>
+<li><p>I’m late on Tuesdays.
+I’m late again today.
+So, today is Tuesday</p></li>
+</ol></li>
+<li><p>Justify the invalidity of each of the argument patterns below by providing an instance with true premises and a false conclusion.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span> or <span class="math inline">\(r\)</span>.<br />
+Not <span class="math inline">\(q\)</span>.<br />
+Therefore, <span class="math inline">\(r\)</span>.</p></li>
+<li><p><span class="math inline">\(p\)</span> unless <span class="math inline">\(q\)</span>.<br />
+<span class="math inline">\(q\)</span>.<br />
+<span class="math inline">\(p\)</span>.</p></li>
+<li><p><span class="math inline">\(p\)</span> if, and only if, both <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span>.<br />
+<span class="math inline">\(r\)</span>.<br />
+<span class="math inline">\(q\)</span>.</p></li>
+</ol></li>
+<li><p>True or false? Justify your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>There are valid arguments with false premises and a true conclusion.</p></li>
+<li><p>There are invalid arguments with true premises and a true conclusion.</p></li>
+<li><p>There are valid arguments with a false conclusion.</p></li>
+<li><p>There are sound arguments with a false conclusion.</p></li>
+<li><p>If an argument is valid, then at least one of its premises is true.</p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+
+
+
+<p style="text-align: center;">
+<a href="index.html"><button class="btn btn-default">Previous</button></a>
+<a href="proplogic.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

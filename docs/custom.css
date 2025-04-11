@@ -1,0 +1,90 @@
+body {
+  background-color: #ffffff;
+}
+
+dt {
+  text-indent: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold !important;
+}
+
+h1 > .header-section-number {
+   padding-right: .15em;
+}
+
+div.epigraph {
+  font-style: italic;
+  text-align: right;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.definition {
+  border-left: 3px double maroon;
+  padding-left: 1rem;
+}
+
+
+div.example {
+  border-left: 3px double teal;
+  padding-left: 1rem;
+}
+
+div.problem {
+  border-left: 3px double maroon;
+  padding-left: 1rem;
+}
+
+div.puzzle {
+  border-left: 3px double teal;
+  padding-left: 1rem;
+}
+
+div.info {
+  border-left: 3px double teal;
+  padding-left: 1rem;
+}
+
+div.warning {
+  border-left: 3px double red;
+  padding-left: 1rem;
+}
+
+div.argument {
+  /*border-left: 3px double silver;*/
+  padding-left: 2rem;
+}
+
+button {
+  background: none!important;
+  color: inherit;
+  border: none; 
+  padding: 1!important;
+  font: inherit;
+}
+
+.title {
+  width: 55%;
+}
+
+ol, ul, hr {
+  width: 50%;
+}
+
+ol ol, ol ul, ul ol, ul ul, ol table, ul table, ol hr, ul hr {
+  width: 91%;
+}
+
+@media screen and (max-width: 760px) { 
+  ol, ul { width: 90%; }
+  ul { width: 85%; }
+}
+
+div.proof:after {
+  text-align: right;
+  display: inline-block;
+  width: 55%;
+  font-size: 1.4rem;
+  content: "∎";
+}
