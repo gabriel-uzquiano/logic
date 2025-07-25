@@ -79,11 +79,11 @@ MathJax.Hub.Config({
 <li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
 <li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
 <ul>
-<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
-<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
-<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+<li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>III Quantificational Logic</b></span></li>
 <li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
@@ -212,9 +212,9 @@ MathJax.Hub.Config({
 <div class="argument">
 <p>The animal in the pen is a zebra. Therefore, there are infinitely many numbers.</p>
 </div>
-<p>While there is no risk for the premises to be true and the conclusion to be false in these cases, the reason has nothing to do with the form of the arguments but rather to the subject matter of the statements. Instead, we will be concerned with cases in which it is the form of the argument that explains the fact that there is no risk that the premises may be true and the conclusion false.</p>
+<p>While there is no risk for the premises to be true and the conclusion to be false in these cases, the reason has nothing to do with the structure or form of the arguments but rather something to the subject matter of the statements. Instead, we will be concerned with cases in which it is the very structure or form of the argument that explains the fact that there is no risk that the premises may be true and the conclusion false.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.3  </strong></span>We may discern a common valid <em>argument form</em> in the three arguments given below:</p>
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.3  </strong></span>We may discern a common valid <em>argument form</em> in all three arguments given below:</p>
 <div class="argument">
 <ol style="list-style-type: decimal">
 <li>If there is gas in the tank, then the engine will start.<br />
@@ -256,7 +256,7 @@ MathJax.Hub.Config({
 </div>
 <p>Other inferences exemplify different valid argument forms.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 1.4  </strong></span>The three arguments given below exemplify a common valid <em>argument form</em>:</p>
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 1.4  </strong></span>All three arguments below exemplify a common valid <em>argument form</em>:</p>
 <div class="argument">
 <ol style="list-style-type: decimal">
 <li>The battery is dead or the laptop is broken. </li>
@@ -295,12 +295,12 @@ MathJax.Hub.Config({
 <div class="definition">
 <p><span id="def:unlabeled-div-6" class="definition"><strong>Definition 1.2  </strong></span>An argument is <em>valid</em> if, and only if, it is an instance of a valid argument form.</p>
 </div>
-<p>One concern is that we have explained what is for an argument to be valid in terms of the exemplification of a valid <em>argument form</em>. But that just seems to postpone the question. Not much progress has been made unless we are in a positiont to find a catalogue of valid argument forms. That, however, is the one of the goals of the introduction of the formal languages we will subsequently study. They will provide us with the ability to identify and characterize a broad family of valid argument forms, and we will be able to explain their validity in terms of the behavior of their logical connectives, which are formal counterparts of subsentential expressions in English. In the meantime, we will content ourselves with the fact that valid argument forms exemplify the following features:</p>
-<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Two features of valid argument forms</strong></span></span></p>
+<p>One concern is that we have explained what is for an argument to be valid in terms of the exemplification of a valid <em>argument form</em>. But that just seems to postpone the question. We have not made much progress unless we are able to explain what makes an argument form valid. That, however, is the one of the goals of the introduction of the formal languages we will subsequently study. They will provide us with the ability to identify and characterize a broad family of valid argument forms, and we will be able to explain their validity in terms of the behavior of their logical connectives, which are formal counterparts of subsentential expressions in English. In the meantime, we will content ourselves with the fact that valid argument forms exemplify the following distinctive features:</p>
+<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Two distinctive features of valid argument forms</strong></span></span></p>
 <div class="info">
 <ol style="list-style-type: decimal">
-<li>A valid form has <em>no</em> instances with true premises and a false conclusion.</li>
-<li>A valid form preserves truth regardless of the subject matter of its instances.</li>
+<li>A valid argument form has <em>no</em> argument instances with true premises and a false conclusion.</li>
+<li>A valid argument form preserves the truth of its premises regardless of the subject matter of its instances.</li>
 </ol>
 </div>
 <p>Let us look at further examples of valid arguments:</p>

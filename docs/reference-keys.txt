@@ -97,7 +97,7 @@ reason
 proplogic
 translationproplogic
 natdedprop
-limits-of-propositional-logic
+the-limits-of-propositional-logic
 formal-language
 translation
 natural-deduction

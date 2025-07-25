@@ -79,11 +79,11 @@ MathJax.Hub.Config({
 <li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
 <li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="limits-of-propositional-logic.html#limits-of-propositional-logic" id="toc-limits-of-propositional-logic"><span class="toc-section-number">5</span> Limits of Propositional Logic</a>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
 <ul>
-<li><a href="limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
-<li><a href="limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
-<li><a href="limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+<li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>III Quantificational Logic</b></span></li>
 <li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
@@ -235,9 +235,9 @@ is a <em>formula</em>.<br />
 \]</span>
 Here is a brief justification:</p>
 <div class="argument">
-<p>By rule 2, the expression <span class="math inline">\((p \vee (q \to \neg r))\)</span> is a formula if both expressions <span class="math inline">\(p\)</span> and <span class="math inline">\((q \to \neg r)\)</span> are formulas.<br />
+<p>By rule 2, the expression <span class="math inline">\((p \vee (q \to \neg r))\)</span> is a formula if both the expression <span class="math inline">\(p\)</span> and the expression <span class="math inline">\((q \to \neg r)\)</span> are formulas.<br />
 By rule 1, the expression <span class="math inline">\(p\)</span> is a formula.<br />
-By rule 2, the expression <span class="math inline">\((q \to \neg r)\)</span> is a formula if both expressions <span class="math inline">\(q\)</span> and <span class="math inline">\(\neg r\)</span> are formulas.<br />
+By rule 2, the expression <span class="math inline">\((q \to \neg r)\)</span> is a formula if both the expression <span class="math inline">\(q\)</span> and the expression <span class="math inline">\(\neg r\)</span> are formulas.<br />
 By rule 1, the expression <span class="math inline">\(q\)</span> is a formula.<br />
 By rule 2, the expression <span class="math inline">\(\neg r\)</span> is a formula if <span class="math inline">\(r\)</span> is a formula.<br />
 By rule 1, the expression <span class="math inline">\(r\)</span> is a formula.</p>
@@ -253,8 +253,8 @@ By rule 1, the expression <span class="math inline">\(r\)</span> is a formula.</
 \neg  (p \to A)
 \]</span></p>
 <div class="argument">
-<p>By rule 2, the expression <span class="math inline">\(\neg (p \to  A)\)</span> is a formula <em>if</em> <span class="math inline">\((p \to A)\)</span> is a formula.<br />
-By rule 2, the expression <span class="math inline">\((p \to A)\)</span> is a formula <em>if</em> both expressions <span class="math inline">\(p\)</span> and <span class="math inline">\(A\)</span> are formulas.<br />
+<p>By rule 2, the expression <span class="math inline">\(\neg (p \to  A)\)</span> is a formula <em>if</em> the expression <span class="math inline">\((p \to A)\)</span> is a formula.<br />
+By rule 2, the expression <span class="math inline">\((p \to A)\)</span> is a formula <em>if</em> both the expression <span class="math inline">\(p\)</span> and the expression <span class="math inline">\(A\)</span> are formulas.<br />
 By rule 1, the expression <span class="math inline">\(p\)</span> is a formula.<br />
 By rule 3, the expression <span class="math inline">\(A\)</span> is <em>not</em> a formula, since it is neither a propositional variable nor the outcome of one of the procedures described by rule 2.</p>
 </div>
@@ -293,7 +293,7 @@ as an abbreviation of the first formula.</p>
 <h2>Semantics</h2>
 <p>We will use assignments of truth values to propositional variables in order to interpret the language of propositional logic.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 2.1  </strong></span>An <em>assignment</em> <span class="math inline">\(A\)</span> for propositional logic maps each propositional variable into a truth value <span class="math inline">\(T\)</span> or <span class="math inline">\(F\)</span>.</p>
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 2.1  </strong></span>An <em>assignment</em> <span class="math inline">\(A\)</span> for propositional logic maps every propositional variable into exactly one truth value (<span class="math inline">\(T\)</span> or <span class="math inline">\(F\)</span>).</p>
 </div>
 <p>We will declare a sentence of propositional logic to be true or false relative to an assignment of truth values to the propositional variables.</p>
 <dl>
@@ -302,7 +302,7 @@ as an abbreviation of the first formula.</p>
 <p>We define what is for a sentence to be true under an assignment <span class="math inline">\(A\)</span>:</p>
 </dd>
 </dl>
-<div class="argument">
+<div class="info">
 <p>A propositional variable <span class="math inline">\(p\)</span> is true relative to <span class="math inline">\(A\)</span> if, and only if, the assignnment maps <span class="math inline">\(p\)</span> into <span class="math inline">\(T\)</span>.<br />
 </p>
 <p>A negation <span class="math inline">\(\neg \varphi\)</span> is true relative to <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\varphi\)</span> is not true relative to <span class="math inline">\(A\)</span>.</p>

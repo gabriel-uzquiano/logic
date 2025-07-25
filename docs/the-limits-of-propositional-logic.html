@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="5 The Limits of Propositional Logic | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>5 The Limits of Propositional Logic | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">1</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">2</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
+<ul>
+<li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="the-limits-of-propositional-logic" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> The Limits of Propositional Logic</h1>
+<p>We sometimes speak of <em>the translation of an English sentence into propositional logic</em> when there is often more than candidate translation for the target sentence. There is, for example, room for the choice of different propositional variables and for the treatment of English phrases such as ‘unless’ or ‘neither <span class="math inline">\(\dots\)</span> nor <span class="math inline">\(\dots\)</span>’. Part of the reason we ignore the differences between them is because they will be unimportant for our purposes. If an English sentence is classified as a tautology, then it will not make a difference whether we choose one translation key or another for purposes of translation. For example, <span class="math inline">\(p \to (q \to p)\)</span> is a tautology, but the same is true for the result of the systematic replacement of its propositional variables for different ones, e.g., <span class="math inline">\(r \to (p \to r)\)</span>. Nor will it make a difference to translate ‘unless’ in terms of ‘if not’ or to translate it in terms of ‘or’ as the appropriate translations will be equivalent to each other, and one will be a tautology or a contradiction or neither if, and only if, the other is.</p>
+<p>Structural ambiguity presents a separate problem of its own, since it provides us with cases in which one and the same English sentence appears to admit more than one translation into propositional logic, and there is no reason to expect them to be equivalent to each other. In such cases, it would be better to speak of translations of different <em>interpretations</em> of the original sentence. In what follows, we will set the issue of ambiguity to one side and continue, for all intents and purposes, to talk of translation of a sentence.</p>
+<div id="natural-language-and-propositional-logic" class="section level2 unnumbered">
+<h2>Natural Language and Propositional Logic</h2>
+<p>We start with two categories for sentences of natural language.</p>
+<p><label for="tufte-mn-44" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-44" class="margin-toggle"><span class="marginnote"><span style="display: block;">Tautology</span></span></p>
+<dl>
+<dt>Tautology</dt>
+<dd>
+<p>An English sentence is a <em>tautology</em> if, and only if, its translation into propositional logic is a tautology.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 5.1  </strong></span>Consider the English sentence:</p>
+<div class="argument">
+<p>Unless I purchase a lottery ticket, it is not the case that I purchase a lottery ticket and I win the lottery</p>
+</div>
+<p>This sentence is a tautology because it translates into a tautology of propositional logic:</p>
+<p><span class="math display">\[
+\neg p \to \neg (p \wedge q)
+\]</span>
+<strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: I purchase a lottery ticket.<br />
+<span class="math inline">\(q\)</span>: I win the lottery</p>
+</div>
+<p>But the sentence we obtain is a tautology:
+<span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+p  &amp; q &amp;  \ \neg p \to \neg (p \wedge q) \\
+\hline
+T &amp; T  &amp; \! \! \! \! \! \! \color{red}{T}\\
+T &amp; F  &amp; \! \! \! \! \! \! \color{red}{T}\\
+F &amp; T  &amp;  \! \! \! \! \! \! \color{red}{T}\\
+F &amp; F  &amp; \! \! \! \! \! \! \color{red}{T}\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<p>A tautology is a <em>logical truth</em>, since it is true in virtue of the form it exemplifies. But that is not to suggest that every logical truth of English is a tautology. Some English sentences, e.g., ‘all human beings are human’, in virtue of the form they exemplify, yet they do not translate into a tautology of propositional logic.</p>
+<p>On the face of it, the English sentence ‘all human beings are human’, is a logical truth since it exemplifies the form ‘all <span class="math inline">\(H\)</span> are <span class="math inline">\(H\)</span>’ all of whose instances appear to be true. Yet, the</p>
+<p><label for="tufte-mn-45" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-45" class="margin-toggle"><span class="marginnote"><span style="display: block;">Contradiction</span></span></p>
+<dl>
+<dt>Contradiction</dt>
+<dd>
+<p>An English sentence is a <em>contradiction</em> if, and only if, it translates into a contradiction of propositional logic.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 5.2  </strong></span>Consider the English sentence:</p>
+<div class="argument">
+<p>You will not purchase a lottery ticket though it is not true that you will not purchase one or you will win.</p>
+</div>
+<p>This sentence is a contradiction because it can be translated into the language of propositional logic as follows:</p>
+<p><span class="math display">\[
+\neg p \wedge \neg (\neg p \vee q)
+\]</span>
+<strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: I will purchase a lottery ticket.<br />
+<span class="math inline">\(q\)</span>: I will win the lottery</p>
+</div>
+<p>But the sentence we obtain is a tautology:
+<span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+p  &amp; q &amp;  \neg p \wedge \neg (\neg  p \vee q) \\
+\hline
+T &amp; T  &amp; \! \! \! \! \! \! \color{red}{F}\\
+T &amp; F  &amp; \! \! \! \! \! \! \color{red}{F}\\
+F &amp; T  &amp;  \! \! \! \! \! \! \color{red}{F}\\
+F &amp; F  &amp; \! \! \! \! \! \! \color{red}{F}\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<p>A contradiction is logically false or false in virtue of the form it exemplifies. Note, however, that some logically false sentences of English do not translate into contradictions of propositional logic, e.g., ‘some human beings are not human’ does not. Part of the problem is that propositional logic is not sufficiently rich to capture the structural aspects of the sentence in virtue of which it is false.</p>
+<p><label for="tufte-mn-46" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-46" class="margin-toggle"><span class="marginnote"><span style="display: block;">Propositional Equivalence</span></span></p>
+<dl>
+<dt>Propositional Equivalence</dt>
+<dd>
+<p>Two English sentences are <em>propositionally equivalent</em> if, and only if, they translate into equivalent formulas of propositional logic.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 5.3  </strong></span>Consider the two English sentences:</p>
+<div class="argument">
+<p>You will not win the lottery unless you purchase a ticket.</p>
+</div>
+<div class="argument">
+<p>You will win the lottery only if you purchase a ticket.</p>
+</div>
+<p>These sentences are propositionally equivalent because they translate into two equivalent sentences of propositional logic:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\neg p \to \neg q \\
+q \to p
+\end{array}
+\]</span>
+<strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: I will purchase a lottery ticket.<br />
+<span class="math inline">\(q\)</span>: I will win the lottery</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline
+p  &amp; q &amp;  \neg p \to \neg q &amp; q \to p \\
+\hline
+T &amp; T  &amp;  \color{red}{T} &amp;  \color{red}{T} \\
+T &amp; F  &amp;  \color{red}{T}  &amp;  \color{red}{T} \\
+F &amp; T  &amp;   \color{red}{F} &amp;  \color{red}{F} \\
+F &amp; F  &amp;  \color{red}{T} &amp;  \color{red}{T} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<p>If two natural language sentences are propositionally equivalent, then they are logically equivalent. On the other hand, two sentences of English may be logically equivalent even if they are not propositionally equivalent. The sentences ‘Not all logicians are philosophers’ and ‘Some logicians are not philosophers’ entail each other because they exemplify the forms ‘Not all <span class="math inline">\(L\)</span> are <span class="math inline">\(P\)</span>’ and ‘Some <span class="math inline">\(L\)</span> are not <span class="math inline">\(P\)</span>’. So, they are presumably logically equivalent, even though they are not propositionally equivalent; their translations into propositional logic are not equivalent.</p>
+<p><label for="tufte-mn-47" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-47" class="margin-toggle"><span class="marginnote"><span style="display: block;">Propositional Consistency</span></span></p>
+<dl>
+<dt>Propositional Consistency</dt>
+<dd>
+<p>A set of English sentences is <em>propositionally consistent</em> if, and only if, they translate into the members of a consistent set of formulas of propositional logic.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 5.4  </strong></span>Consider the set of three English sentences:</p>
+<div class="argument">
+<p>You will not win the lottery unless you purchase a ticket.<br />
+You will purchase a ticket.<br />
+You will not win the lottery.</p>
+</div>
+<p>The set of three sentences is propositionally consistent because the set of its translations into propositional logic is consistent:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\neg p \to \neg q\\
+p\\
+\neg q
+\end{array}
+\]</span>
+<strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: I will purchase a lottery ticket.<br />
+<span class="math inline">\(q\)</span>: I will win the lottery</p>
+</div>
+<p>To check that the set is consistent, we construct a truth table in search of an assignment making true all three formulas.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp;  \neg p \to \neg q &amp; p &amp;  \neg q \\
+\hline
+T &amp; T  &amp;  T &amp;  T &amp; F \\
+T &amp; F  &amp;  \color{red}{T}  &amp;  \color{red}{T}  &amp;  \color{red}{T} \\
+F &amp; T  &amp;  F &amp; F &amp;  F \\
+F &amp; F  &amp;  T &amp; F &amp;  T \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<p><label for="tufte-mn-48" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-48" class="margin-toggle"><span class="marginnote"><span style="display: block;">Propositional Validity</span></span></p>
+<dl>
+<dt>Propositional Validity</dt>
+<dd>
+<p>An argument in English is <em>propositionally valid</em> if, and only if, it translates into a valid argument of propositional logic.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 5.5  </strong></span>Consider the natural language argument:</p>
+<blockquote>
+<p>You will be rich tomorrow if you buy a lottery ticket from me. You will buy a ticket from me if the lottery is rigged and you think that I’m part of the scheme. The lottery is rigged but you will not be rich tomorrow. So, you do not think that I’m part of the scheme.</p>
+</blockquote>
+<p>In premise-conclusion form:</p>
+<ol style="list-style-type: decimal">
+<li>You will be rich tomorrow if you buy a lottery ticket from me.</li>
+<li>You will buy a ticket form me if the lottery is rigged and you think that I’m part of the scheme.</li>
+<li>The lottery is rigged but you will not be rich tomorrow.</li>
+<li>So, you do not think that I’m part of the scheme.</li>
+</ol>
+<p>Here is the translation of the argument into the language of propositional logic.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p \to q\)</span></li>
+<li><span class="math inline">\((r \wedge s) \to p\)</span></li>
+<li><span class="math inline">\(r \wedge \neg q\)</span></li>
+<li><span class="math inline">\(\neg s\)</span></li>
+</ol>
+<p><strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: You will buy a lottery ticket from me.<br />
+<span class="math inline">\(q\)</span>: You will be rich tomorrow.<br />
+<span class="math inline">\(r\)</span>: The lottery is rigged.<br />
+<span class="math inline">\(s\)</span>: You think I’m part of the scheme.</p>
+</div>
+<p>We now use a natural deduction proof in order to justify the validity of the argument formulated in propositional logic:</p>
+<p><img src="images/ex%205.5.png" style="display:block; margin: 0 auto;"></p>
+<p>The translation of the argument into propositional logic is valid, which makes the original argument propositionally valid.</p>
+</div>
+<p>To be sure, propositional validity is a species of validity, but not every valid argument is propositionally valid. Some valid arguments translate into invalid arguments of propositional logic simply because propositional logic is not well equipped to capture the structural aspects of the argument that are responsible for its validity in English. Let us look at an example of a putative valid argument that is <em>not</em> propositionally valid.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.6  </strong></span>Consider the natural language argument:</p>
+<blockquote>
+<p>Unless the mind is material, each human being has an immaterial part. Descartes is a human being. Therefore, unless the mind is material, Descartes has an immaterial part.</p>
+</blockquote>
+<p>In premise-conclusion form, the argument would read:</p>
+<ol style="list-style-type: decimal">
+<li>Unless the mind is material, every human being has an immaterial part.</li>
+<li>Descartes is a human being.</li>
+<li>Descartes has an immaterial part.</li>
+</ol>
+<p>Here is the translation of the argument into the language of propositional logic.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\neg p \to q\)</span></li>
+<li><span class="math inline">\(r\)</span></li>
+<li><span class="math inline">\(\neg p \to s\)</span></li>
+</ol>
+<p><strong>Translation key</strong>:</p>
+<div class="argument">
+<p><span class="math inline">\(p\)</span>: The mind is material.<br />
+<span class="math inline">\(q\)</span>: Each human being has an immaterial part.<br />
+<span class="math inline">\(r\)</span>: Descartes is a human being.
+<span class="math inline">\(s\)</span>: Descartes has an immaterial part.</p>
+</div>
+<p>But it is not difficult to verify that the argument formulated in the language of propositional logic is invalid. Here is an assignment on which the premises come out true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; s &amp; \neg p \to q &amp; r &amp; \neg p \to s \\
+\hline
+F &amp; T &amp;  T &amp;  F &amp; \color{red}{T}  &amp; \color{red}{T} &amp;  \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+<p>And yet, a closer look at the argument formulated in English suggests that it exemplifies a valid argument form, just not one that is captured in the language of propositional logic:</p>
+<ol style="list-style-type: decimal">
+<li>Unless <span class="math inline">\(p\)</span>, every <span class="math inline">\(H\)</span> is <span class="math inline">\(I\)</span>.</li>
+<li><span class="math inline">\(D\)</span> is <span class="math inline">\(H\)</span></li>
+<li>Unless <span class="math inline">\(p\)</span>, <span class="math inline">\(D\)</span> is <span class="math inline">\(I\)</span></li>
+</ol>
+</div>
+</div>
+<div id="expressive-limitations" class="section level2 unnumbered">
+<h2>Expressive Limitations</h2>
+<p>A variety of valid arguments in English fail to be propositionally valid. That is, the arguments appear exemplify a valid argument form, but their translation into the language of propositional logic is not valid. For a particularly simple example, consider the argument:</p>
+<blockquote>
+<p>All logicians are philosophers. Peter is a logician. Therefore, Peter is a philosopher.</p>
+</blockquote>
+<p>The argument is not propositionally valid because both premises and conclusion translate into propositional variables; they are not constructed from simpler sentences by means of a connective. But the reason the argument is valid is that the sentences display a measure of complexity, one that is not captured by propositional logic. What is required for present purposes is a more powerful and sophisticated formal language, one that does justice to the structure of the three sentences and the argument form they exemplify.</p>
+<p>In order to do better, we have to find a way discern more structure in sentences such as ‘Peter is a logician’ and ‘Peter is a philosopher’. One observation is that we can discern constituents of two broad types in each sentence. They each contain a word, i.e., ‘Peter’, whose primary semantic function is to <em>designate</em> and individual, And they each contain an expression, i.e., ‘is a logician’ and ‘is a philosopher’, whose primary semantic function is to <em>predicate</em> something of an individual. Some of the sentences we treated as simple in the context of propositional logic may now be regarded as complex sentences, which combine one or more <em>designators</em> with a <em>predicate</em>.</p>
+<p><label for="tufte-mn-49" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-49" class="margin-toggle"><span class="marginnote"><span style="display: block;">Predicates and Designators</span></span></p>
+<dl>
+<dt>Predicates and Designators</dt>
+<dd>
+<p>The primary semantic function of a <em>designator</em> is to designate an individual, and the primary semantic function of a <em>predicate</em> is to predicate something of an individual.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 5.7  </strong></span>Each of the sentences below combines one or more designators with a predicate:</p>
+<div class="argument">
+<p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}} \ \underbrace{\text{is a city}}_{\text{predicate}}\)</span>.</p>
+<p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{is south of}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{San Francisco}}_{\text{designator}}\)</span></p>
+<p><span class="math inline">\(\underbrace{\text{Peter}}_{\text{designator}} \ \underbrace{\text{is a philosopher}}_{\text{predicate}}\)</span>.</p>
+<p><span class="math inline">\(\underbrace{\text{I}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{talked to}}_{\text{first part of the predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{her}}_{\text{designator}}\)</span>  <span class="math inline">\(\underbrace{\text{over zoom}}_{\text{second part of the predicate}}\)</span></p>
+</div>
+</div>
+<p>Notice that while some predicate expressions, e.g., ‘<span class="math inline">\(\dots\)</span> is a philosopher’, combine with just one designator in order to form a sentence, but others, e.g., ‘<span class="math inline">\(\dots\)</span> is south of <span class="math inline">\(\dots\)</span>’ or ‘comes between <span class="math inline">\(\dots\)</span> and <span class="math inline">\(\dots\)</span>’ require more than one designator. Once we acknowledge the distinction between designators and predicates, we realize that the methods of propositional logic are much too crude to represent the structure of predication.</p>
+<p>There is another category of expression we find in simple sentences that translate into propositional variables of propositional logic. There is, in particular, an important difference between the sentences ‘Peter is a logician’ and ‘Someone is a logician’. The two sentences contain a predicate expression, i.e., ‘<span class="math inline">\(\dots\)</span> is a logician’, which at least in one case combines with a designator, i.e., ‘Kurt’. The crucial observation now is that the word ‘Someone’ is <em>not</em> a designator, since its primary semantic function is <em>not</em> to designate an individual. For what individual could that be? ‘Someone’ does not designate Peter or any other logician for that matter.</p>
+<p>The contrast between quantification and designation is perhaps more clear in the case of quantifier expressions such as ‘no one’ as it occurs in the sentence ‘No one is a logician’. Whatever the semantic function of the quantifier expression ‘no one’, it is <em>not</em> to designate an individual of which something is predicate. In fact, the truth conditions of the sentence require the existence of no logicians at all.</p>
+<p><label for="tufte-mn-50" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-50" class="margin-toggle"><span class="marginnote"><span style="display: block;">Quantifiers</span></span></p>
+<dl>
+<dt>Quantifiers</dt>
+<dd>
+<p>The primary semantic function of a quantifier is to express generality.</p>
+</dd>
+</dl>
+<p>Some quantifier expressions combine a quantifier, which is a mark of generality, with a predicate in order to form a quantifier phrase. The combination, for example, of the quantifier ‘some’ with the predicate ‘book’ results in the quantifier phrase: ‘some book’. Likewise for the combination of a quantifier such as ‘most’ with a predicate such as ‘material object’, which results in the quantifier phrase: ‘most books’.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 5.8  </strong></span>Each of the sentences below combine occurrences of designators, predicates, and quantifier expressions:</p>
+<div class="argument">
+<p><span class="math inline">\(\underbrace{\text{Something}}_{\text{quantifier}} \ \underbrace{\text{is a city}}_{\text{predicate}}\)</span>.</p>
+<p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{is south of}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{some city}}_{\text{quantifier phrase}}\)</span></p>
+<p><span class="math inline">\(\underbrace{\text{Every logician}}_{\text{quantifier phrase}} \ \underbrace{\text{is a philosopher}}_{\text{predicate}}\)</span>.</p>
+<p><span class="math inline">\(\underbrace{\text{A workday}}_{\text{quantifier phrase}}\)</span>   <span class="math inline">\(\underbrace{\text{comes between}}_{\text{first part of the predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{Tuesday}}_{\text{designator}}\)</span>  <span class="math inline">\(\underbrace{\text{and}}_{\text{second part of the predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{Thursday}}_{\text{designator}}\)</span></p>
+<p><span class="math inline">\(\underbrace{\text{Someone}}_{\text{quantifier}}\)</span>   <span class="math inline">\(\underbrace{\text{talked to}}_{\text{first part of the predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{her}}_{\text{designator}}\)</span>  <span class="math inline">\(\underbrace{\text{over zoom}}_{\text{second part of the predicate}}\)</span></p>
+</div>
+</div>
+</div>
+<div id="exercises-4" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Determine whether the following English sentences are tautologies, contradictions, or neither tautologies nor contradictions:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Someone is a logician and not a logician.</li>
+<li>Some logicians are philosophers but some logicians are not philosophers.</li>
+<li>If all logicians are philosophers, then if some philosophers are logicians, then all logicians are philosophers.</li>
+<li>Someone is a logician and someone is not a logician.</li>
+<li>All logicians are philosophers but no philosophers are logicians.</li>
+</ol></li>
+<li><p>Determine whether the following arguments are propositionally valid:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The deal will be completed only if Smith or Jones are in attendance. If Smith attends, then Jones will too. Jones will not be in attendance. Therefore, the deal will not be completed.</li>
+<li>All logicians are philosophers. All logicians learn propositional logic at some point. So, some philosophers learn propositional logic at some point.</li>
+<li>The deal will not be completed unless someone is in attendance. Neither Smith nor Jones will be in attendance. Therefore, the deall will not be completed.</li>
+</ol></li>
+<li><p>Identify occurrences of designators, predicates, and quantifier expressions in the following sentences:</p>
+<ol style="list-style-type: lower-alpha">
+<li>USC is located in Los Angeles.</li>
+<li>Some private university is located in NYC.</li>
+<li>Some critic admires every critic.</li>
+<li>Mark Twain wrote <em>Tom Sawyer</em>.</li>
+<li>Every students owns a computer.</li>
+<li>Everyone admires someone.</li>
+<li>Some workday comes after a weekend day.</li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+
+
+
+<p style="text-align: center;">
+<a href="natdedprop.html"><button class="btn btn-default">Previous</button></a>
+<a href="formal-language.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
