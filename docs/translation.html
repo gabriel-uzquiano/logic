@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="7 Translation | Introduction to Logic" />
+<meta property="og:title" content="9 Translation | Introduction to Logic" />
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
@@ -23,7 +23,7 @@ MathJax.Hub.Config({
 
 <meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
 
-<title>7 Translation | Introduction to Logic</title>
+<title>9 Translation | Introduction to Logic</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
@@ -61,60 +61,78 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
 <li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
-<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
 <li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<li class="has-sub"><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">3</span> Semantics</a>
+<ul>
+<li><a href="semantics.html#truth-tables" id="toc-truth-tables">Truth Tables</a></li>
+<li><a href="semantics.html#tautologies-and-contradictions" id="toc-tautologies-and-contradictions">Tautologies and Contradictions</a></li>
+<li><a href="semantics.html#equivalence-and-consistency" id="toc-equivalence-and-consistency">Equivalence and Consistency</a></li>
+<li><a href="semantics.html#validity" id="toc-validity">Validity</a></li>
+<li><a href="semantics.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">4</span> Translation</a>
 <ul>
 <li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
 <li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
 <li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
-<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+<li><a href="translationproplogic.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">5</span> Natural Deduction</a>
 <ul>
 <li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
 <li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
 <li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
 <li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
-<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+<li><a href="natdedprop.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">6</span> The Limits of Propositional Logic</a>
 <ul>
 <li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
 <li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
-<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>III Quantificational Logic</b></span></li>
-<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">7</span> Formal Language</a>
 <ul>
 <li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
-<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
-<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+<li><a href="formal-language.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">8</span> Semantics</a>
+<ul>
+<li class="has-sub"><a href="semantics-1.html#models" id="toc-models">Models</a>
+<ul>
+<li><a href="semantics-1.html#truth-relative-to-a-variable-assignment" id="toc-truth-relative-to-a-variable-assignment">Truth Relative to a Variable Assignment</a></li>
+<li><a href="semantics-1.html#truth-in-a-model" id="toc-truth-in-a-model">Truth in a Model</a></li>
+</ul></li>
+<li><a href="semantics-1.html#logical-truths" id="toc-logical-truths">Logical Truths</a></li>
+<li><a href="semantics-1.html#equivalence-and-consistency-1" id="toc-equivalence-and-consistency-1">Equivalence and Consistency</a></li>
+<li><a href="semantics-1.html#validity-1" id="toc-validity-1">Validity</a></li>
+<li><a href="semantics-1.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">9</span> Translation</a>
 <ul>
 <li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
 <li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
-<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+<li><a href="translation.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">10</span> Natural Deduction</a>
 <ul>
 <li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
 <li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
 <li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
-<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+<li><a href="natural-deduction.html#exercises-9" id="toc-exercises-9">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">11</span> Identity</a>
 <ul>
 <li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
 <li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
 <li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
-<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+<li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
 <ul>
 <li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
 <li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
@@ -132,8 +150,8 @@ MathJax.Hub.Config({
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="translation" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Translation</h1>
+<div id="translation" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Translation</h1>
 <p>We want to use the language of quantificational logic for the evaluation of natural language arguments. That will require us to be able to translate from natural language into the formal language of quantificational logic. We proceed in stages. We will briefly consider the case of predications, which are some of the simplest natural language sentences, and we will pay special attention to the translation of quantifier phrases.</p>
 <div id="a-translation-method-1" class="section level2 unnumbered">
 <h2>A Translation Method</h2>
@@ -538,7 +556,7 @@ Some thing<span class="math inline">\(_x\)</span> is such that it<span class="ma
 </div>
 <p>We are in a position to combine the skills we have gained in order to determine whether an argumnet formulated in English exemplifies a valid quantificational form.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 7.1  </strong></span>Consider the argument:</p>
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 9.1  </strong></span>Consider the argument:</p>
 <ol style="list-style-type: decimal">
 <li>All physicists admire Newton.</li>
 <li>Newton admires some mathematicians.</li>
@@ -564,7 +582,7 @@ diamond<br />
 <p><img src="images/7.13.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 7.2  </strong></span>Consider the argument:</p>
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 9.2  </strong></span>Consider the argument:</p>
 <ol style="list-style-type: decimal">
 <li>Some LA landmark is moore beautiful than some NY landmark.</li>
 <li>The Griffith Observatory is an LA landmark and Times Square is a NY landmark.</li>
@@ -592,7 +610,7 @@ diamond<br />
 <p><img src="images/7.14.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
-<div id="exercises-6" class="section level2 unnumbered">
+<div id="exercises-8" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
 <li><p>Translate the following sentences into the language of quantificational logic.</p>
@@ -620,7 +638,7 @@ diamond<br />
 </div>
 </div>
 <p style="text-align: center;">
-<a href="formal-language.html"><button class="btn btn-default">Previous</button></a>
+<a href="semantics-1.html"><button class="btn btn-default">Previous</button></a>
 <a href="natural-deduction.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>

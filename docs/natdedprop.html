@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="4 Natural Deduction | Introduction to Logic" />
+<meta property="og:title" content="5 Natural Deduction | Introduction to Logic" />
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
@@ -23,7 +23,7 @@ MathJax.Hub.Config({
 
 <meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
 
-<title>4 Natural Deduction | Introduction to Logic</title>
+<title>5 Natural Deduction | Introduction to Logic</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
@@ -61,60 +61,78 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
 <li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
-<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
 <li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<li class="has-sub"><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">3</span> Semantics</a>
+<ul>
+<li><a href="semantics.html#truth-tables" id="toc-truth-tables">Truth Tables</a></li>
+<li><a href="semantics.html#tautologies-and-contradictions" id="toc-tautologies-and-contradictions">Tautologies and Contradictions</a></li>
+<li><a href="semantics.html#equivalence-and-consistency" id="toc-equivalence-and-consistency">Equivalence and Consistency</a></li>
+<li><a href="semantics.html#validity" id="toc-validity">Validity</a></li>
+<li><a href="semantics.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">4</span> Translation</a>
 <ul>
 <li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
 <li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
 <li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
-<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+<li><a href="translationproplogic.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">5</span> Natural Deduction</a>
 <ul>
 <li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
 <li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
 <li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
 <li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
-<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+<li><a href="natdedprop.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">6</span> The Limits of Propositional Logic</a>
 <ul>
 <li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
 <li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
-<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>III Quantificational Logic</b></span></li>
-<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">7</span> Formal Language</a>
 <ul>
 <li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
-<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
-<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+<li><a href="formal-language.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">8</span> Semantics</a>
+<ul>
+<li class="has-sub"><a href="semantics-1.html#models" id="toc-models">Models</a>
+<ul>
+<li><a href="semantics-1.html#truth-relative-to-a-variable-assignment" id="toc-truth-relative-to-a-variable-assignment">Truth Relative to a Variable Assignment</a></li>
+<li><a href="semantics-1.html#truth-in-a-model" id="toc-truth-in-a-model">Truth in a Model</a></li>
+</ul></li>
+<li><a href="semantics-1.html#logical-truths" id="toc-logical-truths">Logical Truths</a></li>
+<li><a href="semantics-1.html#equivalence-and-consistency-1" id="toc-equivalence-and-consistency-1">Equivalence and Consistency</a></li>
+<li><a href="semantics-1.html#validity-1" id="toc-validity-1">Validity</a></li>
+<li><a href="semantics-1.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">9</span> Translation</a>
 <ul>
 <li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
 <li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
-<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+<li><a href="translation.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">10</span> Natural Deduction</a>
 <ul>
 <li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
 <li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
 <li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
-<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+<li><a href="natural-deduction.html#exercises-9" id="toc-exercises-9">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">11</span> Identity</a>
 <ul>
 <li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
 <li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
 <li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
-<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+<li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
 <ul>
 <li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
 <li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
@@ -132,8 +150,8 @@ MathJax.Hub.Config({
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="natdedprop" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Natural Deduction</h1>
+<div id="natdedprop" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Natural Deduction</h1>
 <p>We now develop a deductive system for propositional logic. The system will enable us to derive the conclusion of a valid argument from its premises in the language of propositional logic. These derivations will closely resemble chains of reasoning we may use to convince ourselves that a proposition follows from others in natural language. One difference, however, is that our derivations will display a very rigid structure where each step we take will be codified by a formal rule of inference. These rules of inference will in turn be closely tied to the semantic behavior of the connectives they formalize.</p>
 <p>It will turn out that an argument formulated in the language of propositional logic is valid if, and only if, there is a derivation of the conclusion from its premises. That means that the deductive system will provide yet another approach to the study of validity in propositional logic.</p>
 <p>There is a variety of different proof systems for propositional logic designed for different purposes. Some of them are specifically designed to facilitate the design of proofs in accordance with rules that are not dissimilar from steps we take in moore familiar contexts, whereas others minimize the rules of inference available for a derivation in order to focus on the study of the metatheory of propositional logic. Here we will focus on a system of the first type otherwise known as a <em>natural deduction</em> system.</p>
@@ -168,7 +186,7 @@ Repetition</span></span></p>
 <p>The annotation indicates that we are allowed to repeat the formula on line <span class="math inline">\(n\)</span> at a later line <span class="math inline">\(m\)</span>.</p>
 <p>This is perhaps the simplest derivation you will ever encounter.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 4.1  </strong></span><span class="math inline">\(p \vdash p\)</span>
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 5.1  </strong></span><span class="math inline">\(p \vdash p\)</span>
 <img src="images/4.%20ex%20repetition.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
@@ -185,7 +203,7 @@ Conjunction Introduction</span></span></p>
 </dl>
 <p>To illustrate the rule, notice how the introduction rule for conjunction suffices for a derivation of <span class="math inline">\(p \wedge (r \wedge q)\)</span> from three premises <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, and <span class="math inline">\(r\)</span>:</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-36" class="example"><strong>Example 4.2  </strong></span><span class="math inline">\(p, q, r \vdash p \wedge (r \wedge q)\)</span></p>
+<p><span id="exm:unlabeled-div-36" class="example"><strong>Example 5.2  </strong></span><span class="math inline">\(p, q, r \vdash p \wedge (r \wedge q)\)</span></p>
 <p><img src="images/4.%20ex%20conj%20intro.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p><label for="tufte-mn-35" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-35" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/conj%20elim.png"><br />
@@ -201,7 +219,7 @@ Conjunction Elimination</span></span></p>
 </dl>
 <p>By way of illustration, note how the introduction rule for conjunction suffices for a derivation of <span class="math inline">\(r\)</span> from three premises <span class="math inline">\(p \wedge (r \wedge q)\)</span>:</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 4.3  </strong></span><span class="math inline">\(p \wedge (r \wedge q) \vdash r\)</span></p>
+<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 5.3  </strong></span><span class="math inline">\(p \wedge (r \wedge q) \vdash r\)</span></p>
 <p><img src="images/4%20ex%20conj%20elim%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p><label for="tufte-mn-36" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-36" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20elim.png"><br />
@@ -214,7 +232,7 @@ Conditional Elimination</span></span></p>
 </dl>
 <p>We may now produce derivations for more sophisticated arguments.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 4.4  </strong></span><span class="math inline">\(p, \ p \to (q \wedge r), \ q \to (s \wedge t) \vdash r \wedge t\)</span></p>
+<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 5.4  </strong></span><span class="math inline">\(p, \ p \to (q \wedge r), \ q \to (s \wedge t) \vdash r \wedge t\)</span></p>
 <p><img src="images/4%20ex%20cond%20elim%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p><label for="tufte-mn-37" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-37" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20intro.png"><br />
@@ -228,11 +246,11 @@ Conditional Introduction</span></span></p>
 <p>The thought behind the rule is simple. We are entitled to write the conditional <span class="math inline">\(\varphi \to \psi\)</span> by itself in a line if we convince ourselves that we may eventually reach <span class="math inline">\(\psi\)</span> on the assumption that <span class="math inline">\(\varphi\)</span>.</p>
 <p>Let us look at assorted applications of this rule:</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 4.5  </strong></span><span class="math inline">\(p \to (q \wedge r) \vdash p \to (r \wedge q)\)</span></p>
+<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 5.5  </strong></span><span class="math inline">\(p \to (q \wedge r) \vdash p \to (r \wedge q)\)</span></p>
 <p><img src="images/4%20ex%20cond%20intro%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 4.6  </strong></span><span class="math inline">\(p \wedge q \vdash p \to q\)</span></p>
+<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 5.6  </strong></span><span class="math inline">\(p \wedge q \vdash p \to q\)</span></p>
 <p><img src="images/4%20ex%20cond%20intro%202.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
@@ -259,7 +277,7 @@ Disjunction Elimination</span></span></p>
 <p>By way of motivation, notice that if <span class="math inline">\(\varphi \vee \psi\)</span> is the case, then there are two horns to consider. If <span class="math inline">\(\varphi \to \chi\)</span>, then one horn leads to <span class="math inline">\(\chi\)</span>, and if <span class="math inline">\(\psi \to \chi\)</span>, then the other horn leads to <span class="math inline">\(\chi\)</span>. But now, if both horns lead to <span class="math inline">\(\chi\)</span>, then we should be able to conclude <span class="math inline">\(\chi\)</span> on the basis of the disjunction <span class="math inline">\(\varphi \vee \psi\)</span> and the two conditionals above.</p>
 <p>Here is an example of the elimination rule in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 4.7  </strong></span><span class="math inline">\((p \wedge q) \vee (q \wedge p)  \vdash p\)</span></p>
+<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 5.7  </strong></span><span class="math inline">\((p \wedge q) \vee (q \wedge p)  \vdash p\)</span></p>
 <p><img src="images/4.%20ex%20disj%20elim.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>We finally introduce natural deduction rules for negation, which is the last connective left to consider. To reason with negation, it will be convenient to introduce a <em>new</em> symbol into the deductive system: <span class="math inline">\(\bot\)</span>. This symbol, which is sometimes called <em>falsum</em> or <em>bottom</em> or <em>bot</em>, is designed to record the fact that we have arrived at a contradiction, and though it is not an official symbol of the language of propositional logic, it will play an auxiliary role in the formulation of the introduction and elimination rules for negation.</p>
@@ -281,12 +299,12 @@ Negation Introduction</span></span></p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 4.8  </strong></span><span class="math inline">\(p  \vdash \neg \neg p\)</span></p>
+<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 5.8  </strong></span><span class="math inline">\(p  \vdash \neg \neg p\)</span></p>
 <p><img src="images/4%20ex%20neg%20intro%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>This rule requires some explanation. What motivates it is the thought that we should conclude a negation of the form <span class="math inline">\(\neg \varphi\)</span> if we find that we are able to reach an absurdity on the assumption that <span class="math inline">\(\varphi\)</span> is the case. How do we know that the square root of <span class="math inline">\(2\)</span> is <em>not</em> rational? Because we are able to reach an absurdity from the assumption that <span class="math inline">\(\sqrt{2}\)</span> is a ratio of two integers <span class="math inline">\(\frac{p}{q}\)</span> without a common denominator.<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> If <span class="math inline">\(\sqrt{2} = \frac{p}{q}\)</span>, then <span class="math inline">\(2 = \frac{p^2}{q^2}\)</span> and <span class="math inline">\(p^2 = 2q^2\)</span>. That means that <span class="math inline">\(p^2\)</span> is even, which requires <span class="math inline">\(p\)</span> to be even. It follows that <span class="math inline">\(p^2\)</span> is divisible by <span class="math inline">\(4\)</span> making <span class="math inline">\(q^2\)</span> and <span class="math inline">\(q\)</span> even. So, <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are both even, which means that they share a common factor. That is absurd, since we began with the assumption that they have no factors in common.</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 4.9  </strong></span><span class="math inline">\(p \to q,  \neg q \vdash \neg p\)</span></p>
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 5.9  </strong></span><span class="math inline">\(p \to q,  \neg q \vdash \neg p\)</span></p>
 <p><img src="images/4%20ex%20neg%20intro%202.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p><label for="tufte-mn-42" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-42" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/EFSQ.png"><br />
@@ -299,11 +317,11 @@ Ex Falso Sequitur Quodlibet</span></span></p>
 </dl>
 <p>The Latin phrase <em>Ex Falso Sequitur Quodlibet</em> means that anything at all follows from a contradiction, and we will use the initials EFSQ to abbreviate the rule that enables to write an arbitrary formula after a contradiction.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 4.10  </strong></span><span class="math inline">\(p \vee q, \neg p  \vdash q\)</span></p>
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 5.10  </strong></span><span class="math inline">\(p \vee q, \neg p  \vdash q\)</span></p>
 <p><img src="images/4%20ex%20EFSQ%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 4.11  </strong></span><span class="math inline">\(\neg p  \vdash p \to q\)</span></p>
+<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 5.11  </strong></span><span class="math inline">\(\neg p  \vdash p \to q\)</span></p>
 <p><img src="images/4%20ex%20EFSQ%202.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>We require one more rule in order to be able to cancel a doble negation. That is, we want a rule designed to help us move from <span class="math inline">\(\neg \neg \varphi\)</span> to <span class="math inline">\(\varphi\)</span>.</p>
@@ -316,7 +334,7 @@ Double Negation</span></span></p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 4.12  </strong></span><span class="math inline">\(\vdash p \vee \neg p\)</span></p>
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 5.12  </strong></span><span class="math inline">\(\vdash p \vee \neg p\)</span></p>
 <p><img src="images/4%20ex%20DN%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>That completes the list of natural deduction rules for propositional logic. They suffice for the purpose of deriving a conclusion from the premises of a valid argument of propositional logic.</p>
@@ -338,7 +356,7 @@ Double Negation</span></span></p>
 <li><p>The case of negation <span class="math inline">\(\neg \varphi\)</span> is more delicate. We know that we are able to introduce <span class="math inline">\(\bot\)</span> by itself on a line if we are able to find an auxiliary derivation of <span class="math inline">\(\varphi\)</span>, which becomes the new subgoal in order to exploit the original negation.</p></li>
 </ul>
 </div>
-<div id="exercises-3" class="section level2 unnumbered">
+<div id="exercises-4" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
 <li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>

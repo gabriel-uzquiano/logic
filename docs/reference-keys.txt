@@ -95,10 +95,12 @@ exm:unlabeled-div-94
 exm:unlabeled-div-95
 reason
 proplogic
+semantics
 translationproplogic
 natdedprop
 the-limits-of-propositional-logic
 formal-language
+semantics-1
 translation
 natural-deduction
 identity

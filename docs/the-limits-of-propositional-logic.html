@@ -5,7 +5,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="5 The Limits of Propositional Logic | Introduction to Logic" />
+<meta property="og:title" content="6 The Limits of Propositional Logic | Introduction to Logic" />
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
@@ -23,7 +23,7 @@ MathJax.Hub.Config({
 
 <meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
 
-<title>5 The Limits of Propositional Logic | Introduction to Logic</title>
+<title>6 The Limits of Propositional Logic | Introduction to Logic</title>
 
 <link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
 <link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
@@ -61,60 +61,78 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
 <li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
-<li><a href="proplogic.html#semantics" id="toc-semantics">Semantics</a></li>
 <li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">3</span> Translation</a>
+<li class="has-sub"><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">3</span> Semantics</a>
+<ul>
+<li><a href="semantics.html#truth-tables" id="toc-truth-tables">Truth Tables</a></li>
+<li><a href="semantics.html#tautologies-and-contradictions" id="toc-tautologies-and-contradictions">Tautologies and Contradictions</a></li>
+<li><a href="semantics.html#equivalence-and-consistency" id="toc-equivalence-and-consistency">Equivalence and Consistency</a></li>
+<li><a href="semantics.html#validity" id="toc-validity">Validity</a></li>
+<li><a href="semantics.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">4</span> Translation</a>
 <ul>
 <li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
 <li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
 <li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
-<li><a href="translationproplogic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+<li><a href="translationproplogic.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">4</span> Natural Deduction</a>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">5</span> Natural Deduction</a>
 <ul>
 <li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
 <li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
 <li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
 <li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
-<li><a href="natdedprop.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+<li><a href="natdedprop.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">5</span> The Limits of Propositional Logic</a>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">6</span> The Limits of Propositional Logic</a>
 <ul>
 <li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
 <li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
-<li><a href="the-limits-of-propositional-logic.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>III Quantificational Logic</b></span></li>
-<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">6</span> Formal Language</a>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">7</span> Formal Language</a>
 <ul>
 <li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
-<li><a href="formal-language.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
-<li><a href="formal-language.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+<li><a href="formal-language.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">7</span> Translation</a>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">8</span> Semantics</a>
+<ul>
+<li class="has-sub"><a href="semantics-1.html#models" id="toc-models">Models</a>
+<ul>
+<li><a href="semantics-1.html#truth-relative-to-a-variable-assignment" id="toc-truth-relative-to-a-variable-assignment">Truth Relative to a Variable Assignment</a></li>
+<li><a href="semantics-1.html#truth-in-a-model" id="toc-truth-in-a-model">Truth in a Model</a></li>
+</ul></li>
+<li><a href="semantics-1.html#logical-truths" id="toc-logical-truths">Logical Truths</a></li>
+<li><a href="semantics-1.html#equivalence-and-consistency-1" id="toc-equivalence-and-consistency-1">Equivalence and Consistency</a></li>
+<li><a href="semantics-1.html#validity-1" id="toc-validity-1">Validity</a></li>
+<li><a href="semantics-1.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">9</span> Translation</a>
 <ul>
 <li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
 <li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
-<li><a href="translation.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+<li><a href="translation.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">8</span> Natural Deduction</a>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">10</span> Natural Deduction</a>
 <ul>
 <li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
 <li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
 <li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
-<li><a href="natural-deduction.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+<li><a href="natural-deduction.html#exercises-9" id="toc-exercises-9">Exercises</a></li>
 </ul></li>
-<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">9</span> Identity</a>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">11</span> Identity</a>
 <ul>
 <li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
 <li><a href="identity.html#semantics-2" id="toc-semantics-2">Semantics</a></li>
 <li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
-<li><a href="identity.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+<li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
 <li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">10</span> Solutions to Selected Exercises</a>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
 <ul>
 <li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
 <li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
@@ -132,8 +150,8 @@ MathJax.Hub.Config({
 </div>
 <div class="row">
 <div class="col-sm-12">
-<div id="the-limits-of-propositional-logic" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> The Limits of Propositional Logic</h1>
+<div id="the-limits-of-propositional-logic" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> The Limits of Propositional Logic</h1>
 <p>We sometimes speak of <em>the translation of an English sentence into propositional logic</em> when there is often more than candidate translation for the target sentence. There is, for example, room for the choice of different propositional variables and for the treatment of English phrases such as ‘unless’ or ‘neither <span class="math inline">\(\dots\)</span> nor <span class="math inline">\(\dots\)</span>’. Part of the reason we ignore the differences between them is because they will be unimportant for our purposes. If an English sentence is classified as a tautology, then it will not make a difference whether we choose one translation key or another for purposes of translation. For example, <span class="math inline">\(p \to (q \to p)\)</span> is a tautology, but the same is true for the result of the systematic replacement of its propositional variables for different ones, e.g., <span class="math inline">\(r \to (p \to r)\)</span>. Nor will it make a difference to translate ‘unless’ in terms of ‘if not’ or to translate it in terms of ‘or’ as the appropriate translations will be equivalent to each other, and one will be a tautology or a contradiction or neither if, and only if, the other is.</p>
 <p>Structural ambiguity presents a separate problem of its own, since it provides us with cases in which one and the same English sentence appears to admit more than one translation into propositional logic, and there is no reason to expect them to be equivalent to each other. In such cases, it would be better to speak of translations of different <em>interpretations</em> of the original sentence. In what follows, we will set the issue of ambiguity to one side and continue, for all intents and purposes, to talk of translation of a sentence.</p>
 <div id="natural-language-and-propositional-logic" class="section level2 unnumbered">
@@ -147,7 +165,7 @@ MathJax.Hub.Config({
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 5.1  </strong></span>Consider the English sentence:</p>
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 6.1  </strong></span>Consider the English sentence:</p>
 <div class="argument">
 <p>Unless I purchase a lottery ticket, it is not the case that I purchase a lottery ticket and I win the lottery</p>
 </div>
@@ -184,7 +202,7 @@ F &amp; F  &amp; \! \! \! \! \! \! \color{red}{T}\\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 5.2  </strong></span>Consider the English sentence:</p>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 6.2  </strong></span>Consider the English sentence:</p>
 <div class="argument">
 <p>You will not purchase a lottery ticket though it is not true that you will not purchase one or you will win.</p>
 </div>
@@ -220,7 +238,7 @@ F &amp; F  &amp; \! \! \! \! \! \! \color{red}{F}\\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 5.3  </strong></span>Consider the two English sentences:</p>
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 6.3  </strong></span>Consider the two English sentences:</p>
 <div class="argument">
 <p>You will not win the lottery unless you purchase a ticket.</p>
 </div>
@@ -261,7 +279,7 @@ F &amp; F  &amp;  \color{red}{T} &amp;  \color{red}{T} \\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 5.4  </strong></span>Consider the set of three English sentences:</p>
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 6.4  </strong></span>Consider the set of three English sentences:</p>
 <div class="argument">
 <p>You will not win the lottery unless you purchase a ticket.<br />
 You will purchase a ticket.<br />
@@ -302,7 +320,7 @@ F &amp; F  &amp;  T &amp; F &amp;  T \\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 5.5  </strong></span>Consider the natural language argument:</p>
+<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 6.5  </strong></span>Consider the natural language argument:</p>
 <blockquote>
 <p>You will be rich tomorrow if you buy a lottery ticket from me. You will buy a ticket from me if the lottery is rigged and you think that I’m part of the scheme. The lottery is rigged but you will not be rich tomorrow. So, you do not think that I’m part of the scheme.</p>
 </blockquote>
@@ -333,7 +351,7 @@ F &amp; F  &amp;  T &amp; F &amp;  T \\
 </div>
 <p>To be sure, propositional validity is a species of validity, but not every valid argument is propositionally valid. Some valid arguments translate into invalid arguments of propositional logic simply because propositional logic is not well equipped to capture the structural aspects of the argument that are responsible for its validity in English. Let us look at an example of a putative valid argument that is <em>not</em> propositionally valid.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.6  </strong></span>Consider the natural language argument:</p>
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 6.6  </strong></span>Consider the natural language argument:</p>
 <blockquote>
 <p>Unless the mind is material, each human being has an immaterial part. Descartes is a human being. Therefore, unless the mind is material, Descartes has an immaterial part.</p>
 </blockquote>
@@ -390,7 +408,7 @@ F &amp; T &amp;  T &amp;  F &amp; \color{red}{T}  &amp; \color{red}{T} &amp;  \c
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 5.7  </strong></span>Each of the sentences below combines one or more designators with a predicate:</p>
+<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 6.7  </strong></span>Each of the sentences below combines one or more designators with a predicate:</p>
 <div class="argument">
 <p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}} \ \underbrace{\text{is a city}}_{\text{predicate}}\)</span>.</p>
 <p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{is south of}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{San Francisco}}_{\text{designator}}\)</span></p>
@@ -410,7 +428,7 @@ F &amp; T &amp;  T &amp;  F &amp; \color{red}{T}  &amp; \color{red}{T} &amp;  \c
 </dl>
 <p>Some quantifier expressions combine a quantifier, which is a mark of generality, with a predicate in order to form a quantifier phrase. The combination, for example, of the quantifier ‘some’ with the predicate ‘book’ results in the quantifier phrase: ‘some book’. Likewise for the combination of a quantifier such as ‘most’ with a predicate such as ‘material object’, which results in the quantifier phrase: ‘most books’.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 5.8  </strong></span>Each of the sentences below combine occurrences of designators, predicates, and quantifier expressions:</p>
+<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 6.8  </strong></span>Each of the sentences below combine occurrences of designators, predicates, and quantifier expressions:</p>
 <div class="argument">
 <p><span class="math inline">\(\underbrace{\text{Something}}_{\text{quantifier}} \ \underbrace{\text{is a city}}_{\text{predicate}}\)</span>.</p>
 <p><span class="math inline">\(\underbrace{\text{Los Angeles}}_{\text{designator}}\)</span>   <span class="math inline">\(\underbrace{\text{is south of}}_{\text{predicate}}\)</span>  <span class="math inline">\(\underbrace{\text{some city}}_{\text{quantifier phrase}}\)</span></p>
@@ -420,7 +438,7 @@ F &amp; T &amp;  T &amp;  F &amp; \color{red}{T}  &amp; \color{red}{T} &amp;  \c
 </div>
 </div>
 </div>
-<div id="exercises-4" class="section level2 unnumbered">
+<div id="exercises-5" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
 <li><p>Determine whether the following English sentences are tautologies, contradictions, or neither tautologies nor contradictions:</p>

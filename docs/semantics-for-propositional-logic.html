@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="4 Semantics for Propositional Logic | Introduction to Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 220g. Introduction to Logic.">
+
+<title>4 Semantics for Propositional Logic | Introduction to Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#url-your-book-url-like-httpsbookdown.orgyihuibookdown" id="toc-url-your-book-url-like-httpsbookdown.orgyihuibookdown"><span class="toc-section-number">1</span> url: your book url like https://bookdown.org/yihui/bookdown</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="has-sub"><a href="reason.html#reason" id="toc-reason"><span class="toc-section-number">2</span> Reason and Argument</a>
+<ul>
+<li><a href="reason.html#arguments" id="toc-arguments">Arguments</a></li>
+<li><a href="reason.html#validity-and-form" id="toc-validity-and-form">Validity and Form</a></li>
+<li><a href="reason.html#formal-languages" id="toc-formal-languages">Formal Languages</a></li>
+<li><a href="reason.html#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>II Propositional Logic</b></span></li>
+<li class="has-sub"><a href="proplogic.html#proplogic" id="toc-proplogic"><span class="toc-section-number">3</span> Formal Language</a>
+<ul>
+<li><a href="proplogic.html#quotation-and-metavariables" id="toc-quotation-and-metavariables">Quotation and Metavariables</a></li>
+<li><a href="proplogic.html#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="proplogic.html#exercises-1" id="toc-exercises-1">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-for-propositional-logic.html#semantics-for-propositional-logic" id="toc-semantics-for-propositional-logic"><span class="toc-section-number">4</span> Semantics for Propositional Logic</a>
+<ul>
+<li><a href="semantics-for-propositional-logic.html#truth-tables" id="toc-truth-tables">Truth Tables</a></li>
+<li><a href="semantics-for-propositional-logic.html#tautologies-and-contradictions" id="toc-tautologies-and-contradictions">Tautologies and Contradictions</a></li>
+<li><a href="semantics-for-propositional-logic.html#equivalence-and-consistency" id="toc-equivalence-and-consistency">Equivalence and Consistency</a></li>
+<li><a href="semantics-for-propositional-logic.html#validity" id="toc-validity">Validity</a></li>
+<li><a href="semantics-for-propositional-logic.html#exercises-2" id="toc-exercises-2">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translationproplogic.html#translationproplogic" id="toc-translationproplogic"><span class="toc-section-number">5</span> Translation</a>
+<ul>
+<li><a href="translationproplogic.html#a-translation-method" id="toc-a-translation-method">A Translation Method</a></li>
+<li><a href="translationproplogic.html#issues-with-translation" id="toc-issues-with-translation">Issues with Translation</a></li>
+<li><a href="translationproplogic.html#application" id="toc-application">Application</a></li>
+<li><a href="translationproplogic.html#exercises-3" id="toc-exercises-3">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natdedprop.html#natdedprop" id="toc-natdedprop"><span class="toc-section-number">6</span> Natural Deduction</a>
+<ul>
+<li><a href="natdedprop.html#natural-deduction-rules" id="toc-natural-deduction-rules">Natural Deduction Rules</a></li>
+<li><a href="natdedprop.html#conjunction-and-conditional" id="toc-conjunction-and-conditional">Conjunction and Conditional</a></li>
+<li><a href="natdedprop.html#disjunction-and-negation" id="toc-disjunction-and-negation">Disjunction and Negation</a></li>
+<li><a href="natdedprop.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+<li><a href="natdedprop.html#exercises-4" id="toc-exercises-4">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-limits-of-propositional-logic.html#the-limits-of-propositional-logic" id="toc-the-limits-of-propositional-logic"><span class="toc-section-number">7</span> The Limits of Propositional Logic</a>
+<ul>
+<li><a href="the-limits-of-propositional-logic.html#natural-language-and-propositional-logic" id="toc-natural-language-and-propositional-logic">Natural Language and Propositional Logic</a></li>
+<li><a href="the-limits-of-propositional-logic.html#expressive-limitations" id="toc-expressive-limitations">Expressive Limitations</a></li>
+<li><a href="the-limits-of-propositional-logic.html#exercises-5" id="toc-exercises-5">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>III Quantificational Logic</b></span></li>
+<li class="has-sub"><a href="formal-language.html#formal-language" id="toc-formal-language"><span class="toc-section-number">8</span> Formal Language</a>
+<ul>
+<li><a href="formal-language.html#syntax-1" id="toc-syntax-1">Syntax</a></li>
+<li><a href="formal-language.html#semantics" id="toc-semantics">Semantics</a></li>
+<li><a href="formal-language.html#exercises-6" id="toc-exercises-6">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="translation.html#translation" id="toc-translation"><span class="toc-section-number">9</span> Translation</a>
+<ul>
+<li><a href="translation.html#a-translation-method-1" id="toc-a-translation-method-1">A Translation Method</a></li>
+<li><a href="translation.html#issues-with-translation-1" id="toc-issues-with-translation-1">Issues with Translation</a></li>
+<li><a href="translation.html#exercises-7" id="toc-exercises-7">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="natural-deduction.html#natural-deduction" id="toc-natural-deduction"><span class="toc-section-number">10</span> Natural Deduction</a>
+<ul>
+<li><a href="natural-deduction.html#universal-quantification" id="toc-universal-quantification">Universal Quantification</a></li>
+<li><a href="natural-deduction.html#existential-quantification" id="toc-existential-quantification">Existential Quantification</a></li>
+<li><a href="natural-deduction.html#common-mistakes-and-strategies" id="toc-common-mistakes-and-strategies">Common Mistakes and Strategies</a></li>
+<li><a href="natural-deduction.html#exercises-8" id="toc-exercises-8">Exercises</a></li>
+</ul></li>
+<li class="has-sub"><a href="identity.html#identity" id="toc-identity"><span class="toc-section-number">11</span> Identity</a>
+<ul>
+<li><a href="identity.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="identity.html#semantics-1" id="toc-semantics-1">Semantics</a></li>
+<li><a href="identity.html#natural-deduction-1" id="toc-natural-deduction-1">Natural Deduction</a></li>
+<li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
+<li><a href="identity.html#exercises-9" id="toc-exercises-9">Exercises</a></li>
+</ul></li>
+<li class="part"><span><b>IV Appendix</b></span></li>
+<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
+<ul>
+<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
+<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
+<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="semantics-for-propositional-logic" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Semantics for Propositional Logic</h1>
+<p>We will use assignments of truth values to propositional variables in order to interpret the language of propositional logic.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 4.1  </strong></span>An <em>assignment</em> <span class="math inline">\(A\)</span> for propositional logic maps every propositional variable into exactly one truth value (<span class="math inline">\(T\)</span> or <span class="math inline">\(F\)</span>).</p>
+</div>
+<p>We will declare a sentence of propositional logic to be true or false relative to an assignment of truth values to the propositional variables.</p>
+<dl>
+<dt>Truth under an Assignment</dt>
+<dd>
+<p>We define what is for a sentence to be true under an assignment <span class="math inline">\(A\)</span>:</p>
+</dd>
+</dl>
+<div class="info">
+<p>A propositional variable <span class="math inline">\(p\)</span> is true relative to <span class="math inline">\(A\)</span> if, and only if, the assignnment maps <span class="math inline">\(p\)</span> into <span class="math inline">\(T\)</span>.<br />
+</p>
+<p>A negation <span class="math inline">\(\neg \varphi\)</span> is true relative to <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\varphi\)</span> is not true relative to <span class="math inline">\(A\)</span>.</p>
+<p>A conjunction <span class="math inline">\((\varphi \wedge \psi)\)</span> is true relative to <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\varphi\)</span> is true under <span class="math inline">\(A\)</span> and <span class="math inline">\(\psi\)</span> is true relative to <span class="math inline">\(A\)</span>.</p>
+<p>A disjunction <span class="math inline">\((\varphi \vee \psi)\)</span> is true relative to <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\varphi\)</span> is true under <span class="math inline">\(A\)</span> or <span class="math inline">\(\psi\)</span> is true relative to <span class="math inline">\(A\)</span>.</p>
+<p>A conditional <span class="math inline">\((\varphi \to \psi)\)</span> is true relative to <span class="math inline">\(A\)</span> if and only if <span class="math inline">\(\varphi\)</span> is not true under <span class="math inline">\(A\)</span> or <span class="math inline">\(\psi\)</span> is true relative to <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="truth-tables" class="section level2 unnumbered">
+<h2>Truth Tables</h2>
+<p>We use truth tables to represent how the truth value of complex sentences depends on the truth values of their simpler sentences. The following truth tables summarize the semantic clauses for negation, conjunction, disjunction, and the material conditional.</p>
+<dl>
+<dt>Negation</dt>
+<dd>
+<p>Given a sentence <span class="math inline">\(\varphi\)</span>, the truth value of the negation <span class="math inline">\(\neg \varphi\)</span> under an assignment is a function of the truth value of <span class="math inline">\(\varphi\)</span> under the assignment.</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\neg\)</span></span></strong></span></span>
+<span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+\varphi  &amp; \neg \varphi  \\
+\hline
+T &amp; F \\
+F  &amp; T \\
+\hline
+\end{array}
+\]</span></p>
+<dl>
+<dt>Conjunction</dt>
+<dd>
+<p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the conjunction <span class="math inline">\((\varphi \wedge \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\wedge\)</span></span></strong></span></span>
+<span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+\varphi &amp; \psi &amp; (\varphi \wedge \psi) \\
+\hline
+T &amp; T  &amp; T \\
+T &amp; F  &amp; F \\
+F &amp; T  &amp; F \\
+F &amp; F  &amp; F \\
+\hline
+\end{array}
+\]</span></p>
+<dl>
+<dt>Disjunction</dt>
+<dd>
+<p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the disjunction <span class="math inline">\((\varphi \vee \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\vee\)</span></span></strong></span></span>
+<span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+\varphi  &amp; \psi &amp; (\varphi \vee \psi) \\
+\hline
+T &amp; T  &amp; T \\
+T &amp; F  &amp; T \\
+F &amp; T  &amp; T \\
+F &amp; F  &amp; F \\
+\hline
+\end{array}
+\]</span></p>
+<dl>
+<dt>Conditional</dt>
+<dd>
+<p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the material conditional <span class="math inline">\((\varphi \wedge \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
+</dd>
+</dl>
+<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\to\)</span></span></strong></span></span>
+<span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+\varphi  &amp; \psi &amp; (\varphi \to \psi) \\
+\hline
+T &amp; T  &amp; T \\
+T &amp; F  &amp; F \\
+F &amp; T  &amp; T \\
+F &amp; F  &amp;  T \\
+\hline
+\end{array}
+\]</span></p>
+<p>We may use these rules to calculate the truth values of complex sentences of propositional logic relative to every assignment of truth values to its propositional variables.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 4.1  </strong></span>We may calculate the truth value of the sentence
+<span class="math display">\[
+\neg (p \wedge q)
+\]</span>
+relative to every assignment in two stages, which correspond to the way in which the sentence has been constructed from simpler constituents:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline
+p  &amp; q &amp; (p \wedge q) &amp;  \neg  (p \wedge q)   \\
+\hline
+T &amp; T  &amp; T &amp; \color{red}{F} \\
+T &amp; F  &amp; F &amp; \color{red}{T}\\
+F &amp; T  &amp; F &amp; \color{red}{T}\\
+F &amp; F  &amp; F &amp; \color{red}{T} \\
+\hline
+\end{array}
+\]</span>
+That means that the sentence is false when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are mapped into the truth value <span class="math inline">\(T\)</span> and true otherwise.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 4.2  </strong></span>We may calculate the truth value of the sentence
+<span class="math display">\[
+\neg (q \to p)
+\]</span>
+relative to every assignment in two stages:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline
+p  &amp; q &amp; (q  \to p) &amp; \neg (q \to p) \\
+\hline
+T &amp; T  &amp; T &amp; \color{red}{F} \\
+T &amp; F  &amp; T &amp; \color{red}{F}\\
+F &amp; T  &amp; F &amp; \color{red}{T}\\
+F &amp; F  &amp; T &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+That means that the sentence is true if <span class="math inline">\(p\)</span> is false and <span class="math inline">\(q\)</span> is true relative to an assignment and false otherwise.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 4.3  </strong></span>We may now combine the two truth tables in order to produce a truth table for the complex sentence:
+<span class="math display">\[
+\neg (p \wedge q) \vee \neg (q \to p)
+\]</span>
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; \neg (p \wedge q) &amp; \neg (q \to p) &amp; (\neg (p \wedge q) \vee \neg (q \to p)) \\
+\hline
+T &amp; T  &amp; F &amp; F  &amp;  \color{red}{F}\\
+T &amp; F  &amp; T &amp; F &amp;  \color{red}{T}\\
+F &amp; T  &amp; T &amp; T &amp;  \color{red}{T}\\
+F &amp; F  &amp; T &amp; F  &amp; \color{red}{T}\\
+\hline
+\end{array}
+\]</span></p>
+<p>That means that the formula is true under an assignment unless it assigns the truth value <span class="math inline">\(T\)</span> to both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>., which is the situation depicted by the first row of the truth table.</p>
+</div>
+<p><label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote"><span style="display: block;">How to construct a truth table</span></span>
+We want to develop a systematic procedure for constructing a complete truth table for a target sentence. We proceed in three steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>We devote a column for each propositional variable occurring in a sentence followed by a column for each subsentence for the target sentence.</p></li>
+<li><p>The number of propositional variables occurring in a sentence determines the number of rows for the truth table. Given <span class="math inline">\(n\)</span> propositional variables, there are exactly <span class="math inline">\(2^n\)</span> types of assignment to consider.<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> That means that a truth table for a sentence containing <span class="math inline">\(3\)</span> propositional variables will require <span class="math inline">\(8\)</span> rows; one for a sentence containing <span class="math inline">\(4\)</span> propositional letters will require <span class="math inline">\(16\)</span> rows; etc.</span> We start with the <em>innermost</em> column devoted to a propositional letter and we alternate occurrences of ‘<span class="math inline">\(T\)</span>’ and ‘<span class="math inline">\(F\)</span>’ until we populate the entire column. That is, <span class="math inline">\(2^0\)</span> occurrences of ‘<span class="math inline">\(T\)</span>’ followed by <span class="math inline">\(2^0\)</span> occurrences of ‘<span class="math inline">\(F\)</span>’. For the next column on the left, we alternate <span class="math inline">\(2^1\)</span>, e.g., <span class="math inline">\(2\)</span> occurrences of ‘<span class="math inline">\(T\)</span>’ with <span class="math inline">\(2^1\)</span>, e.g., <span class="math inline">\(2\)</span> occurrences of ‘<span class="math inline">\(F\)</span>’. More generally, for the <span class="math inline">\(n\)</span>th column on the left of the innermost column devoted to a propositional letter, we alternate <span class="math inline">\(2^n\)</span> occurrences of ‘<span class="math inline">\(T\)</span>’ with <span class="math inline">\(2^n\)</span> occurrences of ‘<span class="math inline">\(F\)</span>’.</p></li>
+<li><p>We populate each subsequent column for a subsetence of the target sentence as a function of the truth values for the relevant subsentences of it.</p></li>
+</ol>
+</div>
+<div id="tautologies-and-contradictions" class="section level2 unnumbered">
+<h2>Tautologies and Contradictions</h2>
+<dl>
+<dt>Tautology</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is a <em>tautology</em> if, and only if, <span class="math inline">\(\varphi\)</span> is true under all assignments of truth values to propositional variables.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 4.4  </strong></span>The formula
+<span class="math display">\[
+(p \to q) \vee (q \to p)
+\]</span>
+is a tautology.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; (p \to \neg q) &amp; (q \to p) &amp; (p \to  q) \vee (q \to p) \\
+\hline
+T &amp; T  &amp; T &amp; T  &amp;  \color{red}{T}\\
+T &amp; F  &amp; F &amp; T &amp;  \color{red}{T}\\
+F &amp; T  &amp; T &amp; F &amp;  \color{red}{T}\\
+F &amp; F  &amp; T &amp; T  &amp; \color{red}{T}\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<dl>
+<dt>Contradiction</dt>
+<dd>
+<p>A formula <span class="math inline">\(\varphi\)</span> is a <em>contradiction</em> if, and only if, <span class="math inline">\(\varphi\)</span> is false under all assignments of truth values to propositional variables.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 4.5  </strong></span>The formula
+<span class="math display">\[
+\neg  (p \to  q) \wedge (q \vee \neg  p)
+\]</span>
+is a contradiction.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; \neg (p \to  q) &amp; (q \vee \neg p) &amp; \neg (p \to  q) \wedge (q \vee \neg p) \\
+\hline
+T &amp; T  &amp; F &amp; T  &amp;  \color{red}{F}\\
+T &amp; F  &amp; T &amp; F &amp;  \color{red}{F}\\
+F &amp; T  &amp; F &amp; T &amp;  \color{red}{F}\\
+F &amp; F  &amp; F &amp; T  &amp; \color{red}{F}\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="equivalence-and-consistency" class="section level2 unnumbered">
+<h2>Equivalence and Consistency</h2>
+<dl>
+<dt>Equivalence</dt>
+<dd>
+<p>Two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are <em>equivalent</em> if, and only if, they are true under exactly the same assignments of truth values to propositional variables.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 4.6  </strong></span>The formulas <span class="math inline">\(p \to q\)</span> and <span class="math inline">\(\neg p \vee q\)</span> are equivalent because they are true under exactly the same assignments.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline
+p  &amp; q &amp; p \to  q &amp; \neg  p \vee  q  \\
+\hline
+T &amp; T  &amp; \color{red}{T} &amp;  \color{red}{T}\\
+T &amp; F  &amp; \color{red}{F}  &amp;   \color{red}{F}\\
+F &amp; T  &amp; \color{red}{T} &amp;   \color{red}{T}\\
+F &amp; F  &amp; \color{red}{T} &amp;  \color{red}{T} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<dl>
+<dt>Consistency</dt>
+<dd>
+<p>A set of formulas is <em>consistent</em> if, and only if, there is at least one assignment of truth values to propositional variables under which all of its members are true. Otherwise, the set is <em>inconsistent</em>.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 4.7  </strong></span>The set <span class="math inline">\(\{p \to q, q \to r, r \to \neg  p\}\)</span> consists of three formulas: <span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \to r\)</span> and <span class="math inline">\(\neg p\)</span>. Now, the set is consistent because there is at least one assignment under which they are all true.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \to  q &amp; q \to r &amp; r \to \neg p \\
+\hline
+T &amp; T  &amp; T  &amp; T &amp; T  &amp;  F\\
+T &amp; T &amp; F  &amp; T &amp; F &amp;  T\\
+T &amp; F &amp; T &amp; F &amp; T &amp;  F\\
+T &amp; F &amp; F &amp; F &amp; T  &amp; T\\
+F &amp; T &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
+F &amp; T &amp; F &amp; T &amp; F  &amp; T\\
+F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
+F &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{T}\\
+\hline
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="validity" class="section level2 unnumbered">
+<h2>Validity</h2>
+<dl>
+<dt>Validity</dt>
+<dd>
+<p>An argument is <em>valid</em> if, and only if, there is no assignment of truth values to propositional variables under which all of its premises are true while its conclusion is false. Otherwise, the argument is <em>invalid</em>.</p>
+</dd>
+</dl>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 4.8  </strong></span>Consider the argument given below:</p>
+<div class="argument">
+<p><span class="math inline">\(p \vee q\)</span><br />
+<span class="math inline">\(p \to \neg r\)</span><br />
+<span class="math inline">\(\neg r  \vee p\)</span></p>
+</div>
+<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \vee  q &amp; p \to \neg r &amp; \neg r \vee p \\
+\hline
+T &amp; T  &amp; T  &amp; T &amp; F  &amp;  T\\
+T &amp; T &amp; F  &amp; T &amp; T &amp;  T\\
+T &amp; F &amp; T &amp; T &amp; F &amp;  T\\
+T &amp; F &amp; F &amp; T &amp; T  &amp; T\\
+F &amp; T &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F}\\
+F &amp; T &amp; F &amp; T &amp; T  &amp; T\\
+F &amp; F &amp; T &amp; F &amp; T  &amp;  F\\
+F &amp; F &amp; F &amp; F &amp; T &amp; T\\
+\hline
+\end{array}
+\]</span>
+The fith row in the truth table corresponds to an assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>invalid</em>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 4.9  </strong></span>Consider the argument given below:</p>
+<div class="argument">
+<p><span class="math inline">\(p \vee q\)</span><br />
+<span class="math inline">\(\neg (p \wedge \neg r)\)</span><br />
+<span class="math inline">\(r  \to q\)</span></p>
+</div>
+<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \vee  q &amp; \neg  (p \wedge r) &amp; r \to q \\
+\hline
+T &amp; T  &amp; T  &amp; T &amp; F  &amp;  T\\
+T &amp; T &amp; F  &amp; T &amp; T &amp;  T\\
+T &amp; F &amp; T &amp; T &amp; F &amp;  F\\
+T &amp; F &amp; F &amp; T &amp; T  &amp; T\\
+F &amp; T &amp; T &amp; T &amp; T  &amp; T\\
+F &amp; T &amp; F &amp; T &amp; T  &amp; T\\
+F &amp; F &amp; T &amp; F &amp; T  &amp;  F\\
+F &amp; F &amp; F &amp; F &amp; T &amp; T\\
+\hline
+\end{array}
+\]</span>
+There is in this case no assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>valid</em>.</p>
+</div>
+<p><label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote"><span style="display: block;">The Search for Counterexample Method</span></span></p>
+<p>The method of truth tables is perfectly general, since it enables one to survey all assignments of truth values to the sentence letters involved in the argument. One issue, however, is that it may require one to draw very complex and cumbersome truth tables in cases in which more than 3 propositional variables are involved in the argument. A truth table for an argument in which 5 propositional variables occur requires <span class="math inline">\(2^5\)</span>, i.e., 32, rows; <span class="math inline">\(2^6\)</span>, i.e., 64 rows, if the argument involves 6 propositional variables, etc.</p>
+<p>In those cases, we may proceed differently: we search for a counterexample. That is, we set out to construct an assignment on which the conclusion is false and the premises are true. There are two eventual outcoumes to this procedure. If we succeed, then the argument is invalid; if the construction of the assignment breaks down, then the argument is valid.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Example 4.10  </strong></span>Consider the argument given below:</p>
+<div class="argument">
+<p><span class="math inline">\(p \wedge q\)</span><br />
+<span class="math inline">\(\neg r \to \neg q\)</span><br />
+<span class="math inline">\(p \to r\)</span></p>
+</div>
+<p>We proceed to outline an assignment that makes the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \wedge  q &amp; \neg  r\to \neg q &amp; p \to r \\
+\hline
+&amp;   &amp;  &amp;  &amp;   &amp;  \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+That requires <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span> to be true and false, respectively:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \wedge  q &amp; \neg  p \to \neg q &amp; p \to q \\
+\hline
+T &amp;   &amp; F &amp;  &amp;   &amp;  \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+Once we do, we set out to make the premises true. In particular, we realize we must make <span class="math inline">\(q\)</span> true in order to verify <span class="math inline">\(p \wedge q\)</span>:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \wedge  q &amp; \neg  r \to \neg q &amp; p \to r \\
+\hline
+T &amp; T  &amp; F &amp; \color{red}{T}  &amp;   &amp;  \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+On that assignment, we find that <span class="math inline">\(\neg  p \to \neg q\)</span> comes out true as well.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p \wedge  q &amp; \neg  r \to \neg q &amp; p \to r \\
+\hline
+T &amp; T  &amp; F &amp; \color{red}{T}  &amp;  \color{red}{T} &amp;  \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+So, we found an assignment on which all the premises are true and the conclusion is false. The argument is <em>invalid</em>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-12" class="example"><strong>Example 4.11  </strong></span>Consider the argument given below:</p>
+<div class="argument">
+<p><span class="math inline">\(p \to (q \rightarrow r)\)</span><br />
+<span class="math inline">\(\neg (\neg p_1 \vee \neg p)\)</span><br />
+<span class="math inline">\((r \to p_2) \wedge (p_2 \to q)\)</span><br />
+<span class="math inline">\(q \vee r\)</span></p>
+</div>
+<p>We set out to make the conclusion false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
+\hline
+&amp;  &amp;  &amp;   &amp;   &amp; &amp; &amp; &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+That requires <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> to be respectively false.
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
+\hline
+&amp; F &amp; F  &amp;   &amp;   &amp; &amp; &amp; &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+That in turn makes <span class="math inline">\((q \leftrightarrow r)\)</span> true and <span class="math inline">\(\neg (q \leftrightarrow r)\)</span> false. In order to make the first premise true, we must make <span class="math inline">\(p\)</span> false:
+<span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
+\hline
+F &amp; F &amp; F  &amp;   &amp;   &amp; \color{red}{T} &amp; &amp; &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span></p>
+<p>But notice that the second premise will now come out <em>false</em> under the assignment. Since <span class="math inline">\(p\)</span> is false, <span class="math inline">\(\neg p\)</span> will be true as well as the disjunction <span class="math inline">\(\neg p_1 \vee \neg p\)</span>, which makes its negation false.</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|}
+\hline
+p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
+\hline
+F &amp; F &amp; F  &amp;   &amp;   &amp; \color{red}{T} &amp; \color{red}{F \ !}  &amp; &amp; \color{red}{F} \\
+\hline
+\end{array}
+\]</span>
+We conclude that there is <em>no</em> assignment under which the premises are true and the conclusion is false. So, the argument is valid.</p>
+</div>
+</div>
+<div id="exercises-2" class="section level2 unnumbered">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>Add quotation marks to the following sentences in order to obtain a true sentence of English. If there is more than one solution, make sure to explain why.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Los Angeles names a city in Southern California.</p></li>
+<li><p>Los is part of Los Angeles.</p></li>
+<li><p>Snow is white is a grammatical sentence of English.</p></li>
+<li><p>What is monosyllabic but whatever is polysyllabic.</p></li>
+</ol></li>
+<li><p>Determine whether each of the following expressions is a sentence of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\neg \neg A\)</span></p></li>
+<li><p><span class="math inline">\((p \to (\neg q))\)</span></p></li>
+<li><p><span class="math inline">\((p)\)</span></p></li>
+<li><p><span class="math inline">\((q \to (\neg  \neg  p \vee r))\)</span></p></li>
+</ol></li>
+<li><p>Determine whether each of the following expressions is an <em>abbreviation</em> for a sentence of propositional logic.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to (q \wedge r)\)</span></p></li>
+<li><p><span class="math inline">\(p \to q \to r\)</span></p></li>
+<li><p><span class="math inline">\(p \vee (q \wedge r)\)</span></p></li>
+<li><p><span class="math inline">\(p \to (q\wedge r \to q)\)</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether each of the following sentences is a <em>tautology</em>, a <em>contradiction</em>, or neither a tautology or a contradiction.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(((p \vee q) \to \neg (p \to q))\)</span></p></li>
+<li><p><span class="math inline">\(p \to (q \to p)\)</span></p></li>
+<li><p><span class="math inline">\(q \to (q \to p)\)</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following pairs of sentences are logically equivalent.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \wedge \neg (p \vee q)\)</span></p></li>
+<li><p><span class="math inline">\(p \to p\)</span>, <span class="math inline">\(q \to q\)</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following sets of sentences are consistent.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\{ p, q, \neg (p \wedge q)\}\)</span></p></li>
+<li><p><span class="math inline">\(\{p \vee q, q \to r, \neg (p \wedge r)\}\)</span></p></li>
+</ol></li>
+<li><p>Use the truth table method to determine whether the following arguments are valid.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to q\)</span><br />
+<span class="math inline">\(q \to r\)</span><br />
+<span class="math inline">\(r\)</span></p></li>
+<li><p><span class="math inline">\(q \vee (p \wedge r)\)</span><br />
+<span class="math inline">\(\neg q\)</span><br />
+<span class="math inline">\(r\)</span></p></li>
+</ol></li>
+<li><p>Use the search-for-counterexample method to determine whether the following arguments are valid.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p \to (q \vee r)\)</span><br />
+<span class="math inline">\(r \to (p \to q)\)</span><br />
+<span class="math inline">\(p\)</span><br />
+<span class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\((p \to q) \wedge (q \to p)\)</span><br />
+<span class="math inline">\(\neg (p \wedge r)\)</span><br />
+<span class="math inline">\(\neg (r \to s)\)</span><br />
+<span class="math inline">\(s \to q\)</span></p></li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="proplogic.html"><button class="btn btn-default">Previous</button></a>
+<a href="translationproplogic.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
