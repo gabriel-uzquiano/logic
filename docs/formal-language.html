@@ -174,7 +174,7 @@ MathJax.Hub.Config({
 <dl>
 <dt>Predicates</dt>
 <dd>
-<p>These are uppercase letters <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, <span class="math inline">\(R\)</span>, <span class="math inline">\(S\)</span>, and <span class="math inline">\(T\)</span> with or without numerical subscripts.</p>
+<p>These are uppercase letters <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, <span class="math inline">\(R\)</span>, <span class="math inline">\(S\)</span>, and <span class="math inline">\(T\)</span> with or without numerical subscripts. Each predicate comes with a fixed number of argument places.</p>
 </dd>
 </dl>
 <p><span class="math display">\[
@@ -203,9 +203,9 @@ x, y, z \dots
 <p>There are two quantifier expressions:
 <span class="math display">\[
 \forall, \exists
-\]</span>
-Parentheses</p>
+\]</span></p>
 </dd>
+<dt>Parentheses</dt>
 <dd>
 <p>There are two parentheses:
 <span class="math display">\[
@@ -223,7 +223,7 @@ Parentheses</p>
 <dd>
 <p>If <span class="math inline">\(P\)</span> is a predicate with <span class="math inline">\(n\)</span> argument places, and each of <span class="math inline">\(\tau_1, \dots, \tau_n\)</span> is a constant or a variable, then
 <span class="math display">\[
-P\tau_1, \dots, \tau_n
+P\tau_1 \dots \tau_n
 \]</span>
 is an <em>atomic formula</em>.</p>
 </dd>
@@ -382,7 +382,7 @@ The former formula is a <em>closed formula</em> whereas the latter is an <em>ope
 <span class="math display">\[
 \forall x Rxa \to Rax
 \]</span>
-is an abbreviation for the formula
+as an abbreviation for the formula
 <span class="math display">\[
 (\forall x Rxa \to Rax)
 \]</span></p>
@@ -403,7 +403,7 @@ is an abbreviation for the formula
 <li><p>Determine whether each of the following expressions is a formula of quantificational logic.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(\neg \neg Rxy\)</span></p></li>
-<li><p><span class="math inline">\((Pa \to (Axy \wedge \exists x Qx)\)</span></p></li>
+<li><p><span class="math inline">\((Pa \to (Axy \wedge \exists x Qx))\)</span></p></li>
 <li><p><span class="math inline">\(\forall x Ryy\)</span></p></li>
 <li><p><span class="math inline">\(\exists x y (P \wedge P(y))\)</span></p></li>
 <li><p><span class="math inline">\(\forall \forall x Ryx\)</span></p></li>
@@ -429,7 +429,7 @@ is an abbreviation for the formula
 </ol></li>
 <li><p>Determine whether the following formulas are <em>open</em> or <em>closed</em>. Justify your answers.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\forall x Rxy  \wedge Ryxz\)</span></p></li>
+<li><p><span class="math inline">\(\forall x Rxy  \wedge Ryx\)</span></p></li>
 <li><p><span class="math inline">\(Rab\)</span></p></li>
 <li><p><span class="math inline">\(\exists x (Pax \wedge Qxa) \to \forall y Rxy\)</span></p></li>
 <li><p><span class="math inline">\(\forall x Ryy\)</span></p></li>
