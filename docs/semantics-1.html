@@ -177,7 +177,7 @@ MathJax.Hub.Config({
 <li><span class="math inline">\(I\)</span> interprets constants and predicates in accordance to the requirements:
 <ul>
 <li>If <span class="math inline">\(a\)</span> is a constant, <span class="math inline">\(I(a)\)</span> is a member of <span class="math inline">\(D\)</span>.</li>
-<li>If <span class="math inline">\(P\)</span> is a one-place predicate, <span class="math inline">\(I(P)\)</span> is a set of members of <span class="math inline">\(P\)</span>.</li>
+<li>If <span class="math inline">\(P\)</span> is a one-place predicate, <span class="math inline">\(I(P)\)</span> is a set of members of <span class="math inline">\(D\)</span>.</li>
 <li>If <span class="math inline">\(R\)</span> is an <span class="math inline">\(n\)</span>-place predicate, <span class="math inline">\(I(R)\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of members of <span class="math inline">\(D\)</span>.</li>
 </ul></li>
 </ul>
@@ -199,7 +199,7 @@ MathJax.Hub.Config({
 </ul>
 <p>We will eventually explain that the model verifies the premises but not the conclusion of the argument.</p>
 </div>
-<p>One heuristic you may find helpful for the specification of a model is to use a diagrams as partial representation of the model. The diagram should come accompanied with a key designed to help us specify the interpretation of the relevant constants and predicates.</p>
+<p>One heuristic you may find helpful for the specification of a model is to use a diagram as a partial representation of the model. The diagram should come accompanied with a key designed to help us specify the interpretation of the relevant constants and predicates.</p>
 <p><label for="tufte-mn-59" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-59" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%206.8.png" style="display:block; margin: 0 auto;"><br />
 <span class="math inline"><span class="math inline">\(P :  \text{enclosed by a
 circle}\)</span></span><br />
@@ -228,7 +228,7 @@ figure}\)</span></span><br />
 <dl>
 <dt>Variable Assignment</dt>
 <dd>
-<p>A <em>variable assignment</em> <span class="math inline">\(\alpha\)</span> over a model <span class="math inline">\(M\)</span> is a map from the range of variables to a members of the domain <span class="math inline">\(D\)</span>.</p>
+<p>A <em>variable assignment</em> <span class="math inline">\(\alpha\)</span> over a model <span class="math inline">\(M\)</span> is a map from the range of variables to members of the domain <span class="math inline">\(D\)</span>.</p>
 </dd>
 </dl>
 <div class="example">
@@ -256,7 +256,7 @@ p_1 &amp; p_2 &amp; p_2 &amp; p_2 &amp; p_2 &amp; p_1  &amp; p_2 &amp; p_1 &amp;
 \]</span></p>
 </div>
 <p>Once variable assignments are in place, we are in a position to assign a semantic value to a variable <span class="math inline">\(x\)</span> in a model <span class="math inline">\(M\)</span> <em>relative to an assignment</em> <span class="math inline">\(\alpha\)</span>, which is just <span class="math inline">\(\alpha(x)\)</span>.</p>
-<p>For technical reasons, we want to assign semantic values to open formulas in a model relative to a variable assignment over the model. The definition of truth in a model relative to a variable assignment will be inductive: we will define the truth conditions of complex formulas in terms of the truth conditions of simpler ones in much the way with did with the definition of truth under an assignment of truth values to propositional variables in the case of propositional logic. We will begin with an account of the truth conditions of atomic formulas, and we will explain how to assign truth values to more complex sentences in a model relative to an assignment.</p>
+<p>For technical reasons, we want to assign semantic values to open formulas in a model relative to a variable assignment over the model. The definition of truth in a model relative to a variable assignment will be inductive: we will define the truth conditions of complex formulas in terms of the truth conditions of simpler ones in much the way we did with the definition of truth under an assignment of truth values to propositional variables in the case of propositional logic. We will begin with an account of the truth conditions of atomic formulas, and we will explain how to assign truth values to more complex sentences in a model relative to an assignment.</p>
 <dl>
 <dt>Denotation</dt>
 <dd>
@@ -362,7 +362,7 @@ Then:</p>
 <br />
 <span class="math inline">\((Pa \wedge Qb) \to Rab\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rab\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(\langle I(a), I(b)\rangle = \langle p_1, p_2 \rangle \in I(R)\)</span>.<br />
 <br />
-<span class="math inline">\(\neg Rba\)</span> is in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rba\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(\langle I(b), I(a)\rangle = \langle p_2, p_1 \rangle \notin I(R)\)</span>.<br />
+<span class="math inline">\(\neg Rba\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rba\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(\langle I(b), I(a)\rangle = \langle p_2, p_1 \rangle \notin I(R)\)</span>.<br />
 </p>
 </div>
 </div>
@@ -390,7 +390,7 @@ Then:</p>
 <br />
 <span class="math inline">\((Pa \wedge Qb) \to Rab\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rab\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(I(a)\)</span> points to <span class="math inline">\(I(b)\)</span>. That is, <span class="math inline">\(p_1\)</span> points to <span class="math inline">\(p2\)</span>.<br />
 <br />
-<span class="math inline">\(\neg Rba\)</span> is in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rba\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(I(b)\)</span> does not point to <span class="math inline">\(I(b)\)</span>. That is, <span class="math inline">\(p_2\)</span> does not point to <span class="math inline">\(p1\)</span>.<br />
+<span class="math inline">\(\neg Rba\)</span> is in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because <span class="math inline">\(Rba\)</span> is <em>not</em> true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span>. This is because <span class="math inline">\(I(b)\)</span> does not point to <span class="math inline">\(I(a)\)</span>. That is, <span class="math inline">\(p_2\)</span> does not point to <span class="math inline">\(p1\)</span>.<br />
 </p>
 </div>
 </div>
@@ -398,11 +398,11 @@ Then:</p>
 <dl>
 <dt>Existential Quantification</dt>
 <dd>
-<p><span class="math inline">\(\exists v  \varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to a variable asignment <span class="math inline">\(\alpha\)</span> if, and only if, there is an object <span class="math inline">\(p\)</span> in the domain of <span class="math inline">\(M\)</span> such that <span class="math inline">\(\varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha[x/p]\)</span>, which is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for the fact that it assigns <span class="math inline">\(p\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
+<p><span class="math inline">\(\exists v  \varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to a variable assignment <span class="math inline">\(\alpha\)</span> if, and only if, there is an object <span class="math inline">\(p\)</span> in the domain of <span class="math inline">\(M\)</span> such that <span class="math inline">\(\varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha[x/p]\)</span>, which is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for the fact that it assigns <span class="math inline">\(p\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
 </dd>
 <dt>Universal Quantification</dt>
 <dd>
-<p><span class="math inline">\(\forall v  \varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to a variable asignment <span class="math inline">\(\alpha\)</span> if, and only if, for every object <span class="math inline">\(p\)</span> in the domain of <span class="math inline">\(M\)</span>, <span class="math inline">\(\varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha[x/p]\)</span>, which is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for the fact that it assigns <span class="math inline">\(p\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
+<p><span class="math inline">\(\forall v  \varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to a variable assignment <span class="math inline">\(\alpha\)</span> if, and only if, for every object <span class="math inline">\(p\)</span> in the domain of <span class="math inline">\(M\)</span>, <span class="math inline">\(\varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha[x/p]\)</span>, which is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for the fact that it assigns <span class="math inline">\(p\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
 </dd>
 </dl>
 <div class="example">
@@ -423,10 +423,10 @@ x  &amp; y &amp; z &amp; x_1 &amp;  y_1 &amp; z_1 &amp;  \dots  \\
 \]</span>
 Then:</p>
 <div class="argument">
-<p><span class="math inline">\(\exists x (Px \wedge \neg Rxa)\)</span> is not true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because there is no member of <span class="math inline">\(D\)</span> we can assign to the variable <span class="math inline">\(x\)</span>, where the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects, in order to make <span class="math inline">\(Px \wedge \neg Rxa\)</span> true:</p>
+<p><span class="math inline">\(\exists x (Px \wedge \neg Rxa)\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because there is no member of <span class="math inline">\(D\)</span> we can assign to the variable <span class="math inline">\(x\)</span>, where the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects, in order to make <span class="math inline">\(Px \wedge \neg Rxa\)</span> true:</p>
 <ul>
-<li><span class="math inline">\(\alpha[x/1]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is not true relative to that assignment because <span class="math inline">\(\langle 1, I(a)\rangle \notin I(R)\)</span>.</li>
-<li><span class="math inline">\(\alpha[x/2]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is not true relative to that assignment because <span class="math inline">\(\langle 2, I(a)\rangle \notin I(R)\)</span>.
+<li><span class="math inline">\(\alpha[x/1]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is true relative to that assignment because <span class="math inline">\(1 \in I(P)\)</span> and <span class="math inline">\(\langle 1, I(a)\rangle \notin I(R)\)</span>.</li>
+<li><span class="math inline">\(\alpha[x/2]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is true relative to that assignment because because <span class="math inline">\(1 \in I(P)\)</span> and <span class="math inline">\(\langle 2, I(a)\rangle \notin I(R)\)</span>.
  </li>
 </ul>
 <p><span class="math inline">\(\forall x Px\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because no matter what member of <span class="math inline">\(D\)</span> assign to the variable <span class="math inline">\(x\)</span>, where the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects, we find that <span class="math inline">\(Px\)</span> is true in <span class="math inline">\(M\)</span> relative to the new assignment:</p>
@@ -456,11 +456,11 @@ p_1 &amp; p_2 &amp; p_2 &amp; p_2 &amp; p_2 &amp; p_1  &amp; \dots \\
 \]</span>
 Then:</p>
 <div class="argument">
-<p><span class="math inline">\(\exists x (Px \wedge \neg Rxa)\)</span> is not true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because there is no member of <span class="math inline">\(D\)</span> we can assign to the variable <span class="math inline">\(x\)</span> making sure the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects in order to make: <span class="math inline">\(Px \wedge \neg Rxa\)</span>:<br />
+<p><span class="math inline">\(\exists x (Px \wedge \neg Rxa)\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because there is no member of <span class="math inline">\(D\)</span> we can assign to the variable <span class="math inline">\(x\)</span> making sure the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects in order to make: <span class="math inline">\(Px \wedge \neg Rxa\)</span>:<br />
 </p>
 <ul>
-<li><span class="math inline">\(\alpha[x/p_1]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is not true relative to that assignment because <span class="math inline">\(p_1\)</span> does not point to <span class="math inline">\(p_1\)</span>.</li>
-<li><span class="math inline">\(\alpha[x/p_2]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is not true relative to that assignment because <span class="math inline">\(p_2\)</span> does not point to <span class="math inline">\(p_1\)</span>.<br />
+<li><span class="math inline">\(\alpha[x/p_1]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is true relative to that assignment because <span class="math inline">\(p_1\)</span> is enclosed by a circle and <span class="math inline">\(p_1\)</span> does not point to <span class="math inline">\(p_1\)</span>.</li>
+<li><span class="math inline">\(\alpha[x/p_2]\)</span>: <span class="math inline">\(Px \wedge \neg Rxa\)</span> is true relative to that assignment because because <span class="math inline">\(p_2\)</span> is enclosed by a circle and <span class="math inline">\(p_2\)</span> does not point to <span class="math inline">\(p_1\)</span>.<br />
 </li>
 </ul>
 <p><span class="math inline">\(\forall x Px\)</span> is true in <span class="math inline">\(M\)</span> relative to <span class="math inline">\(\alpha\)</span> because no matter what member of <span class="math inline">\(D\)</span> assign to the variable <span class="math inline">\(x\)</span>, where the new variable assignment remains just like <span class="math inline">\(\alpha\)</span> in all other respects, we find that <span class="math inline">\(Px\)</span> is true in <span class="math inline">\(M\)</span> relative to the new assignment:<br />
@@ -498,7 +498,7 @@ Then:</p>
 <span style="display: block;"><span class="math inline"><span class="math inline">\(R : \text{points to}\)</span></span><br />
 <span class="math inline"><span class="math inline">\(a : p_1\)</span></span></span></span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 8.10  </strong></span>The formula <span class="math inline">\(Raa \to \forall x Rxa\)</span> is <em>not</em> a logical truth.</p>
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 8.10  </strong></span>The formula <span class="math inline">\(Raa \to \forall x Rax\)</span> is <em>not</em> a logical truth.</p>
 <p>The model depicted by the diagram verifies the antecedent of the conditional <span class="math inline">\(Raa\)</span> but it falsifies the consequent <span class="math inline">\(\forall x Rax\)</span>.</p>
 <div class="argument">
 <p>The atomic formula <span class="math inline">\(Raa\)</span> is true in the model because <span class="math inline">\(p_1\)</span> points to itself.<br />
@@ -550,7 +550,7 @@ figure}\)</span></span><br />
 <span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
 <span class="math inline"><span class="math inline">\(b : p_2\)</span></span></span></span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 8.12  </strong></span>The set of formulas <span class="math inline">\(\{R(a,b), P(a), Q(b), \exists x (P(x) \wedge Q(x)\}\)</span> is consistent.</p>
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 8.12  </strong></span>The set of formulas <span class="math inline">\(\{Rb, Pa, Qb, \exists x (Px \wedge Qx)\}\)</span> is consistent.</p>
 <p>All these formulas are true in the model depicted by the diagram:</p>
 <div class="argument">
 <p><span class="math inline">\(Rab\)</span> is true in the model because the denotation of <span class="math inline">\(a\)</span> points to that of <span class="math inline">\(b\)</span>. That is, <span class="math inline">\(p_1\)</span> points to <span class="math inline">\(p_2\)</span>.<br />
@@ -559,7 +559,7 @@ figure}\)</span></span><br />
 <br />
 <span class="math inline">\(Qb\)</span> is true because the denotation of <span class="math inline">\(b\)</span>, namely, <span class="math inline">\(p_2\)</span>, is enclosed by a dark grey figure.<br />
 <br />
-<span class="math inline">\(\exists x (Px \wedge Qx)\)</span> is true in the model because the conjunction <span class="math inline">\(Px \wedge Qx\)</span> is true when we assign a member of the domain, namely, <span class="math inline">\(p_2\)</span>, to the variable <span class="math inline">\(x\)</span>.<br />
+<span class="math inline">\(\exists x (Px \wedge Qx)\)</span> is true in the model because the conjunction <span class="math inline">\(Px \wedge Qx\)</span> is true when we assign <span class="math inline">\(p_2\)</span>, to the variable <span class="math inline">\(x\)</span>.<br />
 </p>
 </div>
 </div>
@@ -569,7 +569,7 @@ figure}\)</span></span><br />
 <dl>
 <dt>Validity</dt>
 <dd>
-<p>An argument of quantificational logic is <em>valid</em> if, and only if, there is no model which all of its premises are true while its conclusion is false. Otherwise, the argument is <em>invalid</em>.</p>
+<p>An argument of quantificational logic is <em>valid</em> if, and only if, there is no model in which all of its premises are true while its conclusion is false. Otherwise, the argument is <em>invalid</em>.</p>
 </dd>
 </dl>
 <p>If an argument is not valid, then we are in a position to search for a model in which the premises are true and the conclusion is false. Otherwise, we will have to rely on a generalization of the tableaux method in order to establish validity.</p>
@@ -585,9 +585,9 @@ figure}\)</span></span><br />
 <div class="example">
 <p><span id="exm:unlabeled-div-74" class="example"><strong>Example 8.13  </strong></span>Consider the following argument:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\((P(a) \wedge Q(b)) \to R(a,b)\)</span></li>
-<li><span class="math inline">\(\neg R(b,a)\)</span></li>
-<li><span class="math inline">\(\exists x (P(x) \wedge R(x,a))\)</span></li>
+<li><span class="math inline">\((Pa \wedge Qb) \to Rab\)</span></li>
+<li><span class="math inline">\(\neg Rba\)</span></li>
+<li><span class="math inline">\(\exists x (Px \wedge Rxa)\)</span></li>
 </ol>
 <p>The model depicted by the diagram verifies the premises of the argument but falsifies the conclusion.</p>
 <div class="argument">
