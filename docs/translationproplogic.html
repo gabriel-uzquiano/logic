@@ -217,7 +217,7 @@ negotiator.<br />
 agreement.</span></span></p>
 <p>We replace each simple sentence with a propositional variable in accordance with a suitable translation key.</p>
 <div class="{argument}">
-<p><span class="math inline">\((\neg p \wedge ((q \to r))\)</span>.</p>
+<p><span class="math inline">\((\neg p \wedge (q \to r))\)</span>.</p>
 </div>
 </div>
 <p>It will be helpful to look at a more complex example.</p>
@@ -234,7 +234,7 @@ agreement.</span></span></p>
 </dd>
 <dt>Step 2</dt>
 <dd>
-<p>(Cobalt is present <span class="math inline">\(\to\)</span> (<span class="math inline">\(\neg\)</span> there is nickel <span class="math inline">\(\vee\)</span> (there is managanese <span class="math inline">\(\wedge\)</span> a brown color appears))))</p>
+<p>(Cobalt is present <span class="math inline">\(\to\)</span> (<span class="math inline">\(\neg\)</span> there is nickel <span class="math inline">\(\vee\)</span> (there is manganese <span class="math inline">\(\wedge\)</span> a brown color appears)))</p>
 </dd>
 </dl>
 <p><label for="tufte-mn-20" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-20" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
@@ -246,7 +246,7 @@ present.<br />
 <dl>
 <dt>Step 3</dt>
 <dd>
-<p><span class="math inline">\(((p \to (\neg  q \vee (r \wedge s))))\)</span></p>
+<p><span class="math inline">\((p \to (\neg  q \vee (r \wedge s)))\)</span></p>
 </dd>
 </dl>
 </div>
@@ -291,7 +291,7 @@ present.<br />
 <p>There are at least two different readings of this sentence depending on whether we regard it as a conjunction or as a disjunction:</p>
 <div class="argument">
 <p>Jones is at the office and (Smith is on zoom or the deal will not be completed)<br />
-(Jones is a the office and Smith is on zoom) or the deal will not be completed.</p>
+(Jones is at the office and Smith is on zoom) or the deal will not be completed.</p>
 </div>
 <p>These two sentences come with different truth conditions, e.g., only the second sentence is true if Jones is <em>not</em> at the office but the deal is not completed.</p>
 <dl>
@@ -340,10 +340,10 @@ completed.<br />
 <span class="math inline"><span class="math inline">\(q\)</span></span>: Both parties agree to it.<br />
 </span></span></p>
 <div class="argument">
-<p>The deal will be completed if both parties agree to it, <em>and</em> the deal will be completed only if both partiess agree to it.<br />
+<p>The deal will be completed if both parties agree to it, <em>and</em> the deal will be completed only if both parties agree to it.<br />
 <span class="math inline">\((q \to p) \wedge (p \to q)\)</span></p>
 </div>
-<p>That means that the signature of the contract in the afternoon is both a <em>necessary</em> and <em>sufficient</em> condition for the deal to be completed.</p>
+<p>That means that both parties’ agreement is both a <em>necessary</em> and <em>sufficient</em> condition for the deal to be completed.</p>
 <p>We will sometimes use the symbol <span class="math inline">\(\leftrightarrow\)</span> in order to abbreviate formulas of that form. In general:
 <span class="math display">\[
 (\varphi \leftrightarrow \psi) := (\psi \to \varphi) \wedge (\varphi \to \psi).
@@ -429,16 +429,16 @@ through.<br />
 <div class="example">
 <p><span id="exm:unlabeled-div-33" class="example"><strong>Example 4.5  </strong></span>Consider the natural language argument:</p>
 <blockquote>
-<p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule. I cannot rule out that the animal in the pen is not a cleverly painted mule. Therefore, I cannot be certain that the animal in the pen is a zebra.</p>
+<p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule. I cannot rule out that the animal in the pen is a cleverly painted mule. Therefore, I cannot be certain that the animal in the pen is a zebra.</p>
 </blockquote>
 <p>To assess the argument, we follow three steps.</p>
 <p><em>First</em>, we put the argument into premise-conclusion form:</p>
 <ol style="list-style-type: decimal">
-<li><p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule.<br />
+<li><p>I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is a cleverly painted mule.<br />
 </p></li>
 <li><p>I cannot rule out that the animal in the pen is a cleverly painted mule.<br />
 </p></li>
-<li><p>Therefore, I cannot be certain that the aninal in the pen is a zebra.</p></li>
+<li><p>Therefore, I cannot be certain that the animal in the pen is a zebra.</p></li>
 </ol>
 <p><em>Second</em>, we translate the premises and conclusion of the argument into the language of propositional logic.
 <label for="tufte-mn-31" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-31" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
@@ -527,7 +527,7 @@ T &amp;  F &amp; ! &amp; T &amp;     \color{red}{F} \\
 <p>In order to assess the argument, we follow the same steps as before.</p>
 <p><em>First</em>, we put the argument into premise-conclusion form:</p>
 <ol style="list-style-type: decimal">
-<li><p>You will be admitted into the club just in case you apply for club membership and you are not peceived to be eager to join.</p></li>
+<li><p>You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join.</p></li>
 <li><p>If you apply for club membership, you will be perceived to be eager to join.</p></li>
 <li><p>You will not be admitted into the club.</p></li>
 </ol>
@@ -541,10 +541,10 @@ membership.<br />
 eager to join.</span></span></p>
 <p><em>First premise</em>:</p>
 <div class="argument">
-<p>You will be admitted into the club if, and only if, (you apply for club membership and you are not peceived to be eager to join).</p>
+<p>You will be admitted into the club if, and only if, (you apply for club membership and you are not perceived to be eager to join).</p>
 </div>
 <div class="argument">
-<p>((you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are peceived to be eager to join) <span class="math inline">\(\to\)</span> you will be admitted to the club) <span class="math inline">\(\wedge\)</span> (you will be admitted into the club <span class="math inline">\(\to\)</span> (you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are peceived to be eager to join)).</p>
+<p>((you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are perceived to be eager to join) <span class="math inline">\(\to\)</span> you will be admitted to the club) <span class="math inline">\(\wedge\)</span> (you will be admitted into the club <span class="math inline">\(\to\)</span> (you apply for club membership <span class="math inline">\(\wedge\)</span> <span class="math inline">\(\neg\)</span> you are perceived to be eager to join)).</p>
 </div>
 <div class="argument">
 <p><span class="math inline">\((p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)\)</span></p>
@@ -571,8 +571,7 @@ eager to join.</span></span></p>
 </div>
 <p>We arrive at the translation:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(p \leftrightarrow (q \wedge \neg r)\)</span></li>
-<li><span class="math inline">\(p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)\)</span></li>
+<li><span class="math inline">\((p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)\)</span></li>
 <li><span class="math inline">\(q \to r\)</span></li>
 <li><span class="math inline">\(\neg p\)</span></li>
 </ol>
@@ -581,7 +580,7 @@ eager to join.</span></span></p>
 <span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; \neg  p \\
+p  &amp; q &amp; r &amp; (p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; \neg  p \\
 \hline
 T &amp;   &amp;  &amp;  &amp;  &amp;   \color{red}{F} \\
 \hline
@@ -591,7 +590,7 @@ In order to make the first premise true, we must make <span class="math inline">
 <span class="math display">\[
 \begin{array}{|c|c|c|c|c|c|}
 \hline
-p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; p \\
+p  &amp; q &amp; r &amp; (p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; \neg p \\
 \hline
 T &amp;  T &amp; F  &amp; T &amp;  &amp;   \color{red}{F} \\
 \hline
@@ -603,7 +602,7 @@ Unfortunately, that makes the second premise false, which means that we cannot f
 \hline
 p  &amp; q &amp; r &amp; p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) &amp; q \to r &amp; p \\
 \hline
-F &amp;  T &amp; F  &amp; T &amp;  ! &amp;   \color{red}{F} \\
+T &amp;  T &amp; F  &amp; T &amp;  ! &amp;   \color{red}{F} \\
 \hline
 \end{array}
 \]</span></p>
