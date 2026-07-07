@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <p>Instead, we will develop a natural deduction system for quantificational logic, one which adapts and extends the framework we developed for propositional logic. Once the natural deduction system is in place, we will establish the validity of an argument in the language of quantificational logic by means of a proof of the conclusion from the premises of the argument.</p>
 <p>Since quantificational logic includes the usual propositional connectives, we will just import and adapt the introduction and elimination rules we devised for them to the new framework. That is enough to enable us to establish the validity of <em>some</em> arguments in the language of quantificational logic.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-77" class="example"><strong>Example 10.1  </strong></span><span class="math inline">\(\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px\)</span>.</p>
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 10.1  </strong></span><span class="math inline">\(\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px\)</span>.</p>
 <p><img src="images/qex%201.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>Notice that it suffices in this case to deploy natural deduction rules for negation and the conditional, which we adapt from the natural deduction system for propositional logic.</p>
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 10.2  </strong></span>Some examples:</p>
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 10.2  </strong></span>Some examples:</p>
 <ul>
 <li><span class="math inline">\(Pc\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Px\)</span>.</li>
 <li><span class="math inline">\(Ray\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Rxy\)</span>.</li>
@@ -192,11 +192,11 @@ Universal Elimination</span></span></p>
 <p>The rationale for universal elimination is that we are entitled to write that an individual <span class="math inline">\(a\)</span> satisfies a given condition if we are given that <em>all</em> individuals do.</p>
 <p>Let us look at the universal elimination rule in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 10.3  </strong></span><span class="math inline">\(\forall x \forall y(Px \to Qy), Pa, \vdash Qb\)</span>.</p>
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 10.3  </strong></span><span class="math inline">\(\forall x \forall y(Px \to Qy), Pa, \vdash Qb\)</span>.</p>
 <p><img src="images/qex%20ue1.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 10.4  </strong></span><span class="math inline">\(\forall x \forall y Rxy \vdash Raa\)</span>.</p>
+<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 10.4  </strong></span><span class="math inline">\(\forall x \forall y Rxy \vdash Raa\)</span>.</p>
 <p><img src="images/qex%20ue2.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>The introduction rule for the universal quantifier requires more care. In order to be able to write <span class="math inline">\(\forall x \varphi(x)\)</span> by itself on a line, we should convince ourselves we have the means to establish some <em>arbitrary</em> instance <span class="math inline">\(\varphi(a/x)\)</span> where the constant <span class="math inline">\(a\)</span> does not occur in an undischarged assumption.</p>
@@ -210,11 +210,11 @@ Universal Introduction</span></span></p>
 </dl>
 <p>Let us look at some applications of the rule.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 10.5  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)\)</span>.</p>
+<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 10.5  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)\)</span>.</p>
 <p><img src="images/qex%20ui1.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 10.6  </strong></span><span class="math inline">\(\forall x (Px \to \neg Px) \vdash \forall x \neg Px)\)</span></p>
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 10.6  </strong></span><span class="math inline">\(\forall x (Px \to \neg Px) \vdash \forall x \neg Px)\)</span></p>
 <p><img src="images/qex%20ui2.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
@@ -232,11 +232,11 @@ Existential Introduction</span></span></p>
 <p>The rationale for existential introduction is that we are entitled to write that something satisfies a condition if we are given that an individual <span class="math inline">\(a\)</span> does.</p>
 <p>Here is the rule of existential introduction in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 10.7  </strong></span><span class="math inline">\(Rab \vdash \exists x\exists y Rxy\)</span></p>
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 10.7  </strong></span><span class="math inline">\(Rab \vdash \exists x\exists y Rxy\)</span></p>
 <p><img src="images/qex%20ei1.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 10.8  </strong></span><span class="math inline">\(\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)\)</span></p>
+<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 10.8  </strong></span><span class="math inline">\(\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)\)</span></p>
 <p><img src="images/qex%20ei2.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <p>The elimination rule for the existential quantifier is more subtle. Suppose we want to reason from an existential generalization of the form <span class="math inline">\(\exists x \varphi(x)\)</span> to some formula <span class="math inline">\(\psi\)</span>. The elimination rule for the existential tells us that the step is justified if we have the means to establish a conditional <span class="math inline">\(\varphi(a/v) \to \psi\)</span> where <span class="math inline">\(a\)</span> is a constant that occurs neither in <span class="math inline">\(\psi\)</span> nor <span class="math inline">\(\exists x \varphi\)</span> nor in an earlier open assumption.</p>
@@ -249,11 +249,11 @@ Existential Elimination</span></span></p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 10.9  </strong></span><span class="math inline">\(\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)\)</span></p>
+<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 10.9  </strong></span><span class="math inline">\(\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)\)</span></p>
 <p><img src="images/qex%20ee1.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 10.10  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz\)</span></p>
+<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 10.10  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz\)</span></p>
 <p><img src="images/qex%20ee2.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
@@ -264,11 +264,11 @@ Existential Elimination</span></span></p>
 <p>One more potential pitfall is the failure to apply the rules for quantification once at a time. The elimination rule for the universal quantifier does <em>not</em> allow an immediate transition from a formula such as <span class="math inline">\(\forall x \forall y Rxy\)</span> to <span class="math inline">\(Rab\)</span>. We should instead distinguish two steps: one from the original formula to <span class="math inline">\(\forall y Rxy\)</span> and a further one from this formula to the instance <span class="math inline">\(Rab\)</span>.</p>
 <p>Let us now look at some further examples.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 10.11  </strong></span><span class="math inline">\(\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx\)</span></p>
+<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 10.11  </strong></span><span class="math inline">\(\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx\)</span></p>
 <p><img src="images/qex%20cex1.png" style="display:block; margin: 0 auto;"></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 10.12  </strong></span><span class="math inline">\(\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px \to Rxb)\)</span></p>
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 10.12  </strong></span><span class="math inline">\(\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px \to Rxb)\)</span></p>
 <p><img src="images/qex%20cex2.png" style="display:block; margin: 0 auto;"></p>
 </div>
 </div>
