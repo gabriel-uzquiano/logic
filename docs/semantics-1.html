@@ -100,11 +100,8 @@ MathJax.Hub.Config({
 </ul></li>
 <li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">8</span> Semantics</a>
 <ul>
-<li class="has-sub"><a href="semantics-1.html#models" id="toc-models">Models</a>
-<ul>
-<li><a href="semantics-1.html#truth-relative-to-a-variable-assignment" id="toc-truth-relative-to-a-variable-assignment">Truth Relative to a Variable Assignment</a></li>
+<li><a href="semantics-1.html#models" id="toc-models">Models</a></li>
 <li><a href="semantics-1.html#truth-in-a-model" id="toc-truth-in-a-model">Truth in a Model</a></li>
-</ul></li>
 <li><a href="semantics-1.html#logical-truths" id="toc-logical-truths">Logical Truths</a></li>
 <li><a href="semantics-1.html#equivalence-and-consistency-1" id="toc-equivalence-and-consistency-1">Equivalence and Consistency</a></li>
 <li><a href="semantics-1.html#validity-1" id="toc-validity-1">Validity</a></li>
@@ -239,8 +236,9 @@ figure}\)</span></span><br />
 <p>Notice that the diagram comes with a key designed to explain how to interpret each predicate and constant in the diagram.</p>
 </div>
 <p>This heuristic comes with severe limitations, since some models, e.g., models with an infinite domain, are much too complex to be represented by means of a finite diagram. The method will, however, suffice for <em>some</em> purposes; it will enable us to establish the invalidity of a broad family of arguments in quantificational logic.</p>
-<div id="truth-relative-to-a-variable-assignment" class="section level3 unnumbered">
-<h3>Truth Relative to a Variable Assignment</h3>
+</div>
+<div id="truth-in-a-model" class="section level2 unnumbered">
+<h2>Truth in a Model</h2>
 <p>The definition of a model makes sure that models provide a semantic value for constants and predicates, but they remain silent when it comes to variables. If constants are the formal counterparts of names in natural language, variables resemble pronouns like ‘he’ or ‘she’, which do not appear to receive a denotation when used in a sentence like ‘If a person likes opera, then she likes classical music.’ For this reason, models do not assign a denotation to variables.</p>
 <p>Instead, variables will be treated as temporary labels for members of the domain. That will allow us to evaluate an open formula <span class="math inline">\(Px \wedge Rxy\)</span> relative to an assignment of values to the variables that occur in it. More generally, given a model <span class="math inline">\(M\)</span>, we now explain what is an assignment of members of <span class="math inline">\(M\)</span> to the variables of the language.</p>
 <dl>
@@ -511,9 +509,6 @@ Then:</p>
 </ul>
 </div>
 </div>
-</div>
-<div id="truth-in-a-model" class="section level3 unnumbered">
-<h3>Truth in a Model</h3>
 <p>Once we define what is for a formula <span class="math inline">\(\varphi\)</span> to be true in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>, we are in a position to define what is for a formula <span class="math inline">\(\varphi\)</span> to be true in a model <span class="math inline">\(M\)</span>.</p>
 <dl>
 <dt>Truth in a Model</dt>
@@ -521,7 +516,6 @@ Then:</p>
 <p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in a model</em> <span class="math inline">\(M\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is true in <span class="math inline">\(M\)</span> relative to <em>all</em> variable assignments over <span class="math inline">\(M\)</span>.</p>
 </dd>
 </dl>
-</div>
 </div>
 <div id="logical-truths" class="section level2 unnumbered">
 <h2>Logical Truths</h2>
