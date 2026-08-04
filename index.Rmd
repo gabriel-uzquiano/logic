@@ -1,0 +1,58 @@
+--- 
+title: "Introduction to Logic"
+author: "Gabriel Uzquiano"
+date: Fall 2026 | "`r Sys.Date()`"
+site: bookdown::bookdown_site
+
+output:
+  bookdown::pdf_book:
+      latex_engine: xelatex
+      citation_package: natbib
+output-dir: "docs"      
+      
+documentclass: tufte-book
+header-includes:
+    - \usepackage{amsmath}
+    - \usepackage{amssymb}
+  
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a textbook for PHIL 220g. Introduction to Logic.
+
+classoption: justified
+link-citations: yes
+github-repo: gabriel-uzquiano/logic
+---
+
+```{r setup, include=FALSE}
+source("R/proof_checker.R")
+source("R/model_checker.R")
+source("R/prop_formula_checker.R")
+source("R/ql_formula_checker.R")
+source("R/truth_table.R")
+source("R/prop_translation.R")
+source("R/ql_translation.R")
+ex <- pc_load("exercises/exercises.yml")
+proofs <- pc_load("exercises/proofs-scaffold.yml")
+models <- mc_load("exercises/models-scaffold.yml")
+pformulas <- pfc_load("exercises/prop-formulas.yml")
+qformulas <- qfc_load("exercises/ql-formulas.yml")
+ttables   <- tt_load("exercises/truth-tables.yml")
+ptrans    <- ptr_load("exercises/prop-translations.yml")
+qtrans    <- qtr_load("exercises/ql-translations.yml")
+```
+
+
+
+
+
+
+# Preface {-}
+
+This is an introduction to logic based on a course taught at the University of Southern California. The book assumes no formal background or prior familiarity with logic. It is divided into three main parts. We first introduce the subject matter and main aims of logic and motivates the use of a formal language for that purpose. One block focuses on the language of propositional logic as a framework for the study of validity of an important class of natural language arguments. The language of quantificational logic is the subject of the final block, and its main purpose is to provide students with the toolkit they need in order to account for the validity of a wider family of natural language arguments.
+
+The course aims to provide students with a number of formal methods designed in order to assess the validity of a variety of natural language arguments. These include the use of truth tables and a natural deduction system for propositional and quantificational logic. By the end of the course, students should be in a position to appreciate the relevance of formal methods for the study of language.
+
+The book is written with the bookdown package created by Yihui Xie.

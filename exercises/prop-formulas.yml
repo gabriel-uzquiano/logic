@@ -1,0 +1,122 @@
+# prop-formulas.yml
+# Scaffold entries for the Prop Formula Checker
+# Base URL: https://prop-formula-checker.pplx.app
+# Hash format: #v1:<base64(UTF-8 JSON)>
+# JSON shape: { f: string, a?: { p: bool, q: bool, … } }
+
+entries:
+  - id: atom-p
+    label: "Single sentence letter"
+    formula: "p"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicCJ9"
+
+  - id: atom-q
+    label: "Single sentence letter"
+    formula: "q"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicSJ9"
+
+  - id: neg-p
+    label: "Negation of atom"
+    formula: "¬p"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiwqxwIn0="
+
+  - id: neg-neg-p
+    label: "Double negation"
+    formula: "¬¬p"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiwqzCrHAifQ=="
+
+  - id: neg-conj
+    label: "Negation of conjunction"
+    formula: "¬(p ∧ q)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiwqwocCDiiKcgcSkifQ=="
+
+  - id: conj-pq
+    label: "Conjunction"
+    formula: "(p ∧ q)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oinIHEpIn0="
+
+  - id: conj-nested
+    label: "Nested conjunction"
+    formula: "((p ∧ q) ∧ r)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKChwIOKIpyBxKSDiiKcgcikifQ=="
+
+  - id: disj-pq
+    label: "Disjunction"
+    formula: "(p ∨ q)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oioIHEpIn0="
+
+  - id: disj-neg
+    label: "Disjunction with negation"
+    formula: "(¬p ∨ q)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKMKscCDiiKggcSkifQ=="
+
+  - id: cond-pq
+    label: "Conditional (unofficial)"
+    formula: "p → q"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicCDihpIgcSJ9"
+
+  - id: cond-nested
+    label: "Nested conditional"
+    formula: "p → (q → r)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicCDihpIgKHEg4oaSIHIpIn0="
+
+  - id: cond-disj
+    label: "Conditional with disjunction"
+    formula: "(p ∨ q) → r"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oioIHEpIOKGkiByIn0="
+
+  - id: disj-cond-neg
+    label: "Disjunction with conditional and negation"
+    formula: "(p ∨ (q → ¬r))"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjogIihwIOKIqCAocSDihpIgwqxyKSkifQ=="
+
+  - id: complex-1
+    label: "De Morgan"
+    formula: "¬(p ∧ q)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiwqwocCDiiKcgcSkifQ=="
+
+  - id: complex-2
+    label: "Conditional chain"
+    formula: "((p ∧ q) → r)"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKChwIOKIpyBxKSDihpIgcikifQ=="
+
+  - id: complex-3
+    label: "Mixed"
+    formula: "((p ∨ ¬q) ∧ (q ∨ ¬p))"
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKChwIOKIqCDCrHEpIOKIpyAocSDiiKggwqxwKSkifQ=="
+
+  - id: sem-tt
+    label: "p→q true when p=T, q=T"
+    formula: "p → q"
+    assignment: {"p": true, "q": true}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicCDihpIgcSIsImEiOnsicCI6dHJ1ZSwicSI6dHJ1ZX19"
+
+  - id: sem-tf
+    label: "p→q false when p=T, q=F"
+    formula: "p → q"
+    assignment: {"p": true, "q": false}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoicCDihpIgcSIsImEiOnsicCI6dHJ1ZSwicSI6ZmFsc2V9fQ=="
+
+  - id: sem-taut
+    label: "Tautology p∨¬p"
+    formula: "(p ∨ ¬p)"
+    assignment: {"p": true}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oioIMKscCkiLCJhIjp7InAiOnRydWV9fQ=="
+
+  - id: sem-contra
+    label: "Contradiction p∧¬p"
+    formula: "(p ∧ ¬p)"
+    assignment: {"p": true}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oinIMKscCkiLCJhIjp7InAiOnRydWV9fQ=="
+
+  - id: sem-conting
+    label: "Contingent p∧q"
+    formula: "(p ∧ q)"
+    assignment: {"p": true, "q": false}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiKHAg4oinIHEpIiwiYSI6eyJwIjp0cnVlLCJxIjpmYWxzZX19"
+
+  - id: sem-demorgan
+    label: "De Morgan with assignment"
+    formula: "¬(p ∧ q)"
+    assignment: {"p": true, "q": false}
+    url: "https://prop-formula-checker.pplx.app#v1:eyJmIjoiwqwocCDiiKcgcSkiLCJhIjp7InAiOnRydWUsInEiOmZhbHNlfX0="

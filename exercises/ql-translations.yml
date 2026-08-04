@@ -1,0 +1,20 @@
+# Quantificational Logic Translation exercises
+# Each entry corresponds to one problem in the ql-translation app.
+#
+# How to add an entry:
+#   1. Open https://ql-translation.pplx.app/?key=show
+#   2. Enter the sentence, fill in reference predicates, constants, and formula
+#   3. Press "Copy link" — paste the #v1:... fragment as student_hash
+#   4. Fill in the worksheet predicates, constants, and translation -> worked_hash
+#
+# student_hash : sentence loaded, worksheet + translation blank (for students)
+# worked_hash  : sentence + full key + worked translation pre-filled (for solutions)
+#
+# Example entry (replace hashes with real ones from the app):
+#
+# - id: "trojans-1"
+#   label: "Trojans & Achilles — sentence 1"
+#   student_hash: "#v1:..."
+#   worked_hash:  "#v1:..."
+
+# Add your entries below:

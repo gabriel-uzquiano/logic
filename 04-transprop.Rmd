@@ -1,0 +1,622 @@
+# Translation {#translationproplogic}
+
+The framework of propositional logic will enable us to isolate a family of valid argument forms underwritten by the behavior of certain truth functional connectives of English. To that end, we will have to be able to translate from English into the formal language we  have just introduced.
+
+## A Translation Method {-}
+
+We will now develop the skill of translation from natural language to propositional logic. To that end, we break down the task into three main steps.
+
+```{marginfigure, echo=TRUE}
+Step 1. Find a paraphrase
+```
+
+Paraphrase
+
+: We paraphrase the relevant English sentence in order to make clear how the target sentence may be built from simpler constituents by means of connectives such as 'not', 'and', 'or', and 'if $\dots$, then $\dots$'
+
+This first step will often require us to rewrite the sentence to include these connectives as opposed to some of their stylistic variants. We will use parentheses in order to highlight how the sentence has been constructed from simpler sentences.
+
+
+::: {.example} 
+Consider the English sentence:
+
+:::{.argument}
+Although Smith is not a flexible negotiator, she will come to an agreement if we lower our demand.
+:::
+We substitute 'and' for the stylistic variant 'although', and we rewrite the second part of the sentence to reveal how it is constructed from simpler sentences with the help of a conditional:
+
+:::{.argument}
+(It is not the case that Smith is a flexible negotiator, *and* (*if* we lower our demands, *then* she will come to an agreement)).
+:::
+:::
+
+```{marginfigure, echo=TRUE}
+Step 2. Substitute the connectives:
+  
+ Substitute $\neg$ for 'not'
+
+ Substitute $\wedge$ for 'and'
+
+ Substitute $\vee$ for 'or'
+
+ Substitute $\to$ for 'if $\dots$, then $\dots$.'
+```
+
+Substitute the connectives for their counterparts
+
+:   We replace the occurrences of the connectives we have identified above with the symbols for their counterparts in propositional logic. 
+
+
+::: {.example} 
+Consider the outcome of the first step above:
+
+:::{.argument}
+(It is not the case that Smith is a flexible negotiator, and (if we lower our demands, she will come to an agreement))
+:::
+
+We replace each occurrence of a connective with an occurrence of its formal counterpart:
+
+:::{.argument}
+($\neg$ Smith is a flexible negotiator $\wedge$ (we lower our demands $\to$ she will come to an agreement)).
+:::
+:::
+
+```{marginfigure, echo=TRUE}
+Step 3. Substitute a propositional variable for each simple sentence
+```
+
+Replace each simple sentence with a propositional variable
+
+:   We choose a propositional variable for each simple sentence and we proceed to substitute an occurrence of the propositional variable for each occurrence of the simple sentence in the target sentence.
+
+::: {.example} 
+Consider the outcome of the second step above:
+
+:::{.argument}
+(It is not the case that Smith is a flexible negotiator, and (if Jones lowers her demands, she will come to an agreement))\
+:::
+  
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: Smith is a flexible negotiator.\
+$q$: We lower our demands.\
+$r$: Smith will come to an agreement.
+```
+
+We replace each simple sentence with a propositional variable in accordance with a suitable translation key.  
+  
+:::{argument}
+$(\neg p \wedge (q \to r))$.
+:::
+:::
+
+It will be helpful to look at a more complex example.
+
+::: {.example}
+Our target now is the English sentence below:
+
+:::{argument}
+If cobalt is present, then either there is no nickel present or there is manganese present and a brown color appears.
+:::
+
+We proceed in three steps:
+
+Step 1
+
+:   *If* Cobalt is present, *then* (it is *not* the case that there is nickel present *or* (there is manganese present *and* a brown color appears))
+
+Step 2
+
+:   (Cobalt is present $\to$ ($\neg$ there is nickel $\vee$ (there is manganese $\wedge$ a brown color appears)))
+
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: Cobalt is present.\
+$q$: There is nickel present.\
+$r$: There is manganese present.\
+$s$: A brown color appears.
+```
+
+Step 3
+
+:   $(p \to (\neg  q \vee (r \wedge s)))$
+
+
+In practice, we will begin with the identification of the propositional atoms and proceed from there:
+
+
+
+`r ptr_embed_toggle(ptrans[["ch4-ex-cobalt"]], height = 560L)`
+
+:::
+
+## Issues with Translation {-}
+
+Some of the examples above seem deceptively simple. We often find unexpected difficulties when we translate more idiomatic English sentences into the language of propositional logic. Let us distinguish a few different types of problems.
+
+
+Non-Truth-Functional Connectives
+
+:   Some connectives resist paraphrase into a truth-functional connective.
+
+
+Consider the English sentence:
+
+:::{.argument}
+My coffee had a sweet taste because I put sugar into it.
+:::
+
+We may be tempted to paraphrase the sentence as a conjunction:
+
+:::{.argument}
+My coffee had a sweet taste *and* I put sugar into it.
+:::
+
+But the paraphrase does not faithfully capture the truth conditions of the original sentence. More to the point, there is no reason to think the connective 'because' is truth-functional. In fact, we obtain a sentence with a different truth value when we replace one of its simpler parts, e.g., 'I put sugar into my coffee', with another sentence with the same truth value, e.g., 'Los Angeles is south of San Francisco':
+
+:::{.argument}
+My coffee had a sweet taste because Los Angeles is south of San Francisco.
+:::
+
+
+To complicate matters even further, some uses of 'if $\dots$, then $\dots$' in the subjunctive are not truth-functional.
+
+
+Consider the sentence:
+
+:::{.argument}
+If I had put motor oil in my coffee, it would have had a sweet taste.
+:::
+
+Even if the sentence is false, notice that we may obtain a true sentence when we replace 'I had put motor oil in my coffee' with a sentence with the same truth value, e.g., 'I had put saccharine in my coffee'.
+
+
+Structural Ambiguity
+
+:   A sentence may be structurally ambiguous, since there is more than one interpretation on which the sentence is built differently from different simpler sentences.
+
+
+Consider the sentence:
+
+:::{.argument}
+Jones is at the office and Smith is on zoom or the deal will not be completed.
+:::
+
+There are at least two different readings of this sentence depending on whether we regard it as a conjunction or as a disjunction:
+
+:::{.argument}
+Jones is at the office and (Smith is on zoom or the deal will not be completed)\
+(Jones is at the office and Smith is on zoom) or the deal will not be completed.
+:::
+
+These two sentences come with different truth conditions, e.g., only the second sentence is true if Jones is *not* at the office but the deal is not completed.
+
+
+
+Special Phrases
+
+:   Some English phrases present special challenges of their own.
+
+The next issue arises from the question of how much force to apply to the original sentence in order to find a paraphrase constructed from more familiar truth-functional connectives with the same truth conditions as the original. We now look at several problem cases.
+
+```{marginfigure, echo=TRUE}
+**$\dots$ only if $\dots$**
+```
+
+$\dots$ only if $\dots$
+
+:   I will win the lottery only if I buy a ticket.
+
+Despite the superficial similarity between 'only if' and 'if', they achieve very different effects. Compare the sentence above with the conditional:
+
+:::{.argument}
+I will win the lottery *if* I buy a ticket.
+:::
+This sentence tells us that the purchase of a ticket is a *sufficient* condition for a win and it may be paraphrased:
+
+:::{.argument}
+If I buy a ticket, then I will win the lottery.
+:::
+
+The target sentence is quite different: it states that I must buy a ticket in order to have a chance to win the lottery. Otherwise put, the *only if* sentences says that the purchase is in fact a *necessary* condition for a win, and it should be paraphrased:
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: I will win the lottery.\
+$q$: I buy a ticket.\
+```
+
+:::{.argument}
+If I will win the lottery, then I will have bought a ticket.\
+$p \to q$
+:::
+
+
+
+
+```{marginfigure, echo=TRUE}
+**$\dots$  if and only if $\dots$**
+```
+
+$\dots$ if and only if $\dots$
+
+:   The deal will be completed if, and only if, both parties agree to it.
+
+It is not uncommon to combine 'if' and 'only if' into 'if and only if', which we should be able to parse as a conjunction:
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: The deal will be completed.\
+$q$: Both parties agree to it.\
+```
+
+:::{.argument}
+The deal will be completed if both parties agree to it, *and* the deal will be completed only if both parties agree to it.\
+$(q \to p) \wedge (p \to q)$
+:::
+That means that both parties' agreement is both a *necessary* and *sufficient* condition for the deal to be completed.
+
+We will sometimes use the symbol $\leftrightarrow$ in order to abbreviate formulas of that form. In general:
+$$
+(\varphi \leftrightarrow \psi) := (\psi \to \varphi) \wedge (\varphi \to \psi).
+$$
+It would be acceptable to use that symbol as an abbreviation as we translate from English into the language of propositional logic:
+
+:::{.argument}
+The deal will be completed if both parties agree to it, *and* the deal will be completed only if both partiess agree to it.\
+$(q \to p) \wedge (p \to q)$.\
+$(p \leftrightarrow q)$
+:::
+
+
+```{marginfigure, echo=TRUE}
+**Neither $\dots$ nor $\dots$**
+```
+
+Neither $\dots$ nor $\dots$ 
+
+:   Neither Jones nor Smith is in the office.
+
+The goal now is to find a paraphrase constructed from familiar truth-functional connectives that is true if, and only if, the original sentence is true. There is more than one option at this point:
+
+:::{.argument}
+Jones is not in the office and Smith is not in the office.
+:::
+:::{.argument}
+It is not the case that Jones is in the office or Smith is in the office
+:::
+
+In the first case, we turn the original sentence into a conjunction of two negations:
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: Jones is in the office.\
+$q$: Smith is in the office.\
+```
+
+:::{.argument}
+(It is not the case that Jones is in the office and it is not the case that Smith is in the office).\
+$(\neg p \wedge \neg q)$
+:::
+
+In the second case, we paraphrase the original sentence into the negation of a disjunction:
+
+:::{.argument}
+It is not the case that (Jones is in the office or Smith is in the office).\
+$\neg (p \vee q)$
+:::
+
+Both paraphrases are true in exactly the same circumstances, which coincide with the circumstances in which the target sentence is true. That is why both are adequate paraphrases of the original sentence.
+
+
+```{marginfigure, echo=TRUE}
+**Unless**
+```
+
+Unless 
+
+:   The deal will fall through unless Smith is in attendance.
+
+The problem is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. We have at least two options:
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: The deal will fall through.\
+$q$: Smith is in attendance.\
+```
+
+:::{.argument}
+If Smith is not in attendance, then the deal will fall through.\
+$\neg q \to p$
+:::
+
+:::{.argument}
+The deal will fall through or Smith is in attendance.\
+$p \vee q$
+:::
+
+In the first case, we translate 'unless' as 'if not', whereas in the second case we translate it as 'or'. The paraphrases turn out to be  equivalent in that they are true in exactly the same circumstances, which is what is wanted.
+
+```{marginfigure, echo=TRUE}
+**Otherwise**
+```
+
+Otherwise
+
+:   Smith will be in attendance; otherwise, the deal will fall through.
+
+The task now is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. For example:
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: Smith is in attendance.\
+$q$: The deal will fall through.\
+```
+
+:::{.argument}
+Smith will be in attendance, and if Smith is not in attendance, then the deal will fall through.\
+$p \wedge (\neg p \to q)$
+:::
+
+## Application {-}
+
+The point of translation is to be able to discern valid argument forms in arguments formulated in English. In particular, we will often be interested in the question of whether a natural language argument exhibits a valid propositional form.
+
+
+::: {.example}
+Consider the natural language argument:
+
+> I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule. I cannot rule out that the animal in the pen is a cleverly painted mule. Therefore, I cannot be certain that the animal in the pen is a zebra.
+
+To assess the argument, we follow three steps.
+
+*First*, we put the argument into premise-conclusion form:
+
+
+1. I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is a cleverly painted mule.\
+
+2. I cannot rule out that the animal in the pen is a cleverly painted mule.\
+
+3. Therefore, I cannot be certain that the animal in the pen is a zebra.
+
+
+
+
+*Second*, we translate the premises and conclusion of the argument into the language of propositional logic.
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: I can be certain that the animal in the pen is a zebra.\
+$q$: I can rule out that the animal in the pen is a cleverly painted mule.
+```
+
+
+*First premise*:
+
+:::{.argument}
+I cannot be certain that the animal in the pen is a zebra unless I can rule out that it is not a cleverly painted mule.\
+:::
+:::{.argument}
+*If* I can*not* rule out that the animal in the pen is a cleverly painted mule, *then* I can*not* be certain that the animal in the pen is a zebra.
+:::
+:::{.argument}
+($\neg$ I can rule out that the animal in the pen is a cleverly painted mule $\to$ $\neg$ I can be  certain that the animal in the pen is a zebra).
+:::
+:::{.argument}
+$\neg q \to \neg p$
+:::
+
+*Second Premise*:
+
+:::{.argument}
+I can*not* rule out that the animal in the pen is a cleverly painted mule.
+:::
+:::{.argument}
+$\neg$ I can rule out that the animal in the pen is a cleverly painted mule
+:::
+:::{.argument}
+$\neg q$
+:::
+
+*Conclusion*:
+
+:::{.argument}
+I can*not* be certain that the animal in the pen is a zebra.
+:::
+:::{.argument}
+$\neg$ I can be  certain that the animal in the pen is a zebra.
+:::
+:::{.argument}
+$\neg p$
+:::
+We arrive at the translation of the  argument into propositional logic:
+
+1. $\neg q \to \neg p$
+2. $\neg  q$
+3. $\neg p$
+
+*Third*, we now use the search-for-counterexample method to determine whether the argument is valid in propositional logic:
+
+We aim for an assignment that makes the conclusion false:
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  & q & \neg q \to \neg p & \neg q & \neg p \\
+\hline
+T &   &  &  &     \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+In order to make the second premise true, we make $q$ false:
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  & q & \neg q \to \neg p & \neg q & \neg p \\
+\hline
+T &  F &  & T &     \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+Unfortunately, the first premise comes out false under that assigment, which means that we cannot provide an assignment under which the premises come out true and the conclusion false.
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  & q & \neg q \to \neg p & \neg q & \neg p \\
+\hline
+T &  F & ! & T &     \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+:::
+
+Let us move to an even more complex argument.
+
+:::{.example}
+Consider the natural language argument:
+
+> You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join. Applying for club membership is regarded as a sign of eagerness. That is, if you apply for club membership, you will be perceived to be eager to join. So, you will not be admitted into the club.
+
+In order to assess the argument, we follow the same steps as before.
+
+*First*, we put the argument into premise-conclusion form:
+
+1. You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join.
+
+2.  If you apply for club membership, you will be perceived to be eager to join.
+
+3. You will not be admitted into the club.
+
+*Second*, we translate the premises and conclusion of the argument into the language of propositional logic.
+
+```{marginfigure, echo=TRUE}
+*Translation key*\
+$p$: You will be admitted into the club.\
+ $q$: You will apply for club membership.\
+ $r$: You will be perceived to be eager to join.
+```
+
+
+*First premise*:
+
+:::{.argument}
+You will be admitted into the club if, and only if, (you apply for club membership and you are not perceived to be eager to join).
+:::
+
+:::{.argument}
+((you apply for club membership $\wedge$ $\neg$ you are perceived to be eager to join) $\to$ you will be admitted to the club) $\wedge$  (you will be admitted into the club $\to$ (you apply for club membership $\wedge$ $\neg$ you are perceived to be eager to join)).
+:::
+
+:::{.argument}
+$(p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)$
+:::
+
+*Second Premise:*
+
+:::{.argument}
+If you apply for club membership, you will be perceived to be eager to join.
+:::
+
+:::{.argument}
+You apply for club membership $\to$ you will be perceived to be eager to join.
+:::
+
+:::{.argument}
+$q \to r$
+:::
+
+*Conclusion*:
+
+:::{.argument}
+You will not be admitted into the club.
+:::
+
+:::{.argument}
+$\neg$ You will be admitted into the club.
+:::
+
+:::{.argument}
+$\neg p$
+:::
+
+We arrive at the translation:
+
+1. $(p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p)$
+2. $q \to r$
+3. $\neg p$
+
+*Third*, we use the search-for-counterexample method to determine whether the argument is valid in propositional logic:
+
+We aim for an assignment that makes the conclusion false:
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  & q & r & (p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) & q \to r & \neg  p \\
+\hline
+T &   &  &  &  &   \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+In order to make the first premise true, we must make $q \wedge \neg r$ true, which requires $q$ to be true and $r$ to be false:
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  & q & r & (p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) & q \to r & \neg p \\
+\hline
+T &  T & F  & T &  &   \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+Unfortunately, that makes the second  premise false, which means that we cannot find an assignment under which the premises come out true and the conclusion false.
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+p  & q & r & p \to (q \wedge \neg r)) \wedge ((q \wedge \neg r) \to p) & q \to r & p \\
+\hline
+T &  T & F  & T &  ! &   \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+
+:::
+
+
+
+
+## Exercises {-}
+
+1. Translate the following sentences into the language of propositional logic.
+
+    a. If interest rates fall, then we will be able to borrow more money and inflation will rise.
+    
+       `r ptr_embed_toggle_cards(ptrans[["ch4-ex1a"]])`
+    
+    #. Your computer will not start unless you turn it on and the battery is fully charged.
+    
+       `r ptr_embed_toggle_cards(ptrans[["ch4-ex1b"]])`
+    
+    #. The mayor's office made the decision, even though it did not sit well with its constituents.
+    
+       `r ptr_embed_toggle_cards(ptrans[["ch4-ex1c"]])`
+    
+    #. You will carry an umbrella outside just in case it is raining or you are under the impression that it is raining.
+    
+       `r ptr_embed_toggle_cards(ptrans[["ch4-ex1d"]])`
+    
+    #. The deal will be completed if all parties agree to it and the deal is found to be in compliance with current regulations.
+    
+       `r ptr_embed_toggle_cards(ptrans[["ch4-ex1e"]])`
+      
+
+
+    
+#.  Assess the following arguments for propositional validity.
+
+      a. The car will not start unless you turn the ignition and press the accelerator. You turned the ignition but the car failed to start. So, you did not press the accelerator. 
+      
+      #. The mind is a simple substance only if it is not made of further parts. If the mind is material, then it is is made of further parts. So, if the mind is a simple substance, then it is not material. 
+      
+      #. My client is not the burglar. For the doors show no signs of forced entry. If the doors show no signs of forced entry, then if my client is the burglar, he must have climbed to the unlocked window on the second floor. However, my client is arthritic and could not climb to that unlocked window on the second floor. 
+      
+      #. If the British are coming, then they are coming by land or by sea. Paul Revere will light only one lamp, if they are coming by land. He will light two lamps, if they are coming by sea. Paul Revere will light only one lamp. So, the British are coming. 
+      
+      #. The insurance company will cover your expenses only if you are current with your monthly payments. But if you are current  with your monthly payments, then you can afford to cover the expenses yourself. So, the insurance company will not cover your expenses unless you can afford to cover them yourself.

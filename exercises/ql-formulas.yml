@@ -1,0 +1,126 @@
+# ql-formulas.yml
+# Scaffold entries for the QL Formula Checker
+# Base URL: https://ql-formula-checker.pplx.app
+# Hash format: #v1:<base64(UTF-8 JSON)>
+# JSON shape: { f: string }
+
+entries:
+  - id: atom-Pa
+    label: "Unary predicate atom"
+    formula: "Pa"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUGEifQ=="
+
+  - id: atom-Rab
+    label: "Binary predicate atom"
+    formula: "Rab"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUmFiIn0="
+
+  - id: atom-Rabc
+    label: "Ternary predicate atom"
+    formula: "Rabc"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUmFiYyJ9"
+
+  - id: atom-eq
+    label: "Identity statement"
+    formula: "a = b"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiYSA9IGIifQ=="
+
+  - id: neg-Pa
+    label: "Negation of atom"
+    formula: "¬Pa"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqxQYSJ9"
+
+  - id: neg-quant
+    label: "Negation of quantified formula"
+    formula: "¬∀xPx"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIB4UHgifQ=="
+
+  - id: conj-ql
+    label: "Conjunction of atoms"
+    formula: "(Pa ∧ Qa)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiKFBhIOKIpyBRYSkifQ=="
+
+  - id: disj-ql
+    label: "Disjunction"
+    formula: "(Pa ∨ Pb)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiKFBhIOKIqCBQYikifQ=="
+
+  - id: univ-simple
+    label: "Simple universal"
+    formula: "∀xPx"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeFB4In0="
+
+  - id: univ-cond
+    label: "Universal conditional"
+    formula: "∀x(Px → Qx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIgUXgpIn0="
+
+  - id: univ-nested
+    label: "Nested universals"
+    formula: "∀x∀y(Rxy → Ryx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIgHkoUnh5IOKGkiBSeXgpIn0="
+
+  - id: univ-complex
+    label: "Universal with conjunction"
+    formula: "∀x(Px ∧ Qx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDiiKcgUXgpIn0="
+
+  - id: exist-simple
+    label: "Simple existential"
+    formula: "∃xPx"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeFB4In0="
+
+  - id: exist-conj
+    label: "Existential with conjunction"
+    formula: "∃x(Px ∧ Qx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeChQeCDiiKcgUXgpIn0="
+
+  - id: exist-nested
+    label: "Nested quantifiers"
+    formula: "∃x∀yRxy"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeOKIgHlSeHkifQ=="
+
+  - id: free-Px
+    label: "Open formula — x free"
+    formula: "Px"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUHgifQ=="
+
+  - id: free-mixed
+    label: "Mixed free and bound"
+    formula: "∀x(Px → Qy)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIgUXkpIn0="
+
+  - id: bound-all
+    label: "Closed formula"
+    formula: "∀x∃y(Rxy ∧ Px)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIg3koUnh5IOKIpyBQeCkifQ=="
+
+  - id: free-scope
+    label: "Overlapping scopes"
+    formula: "∀xPx ∧ Qx"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeFB4IOKIpyBReCJ9"
+
+  - id: complex-1
+    label: "Alternating quantifiers"
+    formula: "∀x∃y(Rxy → Ryx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIg3koUnh5IOKGkiBSeXgpIn0="
+
+  - id: complex-2
+    label: "Embedded quantifier"
+    formula: "∀x(Px → ∃yRxy)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIg4oiDeVJ4eSkifQ=="
+
+  - id: complex-3
+    label: "De Morgan for quantifiers"
+    formula: "¬∀xPx"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIB4UHgifQ=="
+
+  - id: complex-4
+    label: "Negated existential"
+    formula: "¬∃x(Px ∧ Qx)"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIN4KFB4IOKIpyBReCkifQ=="
+
+  - id: complex-5
+    label: "With identity"
+    formula: "∀x∀y(x = y → (Px → Py))"
+    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIgHkoeCA9IHkg4oaSIChQeCDihpIgUHkpKSJ9"

@@ -1,0 +1,18 @@
+book_filename: "logic"
+delete_merged_file: true
+output_dir: "docs"
+rmd_files: [
+  "index.Rmd",
+  "01-reason.Rmd",
+  "02-proplogic.Rmd",
+  "03-truthtables.Rmd",
+  "04-transprop.Rmd",
+  "05-proofsprop-revised.Rmd",
+  "06-nat.Rmd",
+  "07-quant.Rmd",
+  "08-Models.Rmd",
+  "09-transquant.Rmd",
+  "10-proofsquant.Rmd",
+  "11-identity.Rmd",
+  "12-sol.Rmd"
+]

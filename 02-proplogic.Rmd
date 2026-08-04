@@ -1,0 +1,239 @@
+# (PART) Propositional Logic {-}
+
+# Formal Language  {#proplogic}
+
+The language of propositional logic will allow us to model and study the validity of a broad family of argument forms underwritten by the behavior of propositional connectives such as 'not', 'and'  and 'or'. To describe the language of propositional logic, we will specify:
+
+- a *syntax* for the formal language, which will include a vocabulary of symbols and a set of grammatical rules that specify which strings of symbols count as sentences of the language, and
+
+- a *semantics* for the formal language, which will explain how to interpret the language and what is for a sentence to be true under such an interpretation.
+
+But first, we need some preliminaries. 
+
+## Quotation and Metavariables {-}
+
+In order to describe a language, whether formal or natural, we will have to be able to refer to its expressions. When the target is a natural language such as English, we use quotation marks in order to *mention* a linguistic expression rather than *use* it.
+
+::: {.example}
+The expression 'Los Angeles' is *used* in one of the two sentences below, and it is *mentioned* in the other:
+
+:::{.argument}
+Los Angeles is composed of more than eighty cities.\
+
+'Los Angeles' is composed of two words.
+:::
+:::
+
+The contrast we seek is between the *use* of a natural language expression to mean what it generally means and the mere *mention* of that expression to mean the expression itself, not what it means in natural language. In the former example, the name in question is used in the first sentence  to mean  what it ordinarily means in  natural language, i.e., a city in southern California, but the name is merely  mentioned in the second sentence to mean the very linguistic expression composed of two words, e.g., 'Los' and 'Angeles'.^[Abbott and Costello's [Who's on First](https://youtu.be/RatKhtboq2E) illustrates the risk of conflating use and mention.]
+
+:::{ .example}
+The Arabic numeral '1' is used in one of the sentences below and it is mentioned in the other:
+
+:::{.argument}
+'1' is an Arabic numeral for the successor of 0.\
+
+1 is the remainder of 7 divided by 3. 
+:::
+:::
+
+
+Quotation marks give us the means to mention a natural language expression and to discuss its linguistic features. But we sometimes seek to make generalizations over linguistic expressions. For example, we may want to express the fact that whenever something is an English sentence, the concatenation of the expression 'it is not the case that' and that sentence form another sentence of English. One way to do this is to use Greek letters as metavariables to range over sentences:
+
+
+:::{.example} 
+Greek letters may be used as metavariables over sentences of English in the two sentences below:
+
+:::{.argument}
+If $\varphi$ is a sentence of English, then the concatenation of the expression 'it is not the case that' and $\varphi$ is another sentence of English.
+:::
+
+:::{.argument}
+If we let $\varphi$ be the sentence 'water is H2O' then the expression 'it is not the case that $\varphi$' is the sentence 'it is not the case that water is H2O'.^[To ease notation, we may use 'it is not the case that $\varphi$' as an abbreviation for the concatenation of 'it is not the case that' and  $\varphi$.]
+:::
+:::
+
+We will reserve the use of quotation marks for expressions of natural language in order to avoid confusion between use and mention. That means that we will avoid using quotation marks for expressions of the formal language *unless there is a risk of confusion*. On the other hand, we will make frequent use Greek letters as metavariables for expressions of the formal language being introduced.
+
+
+## Syntax {-}
+
+We specify the syntax of propositional logic in two stages. We will first specify the vocabulary of the language, and we will then explain how to combine the symbols of the language in order to produce sentences of the language.
+
+```{marginfigure, echo=TRUE}
+Vocabulary
+```
+The vocabulary of propositional logic contains three types of symbols:
+
+Propositional Variables
+
+:   These are the lowercase letters $p$, $q$, $r$, $s$, and $t$ with or without numerical subscripts:
+   $$
+   p,  q, r, s, t
+   $$
+
+Connectives
+
+:   These symbols formal counterparts of the natural language connectives 'not', 'or', 'and', and 'if $\dots$, then $\dots$':
+   $$
+   \neg, \vee, \wedge, \to
+   $$
+
+Parentheses
+
+:   There are two parentheses:
+   $$
+   ), (
+   $$
+
+:   Nothing else is a symbol of the language.
+
+
+```{marginfigure, echo=TRUE}
+Grammar
+```
+
+The role of grammar for a language is to explain how to combine symbols of the vocabulary into sentences of the language. For propositional logic, we use three main clauses for the characterization of *formula*. They explain how to generate more complex formulas from simpler formulas with the help of a connective.
+
+Formula
+
+:   We define what is for an expression to be a formula of propositional logic.
+
+
+:::{.info}
+1. All propositional variables are *formulas*.\
+2. If $\varphi$ and $\psi$ are *formulas*, then each of
+$$
+\neg  \varphi, (\varphi \wedge \psi), (\varphi \vee \psi), (\varphi \to \psi)
+$$
+is a *formula*.\
+3. Nothing else is a *formula*.
+:::
+
+It will be helpful to look at concrete uses of the characterization in order to justify the fact that certain sequences of symbols are, or not, formulas of propositional logic.
+
+
+:::{.example}
+Consider the expression: $((p \vee q) \to \neg r)$. This is an official formula of the language. `r pfc_margin_tree(pformulas[["disj-cond-neg"]])`
+Here is a justification:
+
+:::{.argument}
+1. $p$ is a formula (rule 1).
+2. $q$ is a formula (rule 1).
+3. $r$ is a formula (rule 1).
+4. $\neg r$ is a formula (rule 2, from 3).
+5. $(q \to \neg r)$ is a formula (rule 2, from 2 and 4).
+6. $(p \vee (q \to \neg r))$ is a formula (rule 2, from 1 and 5).
+:::
+
+:::
+
+
+
+The definition may similarly be used to justify the fact that a given string of symbols is *not* a sentence of propositional logic.
+
+
+::: {.example}
+Consider the expression: $\neg  (p \to A)$. This is *not* an official formula of the language. Here is a justification:
+
+:::{.argument} 
+1. $p$ is a formula (rule 1).
+2. $A$ is *not* a formula (rule 3).
+3. $(p \to A)$ is *not* a formula (rule 3).
+4. $\neg (p \to A)$ is *not* a formula (rule 3).
+:::
+:::
+
+
+::: {.practice}
+`r pfc_embed_toggle(pformulas[["conj-nested"]])`
+:::
+
+For further practice, you may click on 'New problem' and enter your own chosen expression:
+
+::: {.practice}
+`r pfc_embed_toggle(pformulas[["complex-3"]])`
+:::
+
+We have explained how to construct complex formulas from simpler ones by means of very strict formation rules. Such formulas may sometimes become difficult to parse and tedious to write. For ease of expression, we will adopt a further notational conventions which will allow us to simplify notation. This is *not* meant as a revision of the official characterization of formula as it is not part of the official syntax of the language. The point of the rule instead is to allow us to use certain expressions as abbreviations for the official formulas.
+
+
+Notational Convention	
+
+:   We may remove the outer parentheses from a formula that is not part of another formula.
+
+
+:::{.example}
+Consider the expression $p \to q$. This is *not* an official formula, but it abbreviates $(p \to q)$. `r pfc_margin_tree(pformulas[["cond-pq"]])`
+:::
+
+
+::: {.example}
+We are similarly able to remove the outer parentheses of the formula:
+$$
+((p \vee q) \vee r)
+$$
+to obtain:
+$$
+(p \vee q) \vee r.
+$$
+as an abbreviation of the first formula.
+:::
+
+
+
+## Exercises {-}
+
+1. Add  quotation marks to the following sentences in order to obtain a true sentence of English. If there is more than one solution, make sure to explain why.
+
+      a. Los Angeles names a city in Southern California.
+        <details>
+        'Los Angeles' names a city in Southern California.
+        </details>
+      
+      #. Los is part of Los Angeles.
+      
+         <details>
+        'Los' is part of 'Los Angeles'.
+        </details>
+      
+      #. Snow is white is a grammatical sentence of English.
+      
+         <details>
+        'Snow is white' is a grammatical sentence of English.
+        </details>
+      
+      #. What is monosyllabic but whatever is polysyllabic.
+      
+         <details>
+        'What' is monosyllabic but 'whatever' is polysyllabic.
+        </details>
+      
+#.  Determine whether each of the following expressions is a sentence of propositional logic.
+
+     a. $\neg \neg A$ 
+     
+     #. $(p \to (\neg q))$
+     
+     #. $(p)$
+     
+     #. $(q \to (\neg  \neg  p \vee r))$
+     
+   `r pfc_embed(pformulas[["wff-1"]])` 
+     
+#. Determine whether each of the following expressions is an *abbreviation* for a sentence of propositional logic.    
+
+    a. $p \to (q \wedge r)$
+    
+    #. $p \to q \to r$
+    
+    #. $p \vee (q \wedge r)$
+    
+    #. $p \to (q\wedge r \to q)$
+    
+  `r pfc_embed(pformulas[["wff-1"]])` 
+
+
+
+    
+          
+

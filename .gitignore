@@ -1,0 +1,16 @@
+# Bookdown output — only push docs/ to main when ready to publish
+docs/
+_book/
+_bookdown_files/
+*.html
+
+# R session artifacts
+.RData
+.Rhistory
+.Rproj.user/
+
+# OS
+.DS_Store
+
+# R package cache
+*.Rcheck/

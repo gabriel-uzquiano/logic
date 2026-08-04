@@ -1,0 +1,525 @@
+# (PART) Introduction {-}
+
+# Reason and Argument {#reason}
+
+When we reason, we generally move from a body of statements, which we call *premises*, to another statement they support, which we call the *conclusion*. We will eventually refer to these inferences as *arguments*. We begin with the observation that some arguments appear to display a special feature: there is *no risk* that the conclusion may be false if the premises are true; given the form of the argument, the truth of the premises guarantees the truth of the conclusion. That seems to be the case with the first and fourth arguments below, but not with the others.
+
+:::{.argument}
+All Spanish citizens are EU citizens.\ No EU citizen requires a visa to enter Switzerland.\ Therefore, no Spanish citizen requires a visa to enter Switzerland.
+:::
+
+:::{.argument}
+Whales live underwater.\ Few mammals live underwater.\ Therefore, whales are not mammals.
+:::
+
+:::{.argument}
+Someone is carrying an umbrella on the street.\ So, it is raining.
+:::
+
+:::{.argument}
+No one carries an umbrella on the street unless it is raining. \ Someone is carrying an umbrella on the street. \ So, it is raining.
+:::
+
+It is often difficult to tell whether the conclusion follows from the premises or the extent to which the argument is risk-free:
+
+:::{.argument}
+No human observer is able to observe more than a finite number of stars. So, humanity as a whole is only able to observe a finite number of stars.
+:::
+
+:::{.argument}
+If cobalt but no nickel is present in the sample, then a brown color should eventually appear. Either nickel or manganese is absent. Cobalt is present but only a green color appears. Therefore, nickel must be present.
+:::
+
+:::{.argument}
+The statue did not come into existence until we molded the clay of which it is made into one. However, the clay of which it is made existed well before we did that. If the statue is the same  object as the clay, then whatever is true of one is true of the other. Therefore, the statue is not the same object as the clay; they are two  distinct material objects occupying the same space at the same time.
+:::
+
+## Arguments {-}
+
+Arguments are composed of *declarative sentences*, which are sentences we use to make statements that are either true or false. We will be exclusively concerned with inferences from some declarative sentences, which are its premises, to a declarative sentence marked as its conclusion. More precisely:
+
+```{marginfigure, echo=TRUE}
+What is an argument?
+```
+
+:::{.definition}
+An *argument* is a sequence of declarative sentences. The last sentence in the sequence is its *conclusion*, and the sentences that precede the conclusion are its *premises*.
+:::
+
+To avoid confusion, it is important to distinguish the technical use of the term in logic from more colloquial uses of the word.^[Monty Python's [Argument Clinic](https://youtu.be/ohDB5gbtaEQ) illustrates the difference.]. It will be helpful to consider some examples.
+
+::: {.example}
+
+Consider the argument:
+
+:::{.argument}
+The laptop will not work if the battery is dead. The battery is dead. Therefore, the laptop will not work.
+:::
+
+We represent the argument by means of a numbered sequence of statements. The last statement is the conclusion of the argument, and the statements that precede the conclusion are its premises.
+
+1. The laptop will not work if the  battery is dead.
+2. The battery is dead.
+3. The laptop  will not work.
+:::
+
+The conclusion of an argument is often preceded by transitional phrases such as 'therefore', 'thus', 'it follows that', etc. These phrases indicate that the statement in question is supported by other premises. Notice, however, that while it is perhaps usual for the conclusion of the argument to appear last in the argument, it is not uncommon for it to appear elsewhere in the argument.
+
+:::{.example}
+Consider the argument:
+
+:::{.argument}
+We do not know that the animal in the pen is a zebra. For if we did, then we would know it is not a cleverly painted mule. But we cannot be sure it is not a cleverly painted mule.
+:::
+
+We represent the argument with the help of a list of premises followed by a conclusion:
+
+1. If we knew that the animal in the pen is a zebra, then we would know it is not a cleverly painted mule
+2. We cannot be sure it is not a cleverly painted mule. 
+3. We do not know that the animal in  the pen is a zebra.
+:::
+
+More generally, there is more than one way in which one and the same argument may be given in natural language:
+
+:::{.argument}
+The laptop will not work if the battery is dead. So, the laptop will not work. For the battery is dead.
+:::
+
+:::{.argument}
+The laptop will not work. After all, the battery is dead, and the laptop will not work if the battery is dead.
+:::
+
+:::{.practice}
+Consider the argument:
+
+:::{.argument}
+If the economy stalls, then weak demand will pull inflation down. We will have weak demand only if the economy stalls. Therefore, inflation will come down if there is weak demand.
+:::
+Write the argument in premise-conclusion form.
+
+<details>
+<summary>There are two premises and a conclusion.</summary>
+1. If the economy stalls, then weak demand will pull inflation down.
+2. We will have weak demand only if the economy stalls.
+3. Inflation will come down if there is weak demand.
+</details>
+:::
+
+## Validity and Form {-}
+
+We aim for a better characterization of validity, which we have tentatively characterized in terms of risk. On a first approximation, a valid argument is one where there is no risk that the premises may be true while the conclusion is false. That suggests a crude characterization of validity in terms of possibility:
+
+```{marginfigure, echo=TRUE}
+A false start
+```
+
+:::{.warning}
+An argument is valid if and only if it is *impossible* for the premises to be true while the conclusion is false.
+:::
+That would be a false start, since the characterization would misclassify each of the two arguments below as valid:
+
+:::{.argument}
+The battery is dead. Therefore, the laptop will work or $\sqrt{2}$ is irrational.
+:::
+
+:::{.argument}
+The animal in the pen is a zebra. Therefore, there are infinitely many numbers.
+:::
+
+While there is no risk for the premises to be true and the conclusion to be false in these cases, the reason has nothing to do with the form of the arguments but rather something to the subject matter of the statements involved. Instead, we will be concerned with cases in which it is the very form of the argument that explains the absence of risk.
+
+
+::: {.example}
+We may discern a common valid *argument form* in all three arguments given below:
+
+:::{.argument}
+1. If there is gas in the tank, then the engine will start. \
+2. There is gas in the tank. \
+3. Therefore, the engine will start.
+:::
+
+:::{.argument}
+1. If today is Thursday, then  tomorrow will be Friday. \
+2. Today is Thursday. \
+3. Therefore, tomorrow will be Friday.
+:::
+
+:::{.argument}
+1. If the animal in the pen is a zebra,  then it is not a cleverly painted mule. \
+2. The animal in the pen is a zebra. \
+3. Therefore, the animal in the pen is not  a cleverly painted mule.
+:::
+Here is the argument form in question:
+
+:::{.argument}
+1. If $p$, then $q$.\
+2. $p$\
+3. $q$\
+:::
+:::
+
+We will be particularly interested in argument forms generated by propositional connectives such as 'not', 'or', 'and', and 'if'. Other inferences exemplify valid argument forms in which these connectives are involved:
+
+::: {.example}
+All three arguments below exemplify a common valid *argument form*:
+
+:::{.argument}
+1. The battery is dead  or the laptop is broken.\ 
+2. The battery is not dead.\
+3. Therefore, the laptop is broken.
+:::
+
+:::{.argument}
+1. Either the butler did it or the gardener did it.\ 
+2. The gardener did not do it.\ 
+3. So, the butler did it. 
+:::
+
+:::{.argument}
+1. Either interest rates will be cut or inflation will continue to rise.\ 
+2. Interest rates will not be cut.\ 
+3. Therefore, interest rates will continue to rise.
+:::
+
+Here is the form in question:
+
+:::{.argument}
+1. $p$ or $q$\
+2. Not-$p$\
+3. $q$
+:::
+:::
+
+
+::: {.practice}
+Identify a common valid *argument form* in the arguments given below:
+
+:::{.argument}
+1. If I know it is 3 o'clock, then it is 3 o'clock.\ 
+2. It is not 3 o'clock.\
+3. Therefore, I do not know it is 3 o'clock.
+:::
+
+:::{.argument}
+1. If the gardener did it, then he had a motive.\ 
+2. The gardener did not have a motive.\ 
+3. So, the gardener did not do it. 
+:::
+
+:::{.argument}
+1. If Pluto is a planet, then the solar system has nine planets.\ 
+2. The solar system does not have nine planets\ 
+3. Therefore, Pluto is not a planet.
+:::
+
+<details>
+<summary>The argument form comes with two premises and a conclusion.</summary>
+
+:::{.argument}
+1. If $p$, then $q$\
+2. Not-$q$\
+3. Not-$q$
+:::
+</details>
+:::
+
+We may turn this observation into a crude definition of validity.
+
+```{marginfigure, echo=TRUE}
+What is a valid argument?
+```
+
+:::{.definition}
+An argument is *valid* if, and only if, it is an instance of a valid argument form.
+:::
+One concern is that we have explained what is for an argument to be valid in terms of the exemplification of a valid *argument form*. But that just seems to postpone the question. We have made little progress unless we are able to explain what makes an argument form valid. That, however, is the one of the goals of the introduction of the formal languages we will subsequently study. They will give us the tools to identify and characterize a broad family of valid argument forms, and we will be able to explain their validity in terms of the behavior of logical connectives, which are formal counterparts of subsentential expressions in English. In the meantime, we will content ourselves with the fact that valid argument forms exemplify the following distinctive features:
+
+```{marginfigure, echo=TRUE}
+**Two distinctive features of valid argument forms**
+```
+
+:::{.info}
+1. A valid argument form has *no* argument instances with true premises and a false conclusion.
+2. A valid argument form preserves the truth of its premises regardless of the subject matter of its instances.
+:::
+
+Let us look at further examples of valid arguments:
+
+:::{.example}
+Consider the argument:
+
+:::{.argument}
+If the mind the same thing as the brain, then the mind is mortal. The mind is immortal. Thefore, the mind is not the same thing as the brain.
+:::
+In premise-conclusion form:
+
+:::{.argument}
+1. If the mind the same thing as the brain, then the mind is mortal. \
+2. The mind is immortal. \
+3. The mind is not the same thing as the brain.
+:::
+
+This argument is an instance of a valid argument form:
+
+:::{.argument}
+1. If $p$, then $q$\
+2. Not $q$\
+3. Not $p$
+:::
+:::
+
+A valid argument is not the same as a persuasive one. How persuasive a valid argument may be depends on how persuasive we find the premises of the argument. If the argument is valid, then the conclusion is guaranteed to be true if the premises are true. But a valid argument may contain false, and even utterly unpersuasive premises. That being said, we are especially interested in valid arguments with true premises, which is why we introduce a special label for those valid arguments.
+
+```{marginfigure, echo=TRUE}
+What is a sound argument?
+```
+
+:::{.definition}
+An argument is *sound* if, and only if, it is a valid argument and its premises are all true.
+:::
+
+If an argument  is sound, then the truth of the conclusion is guaranteed by the fact that the premises are all true and validity preserves truth.
+
+:::{.example}
+Compare the two arguments given below:
+
+:::{.argument}
+1. All cities in Southern California enjoy a warm weather. \
+2. Los Angeles is a city in Southern California. \
+3. Therefore, Los Angeles enjoys a warm weather.
+:::
+
+:::{.argument}
+1. All cities in Northern Europe enjoy a warm weather.\ 
+2. Barcelona is a city in Northern Europe. \
+3. Therefore, Barcelona enjoys a warm weather.
+:::
+
+Both arguments are valid as they exemplify one and the same valid form, yet only the first is a candidate for being a sound argument, since it consists of true premises and a true conclusion. The second argument, in contrast, is valid but *unsound* since not all of its premises are true.
+:::
+
+:::{.practice}
+Which of the following three arguments is *sound*?
+
+:::{.argument}
+1. If Los Angeles is north of San Francisco, then Los Angeles is north of San Diego. \
+2. Los Angeles is north of San Francisco. \
+3. Therefore, Los Angeles is north of San Diego.
+:::
+
+:::{.argument}
+1. If Los Angeles is north of San Diego, then San Francisco is north of San Diego.\ 
+2. Los Angeles is north of San Diego. \
+3. Therefore, San Francisco is north of San Diego.
+:::
+
+
+:::{.argument}
+1. If Los Angeles is north of San Diego, then San Francisco is north of San Diego.\
+2. San Francisco is north of San Diego. \
+3. Therefore, Los Angeles is north of San Diego. \
+:::
+
+<details>
+<summary>One argument is valid but not sound, another is valid and sound, and one last argument is not even valid.</summary>
+
+The first two arguments exemplify a valid argument form:
+
+:::{.argument}
+1. If $p$, then $q$\
+2. $p$\
+3. $q$
+:::
+Since the first premise of the first argument is false, the argument is **valid** but not **sound**. 
+
+The second argument has true premises and a true conclusion, which means it is both **valid** and **sound**.
+
+The third argument does not exemplify a **valid** argument form. Notice that the following argument form is invalid:
+
+:::{.argument}
+1. If $p$, then $q$\
+2. $q$\
+3. $p$
+:::
+
+</details>
+
+:::
+
+
+
+
+## Formal Languages {-}
+
+The question of validity boils down to the question of which argument forms are valid. The validity of certain argument forms is in turn connected to the behavior of certain expressions in English, e.g., connectives such as 'not', 'and', 'or' or 'if'. So, the study of logic will require us to make inroads in the study of natural language.
+
+We will introduce two formal languages in order to be able to isolate and study valid argument forms connected to the semantic behavior of different sets of expressions. These formal languages are in some respects less complicated than natural languages such as English and Spanish. You may even conceive of them as models of natural languages in which we can isolate and study the semantic behavior of selected natural language expressions. 
+
+We should distinguish three different aspects of a language, whether natural or formal: syntax, semantics, and pragmatics.
+
+- Syntax is concerned with the formal features of the expressions of a language regardless of what they mean. In a spoken natural language like English, certain sounds are combined into syllables and words, which are in turn parts of larger syntactic items such as sentences. The grammar of the language specifies what counts as word and how words may be combined into well-formed sentences of the language.
+
+- Semantics is concerned with the interpretation of the language. In order to be a competent user of a natural language, one  must not only be able to recognize a word or a sentence of the language, one must know what they mean.
+
+- Pragmatics studies the role of context in communication. In order to understand what is communicated by the use of a sentence, one must acknowledge know not only what the sentence literally means, but how that meaning interacts with the intentions of the speaker and the common ground of the context in which it is uttered.
+
+Pragmatics will not be relevant for the study of the formal languages we will subsequently introduce, but it will play a role in our discussion of the semantic behavior of connectives such  as 'or' and 'if ..., then ...' in  natural language and the extent to which they are captured by the semantics  of the formal language.
+
+## Exercises {-}
+
+
+1. Identify the premises and conclusion of each of the following arguments.
+
+
+   a. You did not turn the ignition. The car starts when you turn the ignition and the tank is full. Unfortunately, the tank is full and the car did not start.
+   
+      <details>
+      1. The car starts when you turn the ignition and the tank is full.
+      2. The tank is full and the car did not start.
+      3. You did not turn the ignition.
+      </details>
+   
+   #. If the mind is the same as the brain, the whatever is true of one is true of the other. The brain is a physically extended object but the mind is not. So, the mind is not the same as the brain.
+   
+      <details>
+      1. If the mind is the same as the brain, the whatever is true of one is true of the  other.
+      2. The brain is a physically extended object but the mind is not.
+      3. The mind is not the same as the brain.
+      </details>
+   
+   #. The deal will fall through unless Smith is part of the negotiation. So, the deal will not be completed. For Smith just called to let us know she cannot join the negotiation.
+   
+       <details>
+      1. The deal will fall through unless Smith is part of the negotiation.
+      2. Smith just called to let us know she cannot join the negotiation.
+      3. The deal will not be completed.
+      </details>
+   
+   
+   #. You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join. Applying for club membership is regarded as a sign of eagerness. That is, if you apply for club membership, you will be perceived to be eager to join. So, you will not be admitted into the club.
+   
+       <details>
+      1. You will be admitted into the club just in case you apply for club membership and you are not perceived to be eager to join.
+      2. If you apply for club membership, you will be perceived to be eager to join.
+      3. You will not be admitted into the club.
+      </details>
+
+
+#. Which of the following arguments are valid? Focus on argument forms generated by connectives such as 'not', 'or', 'and', and 'if' in what follows.
+
+    a.  It today is Tuesday, then today is not Wednesday.
+        Today is Tuesday.
+        So, today is not Wednesday.
+        
+        <details>
+        **Valid**. The argument has a **valid argument form**:
+        
+        1. If $p$, then not-$q$
+        2. $p$
+        3. Not-$q$
+        </details>
+        
+
+    #.  Today is Tuesday or Thursday. 
+        So, today is Tuesday
+        
+         <details>
+        **Invalid**. The argument exemplifies both the forms:
+        
+        1. $p$
+        2. $q$
+        
+        and:
+        
+        1. $p$ or $q$
+        2. $p$ 
+        
+        
+        Some arguments with the same form have true premises and a false conclusion. For example:
+        
+        1. Snow is black or snow is white.
+        2. Snow is black
+        </details>
+
+    #.  Today is Tuesday or Thursday.
+        Today is not Thursday.
+        So, today is Tuesday
+        
+         <details>
+        **Valid**. The argument has a **valid argument form**:
+        
+        1. $p$ or $q$
+        2. Not-$q$
+        3. $p$
+        </details>
+        
+        
+
+    #.  I'm late on Tuesdays.
+        I'm late again today. 
+        So, today is Tuesday
+        
+         <details>
+         **Invalid**. The argument exemplifies the form:
+        
+        1. $p$
+        2. $q$
+        3. $r$
+        
+        Some instances of that argument form have true premises and a false conclusion.
+        </details>
+   
+
+  
+#. Justify the invalidity of each of the argument patterns below by providing an instance with true premises and a false conclusion. 
+
+    a.    If $p$, then $q$ or $r$.\
+          Not $q$.\
+          Therefore, $r$.
+          
+          
+    #.    $p$ unless $q$.\
+          $q$.\
+          $p$.
+          
+          <details>
+         **Invalid**. Some instances of this argument form have true premises and a false conclusion:
+         
+          1. I will be late unless I set my alarm. (True)
+          2. I set my alarm. (True)
+          3. I will be late. (False)
+          </details>
+          
+          
+    #.    $p$ if, and only if, both $q$ and $r$.\
+          $r$.\
+          $q$.
+     
+   
+#. True or false? Justify your answers.
+
+      a.    There are valid arguments with false premises and a true conclusion.
+            
+            <details>
+            **True**. Here is a valid argument with false premises and a true conclusion:
+            
+            1. Snow is white and snow is black. (False)
+            2. Snow is white. (True)
+            </details>
+  
+      #.    There are invalid arguments with true premises and a true conclusion.
+  
+      #.    There are valid arguments with a false conclusion.
+  
+      #.    There are sound arguments with a false conclusion.
+      
+            <details>
+            **False**. A sound argument is a valid argument with true premises. But a valid argument with true premises must have a true conclusion.
+            </details>
+  
+  
+      #.    If an argument is valid, then at least one of its premises is true.
+      
+            <details>
+            **False**. The argument we used in $a$ has no true premises.
+            </details>

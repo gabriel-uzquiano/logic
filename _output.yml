@@ -1,0 +1,9 @@
+bookdown::tufte_html_book:
+  toc: yes
+  css:
+    - toc.css
+    - custom.css
+  split_by: chapter
+  toc_depth: 3
+  pandoc_args:
+    - "--lua-filter=lua/practice.lua"

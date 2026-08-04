@@ -1,0 +1,150 @@
+# truth-tables.yml
+# Scaffold entries for the Truth Tables app
+# Base URL: https://truth-table.pplx.app
+# Hash format: #v1:<base64(UTF-8 JSON)>
+# JSON shape: { formulas?: string[], build?: string }
+
+entries:
+  - id: build-neg
+    label: "Build: negation"
+    build: "¬p"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IsKscCJ9"
+
+  - id: build-conj
+    label: "Build: conjunction"
+    build: "(p ∧ q)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IihwIOKIpyBxKSJ9"
+
+  - id: build-disj
+    label: "Build: disjunction"
+    build: "(p ∨ q)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IihwIOKIqCBxKSJ9"
+
+  - id: build-cond
+    label: "Build: conditional"
+    build: "p → q"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6InAg4oaSIHEifQ=="
+
+  - id: build-neg-conj
+    label: "Build: negation of conjunction"
+    build: "¬(p ∧ q)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IsKsKHAg4oinIHEpIn0="
+
+  - id: build-complex
+    label: "Build: complex formula"
+    build: "((p ∧ q) → r)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IigocCDiiKcgcSkg4oaSIHIpIn0="
+
+  - id: build-demorgan1
+    label: "Build: De Morgan 1"
+    build: "¬(p ∧ q)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IsKsKHAg4oinIHEpIn0="
+
+  - id: build-demorgan2
+    label: "Build: De Morgan 2"
+    build: "(¬p ∨ ¬q)"
+    url: "https://truth-table.pplx.app#v1:eyJidWlsZCI6IijCrHAg4oioIMKscSkifQ=="
+
+  - id: check-consistent-1
+    label: "Consistent: p→q and p"
+    formulas: ["p → q", "p"]
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyJwIOKGkiBxIiwicCJdfQ=="
+
+  - id: check-consistent-2
+    label: "Consistent: p∨q and ¬p"
+    formulas: ["p ∨ q", "¬p"]
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyJwIOKIqCBxIiwiwqxwIl19"
+
+  - id: check-inconsistent-1
+    label: "Inconsistent: p and ¬p"
+    formulas: ["p", "¬p"]
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyJwIiwiwqxwIl19"
+
+  - id: check-inconsistent-2
+    label: "Inconsistent: p→q, p, ¬q"
+    formulas: ["p → q", "p", "¬q"]
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyJwIOKGkiBxIiwicCIsIsKscSJdfQ=="
+
+  - id: check-taut
+    label: "Tautology alone"
+    formulas: ["(p ∨ ¬p)"]
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggwqxwKSJdfQ=="
+
+  - id: check-contra
+    label: "Contradiction alone"
+    formulas: ["(p ∧ ¬p)"]
+    mode: tautology
+    type: contradiction
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgwqxwKSJdfQ=="
+
+  - id: both-demorgan
+    label: "De Morgan pair + build"
+    formulas: ["¬(p ∧ q)", "(¬p ∨ ¬q)"]
+    build: "¬(p ∧ q)"
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyLCrChwIOKIpyBxKSIsIijCrHAg4oioIMKscSkiXSwiYnVpbGQiOiLCrChwIOKIpyBxKSJ9"
+
+  - id: both-cond-set
+    label: "Conditional set"
+    formulas: ["p → q", "p → r"]
+    build: "p → (q ∧ r)"
+    url: "https://truth-table.pplx.app#v1:eyJmb3JtdWxhcyI6WyJwIOKGkiBxIiwicCDihpIgciJdLCJidWlsZCI6InAg4oaSIChxIOKIpyByKSJ9"
+
+  - id: build-neg-cond-qp
+    label: "Build: ¬(q→p)"
+    build: "¬(q → p)"
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJidWlsZCI6IsKsKHEg4oaSIHApIn0="
+
+  - id: build-disj-neg
+    label: "Build: ¬(p∧q)∨¬(q→p)"
+    build: "(¬(p ∧ q) ∨ ¬(q → p))"
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJidWlsZCI6IijCrChwIOKIpyBxKSDiiKggwqwocSDihpIgcCkpIn0="
+
+  - id: taut-cond-disj
+    label: "Logical truth: (p→q)∨(q→p)"
+    formulas: ["((p → q) ∨ (q → p))"]
+    mode: tautology
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyIoKHAg4oaSIHEpIOKIqCAocSDihpIgcCkpIl19"
+
+  - id: equiv-cond
+    label: "Equivalence: p→q and ¬p∨q"
+    formulas: ["(p → q)", "(¬p ∨ q)"]
+    mode: equivalence
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIowqxwIOKIqCBxKSJdfQ=="
+
+  - id: consist-chain
+    label: "Consistency: p→q, q→r, r→¬p"
+    formulas: ["(p → q)", "(q → r)", "(r → ¬p)"]
+    mode: consistency
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIocSDihpIgcikiLCIociDihpIgwqxwKSJdfQ=="
+
+  - id: counterex-vii
+    label: "Counterexample search: p∨q, p→¬r ⊨ ¬r∨p"
+    formulas: ["(p ∨ q)", "(p → ¬r)", "(¬r ∨ p)"]
+    mode: validity
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCIocCDihpIgwqxyKSIsIijCrHIg4oioIHApIl19"
+
+  - id: counterex-viii
+    label: "Counterexample search: p∨q, ¬(p∧r) ⊨ r→q"
+    formulas: ["(p ∨ q)", "¬(p ∧ r)", "(r → q)"]
+    mode: validity
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCLCrChwIOKIpyByKSIsIihyIOKGkiBxKSJdfQ=="
+
+  - id: search-vii
+    label: "Search for counterexample: p∨q, p→¬r ⊨ ¬r∨p"
+    formulas: ["(p ∨ q)", "(p → ¬r)", "(¬r ∨ p)"]
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCIocCDihpIgwqxyKSIsIijCrHIg4oioIHApIl19"
+
+  - id: search-viii
+    label: "Search for counterexample: p∨q, ¬(p∧r) ⊨ r→q"
+    formulas: ["(p ∨ q)", "¬(p ∧ r)", "(r → q)"]
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCLCrChwIOKIpyByKSIsIihyIOKGkiBxKSJdfQ=="
+
+  - id: search-ix
+    label: "Search for counterexample: p∧q, r→¬q ⊨ p→r"
+    formulas: ["(p ∧ q)", "(r → ¬q)", "(p → r)"]
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgcSkiLCIociDihpIgwqxxKSIsIihwIOKGkiByKSJdfQ=="
+
+  - id: valid-x
+    label: "Search for counterexample: p→¬(q→r), ¬(¬p₁∨¬p), (r→p₂)∧(p₂→q) ⊨ q∨r"
+    formulas: ["(p → ¬(q → r))", "¬(¬p₁ ∨ ¬p)", "((r → p₂) ∧ (p₂ → q))", "(q ∨ r)"]
+    url: "https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgwqwocSDihpIgcikpIiwiwqwowqxw4oKBIOKIqCDCrHApIiwiKChyIOKGkiBw4oKCKSDiiKcgKHDigoIg4oaSIHEpKSIsIihxIOKIqCByKSJdfQ=="

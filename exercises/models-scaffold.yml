@@ -1,0 +1,289 @@
+# models-scaffold.yml
+# Catalog of model-checker configurations for the Semantics / Models chapter.
+# Each entry stores the model-checker "Copy link" hash:
+#   worked_hash    -> formulas + a worked interpretation (students see a model)
+#   practice_hash  -> formulas only, model BLANK (students construct the model)
+#
+# Load with:  models <- mc_load("exercises/models-scaffold.yml")
+# Then in a chapter:
+#   `r mc_embed(models[["atomic"]], solution = TRUE)`  # interactive worked model
+#   `r mc_link(models[["logtruth-counter"]], solution = TRUE, label = "configuration")`
+#
+# IMPORTANT: quote every hash. A leading # starts a YAML comment, so an
+# unquoted #v2:... would be silently dropped.
+#
+# How to capture a hash:
+#   1. Open https://gabriel-uzquiano.github.io/model-checker/
+#   2. Type the formulas and (for worked_hash) build the interpretation
+#   3. Press "Copy link"
+#   4. Paste the #v2:... portion into worked_hash / practice_hash below
+
+# --- Countermodel (invalidity) --- WORKING DEMO ----------------------------
+# Argument: Pa, Pa -> Qb, therefore Qa.  INVALID.
+# Worked countermodel: domain {a,b}, P = {a}, Q = {b}.
+#   Pa = T (a in P),  Pa->Qb = T (Qb = T),  Qa = F (a not in Q)  => invalid.
+# (A ✓ next to a formula means it PARSED ok, not that it is true; truth values
+# come from the Evaluate step.)
+- id: "countermodel"
+  label: "Countermodel: Pa, Pa→Qb ⊢ Qa"
+  formulas:
+    - "Pa"
+    - "Pa -> Qb"
+    - "Qa"
+  worked_hash: "#v2:eyJmIjpbIlBhIiwiUGEgLT4gUWIiLCJRYSJdLCJkIjpbImEiLCJiIl0sImkiOnsiUCI6WyJhIl0sIlEiOlsiYiJdfX0="
+  practice_hash: "#v2:eyJmIjpbIlBhIiwiUGEgLT4gUWIiLCJRYSJdfQ=="
+
+# --- Worked model: (Pa∧Qb)→Rab, ¬Rba, ∃x(Px∧Rxa) ---
+- id: "atomic"
+  label: "Worked model: (Pa∧Qb)→Rab, ¬Rba, ∃x(Px∧Rxa)"
+  formulas:
+    - "(Pa ∧ Qb) → Rab"
+    - "¬ Rba"
+    - "∃x (Px ∧ Rxa)"
+  worked_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrFJiYSIsIuKIg3goUHgg4oinIFJ4YSkiXSwiZCI6WyJhIiwiYiJdLCJpIjp7ImEiOiJhIiwiYiI6ImIiLCJQIjpbImEiLCJiIl0sIlEiOlsiYiJdLCJSIjpbWyJhIiwiYiJdXX0sInMiOnt9fQ=="
+
+
+# --- No variable assignment ---
+- id: "novariable"
+  label: "No variable assignment"
+  formulas:
+    - "(Pa ∧ Qb) → Rab"
+    - "¬Rba"
+    - "∃x (Px ∧ Rxa)"
+    - "(Px ∧ Qy) → Rxy"
+  worked_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrFJiYSIsIuKIg3ggKFB4IOKIpyBSeGEpIiwiKFB4IOKIpyBReSkg4oaSIFJ4eSJdLCJkIjpbImEiLCJiIl0sImkiOnsiYSI6ImEiLCJiIjoiYiIsIlAiOlsiYSIsImIiXSwiUSI6WyJiIl0sIlIiOltbImEiLCJiIl1dfSwicyI6e319"
+
+
+# --- Variable assignment α (x=a, y=b) ---
+- id: "assignment1"
+  label: "Variable assignment α (x=a, y=b)"
+  formulas:
+    - "(Pa ∧ Qb) → Rab"
+    - "¬Rba"
+    - "∃x (Px ∧ Rxa)"
+    - "(Px ∧ Qy) → Rxy"
+  worked_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrFJiYSIsIuKIg3ggKFB4IOKIpyBSeGEpIiwiKFB4IOKIpyBReSkg4oaSIFJ4eSJdLCJkIjpbImEiLCJiIl0sImkiOnsiYSI6ImEiLCJiIjoiYiIsIlAiOlsiYSIsImIiXSwiUSI6WyJiIl0sIlIiOltbImEiLCJiIl1dfSwicyI6eyJ4IjoiYSIsInkiOiJiIn19"
+
+# --- Variable assignment β (x=b, y=a) ---
+- id: "assignment2"
+  label: "Variable assignment β (x=b, y=a)"
+  formulas:
+    - "(Pa ∧ Qb) → Rab"
+    - "¬Rba"
+    - "∃x (Px ∧ Rxa)"
+    - "(Px ∧ Qy) → Rxy"
+  worked_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrFJiYSIsIuKIg3ggKFB4IOKIpyBSeGEpIiwiKFB4IOKIpyBReSkg4oaSIFJ4eSJdLCJkIjpbImEiLCJiIl0sImkiOnsiYSI6ImEiLCJiIjoiYiIsIlAiOlsiYSIsImIiXSwiUSI6WyJiIl0sIlIiOltbImEiLCJiIl1dfSwicyI6eyJ4IjoiYiIsInkiOiJhIn19"
+  practice_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrFJiYSIsIuKIg3ggKFB4IOKIpyBSeGEpIiwiKFB4IOKIpyBReSkg4oaSIFJ4eSJdfQ=="
+
+
+
+
+# --- Quantified ---
+- id: "quant"
+  label: "Quantification"
+  formulas:
+    - "∃x (Px ∧ ¬Rxa)"
+    - "∀x (Px ∧ ¬Rxa)"
+    - "(Px ∧ ¬Rxa)"
+  worked_hash: "#v2:eyJmIjpbIuKIg3ggKFB4IOKIpyDCrFJ4YSkiLCLiiIB4IChQeCDiiKcgwqxSeGEpIiwiUHgg4oinIMKsUnhhIl0sImQiOlsiYSIsImIiXSwiaSI6eyJhIjoiYSIsIlAiOlsiYSIsImIiXSwiUiI6W1siYSIsImIiXV19LCJzIjp7IngiOiJhIn19"
+
+
+
+
+
+
+# --- Countermodel: Rab → ∀x Rax ---
+- id: "ltruth-counter"
+  label: "Countermodel: Rab → ∀x Rax"
+  formulas:
+    - "Rab → ∀x Rax"
+  worked_hash: "#v2:eyJmIjpbIlJhYiDihpIg4oiAeCBSYXgiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJSIjpbWyIxIiwiMiJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIlJhYiDihpIg4oiAeCBSYXgiXX0="
+
+# --- Countermodel: ∃xPx∧∃xQx vs ∃x(Px∧Qx) ---
+- id: "equiv-counter"
+  label: "Countermodel: ∃xPx∧∃xQx vs ∃x(Px∧Qx)"
+  formulas:
+    - "∃x Px ∧ ∃x Qx"
+    - "∃x (Px ∧ Qx)"
+  worked_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oinIOKIg3ggUXgiLCLiiIN4IChQeCDiiKcgUXgpIl0sImQiOlsicCIsInEiXSwiaSI6eyJQIjpbInAiXSwiUSI6WyJxIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oinIOKIg3ggUXgiLCLiiIN4IChQeCDiiKcgUXgpIl19"
+
+# --- Consistent model: Rba, Pa, Qb, ∃x(Px∧Qx) ---
+- id: "consistency"
+  label: "Consistent model: Rba, Pa, Qb, ∃x(Px∧Qx)"
+  formulas:
+    - "Rba"
+    - "Pa"
+    - "Qb"
+    - "∃x (Px ∧ Qx)"
+  worked_hash: "#v2:eyJmIjpbIlJiYSIsIlBhIiwiUWIiLCLiiIN4IChQeCDiiKcgUXgpIl0sImQiOlsicCIsInEiXSwiaSI6eyJhIjoicCIsImIiOiJxIiwiUCI6WyJwIl0sIlEiOlsicCIsInEiXSwiUiI6W1sicSIsInAiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIlJiYSIsIlBhIiwiUWIiLCLiiIN4IChQeCDiiKcgUXgpIl19"
+
+# --- Countermodel: (Pa∧Qb)→Rab, ¬Rba, ∃x(Px∧Rxa) ---
+- id: "validity-counter"
+  label: "Countermodel: (Pa∧Qb)→Rab, ¬Rba, ∃x(Px∧Rxa)"
+  formulas:
+    - "(Pa ∧ Qb) → Rab"
+    - "¬ Rba"
+    - "∃x (Px ∧ Rxa)"
+  worked_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrCBSYmEiLCLiiIN4IChQeCDiiKcgUnhhKSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiYSI6IjEiLCJiIjoiMiIsIlAiOlsiMSIsIjIiXSwiUSI6WyIyIl0sIlIiOltbIjEiLCIyIl1dfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIihQYSDiiKcgUWIpIOKGkiBSYWIiLCLCrCBSYmEiLCLiiIN4IChQeCDiiKcgUnhhKSJdfQ=="
+
+# --- End-of-chapter exercise model ---
+- id: "exercise-model"
+  label: "End-of-chapter exercise model"
+  formulas:
+    - "Rab"
+    - "Rab → Rbb"
+    - "Pa ∧ Qb"
+    - "∃x Sx ∧ ∃x Tx"
+    - "∀x(∃y Rxy ∨ ∃y Ryx)"
+    - "∀x (Sx → ∃y(Qy ∧ Rxy))"
+  worked_hash: "#v2:eyJmIjpbIlJhYiIsIlJhYiDihpIgUmJiIiwiUGEg4oinIFFiIiwi4oiDeCBTeCDiiKcg4oiDeCBUeCIsIuKIgHgo4oiDeSBSeHkg4oioIOKIg3kgUnl4KSIsIuKIgHggKFN4IOKGkiDiiIN5KFF5IOKIpyBSeHkpKSJdLCJkIjpbIjEiLCIyIiwiMyIsIjQiXSwiaSI6eyJhIjoiMSIsImIiOiIyIiwiUCI6WyIyIl0sIlMiOlsiMSIsIjIiXSwiVCI6WyIzIl0sIlIiOltbIjEiLCIzIl0sWyIzIiwiMiJdLFsiMyIsIjQiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIlJhYiIsIlJhYiDihpIgUmJiIiwiUGEg4oinIFFiIiwi4oiDeCBTeCDiiKcg4oiDeCBUeCIsIuKIgHgo4oiDeSBSeHkg4oioIOKIg3kgUnl4KSIsIuKIgHggKFN4IOKGkiDiiIN5KFF5IOKIpyBSeHkpKSJdfQ=="
+
+# --- Consistency exercises ---
+- id: "cons-1"
+  label: "Rab, Rab→Rbb, Pa∧Qb, ¬Qa∧¬Pb"
+  formulas: ["Rab", "Rab→Rbb", "Pa∧Qb", "¬Qa∧¬Pb"]
+  worked_hash: "#v2:eyJmIjpbIlJhYiIsIlJhYuKGklJiYiIsIlBh4oinUWIiLCLCrFFh4oinwqxQYiJdLCJkIjpbIjEiLCIyIiwiMyJdLCJpIjp7ImEiOiIyIiwiYiI6IjMiLCJQIjpbIjIiXSwiUSI6WyIzIl0sIlIiOltbIjIiLCIzIl0sWyIzIiwiMyJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIlJhYiIsIlJhYuKGklJiYiIsIlBh4oinUWIiLCLCrFFh4oinwqxQYiJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "cons-2"
+  label: "Pa, Qb, Raa, (Qb∧Pa)→Rba"
+  formulas: ["Pa", "Qb", "Raa", "(Qb∧Pa)→Rba"]
+  worked_hash: "#v2:eyJmIjpbIlBhIiwiUWIiLCJSYWEiLCIoUWLiiKdQYSnihpJSYmEiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiXSwiUSI6WyIyIl0sIlIiOltbIjEiLCIxIl0sWyIyIiwiMSJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIlBhIiwiUWIiLCJSYWEiLCIoUWLiiKdQYSnihpJSYmEiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "cons-3"
+  label: "Pa, Qb, ¬∃x(Px∧Qx)"
+  formulas: ["Pa", "Qb", "¬∃x(Px∧Qx)"]
+  worked_hash: "#v2:eyJmIjpbIlBhIiwiUWIiLCLCrOKIg3goUHjiiKdReCkiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiXSwiUSI6WyIyIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIlBhIiwiUWIiLCLCrOKIg3goUHjiiKdReCkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "cons-4"
+  label: "∀x(Px∨Qx), ¬(∀xPx∨∀xQx)"
+  formulas: ["∀x(Px∨Qx)", "¬(∀xPx∨∀xQx)"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjiiKhReCkiLCLCrCjiiIB4IFB4IOKIqCDiiIB4IFF4KSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiUCI6WyIxIl0sIlEiOlsiMiJdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjiiKhReCkiLCLCrCjiiIB4IFB4IOKIqCDiiIB4IFF4KSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "cons-5"
+  label: "∃x(Px∧Qx), ∀x(Px→(Rx→¬Qx)), Pa∧Ra"
+  formulas: ["∃x(Px∧Qx)", "∀x(Px→(Rx→¬Qx))", "Pa∧Ra"]
+  worked_hash: "#v2:eyJmIjpbIuKIg3goUHjiiKdReCkiLCLiiIB4IChQeOKGkihSeOKGksKsUXgpKSIsIlBh4oinUmEiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiUCI6WyIxIiwiMiJdLCJRIjpbIjIiXSwiUiI6WyIxIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIg3goUHjiiKdReCkiLCLiiIB4IChQeOKGkihSeOKGksKsUXgpKSIsIlBh4oinUmEiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "cons-6"
+  label: "∀x(Px→Qx), Rabb, ∃x(Qx∧Rxxa)"
+  formulas: ["∀x(Px→Qx)", "Rabb", "∃x(Qx∧Rxxa)"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHggKFB44oaSUXgpIiwiUmFiYiIsIuKIg3ggKFF44oinUnh4YSkiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiXSwiUSI6WyIxIl0sIlIiOltbIjEiLCIxIiwiMSJdLFsiMSIsIjIiLCIyIl1dfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHggKFB44oaSUXgpIiwiUmFiYiIsIuKIg3ggKFF44oinUnh4YSkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "cons-7"
+  label: "∀xPx→∀xQx, ¬∀x(Px→Qx)"
+  formulas: ["∀xPx→∀xQx", "¬∀x(Px→Qx)"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHggUHgg4oaSIOKIgHggUXgiLCLCrOKIgHggKFB4IOKGkiBReCkiXSwiZCI6WyIxIiwiMiJdLCJpIjp7IlAiOlsiMSJdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHggUHgg4oaSIOKIgHggUXgiLCLCrOKIgHggKFB4IOKGkiBReCkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "cons-8"
+  label: "∀x(Rax→Px), ∃xRxx, ¬Raa"
+  formulas: ["∀x(Rax→Px)", "∃xRxx", "¬Raa"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHggKFJheCDihpIgUHgpIiwi4oiDeCBSeHgiLCLCrFJhYSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiYSI6IjEiLCJQIjpbIjEiXSwiUiI6W1siMiIsIjIiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIgHggKFJheCDihpIgUHgpIiwi4oiDeCBSeHgiLCLCrFJhYSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "cons-9"
+  label: "∀x∀y(Rxy→Ryx), ∀x∃yRxy"
+  formulas: ["∀x∀y(Rxy→Ryx)", "∀x∃yRxy"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IOKGkiBSeXgpIiwi4oiAeCDiiIN5IFJ4eSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiUiI6W1siMSIsIjIiXSxbIjIiLCIxIl1dfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IOKGkiBSeXgpIiwi4oiAeCDiiIN5IFJ4eSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "cons-10"
+  label: "∀x∃yRxy, ¬∃x∀yRxy"
+  formulas: ["∀x∃yRxy", "¬∃x∀yRxy"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgg4oiDeSBSeHkiLCLCrCDiiIN4IOKIgHkgUnh5Il0sImQiOlsiMSIsIjIiXSwiaSI6eyJSIjpbWyIxIiwiMiJdLFsiMiIsIjEiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgg4oiDeSBSeHkiLCLCrCDiiIN4IOKIgHkgUnh5Il0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+# --- Non-equivalence exercises ---
+- id: "equiv-1"
+  label: "Pa∧Pb  /  ∀xPx"
+  formulas: ["Pa∧Pb", "∀xPx"]
+  worked_hash: "#v2:eyJmIjpbIlBhIOKIpyBQYiIsIuKIgHggUHgiXSwiZCI6WyIxIiwiMiIsIjMiXSwiaSI6eyJhIjoiMSIsImIiOiIyIiwiUCI6WyIxIiwiMiJdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIlBhIOKIpyBQYiIsIuKIgHggUHgiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "equiv-2"
+  label: "¬∀x(Px∧Qx)  /  ¬∃x(Px∧Qx)"
+  formulas: ["¬∀x(Px∧Qx)", "¬∃x(Px∧Qx)"]
+  worked_hash: "#v2:eyJmIjpbIsKs4oiAeChQeOKIp1F4KSIsIsKs4oiDeChQeOKIp1F4KSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiUCI6WyIxIl0sIlEiOlsiMSIsIjIiXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIsKs4oiAeChQeOKIp1F4KSIsIsKs4oiDeChQeOKIp1F4KSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "equiv-3"
+  label: "∀x(Px→Qx)  /  (∀xPx→∀xQx)"
+  formulas: ["∀x(Px→Qx)", "∀xPx→∀xQx"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLiiIB4IFB4IOKGkiDiiIB4IFF4Il0sImQiOlsiMSIsIjIiXSwiaSI6eyJQIjpbIjEiXSwiUSI6WyIyIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLiiIB4IFB4IOKGkiDiiIB4IFF4Il0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+# --- Invalidity / countermodel exercises ---
+- id: "inv-1"
+  label: "∀x(Px→Qx) ⊢ ∀x¬Px ∨ ∀xQx"
+  formulas: ["∀x(Px→Qx)", "∀x¬Px ∨ ∀xQx"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLiiIB4IMKsUHgg4oioIOKIgHggUXgiXSwiZCI6WyIxIiwiMiJdLCJpIjp7IlAiOlsiMiJdLCJRIjpbIjIiXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLiiIB4IMKsUHgg4oioIOKIgHggUXgiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "inv-2"
+  label: "∃xPx ∧ ∃xQx ⊢ ∃x(Px∧Qx)"
+  formulas: ["∃xPx ∧ ∃xQx", "∃x(Px∧Qx)"]
+  worked_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oinIOKIg3ggUXgiLCLiiIN4IChQeCDiiKcgUXgpIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJQIjpbIjEiXSwiUSI6WyIyIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oinIOKIg3ggUXgiLCLiiIN4IChQeCDiiKcgUXgpIl0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "inv-3"
+  label: "¬∀x(Px→¬Qx) ⊢ ∀x(Px→Qx)"
+  formulas: ["¬∀x(Px→¬Qx)", "∀x(Px→Qx)"]
+  worked_hash: "#v2:eyJmIjpbIsKs4oiAeChQeOKGksKsUXgpIiwi4oiAeChQeOKGklF4KSJdLCJkIjpbIjEiLCIyIl0sImkiOnsiUCI6WyIxIiwiMiJdLCJRIjpbIjIiXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIsKs4oiAeChQeOKGksKsUXgpIiwi4oiAeChQeOKGklF4KSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "inv-4"
+  label: "∀x(¬Px→Qx), ∃x(Qx∧Rxb) ⊢ ∃x(¬Px∧Rxb)"
+  formulas: ["∀x(¬Px→Qx)", "∃x(Qx∧Rxb)", "∃x(¬Px∧Rxb)"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgowqxQeOKGksKsUXgpIiwi4oiDeChReOKGklJ4YikiLCLiiIN4KMKsUHjiiKdSeGIpIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJiIjoiMiIsIlAiOlsiMSIsIjIiXSwiUSI6WyIxIiwiMiJdLCJSIjpbWyIxIiwiMiJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgowqxQeOKGksKsUXgpIiwi4oiDeChReOKGklJ4YikiLCLiiIN4KMKsUHjiiKdSeGIpIl0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "inv-5"
+  label: "∀x(Px→Rxa), ∃x(Qx∧Rax) ⊢ ∃x(Px∧∃y(Qy∧Rxy))"
+  formulas: ["∀x(Px→Rxa)", "∃x(Qx∧Rax)", "∃x(Px∧∃y(Qy∧Rxy))"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJSeGEpIiwi4oiDeChReOKIp1JheCkiLCLiiIN4KFB44oin4oiDeShReeKIp1J4eSkpIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJhIjoiMSIsIlEiOlsiMiJdLCJSIjpbWyIxIiwiMiJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJSeGEpIiwi4oiDeChReOKIp1JheCkiLCLiiIN4KFB44oin4oiDeShReeKIp1J4eSkpIl0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "inv-6"
+  label: "∀x¬Rxx, ∀x∀y∀z((Rxy∧Ryz)→Rxz) ⊢ ∀x∀y¬Rxy"
+  formulas: ["∀x¬Rxx", "∀x∀y∀z((Rxy∧Ryz)→Rxz)", "∀x∀y¬Rxy"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHjCrFJ4eCIsIuKIgHjiiIB54oiAeigoUnh54oinUnl6KeKGklJ4eikiLCLiiIB44oiAecKsUnh5Il0sImQiOlsiMSIsIjIiXSwiaSI6eyJSIjpbWyIxIiwiMiJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHjCrFJ4eCIsIuKIgHjiiIB54oiAeigoUnh54oinUnl6KeKGklJ4eikiLCLiiIB44oiAecKsUnh5Il0sImQiOlsiMSIsIjIiXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "inv-7"
+  label: "∀x¬Rxx, ∀x∀y∀z((Rxy∧Ryz)→Rxz) ⊢ ∀x∀y∀z(Rxy→¬Ryz)"
+  formulas: ["∀x¬Rxx", "∀x∀y∀z((Rxy∧Ryz)→Rxz)", "∀x∀y∀z(Rxy→¬Ryz)"]
+  worked_hash: "#v2:eyJmIjpbIuKIgHjCrFJ4eCIsIuKIgHjiiIB54oiAeigoUnh54oinUnl6KeKGklJ4eikiLCLiiIB44oiAeeKIgHooUnh54oaSwqxSeXopIl0sImQiOlsiMSIsIjIiLCIzIl0sImkiOnsiUiI6W1siMSIsIjIiXSxbIjEiLCIzIl0sWyIyIiwiMyJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHjCrFJ4eCIsIuKIgHjiiIB54oiAeigoUnh54oinUnl6KeKGklJ4eikiLCLiiIB44oiAeeKIgHooUnh54oaSwqxSeXopIl0sImQiOlsiMSIsIjIiLCIzIl0sImkiOnt9LCJzIjp7fX0="
+
+# --- Non-logical-truth exercises ---
+- id: "nlt-1"
+  label: "Not a logical truth 1"
+  formulas:
+    - "∃x Px → ∀x Px"
+  worked_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oaSIOKIgHggUHgiXSwiZCI6WyIxIiwiMiJdLCJpIjp7IlAiOlsiMSJdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIg3ggUHgg4oaSIOKIgHggUHgiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0"
+
+- id: "nlt-2"
+  label: "Not a logical truth 2"
+  formulas:
+    - "∃x(Px ∧ ∀y(Py → Qy))"
+  worked_hash: "#v2:eyJmIjpbIuKIg3goUHggJiDiiIB5KFB5IC0+IFF5KSkiXSwiZCI6WyIxIiwiMiJdLCJpIjp7IlAiOlsiMSIsIjIiXSwiUSI6WyIyIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIg3goUHggJiDiiIB5KFB5IC0+IFF5KSkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0"
+
+- id: "nlt-3"
+  label: "Not a logical truth 3"
+  formulas:
+    - "∀x ∀y(Rxy → Ryx) → ∀x Rxx"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IC0+IFJ5eCkg4oaSIOKIgHggUnh4Il0sImQiOlsiMSIsIjIiXSwiaSI6eyJSIjpbWyIxIiwiMiJdLFsiMiIsIjEiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IC0+IFJ5eCkg4oaSIOKIgHggUnh4Il0sImQiOltdLCJpIjp7fSwicyI6e319"

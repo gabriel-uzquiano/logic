@@ -1,0 +1,402 @@
+# Limits of Propositional Logic
+
+We sometimes speak of *the translation of an English sentence into propositional logic* when there is often more than candidate translation for the target sentence. There is, for example, room for the choice of different propositional variables and for the treatment of English phrases such as 'unless' or 'neither $\dots$ nor $\dots$'. Part of the reason we ignore the differences between them is because they will be unimportant for our purposes. If an English sentence is classified as a tautology, then it will not make a difference whether we choose one translation key or another for purposes of translation. For example, $p \to (q \to p)$ is a tautology, but the same is true for the result of the systematic replacement of its propositional variables for different ones, e.g., $r \to (p \to r)$. Nor will it make a difference to translate 'unless' in terms of 'if not' or to translate it in terms of 'or' as the appropriate translations will be equivalent to each other, and one will be a tautology or a contradiction or neither if, and only if, the other is.
+
+Structural ambiguity presents a separate problem of its own, since it provides us with cases in which one and the same English sentence appears to admit more than one translation into propositional logic, and there is no reason to expect them to be equivalent to each other. In such cases, it would be better to speak of translations of different *interpretations* of the original sentence. In what follows, we will set the issue of ambiguity to one side and continue, for all intents and purposes, to talk of translation of a sentence.
+
+## Natural Language and Propositional Logic {-}
+
+We start with two categories for sentences of natural language.
+
+```{marginfigure, echo=TRUE}
+  Tautology
+```
+
+Tautology
+
+:   An English sentence is a *tautology* if, and only if, its translation into propositional logic is a tautology.
+
+
+:::{.example}
+Consider the English sentence: 
+
+:::{.argument}
+Unless I purchase a lottery ticket, it is not the case that I purchase a lottery ticket and I win the lottery
+:::
+
+This sentence is a tautology because it translates into a tautology of propositional logic:
+
+$$
+\neg p \to \neg (p \wedge q)
+$$
+**Translation key**:
+
+:::{.argument}
+$p$: I purchase a lottery ticket.\
+$q$: I win the lottery
+:::
+ 
+ But the sentence we obtain is a tautology:
+ $$
+\begin{array}{|c|c|c|}
+\hline
+p  & q &  \ \neg p \to \neg (p \wedge q) \\
+\hline
+T & T  & \! \! \! \! \! \! \color{red}{T}\\
+T & F  & \! \! \! \! \! \! \color{red}{T}\\
+F & T  &  \! \! \! \! \! \! \color{red}{T}\\
+F & F  & \! \! \! \! \! \! \color{red}{T}\\
+\hline
+\end{array}
+$$
+:::
+A tautology is a *logical truth*, since it is true in virtue of the form it exemplifies. But that is not to suggest that every logical truth of English is a tautology. Some English sentences, e.g., 'all human beings are human', should count as a logical truth in virtue of the form they exemplify, yet they do not translate into a tautology of propositional logic.
+
+On the face of it, the English sentence 'all human beings are human', is a logical truth since it exemplifies the form 'all $H$ are $H$' all of whose instances appear to be true. Yet, the sentence translates into a propositional letter of the form $p$ in propositional logic.
+
+```{marginfigure, echo=TRUE}
+  Contradiction
+```
+
+Contradiction
+
+:   An English sentence is a *contradiction* if, and only if, it translates into a contradiction of propositional logic.
+
+
+:::{.example}
+Consider the English sentence: 
+
+:::{.argument}
+You will not purchase a lottery ticket though it is not true that you will not purchase one or you will win.
+:::
+
+This sentence is a contradiction because it can be translated into the language of propositional logic as follows:
+
+$$
+\neg p \wedge \neg (\neg p \vee q)
+$$
+**Translation key**:
+
+:::{.argument}
+$p$: I will purchase a lottery ticket.\
+$q$: I will win the lottery
+:::
+ 
+ But the sentence we obtain is a contradiction:
+ $$
+\begin{array}{|c|c|c|}
+\hline
+p  & q &  \neg p \wedge \neg (\neg  p \vee q) \\
+\hline
+T & T  & \! \! \! \! \! \! \color{red}{F}\\
+T & F  & \! \! \! \! \! \! \color{red}{F}\\
+F & T  &  \! \! \! \! \! \! \color{red}{F}\\
+F & F  & \! \! \! \! \! \! \color{red}{F}\\
+\hline
+\end{array}
+$$
+:::
+A contradiction is logically false or false in virtue of the form it exemplifies. Note, however, that some logically false sentences of English do not translate into contradictions of propositional logic, e.g., 'some human beings are not human' does not. Part of the problem is that propositional logic is not sufficiently rich to capture the structural aspects of the sentence in virtue of which it is false.
+
+```{marginfigure, echo=TRUE}
+  Propositional Equivalence
+```
+
+Propositional Equivalence
+
+:   Two English sentences are *propositionally equivalent* if, and only if, they translate into equivalent formulas of propositional logic.
+
+
+:::{.example}
+Consider the two English sentences:
+
+:::{.argument}
+You will not win the lottery unless you purchase a ticket.
+:::
+
+:::{.argument}
+You will win the lottery only if you purchase a ticket.
+:::
+
+These sentences are propositionally equivalent because they translate into two equivalent sentences of propositional logic:
+
+$$
+\begin{array}{c}
+\neg p \to \neg q \\
+q \to p 
+\end{array}
+$$
+**Translation key**:
+
+:::{.argument}
+$p$: I will purchase a lottery ticket.\
+$q$: I will win the lottery
+::: 
+ 
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+p  & q &  \neg p \to \neg q & q \to p \\
+\hline
+T & T  &  \color{red}{T} &  \color{red}{T} \\
+T & F  &  \color{red}{T}  &  \color{red}{T} \\
+F & T  &   \color{red}{F} &  \color{red}{F} \\
+F & F  &  \color{red}{T} &  \color{red}{T} \\
+\hline
+\end{array}
+$$
+:::
+If two natural language sentences are propositionally equivalent, then they are logically equivalent. On the other hand, two sentences of English may be logically equivalent even if they are not propositionally equivalent. The sentences 'Not all logicians are philosophers' and 'Some logicians are not philosophers' entail each other because they exemplify the forms 'Not all $L$ are $P$' and 'Some $L$ are not $P$'. So, they are presumably logically equivalent, even though they are not propositionally equivalent; their translations into propositional logic are not equivalent.
+
+```{marginfigure, echo=TRUE}
+  Propositional Consistency
+```
+
+
+Propositional Consistency
+
+:   A set of English sentences is *propositionally consistent* if, and only if, they translate into the members of a consistent set of formulas of propositional logic.
+
+:::{.example}
+Consider the set of three English sentences:
+
+:::{.argument}
+You will not win the lottery unless you purchase a ticket.\
+You will purchase a ticket.\
+You will not win the lottery.
+:::
+
+The set of three sentences is propositionally consistent because the set of its translations into propositional logic is consistent:
+
+$$
+\begin{array}{c}
+\neg p \to \neg q\\
+p\\
+\neg q
+\end{array}
+$$
+**Translation key**:
+
+:::{.argument}
+$p$: I will purchase a lottery ticket.\
+$q$: I will win the lottery
+:::
+ 
+To check that the set is consistent, we construct a truth table in search of an assignment making true all three formulas.
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+p  & q &  \neg p \to \neg q & p &  \neg q \\
+\hline
+T & T  &  T &  T & F \\
+T & F  &  \color{red}{T}  &  \color{red}{T}  &  \color{red}{T} \\
+F & T  &  F & F &  F \\
+F & F  &  T & F &  T \\
+\hline
+\end{array}
+$$
+
+:::
+
+```{marginfigure, echo=TRUE}
+  Propositional Validity
+```
+
+Propositional Validity 
+
+:   An argument in English is *propositionally valid* if, and only if, it translates into a valid argument of propositional logic.
+
+
+::: {.example}
+Consider the natural language argument:
+
+> You will be rich tomorrow if you buy a lottery ticket from me. You will buy a ticket from me if the lottery is rigged and you think that I'm part of the scheme. The lottery is rigged but you will not be rich tomorrow. So, you do not think that I'm part of the scheme.
+
+In premise-conclusion form:
+
+1. You will be rich tomorrow if you buy a lottery ticket from me.
+2. You will buy a ticket from me if the lottery is rigged and you think that I'm part of the scheme.
+3. The lottery is rigged but you will not be rich tomorrow.
+4. So, you do not think that I'm part of the scheme.
+
+
+Here is the translation of the argument into the language of propositional logic.
+
+
+1. $p \to q$
+2. $(r \wedge s) \to p$
+3. $r \wedge \neg q$
+4. $\neg s$
+
+
+**Translation key**:
+
+:::{.argument}
+$p$: You will buy a lottery ticket from me.\
+$q$: You will be rich tomorrow.\
+$r$: The lottery is rigged.\
+$s$: You think I'm part of the scheme.
+:::
+
+
+We now use a natural deduction proof in order to justify the validity of the argument formulated in propositional logic:
+
+<img src="images/ex 5.5.png" style="display:block; margin: 0 auto;">
+
+The translation of the argument into propositional logic is valid, which makes the original argument propositionally valid.
+:::
+
+To be sure, propositional validity is a species of validity, but not every valid argument is propositionally valid. Some valid arguments translate into invalid arguments of propositional logic simply because propositional logic is not well equipped to capture the structural aspects of the argument that are responsible for its validity in English. Let us look at an example of a putative valid argument that is *not* propositionally valid.
+
+:::{.example} 
+Consider the natural language argument:
+
+> Unless the mind is material, each human being has an immaterial part. Descartes is a human being. Therefore, unless the mind is material, Descartes has an immaterial part.
+
+In premise-conclusion form, the argument would read:
+
+1. Unless the mind is material, every human being has an immaterial part.
+2. Descartes is a human being.
+3. Descartes has an immaterial part.
+
+Here is the translation of the argument into the language of propositional logic.
+
+ 1. $\neg p \to q$
+ 2. $r$
+ 3. $\neg p \to s$
+ 
+ **Translation key**:
+
+:::{.argument}
+$p$: The mind is material.\
+$q$: Each human being has an immaterial part.\
+$r$: Descartes is a human being.
+$s$: Descartes has an immaterial part.
+:::
+ 
+But it is not difficult to verify that the argument formulated in the language of propositional logic is invalid. Here is an assignment on which the premises come out true and the conclusion false: 
+ $$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+p  & q & r & s & \neg p \to q & r & \neg p \to s \\
+\hline
+F & T &  T &  F & \color{red}{T}  & \color{red}{T} &  \color{red}{F} \\
+ \hline
+ \end{array}
+$$
+ 
+ 
+ 
+ 
+ 
+ 
+And yet, a closer look at the argument formulated in English suggests that it exemplifies a valid argument form, just not one that is captured in the language of propositional logic:
+
+1. Unless $p$, every $H$ is $I$.
+2. $D$ is $H$
+3. Unless $p$, $D$ is $I$
+:::
+ 
+ 
+## Expressive Limitations {-}
+
+A variety of valid arguments in English fail to be propositionally valid. That is, the arguments appear exemplify a valid argument form, but their translation into the language of propositional logic is not valid. For a particularly simple example, consider the argument:
+
+> All logicians are philosophers. George is a logician. Therefore, George is a philosopher.
+
+The argument is not propositionally valid because both premises and conclusion translate into propositional variables; they are not constructed from simpler sentences by means of a connective. But the reason the argument is valid is that the sentences display a measure of complexity, one that is not captured by propositional logic. What is required for present purposes is a more powerful and sophisticated formal language, one that does justice to the structure of the three sentences and the argument form they exemplify.
+
+ 
+In order to do better, we have to find a way discern more structure in sentences such as 'Peter is a logician' and 'Peter is a philosopher'. One observation is that we can discern constituents of two broad types in each sentence. They each contain a word, i.e., 'George', whose primary semantic function is to *designate* an individual, And they each contain an expression, i.e., 'is a logician' and 'is a philosopher', whose primary semantic function is to *predicate* something of an individual. Some of the sentences we treated as simple in the context of propositional logic may now be regarded as complex sentences, which combine one or more *designators* with a *predicate*.
+ 
+```{marginfigure, echo=TRUE}
+  Predicates and Designators
+```
+
+Predicates and Designators
+
+:   The primary semantic function of a *designator* is to designate an individual, and the primary semantic function of a *predicate* is to predicate something of an individual.
+ 
+:::{.example} 
+Each of the sentences below combines one or more designators with a predicate:
+ 
+:::{.argument} 
+$\underbrace{\text{Los Angeles}}_{\text{designator}} \ \underbrace{\text{is a city}}_{\text{predicate}}$.
+ 
+$\underbrace{\text{Los Angeles}}_{\text{designator}}$ \  $\underbrace{\text{is south of}}_{\text{predicate}}$ \ $\underbrace{\text{San Francisco}}_{\text{designator}}$ 
+ 
+$\underbrace{\text{George}}_{\text{designator}} \ \underbrace{\text{is a philosopher}}_{\text{predicate}}$.
+ 
+$\underbrace{\text{I}}_{\text{designator}}$ \  $\underbrace{\text{talked to}}_{\text{first part of the predicate}}$ \ $\underbrace{\text{her}}_{\text{designator}}$ \ $\underbrace{\text{over zoom}}_{\text{second part of the predicate}}$
+::: 
+:::
+ 
+ 
+Notice that while some predicate expressions, e.g., '$\dots$ is a philosopher', combine with just one designator in order to form a sentence, others, e.g., '$\dots$ is south of $\dots$' or 'comes between $\dots$ and $\dots$' require more than one designator. Once we acknowledge the distinction between designators and predicates, we realize that the methods of propositional logic are much too crude to represent the structure of predication.
+ 
+ 
+There is another category of expression we find in simple sentences that translate into propositional variables of propositional logic. There is, in particular, an important difference between the sentences 'George is a logician' and 'Someone is a logician'. The two sentences contain a predicate expression, i.e., '$\dots$ is a logician', which at least in one case combines with a designator, i.e., 'George'. The crucial observation now is that the word 'Someone' is *not* a designator, since its primary semantic function is *not* to designate an individual. For what individual could that be? 'Someone' does not designate Peter or any other logician for that matter. 
+
+The contrast between quantification and designation is perhaps more clear in the case of quantifier expressions such as 'no one' as it occurs in the sentence 'No one is a logician'. Whatever the semantic function of the quantifier expression 'no one', it is *not* to designate an individual of which something is predicated. In fact, the truth conditions of the sentence require the existence of no logicians at all.
+
+```{marginfigure, echo=TRUE}
+  Quantifiers
+```
+
+Quantifiers
+
+:   The primary semantic function of a quantifier is to express generality.
+
+
+Some quantifier expressions combine a quantifier, which is a mark of generality, with a predicate in order to form a quantifier phrase. The combination, for example, of the quantifier 'some' with the predicate 'book' results in the quantifier phrase: 'some book'. Likewise for the combination of a quantifier such as 'most' with a predicate such as 'material object', which results in the quantifier phrase: 'most books'.
+
+
+:::{.example} 
+Each of the sentences below combine occurrences of designators, predicates, and quantifier expressions:
+ 
+:::{.argument} 
+$\underbrace{\text{Something}}_{\text{quantifier}} \ \underbrace{\text{is a city}}_{\text{predicate}}$.
+ 
+$\underbrace{\text{Los Angeles}}_{\text{designator}}$ \  $\underbrace{\text{is south of}}_{\text{predicate}}$ \ $\underbrace{\text{some city}}_{\text{quantifier phrase}}$ 
+ 
+$\underbrace{\text{Every logician}}_{\text{quantifier phrase}} \ \underbrace{\text{is a philosopher}}_{\text{predicate}}$.
+ 
+$\underbrace{\text{A workday}}_{\text{quantifier phrase}}$ \  $\underbrace{\text{comes between}}_{\text{first part of the predicate}}$ \ $\underbrace{\text{Tuesday}}_{\text{designator}}$  \ $\underbrace{\text{and}}_{\text{second part of the predicate}}$  \ $\underbrace{\text{Thursday}}_{\text{designator}}$
+ 
+$\underbrace{\text{Someone}}_{\text{quantifier}}$ \  $\underbrace{\text{talked to}}_{\text{first part of the predicate}}$ \ $\underbrace{\text{her}}_{\text{designator}}$ \ $\underbrace{\text{over zoom}}_{\text{second part of the predicate}}$
+:::
+:::
+
+ 
+ 
+## Exercises {-}
+
+1. Determine whether the following English sentences are tautologies, contradictions, or neither tautologies nor contradictions:
+
+    a. Someone is a logician and not a logician.
+    #. Some logicians are philosophers but some logicians are not philosophers.
+    #. If all logicians are philosophers, then if some philosophers are logicians, then all logicians are philosophers.
+    #. Someone is a logician and someone is not a logician.
+    #. All logicians are philosophers but no philosophers are logicians.
+    
+ 
+#. Determine whether the following arguments are propositionally valid:
+ 
+    a. The deal will be completed only if Smith or Jones are in attendance. If Smith attends, then Jones will too. Jones will not be in attendance. Therefore, the deal will not be completed.
+    #. All logicians are philosophers. All logicians learn propositional logic at some point. So, some philosophers learn propositional logic at some point.
+    #. The deal will not be completed unless someone is in attendance. Neither Smith nor Jones will be in attendance. Therefore, the deal will not be completed.
+ 
+#. Identify occurrences of designators, predicates, and quantifier expressions in the following sentences:
+
+    a.  USC is located in Los Angeles.
+    #.  Some private university is located in NYC.
+    #.  Some critic admires every critic.
+    #.  Mark Twain wrote *Tom Sawyer*. 
+    #.  Every student owns a computer.
+    #.  Everyone admires someone.
+    #.  Some workday comes after a weekend day.
+ 
+ 
+ 
+

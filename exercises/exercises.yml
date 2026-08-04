@@ -1,0 +1,265 @@
+# Exercises for the Propositional Proof Checker.
+# Read by R/proof_checker.R (pc_load). Each entry:
+#   id          unique key referenced in bookdown, e.g. pc_link(ex[["5.1"]])
+#   label       link text shown to students
+#   premises    comma-separated premises (may be empty)
+#   conclusion  the conclusion formula
+#   proof       (optional) worked solution, as a LIST of lines (one per line).
+#               Each line is quoted so its leading spaces (subproof depth) are
+#               preserved exactly. Omit the proof field for an unsolved exercise.
+#
+# In bookdown:
+#   `r pc_link(ex[["5.1"]], solution = TRUE)`   -> worked-example link
+#   `r pc_link(ex[["5.1"]])`                    -> exercise link (blank proof)
+
+# ── Rule illustrations ───────────────────────────────────────────────────────
+- id: "rule-R"
+  label: "Repetition: p ⊢ p"
+  premises: "p"
+  conclusion: "p"
+  proof:
+    - "p   P"
+    - "p   R  1"
+
+- id: "rule-andI"
+  label: "∧I: p, q ⊢ p∧q"
+  premises: "p, q"
+  conclusion: "p∧q"
+  proof:
+    - "p    P"
+    - "q    P"
+    - "p∧q  ∧I  1, 2"
+
+- id: "rule-andE"
+  label: "∧E: p∧q ⊢ p"
+  premises: "p∧q"
+  conclusion: "p"
+  proof:
+    - "p∧q  P"
+    - "p    ∧E  1"
+
+- id: "rule-ifI"
+  label: "→I: p ⊢ q→p"
+  premises: "p"
+  conclusion: "q→p"
+  proof:
+    - "p    P"
+    - "  q  A"
+    - "  p  R  1"
+    - "q→p  →I  2–3"
+
+- id: "rule-ifE"
+  label: "→E: p→q, p ⊢ q"
+  premises: "p→q, p"
+  conclusion: "q"
+  proof:
+    - "p→q  P"
+    - "p    P"
+    - "q    →E  1, 2"
+
+- id: "rule-orI"
+  label: "∨I: p ⊢ p∨q"
+  premises: "p"
+  conclusion: "p∨q"
+  proof:
+    - "p    P"
+    - "p∨q  ∨I  1"
+
+- id: "rule-orE"
+  label: "∨E: p∨q, p→r, q→r ⊢ r"
+  premises: "p∨q, p→r, q→r"
+  conclusion: "r"
+  proof:
+    - "p∨q  P"
+    - "p→r  P"
+    - "q→r  P"
+    - "r    ∨E  1, 2, 3"
+
+- id: "rule-notI"
+  label: "¬I: p, ¬p ⊢ ¬q"
+  premises: "p, ¬p"
+  conclusion: "¬q"
+  proof:
+    - "p    P"
+    - "¬p   P"
+    - "  q  A"
+    - "  ⊥  ¬E  1, 2"
+    - "¬q   ¬I  3–4"
+
+- id: "rule-notE"
+  label: "¬E: p, ¬p ⊢ ⊥"
+  premises: "p, ¬p"
+  conclusion: "⊥"
+  proof:
+    - "p    P"
+    - "¬p   P"
+    - "⊥    ¬E  1, 2"
+
+- id: "rule-efsq"
+  label: "EFSQ: p, ¬p ⊢ q"
+  premises: "p, ¬p"
+  conclusion: "q"
+  proof:
+    - "p    P"
+    - "¬p   P"
+    - "⊥    ¬E  1, 2"
+    - "q    EFSQ  3"
+
+- id: "rule-DN"
+  label: "DN: ¬¬p ⊢ p"
+  premises: "¬¬p"
+  conclusion: "p"
+  proof:
+    - "¬¬p  P"
+    - "p    DN  1"
+
+# ── Textbook worked examples (§5.1–5.12) ─────────────────────────────────────
+- id: "5.1"
+  label: "p ⊢ p"
+  premises: "p"
+  conclusion: "p"
+  proof:
+    - "p   P"
+    - "p   R  1"
+
+- id: "5.2"
+  label: "p, q, r ⊢ p∧(r∧q)"
+  premises: "p, q, r"
+  conclusion: "p∧(r∧q)"
+  proof:
+    - "p       P"
+    - "q       P"
+    - "r       P"
+    - "r∧q     ∧I  3, 2"
+    - "p∧(r∧q) ∧I  1, 4"
+
+- id: "5.3"
+  label: "5.3  p∧(r∧q) ⊢ r"
+  premises: "p∧(r∧q)"
+  conclusion: "r"
+  proof:
+    - "p∧(r∧q)  P"
+    - "r∧q      ∧E  1"
+    - "r        ∧E  2"
+
+- id: "5.4"
+  label: "5.4  p, p→(q∧r), q→(s∧t) ⊢ r∧t"
+  premises: "p, p→(q∧r), q→(s∧t)"
+  conclusion: "r∧t"
+  proof:
+    - "p        P"
+    - "p→(q∧r)  P"
+    - "q→(s∧t)  P"
+    - "q∧r      →E  2, 1"
+    - "q        ∧E  4"
+    - "s∧t      →E  3, 5"
+    - "t        ∧E  6"
+    - "r        ∧E  4"
+    - "r∧t      ∧I  8, 7"
+
+- id: "5.5"
+  label: "5.5  p→(q∧r) ⊢ p→(r∧q)"
+  premises: "p→(q∧r)"
+  conclusion: "p→(r∧q)"
+  proof:
+    - "p→(q∧r)  P"
+    - "  p      A"
+    - "  q∧r    →E  1, 2"
+    - "  r      ∧E  3"
+    - "  q      ∧E  3"
+    - "  r∧q    ∧I  4, 5"
+    - "p→(r∧q)  →I  2–6"
+
+- id: "5.6"
+  label: "5.6  p∧q ⊢ p→q"
+  premises: "p∧q"
+  conclusion: "p→q"
+  proof:
+    - "p∧q  P"
+    - "  p  A"
+    - "  q  ∧E  1"
+    - "p→q  →I  2–3"
+
+- id: "5.7"
+  label: "5.7  (p∧q)∨(q∧p) ⊢ p"
+  premises: "(p∧q)∨(q∧p)"
+  conclusion: "p"
+  proof:
+    - "(p∧q)∨(q∧p)  P"
+    - "  p∧q  A"
+    - "  p    ∧E  2"
+    - "(p∧q)→p      →I  2–3"
+    - "  q∧p  A"
+    - "  p    ∧E  5"
+    - "(q∧p)→p      →I  5–6"
+    - "p            ∨E  1, 4, 7"
+
+- id: "5.8"
+  label: "5.8  p ⊢ ¬¬p"
+  premises: "p"
+  conclusion: "¬¬p"
+  proof:
+    - "p   P"
+    - "  ¬p  A"
+    - "  ⊥   ¬E  1, 2"
+    - "¬¬p   ¬I  2–3"
+
+- id: "5.9"
+  label: "5.9  p→q, ¬q ⊢ ¬p"
+  premises: "p→q, ¬q"
+  conclusion: "¬p"
+  proof:
+    - "p→q  P"
+    - "¬q   P"
+    - "  p  A"
+    - "  q  →E  1, 3"
+    - "  ⊥  ¬E  4, 2"
+    - "¬p   ¬I  3–5"
+
+- id: "5.10"
+  label: "5.10  p∨q, ¬p ⊢ q"
+  premises: "p∨q, ¬p"
+  conclusion: "q"
+  proof:
+    - "p∨q  P"
+    - "¬p   P"
+    - "  p   A"
+    - "  ⊥   ¬E  3, 2"
+    - "  q   EFSQ  4"
+    - "p→q  →I  3–5"
+    - "  q   A"
+    - "  q   R  7"
+    - "q→q  →I  7–8"
+    - "q    ∨E  1, 6, 9"
+
+- id: "5.11"
+  label: "5.11  ¬p ⊢ p→q"
+  premises: "¬p"
+  conclusion: "p→q"
+  proof:
+    - "¬p  P"
+    - "  p  A"
+    - "  ⊥  ¬E  2, 1"
+    - "  q  EFSQ  3"
+    - "p→q  →I  2–4"
+
+- id: "5.12"
+  label: "5.12  ⊢ p∨¬p"
+  premises: ""
+  conclusion: "p∨¬p"
+  proof:
+    - "  ¬(p∨¬p)  A"
+    - "    p      A"
+    - "    p∨¬p   ∨I  2"
+    - "    ⊥      ¬E  3, 1"
+    - "  ¬p       ¬I  2–4"
+    - "  p∨¬p     ∨I  5"
+    - "  ⊥        ¬E  6, 1"
+    - "¬¬(p∨¬p)   ¬I  1–7"
+    - "p∨¬p       DN  8"
+
+# ── An unsolved exercise (no proof) — students fill it in ─────────────────────
+- id: "ex-5.2"
+  label: "Exercise: p, q, r ⊢ p∧(r∧q)"
+  premises: "p, q, r"
+  conclusion: "p∧(r∧q)"

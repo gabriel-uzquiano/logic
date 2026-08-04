@@ -1,0 +1,450 @@
+# Semantics
+
+We now explain how to interpret the language of quantificational logic. In propositional logic, we used truth tables in order to assign a truth value to complex formulas on the basis of an assignment of truth values to the propositional variables. Unfortunately, that method is not available now, since we have discerned further structure inside some of the sentences we used to translate with the help of propositional variables. Consider the argument:
+
+1. Everything is material.
+2. Therefore, the mind is material.
+
+The argument is valid, but not *propositionally valid*. In propositional logic, we use a propositional variable to translate the premise and the conclusion, and it is simple to find assignments on which one is true and the other false — which is precisely what makes the argument propositionally invalid. To account for its validity, we will eventually translate it into the language of quantificational logic ($a$: the mind; $Px$: $x$ is material):
+
+1. $\forall x Px$
+2. $Pa$
+
+The validity of the argument stems from the fact that no interpretation of the relevant fragment of quantificational logic renders the premise true and the conclusion false. The question now is how exactly to interpret the relevant formulas of quantificational logic in order to do justice to the inner structure they exhibit.
+
+## Models {-}
+
+An interpretation of the language of quantificational logic should specify:
+
+- a *domain* of discourse for the quantifiers to range over,
+- an *interpretation* of the non-logical vocabulary:
+    - a *denotation* for each constant of the language, and
+    - an *extension* for each predicate of the language.
+
+This is the role that a *model* will play in the semantics for quantificational logic. The domain of discourse will help fix the truth conditions of quantified formulas in much the way in which the truth value of the sentence 'Everything is material' depends on what is the domain of objects over which we take the quantifier 'everything' to range. In what follows, we will use a non-empty set of objects as the domain of a model.
+
+We will let a model specify denotations for the constants of the language. Constants are formal counterparts of names in natural language, which are generally taken to denote an object in the domain of discourse, e.g., 'Los Angeles' denotes a city in Southern California. A model will assign a member of the domain to each constant of the language as a denotation.
+
+The case of predication is more subtle. Predicates are formal counterparts of natural language predicates, which are true of some objects and not of others. Let us begin with one-place predicates such as 'material', which applies to material objects and does not apply to non-material objects. One suggestion at this point is to identify the interpretation of 'material' with the *set* of objects to which the predicate applies. The set of objects to which a given predicate applies is known as the *extension* of the predicate. Thus the extension of the predicate 'material' is the set of material objects.
+
+The case of two-place predicates is more complicated. The two-place predicate 'south of' applies to Los Angeles and San Francisco *in that order* but it fails to apply to San Francisco and Los Angeles *in that order*. This raises the question of how to specify the extension of a two-place predicate. The answer is to use sets of *ordered pairs* of objects in the domain, e.g., $\langle$ Los Angeles, San Francisco $\rangle$ is the ordered pair of Los Angeles and San Francisco in that order whereas $\langle$San Francisco, Los Angeles$\rangle$ is the ordered pair of San Francisco and Los Angeles in that order. The solution generalizes to predicates with even more argument places. The extension of a three-place predicate will be a set of ordered triples, and more generally, the extension of an $n$-place predicate is a set of ordered $n$-tuples.
+
+Let us make these remarks more precise:
+
+
+Model
+
+: A model $M$ for quantificational logic is an ordered pair $\langle D, I\rangle$, where:
+
+- $D$ is a non-empty set of objects, and
+- $I$ is an interpretation function, where:
+  - $I(a)$ is a member of $D$ whenever $a$ is a constant.
+  - $I(P)$ is a set of members of $D$ when $P$ is a one-place predicate.
+  - $I(R)$ is a set of ordered $n$-tuples of members of $D$ when $R$ is an $n$-place predicate (with $n \geq 2$).
+
+
+One heuristic you may find helpful for the specification of a model is to use a graph as a partial representation of the model. The graph should come accompanied with a key designed to help us specify the interpretation of the relevant constants and predicates.
+
+The [model checker](https://gabriel-uzquiano.github.io/model-checker/) will ask you to first enter the formulas of quantificational logic you want to interpret. Once you do this, you will be given the option to specify a domain of discourse, set the denotations of the constants and the extensions of the predicates involved in the chosen formulas.
+
+
+:::{.example}
+Consider the argument:
+
+1. $(Pa \wedge Qb) \to Rab$
+2. $\neg Rba$
+3. $\exists x (Px \wedge Rxa)$
+
+To produce a model for the relevant fragment of the language, we specify both a domain and an interpretation function. For example, we may specify $\langle D, I\rangle$ as follows:
+
+- $D = \{\mathsf{a}, \mathsf{b}\}$
+- $I$ is an interpretation function, where:
+  - $I(a) = \mathsf{a}$
+  - $I(b) = \mathsf{a}$
+  - $I(P) = \{\mathsf{a}, \mathsf{b} \}$
+  - $I(Q) = \{ \mathsf{b}\}$
+  - $I(R) = \{\langle \mathsf{a}, \mathsf{b} \rangle\}$
+  
+  
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+
+
+`r mc_iframe_card(models[["atomic"]], card = "model", solution = TRUE, height = 565)`
+
+If you click on the evaluation button, you will notice that the two premises come out true and the conclusion comes out false. The remainder of this chapter aims to explain how to justify these verdicts.
+:::
+
+This heuristic comes with severe limitations, since some models, e.g., models with an infinite domain, are much too complex to be represented by means of a finite diagram. The method will, however, suffice for *some* purposes; it will enable us to establish the invalidity of a broad family of arguments in quantificational logic.
+
+
+## Truth in a Model {-}
+
+The definition of a model makes sure that models provide an interpretation for constants and predicates in the form of a denotation or an extension as the case may be, but they remain silent when it comes to variables. If constants are the formal counterparts of names in natural language, variables resemble pronouns like 'she' used out of context — as in 'She likes classical music' said with no prior referent — which do not receive a fixed denotation on their own. For this reason, models do not assign a denotation to variables.
+
+Instead, variables will be treated as temporary labels for members of the domain. That will allow us to evaluate an open formula $Px \wedge Rxy$ relative to an assignment of values to the variables that occur in it. More generally, given a model $M$, we now explain what an assignment of members of the domain $D$ to the variables of the language is.
+
+Variable Assignment
+
+:   A *variable assignment* $\alpha$ over a model $M$ is a map from the variables of the language to members of the domain $D$.
+
+
+::: {.example}
+ Consider the *open* formula $(Px \wedge Qy) \to Rxy$:
+ 
+
+ `r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+ 
+ `r mc_iframe_card(models[["novariable"]], card = "model", solution = TRUE, height = 565)`
+
+
+To evaluate the formula in the model, we consider variable assignments over the model. For example:
+$$
+\begin{array}{cccc}
+x  & y & z & \dots   \\
+\hline
+\mathsf{a} & \mathsf{b} & \mathsf{a} & \dots \\
+\end{array}
+$$
+
+$$
+\begin{array}{cccc}
+x  & y & z & \dots   \\
+\hline
+\mathsf{b} & \mathsf{a} & \mathsf{a} & \dots  \\
+\end{array}
+$$
+
+These variable assignments differ with respect to what they assign to the variables $x$ and $y$, both of which are *free* in the formula under evaluation.
+
+The model checker includes an option for the specification of a variable assignment for the *free* variables that occur in the formulas under evaluation. One configuration may assign 1 to $x$ and 2 to $y$, whereas another may assign 2 to $x$ and 1 to $y$. Further configurations are available: you could assign the same member of the domain to both variables.
+
+`r mc_iframe_card(models[["assignment1"]], card = "model", solution = TRUE, height = 560)`
+:::
+
+We now explain what it is for an *open* formula to be true in a model under a variable assignment. The definition of truth in a model relative to a variable assignment will be inductive: we will define the truth conditions of complex formulas in terms of the truth conditions of simpler ones. The truth clause for quantified formulas will bottom out in the question of whether a certain open formula is true or false relative to assignments of members of the domain to the free variables. For example, to determine whether $\exists x Px$ is true relative to an assignment, we will need to specify the conditions under which the open formula $Px$ is true relative to certain assignments.
+
+We will begin with an account of the truth conditions of atomic formulas, and we will explain how to assign truth values to more complex sentences in a model relative to an assignment.
+
+Denotation
+
+:   If $\tau$ is either a constant $c$ or a variable $x$, the denotation of $\tau$ in a model $M$ under assignment $\alpha$ is $I(c)$ if $\tau$ is a constant $c$ and $\alpha(x)$ if $\tau$ is a variable $x$.
+
+
+Atomic Formulas
+
+:   $P\tau$ is true in $M$ under $\alpha$ iff the denotation of $\tau$ in $M$ under $\alpha$ is in the extension of $P$, e.g., $Px$ is true in $M$ under $\alpha$ iff $\alpha(x) \in I(P)$ and $Pc$ is true in $M$ under $\alpha$ iff $I(c) \in I(P)$. More generally, $R\tau_1 \cdots \tau_n$ is true in $M$ under $\alpha$ iff the denotations of $\tau_1, \ldots, \tau_n$ are in that order in the extension of $R$, e.g., $Rax$ is true in $M$ under $\alpha$ iff $\langle I(a), \alpha(x)\rangle \in I(R)$.
+
+
+::: {.example}
+Consider the model and a variable assignment $\alpha$ on which $\alpha(x) = \mathsf{a}$, $\alpha(y) = \mathsf{b}$):
+
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["assignment2"]], card = "model", solution = TRUE, height = 565)`
+
+Then:
+
+- $Pa$ is true in $M$ under $\alpha$: $I(a)$ is $\mathsf{a}$, which is in $I(P)$.
+- $Px$ is true in $M$ under $\alpha$: $\alpha(x)$ is $\mathsf{a}$, which is in $I(P)$.
+- $Qb$ is true in $M$ under $\alpha$: $I(b)$ is $\mathsf{b}$, which is in $I(Q)$.
+- $Qy$ is true in $M$ under $\alpha$: $\alpha(y)$ is $\mathsf{b}$, which is in $I(Q)$.
+- $Rxy$ is true in $M$ under $\alpha$: $(\alpha(x), \alpha(y))$ is $(\mathsf{a}, \mathsf{b})$, which is in $I(R)$.
+
+
+
+Matters change when we set $\alpha(x) = \mathsf{b}$, $\alpha(y) = \mathsf{a}$):
+
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["assignment2"]], card = "model", solution = TRUE, height = 565)`
+
+- $Qy$ is *not* true in $M$ under $\alpha$ since $\alpha(y)$ is $\mathsf{a}$, which is *not* in $I(Q)$.
+- $Rxy$ is *not* true in $M$ under $\alpha$ since $(\alpha(x), \alpha(y))$ is $(\mathsf{b}, \mathsf{a})$, which is *not* in $I(R)$.
+:::
+
+If a complex formula is constructed from simpler formulas by an application of a connective such as $\neg$, $\wedge$, $\vee$, $\to$, and $\leftrightarrow$, then its truth conditions in a model $M$ relative to an assignment $\alpha$ are given inductively in the style of the definition of truth for propositional logic. That is,
+
+Negation
+
+:   $\neg  \varphi$ is true in $M$ under a variable assignment $\alpha$ if, and only if, $\varphi$ is not true in $M$ under $\alpha$.
+
+Conjunction
+
+:   $\varphi \wedge \psi$ is true in $M$ under a variable assignment $\alpha$ if, and only if, $\varphi$ is true in $M$ under $\alpha$ and $\psi$ is true in $M$ under $\alpha$.
+
+Disjunction
+
+:   $\varphi \vee \psi$ is true in $M$ under a variable assignment $\alpha$ if, and only if, $\varphi$ is true in $M$ under $\alpha$ or $\psi$ is true in $M$ under $\alpha$.
+
+Conditional
+
+:   $\varphi \to \psi$ is true in $M$ under a variable assignment $\alpha$ if, and only if, $\varphi$ is not true in $M$ under $\alpha$ or $\psi$ is true in $M$ under $\alpha$.
+
+
+::: {.example}
+Consider the model and variable assignment $\alpha$ on which $\alpha(x) = \mathsf{a}$, $\alpha(y) = \mathsf{b}$:
+
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["assignment1"]], card = "model", solution = TRUE, height = 565)`
+
+
+- $Pa \wedge Qb$ is true in $M$ under $\alpha$: $Pa$ and $Qb$ are both true under $\alpha$.
+- $Px \wedge Qy$ is true in $M$ under $\alpha$: $Px$ and $Qy$ are both true under $\alpha$.
+- $(Pa \wedge Qb) \to Rab$ is true in $M$ under $\alpha$: $Rab$ is true in $M$ under $\alpha$.
+- $(Px \wedge Qy) \to Rxy$ is true in $M$ under $\alpha$: $Rxy$ is true in $M$ under $\alpha$.
+
+
+
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+It pays to ask what happens we set $\alpha(x) = \mathsf{b}$, $\alpha(y) = \mathsf{a}$):
+
+
+`r mc_iframe_card(models[["assignment2"]], card = "model", solution = TRUE, height = 600)`
+
+
+There is no change in the evaluation of *closed* formulas. However:
+
+- $Px \wedge Qy$ is *not* true in $M$ under $\alpha$: $Px$ is true under $\alpha$ but $Qy$ is *not*.
+
+- $(Px \wedge Qy) \to Rxy$ is true in $M$ under $\alpha$: $Px \wedge Qy$ is *not* true in $M$ under $\alpha$, so the conditional holds vacuously.
+:::
+
+
+Before we state the truth conditions for quantified formulas, it will help to explain one piece of notation. Given a variable assignment $\alpha$ and an object $p$ in the domain, we write $\alpha[v/p]$ for the assignment that is exactly like $\alpha$ except that it assigns $p$ to the variable $v$. All other variables keep the values they had under $\alpha$.
+
+::: {.example}
+Let $\alpha$ be an assignment:
+$$
+\begin{array}{cccc}
+x  & y & z & \dots    \\
+\hline
+\mathsf{a} & \mathsf{b} & \mathsf{a} & \dots \\
+\end{array}
+$$
+
+Then $\alpha[x/\mathsf{b}$ is the assignment:
+$$
+\begin{array}{cccc}
+x  & y & z & \dots   \\
+\hline
+\mathsf{b} & \mathsf{b} & \mathsf{a} & \dots \\
+\end{array}
+$$
+
+Only the value of $x$ has changed from $\mathsf{a}$ to $\mathsf{b}$. All other variables retain the same value they had under $\alpha$.
+:::
+
+
+
+We now explain how to evaluate quantified formulas $\forall v \varphi$ and $\exists v \varphi$ in a model $M$ under a variable assignment over that model. At the end of the day, we want the formula $\exists x Px$ to be true in $M$ under $\alpha$ if some member of the domain lies in the extension of $P$. One way to do this is to declare the formula true in $M$ under $\alpha$ if there is an object in the domain that we can assign to $x$ in order to verify $Px$. That is, some $p$ in the domain is in the extension of $P$, and $Px$ is true in $M$ under an assignment $\alpha[x/p]$, which is just like $\alpha$ except maybe for assigning $p$ to $x$. Likewise, we want a formula $\forall x Px$ to be true in $M$ under $\alpha$ if $Px$ comes out true no matter what member of the domain we assign to $x$. That is, $\forall x Px$ is true in $M$ under $\alpha$ if every $p$ in the domain is such that $Px$ is true in $M$ under $\alpha[x/p]$. More precisely:
+
+
+Existential Quantification
+
+:   $\exists v  \varphi$ is true in $M$ relative to a variable assignment $\alpha$ if, and only if, there is an object $p$ in the domain of $M$ such that $\varphi$ is true in $M$ relative to $\alpha[v/p]$, which is an assignment just like $\alpha$ except perhaps for the fact that it assigns $p$ to the variable $v$.
+
+Universal Quantification
+
+:   $\forall v  \varphi$ is true in $M$ relative to a variable assignment $\alpha$ if, and only if, for every object $p$ in the domain of $M$, $\varphi$ is true in $M$ relative to $\alpha[v/p]$, which is an assignment just like $\alpha$ except perhaps for the fact that it assigns $p$ to the variable $v$.
+
+
+::: {.example}
+Let us evaluate the formulas $\exists x (Px \wedge \neg Rxa)$ and $\forall x (Px \wedge \neg Rxa)$ in the following model under a variable assignment $\alpha$ on which $\alpha(x) = \mathsf{a}$, $\alpha(y) = \mathsf{b}$:
+
+`r mc_margin_graph(models[["atomic"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["quant"]], card = "model, graph", solution = TRUE, height = 565)`
+
+
+- $\exists x (Px \wedge \neg Rxa)$ is true in $M$ under $\alpha$ iff there is something in the domain we can assign to $x$ in order to make $(Px \wedge \neg Rxa)$ true in the model. It now suffices to note that $Px \wedge \neg Rxa$ is true under $\alpha[x/\mathsf{a}]$.
+
+  - $Px \wedge \neg Rxa$ is true under $\alpha[x/\mathsf{a}]$ because $\mathsf{a} \in I(P)$ and $(\mathsf{a}, \mathsf{a}) \notin I(R)$.
+
+- $\forall x (Px \wedge \neg Rxa)$ is true in $M$ under $\alpha$ iff $(Px \wedge \neg Rxa)$ is true no matter what member of the domain we assign to $x$. We have just checked the formula is true when we assign $1$ to $x$. Since there are only two objects in the domain, we need only check the case in which we assign $2$ to $x$. And indeed $Px \wedge \neg Rxa$ is true under $\alpha[x/2]$.
+
+  - $Px \wedge \neg Rxa$ is true under $\alpha[x/\mathsf{b}]$ because $\mathsf{b} \in I(P)$ and $(\mathsf{b}, \mathsf{a}) \notin I(R)$.
+
+:::
+
+We are now in a position to define what it is for a formula $\varphi$ to be true in a model $M$.
+
+Truth in a Model
+
+:   A formula $\varphi$ is *true in a model* $M$ if, and only if, $\varphi$ is true in $M$ under *every* variable assignment.
+
+
+
+
+## Logical Truths {-}
+
+Logical Truth
+
+:   A formula $\varphi$ is a *logical truth* if, and only if, $\varphi$ is true in every model.
+
+
+One difference between propositional logic and quantificational logic is that we are not in a position to survey all interpretations of the language in order to determine whether a formula is a logical truth. There is an infinity of domains of discourse to consider and there are different interpretations available for the constants and predicates of the language available for each such domain. The generalization of the tableaux method will provide us with an indirect method for establishing the logical truth of a formula, but in the meantime, all we are in a position to do is to find a counterexample model when a formula is *not* a logical truth.
+
+::: {.example}
+$Rab \to \forall x Rax$ is *not* a logical truth.
+
+`r mc_margin_graph(models[["ltruth-counter"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["ltruth-counter"]], card = "model", solution = TRUE, height = 600L)`
+
+- $Rab$ is true in the model: $I(a) = 1$, $I(b) = 2$, and the ordered pair $(1, 2)$ is in $I(R)$.
+
+- $\forall x Rax$ is not true in the model because $Rax$ does *not* remain true no matter what value we assign to $x$, e.g., $Rax$ is not true relative to an assignment on which $x$ is assigned $1$.
+
+It is not difficult to describe a variety of other models in which the formula comes out false.
+:::
+
+::: {.practice}
+Use a model in order to establish that $\exists x Px \to \forall x Px$ is *not* a logical truth.
+
+`r mc_embed_counter(models[["nlt-1"]], height = 420L, summary = "Show a countermodel")`
+:::
+
+
+
+## Equivalence and Consistency {-}
+
+
+Equivalence
+
+:   Two formulas $\varphi$  and $\psi$ are *equivalent* if, and only if, they are true in exactly the same models.
+
+
+We find ourselves in a similar situation. We are not yet in a position to establish that two formulas are logically equivalent, but if they are not, we may set out to find a counterexample in the form of a model in which one formula is true and the other one is false.
+
+
+::: {.example}
+$\exists x Px \wedge \exists x Qx$ and $\exists x (Px \wedge Qx)$ are *not* logically equivalent.
+
+`r mc_margin_graph(models[["equiv-counter"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["equiv-counter"]], card = "model", solution = TRUE, height = 565)`
+
+- $\exists x Px \wedge \exists x Qx$ is true in the model because each conjunct is true.
+  - $\exists x Px$ is true in the model because $Px$ is true when we assign $p$ to $x$.
+  - $\exists x Qx$ is true in the model because $Qx$ is true when we assign $q$ to $x$.
+
+- $\exists x (Px \wedge Qx)$ is not true in the model because $Px \wedge Qx$ is never true no matter what we may assign to $x$.
+:::
+
+::: {.practice}
+Use a model in order to establish that $Pa \wedge Pb$ is *not* equivalent to $\forall x Px$.
+
+`r mc_embed_counter(models[["equiv-1"]], height = 420L, summary = "Show a countermodel")`
+:::
+
+Consistency
+
+:   A set of formulas is *consistent* if, and only if, there is at least one model in which all of its members are true. Otherwise, the set is *inconsistent*.
+
+
+If a set of formulas is consistent, then we are in a position to search for a model in which all of their members are true, but it is a different matter to conclusively establish that a set of sentences is inconsistent.
+
+
+::: {.example}
+The set $\{Rba, Pa, Qb, \exists x (Px \wedge Qx)\}$ is consistent.
+
+
+All these formulas are true in the model 
+
+`r mc_margin_graph(models[["consistency"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["consistency"]], card = "model", solution = TRUE, height = 565)`
+
+- $Rba$ is true in the model because $I(b) = q$, $I(a) = p$, and $(q, p)$ is in $I(R)$.
+
+- $Pa$ is true because $I(a) = p$ and $p$ is in $I(P)$.
+
+- $Qb$ is true because $I(b) = q$ and $q$ is in $I(Q)$.
+
+- $\exists x (Px \wedge Qx)$ is true in the model because $Px \wedge Qx$ is true when we assign $p$ to the variable $x$.
+:::
+
+
+::: {.practice}
+Use a rmodel in order to establish the consistency of the set $\{Rab, Rab \to Rbb, Pa \wedge Qb, \neg Qa \}$.
+
+`r mc_embed_counter(models[["cons-1"]], height = 420L, summary = "Show a model")`
+:::
+
+## Validity {-}
+
+Validity
+
+:   An argument of quantificational logic is *valid* if, and only if, there is no model in which all of its premises are true while the conclusion is false. Otherwise, the argument is *invalid*.
+
+
+If an argument is not valid, then we are in a position to search for a model in which the premises are true and the conclusion is false. Otherwise, we will have to rely on a generalization of the tableaux method in order to establish validity.
+
+
+::: {.example}
+The argument below is *invalid*:
+
+1. $Pa$
+2. $Pa \to Qb$
+3. $Qa$. 
+
+
+`r mc_embed_counter(models[["countermodel"]], height = 420L, summary = "Show a countermodel")`
+:::
+
+
+::: {.example}
+Consider the following argument:
+
+1. $(Pa \wedge Qb) \to Rab$
+2. $\neg Rba$
+3. $\exists x (Px \wedge Rxa)$
+
+`r mc_margin_graph(models[["validity-counter"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["validity-counter"]], card = "model", solution = TRUE, height = 565)`
+
+
+- $(Pa \wedge Qb) \to Rab$ is true in the model because $Rab$ is true in the model.
+
+- $\neg Rba$ is true in the model because $Rba$ is *not* true in the model.
+
+- $\exists x (Px \wedge Rxa)$ is *false* in the model because $Px \wedge Rxa$ is never true no matter what we assign to the variable $x$. This is because *nothing in the model* is related to $1$ by $R$.
+:::
+
+
+:::{.practice}
+Use a model to establish the invalidity of the argument:
+
+1. $\forall x (\neg Px \to Qx)$
+2. $\exists x (Qx \wedge Rxb)$
+3. $\exists x (\neg Px \wedge Rxb)$
+
+`r mc_embed_counter(models[["inv-"]], height = 420L, summary = "Show a countermodel")`
+:::
+
+ 
+
+
+## Exercises {-}
+
+
+1. Determine which of the following formulas are true in the model described by the `r mc_link(models[["exercise-model"]], solution = TRUE, label = "configuration")`:
+
+    a. $Rab$
+
+    #. $Rab \to Rbb$
+
+    #. $Pa \wedge  Qb$
+
+    #. $\exists x Sx \wedge \exists x Tx$
+
+    #. $\forall x (\exists y  Rxy \vee \exists y Ryx)$
+
+    #. $\forall x (Sx  \to \exists y (Qy \wedge Rxy))$
+
+
+`r mc_iframe_card(models[["exercise-model"]], card = "model, graph", solution = TRUE, height = 565)`

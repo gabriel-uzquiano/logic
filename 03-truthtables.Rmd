@@ -1,0 +1,358 @@
+# Semantics
+
+We will use assignments of truth values to propositional variables in order to interpret the language of propositional logic.
+
+::: {.definition}
+An *assignment* $A$ for propositional logic maps every propositional variable into exactly one truth value ($T$ or $F$).
+:::
+
+We will declare a sentence of propositional logic to be true or false relative to an assignment of truth values to the propositional variables.
+
+
+Truth under an Assignment
+
+: We define what is for a sentence to be true under an assignment $A$:
+
+:::{.info}
+A propositional variable $p$ is true relative to $A$ if, and only if, the assignment maps $p$ into $T$.\
+
+A negation $\neg \varphi$ is true relative to $A$ if and only if $\varphi$ is not true relative to $A$.
+
+A conjunction $(\varphi \wedge \psi)$ is true relative to $A$ if and only if $\varphi$ is true under $A$ and $\psi$ is true relative to $A$.
+
+A disjunction $(\varphi \vee \psi)$ is true relative to $A$ if and only if $\varphi$ is true under $A$ or $\psi$ is true relative to $A$.
+
+A conditional $(\varphi \to \psi)$ is true relative to $A$ if and only if $\varphi$ is not true under $A$ or $\psi$ is true relative to $A$.
+:::
+
+## Truth Tables {-}
+
+We use truth tables to represent how the truth value of complex sentences depends on the truth values of their simpler sentences. The  following truth tables summarize the semantic clauses for negation, conjunction, disjunction, and the material conditional.
+
+
+Negation 
+
+:   Given a sentence $\varphi$, the truth value of the negation $\neg \varphi$ under an assignment is a function of the truth value of $\varphi$ under the assignment.
+
+```{marginfigure, echo=TRUE}
+**Truth table for $\neg$**
+```
+$$
+\begin{array}{|c|c|}
+\hline
+\varphi  & \neg \varphi  \\
+\hline
+T & F \\
+F  & T \\
+\hline
+\end{array}
+$$
+
+
+Conjunction
+
+:   Given two sentences $\varphi$ and $\psi$, the truth value of the conjunction $(\varphi \wedge \psi)$ under an assignment is a function of the truth values of $\varphi$ and $\psi$ under the assignment.
+
+```{marginfigure, echo=TRUE}
+**Truth table for $\wedge$**
+```
+$$
+\begin{array}{|c|c|c|}
+\hline
+\varphi & \psi & (\varphi \wedge \psi) \\
+\hline
+T & T  & T \\
+T & F  & F \\
+F & T  & F \\
+F & F  & F \\
+\hline
+\end{array}
+$$
+
+Disjunction
+
+: Given two sentences $\varphi$ and $\psi$, the truth value of the disjunction $(\varphi \vee \psi)$ under an assignment is a function of the truth values of $\varphi$ and $\psi$ under the assignment.
+
+```{marginfigure, echo=TRUE}
+**Truth table for $\vee$**
+```
+$$
+\begin{array}{|c|c|c|}
+\hline
+\varphi  & \psi & (\varphi \vee \psi) \\
+\hline
+T & T  & T \\
+T & F  & T \\
+F & T  & T \\
+F & F  & F \\
+\hline
+\end{array}
+$$
+
+Conditional
+
+:   Given two sentences $\varphi$ and $\psi$, the truth value of the conditional $(\varphi \to \psi)$ under an assignment is a function of the truth values of $\varphi$ and $\psi$ under the assignment.
+
+```{marginfigure, echo=TRUE}
+**Truth table for $\to$**
+```
+$$
+\begin{array}{|c|c|c|}
+\hline
+\varphi  & \psi & (\varphi \to \psi) \\
+\hline
+T & T  & T \\
+T & F  & F \\
+F & T  & T \\
+F & F  &  T \\
+\hline
+\end{array}
+$$
+
+
+We may use these rules to calculate the truth values of complex sentences of propositional logic relative to every assignment of truth values to its propositional variables.
+
+:::{.example}
+We may now calculate the truth value of the sentence $\neg (p \wedge q)$: 
+
+
+`r tt_embed_solved(ttables[["build-neg-conj"]], height = 440)`
+
+:::
+
+:::{.practice}
+Complete the truth table for the formula $(p \wedge q) \to r$:
+
+`r tt_embed_toggle(ttables[["build-complex"]], height = 440)`
+
+:::
+
+:::{.example}
+We may now calculate the truth value of the sentence $\neg (q \to p)$: 
+
+
+`r tt_embed_solved(ttables[["build-neg-cond-qp"]], height = 440)`
+
+:::
+
+
+:::{.example}
+We may now combine the truth tables above in order to produce one for the more complex sentence $\neg (p \wedge q) \vee \neg (q \to p)$
+
+
+`r tt_embed_solved(ttables[["build-disj-neg"]], height = 440)`
+
+:::
+
+
+
+
+
+```{marginfigure, echo=TRUE}
+How to construct a truth table
+```
+We want to develop a systematic procedure for constructing a complete truth table for a target sentence. We proceed in three steps:
+
+1. We devote a column for each propositional variable occurring in a sentence followed by a column for each subsentence for the target sentence.
+
+2. The number of propositional variables occurring in a sentence determines the number of rows for the truth table. Given $n$ propositional variables, there are exactly $2^n$ types of assignment to consider.^[That means that a truth table for a sentence containing $3$ propositional variables will require $8$ rows; one for a sentence containing $4$ propositional letters will require $16$ rows; etc.] We start with the *innermost* column devoted to a propositional letter and we alternate occurrences of '$T$' and '$F$' until we populate the entire column. That is, $2^0$ occurrences of '$T$' followed by $2^0$ occurrences of '$F$'. For the next column on the left, we alternate $2^1$, e.g., $2$ occurrences of '$T$' with $2^1$, e.g., $2$ occurrences of '$F$'. More generally, for the $n$th column on the left of the innermost column devoted to a propositional letter, we alternate $2^n$ occurrences of '$T$' with $2^n$ occurrences of '$F$'.
+
+3. We populate each subsequent column for a subsentence of the target sentence as a function of the truth values for the relevant subsentences of it.
+
+## Tautologies and Contradictions {-}
+
+Tautology
+
+: A formula $\varphi$ is a *tautology* if, and only if, $\varphi$ is true under all assignments of truth values to propositional variables.
+
+:::{.example}
+The sentence $(p \to q) \vee (q \to p)$ is a *tautology*.
+
+`r tt_embed_check(ttables[["taut-cond-disj"]], height = 380)`
+:::
+
+
+
+Contradiction
+
+:   A formula $\varphi$ is a *contradiction* if, and only if, $\varphi$ is false under all assignments of truth values to propositional variables.
+
+
+
+
+
+
+:::{.example}
+The formula $p \wedge \neg p$ is a *contradiction*.
+
+`r tt_embed_check(ttables[["check-contra"]], height = 340)`
+
+:::
+
+## Equivalence and Consistency {-}
+
+Equivalence 
+
+:   Two formulas $\varphi$  and $\psi$ are *equivalent* if, and only if, they are true under exactly the same assignments of truth values to propositional variables.
+
+
+:::{.example}
+The formulas  $p \to q$ and $\neg p \vee q$ are equivalent because they are true under exactly the same assignments.
+
+`r tt_embed_check(ttables[["equiv-cond"]], height = 340)`
+:::
+
+
+Consistency
+
+:   A set of formulas is *consistent* if, and only if, there is at least one assignment of truth values to propositional variables under which all of its members are true. Otherwise, the set is *inconsistent*.
+
+:::{.example}
+The set $\{p \to q, q \to r, r \to \neg  p\}$  consists of three formulas: $p \to q$, $q \to r$ and $r \to \neg p$. Now, the set is consistent because there is at least one assignment under which they are all true.
+
+`r tt_embed_check(ttables[["consist-chain"]], height = 340)`
+:::
+
+
+
+## Validity {-}
+
+Validity
+
+:   An argument is *valid* if, and only if, there is no assignment of truth values to propositional variables under which all of its premises are true while its conclusion is false. Otherwise, the argument is *invalid*.
+
+
+:::{.example}
+Consider the argument given below: 
+
+:::{.argument}
+$p \vee q$\
+$p \to \neg r$\
+$\neg r  \vee p$
+:::
+
+To assess its validity, we use a truth table to check whether there  is some assignment  on  which the premises are true and  the conclusion false:
+
+`r tt_embed_check(ttables[["counterex-vii"]], height = 340)`
+
+The fifth row in the truth table corresponds to an assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is *invalid*.
+:::
+
+:::{.example}
+Consider the argument given below: 
+
+:::{.argument}
+$p \vee q$\
+$\neg (p \wedge  r)$\
+$r  \to q$
+:::
+To assess its validity, we use a truth table to check whether there is some assignment  on  which the premises are true and  the conclusion false:
+
+`r tt_embed_check(ttables[["counterex-viii"]], height = 340)`
+
+There is in this case no assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument  is  *valid*.
+:::
+
+```{marginfigure, echo=TRUE}
+The Search for Counterexample Method
+```
+
+The method of truth tables is perfectly general, since it enables one to survey all assignments of truth values to the sentence letters involved in the argument. One issue, however, is that it may require one to draw very complex and cumbersome truth tables in cases in which more than 3 propositional variables are involved in the argument. A truth table for an argument in which 5 propositional variables occur requires $2^5$, i.e., 32, rows; $2^6$, i.e., 64 rows, if the argument involves 6 propositional variables, etc.
+
+In those cases, we may proceed differently: we search for a counterexample. That is, we set out to construct an assignment on which the conclusion is false and the premises are true. There are two eventual outcomes to this procedure. If we succeed, then  the argument is invalid; if the construction of the assignment breaks down, then the argument is valid. 
+
+:::{.example}
+Consider the argument given below:
+
+:::{.argument}
+$p \wedge q$\
+$r \to \neg q$\
+$p \to r$
+:::
+
+We only consider rows corresponding to assignments on which the conclusion is false. Since the conclusion is a conditional $p \to r$, we need only look at assignments on which $p$ and $r$ are true and false, respectively:
+
+`r tt_embed_search(ttables[["search-ix"]], height = 380)`
+
+Once we do, we check if the premises can be true on either assignment, and we find that at least one assignment verifies both premises. So, we found an assignment on which all the premises are true and the conclusion is false. The argument is *invalid*.
+:::
+
+
+:::{.example}
+Consider the argument given below:
+
+:::{.argument}
+$p \to \neg (q \rightarrow r)$\
+$\neg (\neg p_1 \vee \neg p)$\
+$(r \to p_2) \wedge (p_2 \to q)$\
+$q \vee r$
+:::
+
+We set out to make the conclusion false:
+
+`r tt_embed_search(ttables[["valid-x"]], height = 440)`
+
+In this case, we find that there are at least 8 rows on which the conclusion is false. That in turn makes $(q \rightarrow r)$ true and $\neg (q \rightarrow r)$ false. In  order to make the first premise true, we must make $p$ false. So, we can restrict attention to the last 4 rows of the partial truth table. But notice that the second premise will now come out *false* under the assignment. Since $p$ is false, $\neg p$ will be true as well as the disjunction $\neg p_1 \vee \neg p$, which makes its negation false. We conclude that there is *no* assignment under which the premises are true and the conclusion is false. So,  the argument is valid.
+:::
+
+
+## Exercises {-}
+
+1. Use the truth table method to determine whether each of the following sentences is a *tautology*, a *contradiction*, or neither a tautology or a contradiction.
+
+      a.   $((p \vee q) \to \neg (p \to q))$
+      
+      #.   $p \to (q \to p)$
+      
+      #.   $q \to (q \to p)$
+   
+     `r tt_embed_blank_tautology(height = 700)`
+
+   
+#. Use the truth table method to determine whether the following pairs of sentences are logically equivalent.
+
+      a. $p \to q$, $q \wedge \neg (p \vee q)$
+      
+      #. $p \to p$, $q \to q$
+  
+      `r tt_embed_blank_equivalence(height = 500)`
+ 
+
+#. Use the truth table method to determine whether the following sets of sentences are consistent.
+
+      a. $\{ p, q, \neg (p \wedge q)\}$
+      
+      #. $\{p \vee q, q \to r, \neg (p \wedge r)\}$
+
+      `r tt_embed_blank_consistency(height = 500)`
+
+ 
+#. Use the truth table method to determine whether the following arguments are valid.
+
+      a. $p \to q$ \
+          $q \to r$ \
+          $r$
+     
+      #. $q \vee (p \wedge r)$\
+          $\neg q$ \
+          $r$
+          
+  
+      `r tt_embed_blank_validity(height = 500)` 
+      
+#. Use the search-for-counterexample method to determine whether the following arguments are valid.
+
+    a. $p \to (q \vee r)$ \
+       $r \to (p \to q)$  \
+       $p$ \
+       $q$
+       
+    #. $(p \to q) \wedge (q \to p)$ \
+       $\neg (p \wedge r)$ \
+       $\neg (r \to s)$  \
+       $s \to q$
+    
+    
+      
+          
+

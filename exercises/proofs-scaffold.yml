@@ -1,0 +1,347 @@
+# proofs-scaffold.yml
+# Catalog of proof-checker exercises for the Natural Deduction chapter.
+# Proof syntax matches https://gabriel-uzquiano.github.io/proof-checker/
+#
+# Rules: P, A, R, ∧I, ∧E, →I, →E, ∨I, ∨E, ¬I, ¬E, EFSQ, DN
+# Subproofs: indented with spaces; range cited as m–n (en-dash)
+# Every binary connective needs its own parentheses.
+# Falsum: ⊥ (or type _|_ / bot in the checker)
+#
+# Load with:  proofs <- pc_load("exercises/proofs-scaffold.yml")
+
+# ---------------------------------------------------------------------------
+# Repetition
+# ---------------------------------------------------------------------------
+- id: "rep-worked"
+  role: worked
+  label: "Worked: R — derive p from p"
+  premises: "p"
+  conclusion: "p"
+  proof: "p  P\np  R  1"
+
+# ---------------------------------------------------------------------------
+# Conjunction Introduction
+# ---------------------------------------------------------------------------
+- id: "andI-worked"
+  role: worked
+  label: "Worked: ∧I — derive p∧(r∧q) from p, q, r"
+  premises: "p, q, r"
+  conclusion: "p∧(r∧q)"
+  proof: "p  P\nq  P\nr  P\nr∧q  ∧I  3, 2\np∧(r∧q)  ∧I  1, 4"
+
+- id: "andI-practice"
+  role: practice
+  label: "Practice: ∧I — derive p∧(r∧q) from p, q, r"
+  premises: "p, q, r"
+  conclusion: "p∧(r∧q)"
+
+# ---------------------------------------------------------------------------
+# Conjunction Elimination
+# ---------------------------------------------------------------------------
+- id: "andE-worked"
+  role: worked
+  label: "Worked: ∧E — derive r from p∧(r∧q)"
+  premises: "p∧(r∧q)"
+  conclusion: "r"
+  proof: "p∧(r∧q)  P\nr∧q  ∧E  1\nr  ∧E  2"
+
+- id: "andE-practice"
+  role: practice
+  label: "Practice: ∧E — derive q from p∧(r∧q)"
+  premises: "p∧(r∧q)"
+  conclusion: "q"
+
+# ---------------------------------------------------------------------------
+# Conditional Elimination (Modus Ponens)
+# ---------------------------------------------------------------------------
+- id: "mp-worked"
+  role: worked
+  label: "Worked: →E — derive r∧t from p, p→(q∧r), q→(s∧t)"
+  premises: "p, p→(q∧r), q→(s∧t)"
+  conclusion: "r∧t"
+  proof: "p  P\np→(q∧r)  P\nq→(s∧t)  P\nq∧r  →E  2, 1\nq  ∧E  4\nr  ∧E  4\ns∧t  →E  3, 5\nt  ∧E  7\nr∧t  ∧I  6, 8"
+
+- id: "mp-practice"
+  role: practice
+  label: "Practice: →E — derive r from p→q, q→r, p"
+  premises: "p→q, q→r, p"
+  conclusion: "r"
+
+# ---------------------------------------------------------------------------
+# Conditional Introduction
+# ---------------------------------------------------------------------------
+- id: "condI-worked-1"
+  role: worked
+  label: "Worked: →I — derive p→(r∧q) from p→(q∧r)"
+  premises: "p→(q∧r)"
+  conclusion: "p→(r∧q)"
+  proof: "p→(q∧r)  P\n  p  A\n  q∧r  →E  1, 2\n  q  ∧E  3\n  r  ∧E  3\n  r∧q  ∧I  5, 4\np→(r∧q)  →I  2–6"
+
+- id: "condI-practice-1"
+  role: practice
+  label: "Practice: →I — derive p→q from p→(q∧r)"
+  premises: "p→(q∧r)"
+  conclusion: "p→q"
+
+- id: "condI-worked-2"
+  role: worked
+  label: "Worked: →I — derive p→q from p∧q"
+  premises: "p∧q"
+  conclusion: "p→q"
+  proof: "p∧q  P\n  p  A\n  q  ∧E  1\np→q  →I  2–3"
+
+- id: "condI-practice-2"
+  role: practice
+  label: "Practice: →I — derive q→p from p∧q"
+  premises: "p∧q"
+  conclusion: "q→p"
+
+# ---------------------------------------------------------------------------
+# Disjunction Elimination
+# ---------------------------------------------------------------------------
+- id: "disjE-worked"
+  role: worked
+  label: "Worked: ∨E — derive p from (p∧q)∨(q∧p)"
+  premises: "(p∧q)∨(q∧p)"
+  conclusion: "p"
+  proof: "(p∧q)∨(q∧p)  P\n  p∧q  A\n  p  ∧E  2\n(p∧q)→p  →I  2–3\n  q∧p  A\n  p  ∧E  5\n(q∧p)→p  →I  5–6\np  ∨E  1, 4, 7"
+
+- id: "disjE-practice"
+  role: practice
+  label: "Practice: ∨E — derive q from (p∧q)∨(q∧p)"
+  premises: "(p∧q)∨(q∧p)"
+  conclusion: "q"
+
+# ---------------------------------------------------------------------------
+# Negation Introduction
+# ---------------------------------------------------------------------------
+- id: "negI-worked-1"
+  role: worked
+  label: "Worked: ¬I — derive ¬¬p from p"
+  premises: "p"
+  conclusion: "¬¬p"
+  proof: "p  P\n  ¬p  A\n  ⊥  ¬E  1, 2\n¬¬p  ¬I  2–3"
+
+- id: "negI-practice-1"
+  role: practice
+  label: "Practice: ¬I — derive ¬¬(p∧q) from p∧q"
+  premises: "p∧q"
+  conclusion: "¬¬(p∧q)"
+
+- id: "negI-worked-2"
+  role: worked
+  label: "Worked: ¬I — derive ¬p from p→q, ¬q"
+  premises: "p→q, ¬q"
+  conclusion: "¬p"
+  proof: "p→q  P\n¬q  P\n  p  A\n  q  →E  1, 3\n  ⊥  ¬E  2, 4\n¬p  ¬I  3–5"
+
+- id: "negI-practice-2"
+  role: practice
+  label: "Practice: ¬I — derive ¬p from p→(q∧r), ¬q"
+  premises: "p→(q∧r), ¬q"
+  conclusion: "¬p"
+
+# ---------------------------------------------------------------------------
+# Ex Falso Sequitur Quodlibet (EFSQ)
+# ---------------------------------------------------------------------------
+- id: "efsq-worked-1"
+  role: worked
+  label: "Worked: EFSQ — derive q from p∨q, ¬p"
+  premises: "p∨q, ¬p"
+  conclusion: "q"
+  proof: "p∨q  P\n¬p  P\n  p  A\n  ⊥  ¬E  2, 3\n  q  EFSQ  4\np→q  →I  3–5\n  q  A\nq→q  →I  7–7\nq  ∨E  1, 6, 8"
+
+- id: "efsq-practice-1"
+  role: practice
+  label: "Practice: EFSQ — derive r from p∨q, ¬p, ¬q"
+  premises: "p∨q, ¬p, ¬q"
+  conclusion: "r"
+
+- id: "efsq-worked-2"
+  role: worked
+  label: "Worked: EFSQ — derive p→q from ¬p"
+  premises: "¬p"
+  conclusion: "p→q"
+  proof: "¬p  P\n  p  A\n  ⊥  ¬E  1, 2\n  q  EFSQ  3\np→q  →I  2–4"
+
+- id: "efsq-practice-2"
+  role: practice
+  label: "Practice: EFSQ — derive p→r from ¬p"
+  premises: "¬p"
+  conclusion: "p→r"
+
+# ---------------------------------------------------------------------------
+# Double Negation
+# ---------------------------------------------------------------------------
+- id: "dn-worked"
+  role: worked
+  label: "Worked: DN — derive p∨¬p"
+  premises: ""
+  conclusion: "p∨¬p"
+  proof: "  ¬(p∨¬p)  A\n    p  A\n    p∨¬p  ∨I  2\n    ⊥  ¬E  1, 3\n  ¬p  ¬I  2–4\n  p∨¬p  ∨I  5\n  ⊥  ¬E  1, 6\n¬¬(p∨¬p)  ¬I  1–7\np∨¬p  DN  8"
+
+- id: "dn-practice"
+  role: practice
+  label: "Practice: DN — derive p from ¬¬p"
+  premises: "¬¬p"
+  conclusion: "p"
+
+# ---------------------------------------------------------------------------
+# Exercises (Chapter 5)
+# ---------------------------------------------------------------------------
+- id: "ex5-a-worked"
+  role: worked
+  label: "Ex 5.1a — p, ¬q ⊢ p→(¬q∨r)"
+  premises: "p, ¬q"
+  conclusion: "p→(¬q∨r)"
+  proof: "p  P\n¬q  P\n  p  A\n  ¬q∨r  ∨I  2\np→(¬q∨r)  →I  3–4"
+
+- id: "ex5-b-worked"
+  role: worked
+  label: "Ex 5.1b — p→(q∨r), ¬q, ¬r ⊢ ¬p"
+  premises: "p→(q∨r), ¬q, ¬r"
+  conclusion: "¬p"
+  proof: "p→(q∨r)  P\n¬q  P\n¬r  P\n  p  A\n  q∨r  →E  1, 4\n    q  A\n    ⊥  ¬E  2, 6\n  q→⊥  →I  6–7\n    r  A\n    ⊥  ¬E  3, 9\n  r→⊥  →I  9–10\n  ⊥  ∨E  5, 8, 11\n¬p  ¬I  4–12"
+
+- id: "ex5-c-worked"
+  role: worked
+  label: "Ex 5.1c — p→¬(q∧r), q, ¬r→¬q ⊢ ¬p"
+  premises: "p→¬(q∧r), q, ¬r→¬q"
+  conclusion: "¬p"
+  proof: "p→¬(q∧r)  P\nq  P\n¬r→¬q  P\n  p  A\n  ¬(q∧r)  →E  1, 4\n    r  A\n    q∧r  ∧I  2, 6\n    ⊥  ¬E  5, 7\n  ¬r  ¬I  6–8\n  ¬q  →E  3, 9\n  ⊥  ¬E  2, 10\n¬p  ¬I  4–11"
+
+- id: "ex5-d-worked"
+  role: worked
+  label: "Ex 5.1d — p→q, q∨r, r→(p∨q) ⊢ q"
+  premises: "p→q, q∨r, r→(p∨q)"
+  conclusion: "q"
+  proof: "p→q  P\nq∨r  P\nr→(p∨q)  P\n  q  A\n  q  R  4\nq→q  →I  4–5\n  r  A\n  p∨q  →E  3, 7\n    p  A\n    q  →E  1, 9\n  p→q  →I  9–10\n    q  A\n    q  R  12\n  q→q  →I  12–13\n  q  ∨E  8, 11, 14\nr→q  →I  7–15\nq  ∨E  2, 6, 16"
+
+- id: "ex5-e-worked"
+  role: worked
+  label: "Ex 5.1e — (q∨r)→(p∧q), ¬r→(¬p→q) ⊢ p"
+  premises: "(q∨r)→(p∧q), ¬r→(¬p→q)"
+  conclusion: "p"
+  proof: "(q∨r)→(p∧q)  P\n¬r→(¬p→q)  P\n  ¬p  A\n    ¬r  A\n    ¬p→q  →E  2, 4\n    q  →E  5, 3\n    q∨r  ∨I  6\n    p∧q  →E  1, 7\n    p  ∧E  8\n    ⊥  ¬E  3, 9\n  ¬¬r  ¬I  4–10\n  r  DN  11\n  q∨r  ∨I  12\n  p∧q  →E  1, 13\n  p  ∧E  14\n  ⊥  ¬E  3, 15\n¬¬p  ¬I  3–16\np  DN  17"
+
+# --- Conjunction exercises ---
+- id: "conj-1"
+  label: "p, q∧r ⊢ q∧p"
+  premises: ["p", "q∧r"]
+  conclusion: "q∧p"
+  worked_hash: "#p=p%2C+q%E2%88%A7r&c=q%E2%88%A7p&pr=p++++P%0Aq%E2%88%A7r++P%0Aq++++%E2%88%A7E+2%0Aq%E2%88%A7p++%E2%88%A7I+1%2C+3"
+  practice_hash: "#p=p%2C+q%E2%88%A7r&c=q%E2%88%A7p"
+
+- id: "conj-2"
+  label: "p, q∧r ⊢ r∧p"
+  premises: ["p", "q∧r"]
+  conclusion: "r∧p"
+  worked_hash: "#p=p%2C+q%E2%88%A7r&c=r%E2%88%A7p&pr=p++++P%0Aq%E2%88%A7r++P%0Ar++++%E2%88%A7E+2%0Ar%E2%88%A7p++%E2%88%A7I+1%2C+3"
+  practice_hash: "#p=p%2C+q%E2%88%A7r&c=r%E2%88%A7p"
+
+- id: "conj-3"
+  label: "p∧(q∧t), (p∧q)∧r ⊢ q∧r"
+  premises: ["p∧(q∧t)", "(p∧q)∧r"]
+  conclusion: "q∧r"
+  worked_hash: "#p=p%E2%88%A7%28q%E2%88%A7t%29%2C+%28p%E2%88%A7q%29%E2%88%A7r&c=q%E2%88%A7r&pr=p%E2%88%A7%28q%E2%88%A7t%29++++P%0A%28p%E2%88%A7q%29%E2%88%A7r++++P%0Aq%E2%88%A7t++++++++%E2%88%A7E+1%0Aq++++++++++%E2%88%A7E+3%0Ar++++++++++%E2%88%A7E+2%0Aq%E2%88%A7r++++++++%E2%88%A7I+4%2C+5"
+  practice_hash: "#p=p%E2%88%A7%28q%E2%88%A7t%29%2C+%28p%E2%88%A7q%29%E2%88%A7r&c=q%E2%88%A7r"
+
+- id: "conj-4"
+  label: "p∧(q∧r) ⊢ (r∧q)∧p"
+  premises: ["p∧(q∧r)"]
+  conclusion: "(r∧q)∧p"
+  worked_hash: "#p=p%E2%88%A7%28q%E2%88%A7r%29&c=%28r%E2%88%A7q%29%E2%88%A7p&pr=p%E2%88%A7%28q%E2%88%A7r%29++++P%0Aq%E2%88%A7r++++++++%E2%88%A7E+1%0Ar++++++++++%E2%88%A7E+2%0Aq++++++++++%E2%88%A7E+2%0Ap++++++++++%E2%88%A7E+1%0Ar%E2%88%A7q++++++++%E2%88%A7I+3%2C+4%0A%28r%E2%88%A7q%29%E2%88%A7p++++%E2%88%A7I+5%2C+6"
+  practice_hash: "#p=p%E2%88%A7%28q%E2%88%A7r%29&c=%28r%E2%88%A7q%29%E2%88%A7p"
+
+# --- Conditional exercises ---
+- id: "cond-5"
+  label: "p, p→(q∧r) ⊢ r"
+  premises: ["p", "p→(q∧r)"]
+  conclusion: "r"
+  worked_hash: "#p=p%2C+p%E2%86%92%28q%E2%88%A7r%29&c=r&pr=p++++++++++P%0Ap%E2%86%92%28q%E2%88%A7r%29++++P%0Aq%E2%88%A7r++++++++%E2%86%92E+1%2C+2%0Ar++++++++++%E2%88%A7E+3"
+  practice_hash: "#p=p%2C+p%E2%86%92%28q%E2%88%A7r%29&c=r"
+
+- id: "cond-6"
+  label: "p→q, p→r ⊢ p→(q∧r)"
+  premises: ["p→q", "p→r"]
+  conclusion: "p→(q∧r)"
+  worked_hash: "#p=p%E2%86%92q%2C+p%E2%86%92r&c=p%E2%86%92%28q%E2%88%A7r%29&pr=p%E2%86%92q++++++++P%0Ap%E2%86%92r++++++++P%0A++p++++++++A%0A++q++++++++%E2%86%92E+1%2C+3%0A++r++++++++%E2%86%92E+2%2C+3%0A++q%E2%88%A7r++++++%E2%88%A7I+4%2C+5%0Ap%E2%86%92%28q%E2%88%A7r%29++++%E2%86%92I+3-6"
+  practice_hash: "#p=p%E2%86%92q%2C+p%E2%86%92r&c=p%E2%86%92%28q%E2%88%A7r%29"
+
+- id: "cond-7"
+  label: "p→(q→r) ⊢ q→(p→r)"
+  premises: ["p→(q→r)"]
+  conclusion: "q→(p→r)"
+  worked_hash: "#p=p%E2%86%92%28q%E2%86%92r%29&c=q%E2%86%92%28p%E2%86%92r%29&pr=p%E2%86%92%28q%E2%86%92r%29++++++++P%0A++q++++++++++++A%0A++++p++++++++++A%0A++++q%E2%86%92r++++++++%E2%86%92E+1%2C+3%0A++++r++++++++++%E2%86%92E+2%2C+4%0A++p%E2%86%92r++++++++++%E2%86%92I+3-5%0Aq%E2%86%92%28p%E2%86%92r%29++++++++%E2%86%92I+2-6"
+  practice_hash: "#p=p%E2%86%92%28q%E2%86%92r%29&c=q%E2%86%92%28p%E2%86%92r%29"
+
+- id: "cond-8"
+  label: "p∧(q→(r∧t)) ⊢ q→(p→r)"
+  premises: ["p∧(q→(r∧t))"]
+  conclusion: "q→(p→r)"
+  worked_hash: "#p=p%E2%88%A7%28q%E2%86%92%28r%E2%88%A7t%29%29&c=q%E2%86%92%28p%E2%86%92r%29&pr=p%E2%88%A7%28q%E2%86%92%28r%E2%88%A7t%29%29++++P%0A++q++++++++++++A%0A++++p++++++++++A%0A++++q%E2%86%92%28r%E2%88%A7t%29++++%E2%88%A7E+1%0A++++r%E2%88%A7t++++++++%E2%86%92E+2%2C+4%0A++++r++++++++++%E2%88%A7E+5%0A++p%E2%86%92r++++++++++%E2%86%92I+3-6%0Aq%E2%86%92%28p%E2%86%92r%29++++++++%E2%86%92I+2-7"
+  practice_hash: "#p=p%E2%88%A7%28q%E2%86%92%28r%E2%88%A7t%29%29&c=q%E2%86%92%28p%E2%86%92r%29"
+
+# --- Disjunction and negation exercises ---
+- id: "disj-9"
+  label: "¬p∨q ⊢ p→q"
+  premises: ["¬p∨q"]
+  conclusion: "p→q"
+  worked_hash: "#p=%C2%ACp%E2%88%A8q&c=p%E2%86%92q&pr=%C2%ACp%E2%88%A8q++++++P%0A++%C2%ACp+++++++A%0A++++p++++++A%0A++++%E2%8A%A5++++++%C2%ACE+2%2C+3%0A++++q++++++EFSQ+4%0A++p%E2%86%92q++++++%E2%86%92I+3-5%0A%C2%ACp%E2%86%92%28p%E2%86%92q%29+++%E2%86%92I+2-6%0A++q++++++++A%0A++++p++++++A%0A++++q++++++R+8%0A++p%E2%86%92q++++++%E2%86%92I+9-10%0Aq%E2%86%92%28p%E2%86%92q%29++++%E2%86%92I+8-11%0Ap%E2%86%92q++++++++%E2%88%A8E+1%2C+7%2C+12"
+  practice_hash: "#p=%C2%ACp%E2%88%A8q&c=p%E2%86%92q"
+
+- id: "disj-10"
+  label: "p∧¬q ⊢ ¬(p→q)"
+  premises: ["p∧¬q"]
+  conclusion: "¬(p→q)"
+  worked_hash: "#p=p%E2%88%A7%C2%ACq&c=%C2%AC%28p%E2%86%92q%29&pr=p%E2%88%A7%C2%ACq++++++++P%0A++p%E2%86%92q+++++++A%0A++p++++++++%E2%88%A7E+1%0A++q++++++++%E2%86%92E+2%2C+3%0A++%C2%ACq+++++++%E2%88%A7E+1%0A++%E2%8A%A5++++++++%C2%ACE+4%2C+5%0A%C2%AC%28p%E2%86%92q%29+++++%C2%ACI+2-6"
+  practice_hash: "#p=p%E2%88%A7%C2%ACq&c=%C2%AC%28p%E2%86%92q%29"
+
+- id: "disj-11"
+  label: "p→(q∧r) ⊢ ¬p∨q"
+  premises: ["p→(q∧r)"]
+  conclusion: "¬p∨q"
+  worked_hash: "#p=p%E2%86%92%28q%E2%88%A7r%29&c=%C2%ACp%E2%88%A8q&pr=p%E2%86%92%28q%E2%88%A7r%29++++++++P%0A++%C2%AC%28%C2%ACp%E2%88%A8q%29++++++A%0A++++%C2%ACp+++++++++A%0A++++%C2%ACp%E2%88%A8q+++++++%E2%88%A8I+3%0A++++%E2%8A%A5++++++++++%C2%ACE+2%2C+4%0A++%C2%AC%C2%ACp++++++++++%C2%ACI+3-5%0A++p++++++++++++DN+6%0A++q%E2%88%A7r++++++++++%E2%86%92E+1%2C+7%0A++q++++++++++++%E2%88%A7E+8%0A++%C2%ACp%E2%88%A8q+++++++++%E2%88%A8I+9%0A++%E2%8A%A5++++++++++++%C2%ACE+2%2C+10%0A%C2%AC%C2%AC%28%C2%ACp%E2%88%A8q%29+++++++%C2%ACI+2-11%0A%C2%ACp%E2%88%A8q+++++++++++DN+12"
+  practice_hash: "#p=p%E2%86%92%28q%E2%88%A7r%29&c=%C2%ACp%E2%88%A8q"
+
+- id: "disj-12"
+  label: "(p∧¬q)∨(r∧¬q) ⊢ ¬q"
+  premises: ["(p∧¬q)∨(r∧¬q)"]
+  conclusion: "¬q"
+  worked_hash: "#p=%28p%E2%88%A7%C2%ACq%29%E2%88%A8%28r%E2%88%A7%C2%ACq%29&c=%C2%ACq&pr=%28p%E2%88%A7%C2%ACq%29%E2%88%A8%28r%E2%88%A7%C2%ACq%29++++++P%0A++p%E2%88%A7%C2%ACq+++++++++++++A%0A++%C2%ACq+++++++++++++++%E2%88%A7E+2%0A%28p%E2%88%A7%C2%ACq%29%E2%86%92%C2%ACq++++++++++%E2%86%92I+2-3%0A++r%E2%88%A7%C2%ACq+++++++++++++A%0A++%C2%ACq+++++++++++++++%E2%88%A7E+5%0A%28r%E2%88%A7%C2%ACq%29%E2%86%92%C2%ACq++++++++++%E2%86%92I+5-6%0A%C2%ACq+++++++++++++++++%E2%88%A8E+1%2C+4%2C+7"
+  practice_hash: "#p=%28p%E2%88%A7%C2%ACq%29%E2%88%A8%28r%E2%88%A7%C2%ACq%29&c=%C2%ACq"
+
+- id: "disj-13"
+  label: "p ⊢ ¬(p→¬p)"
+  premises: ["p"]
+  conclusion: "¬(p→¬p)"
+  worked_hash: "#p=p&c=%C2%AC%28p%E2%86%92%C2%ACp%29&pr=p++++++++++P%0A++p%E2%86%92%C2%ACp+++++A%0A++%C2%ACp+++++++%E2%86%92E+1%2C+2%0A++%E2%8A%A5++++++++%C2%ACE+1%2C+3%0A%C2%AC%28p%E2%86%92%C2%ACp%29++++%C2%ACI+2-4"
+  practice_hash: "#p=p&c=%C2%AC%28p%E2%86%92%C2%ACp%29"
+
+- id: "disj-14"
+  label: "¬(p∨q) ⊢ ¬p∧¬q"
+  premises: ["¬(p∨q)"]
+  conclusion: "¬p∧¬q"
+  worked_hash: "#p=%C2%AC%28p%E2%88%A8q%29&c=%C2%ACp%E2%88%A7%C2%ACq&pr=%C2%AC%28p%E2%88%A8q%29+++++P%0A++p++++++++A%0A++p%E2%88%A8q++++++%E2%88%A8I+2%0A++%E2%8A%A5++++++++%C2%ACE+1%2C+3%0A%C2%ACp+++++++++%C2%ACI+2-4%0A++q++++++++A%0A++p%E2%88%A8q++++++%E2%88%A8I+6%0A++%E2%8A%A5++++++++%C2%ACE+1%2C+7%0A%C2%ACq+++++++++%C2%ACI+6-8%0A%C2%ACp%E2%88%A7%C2%ACq++++++%E2%88%A7I+5%2C+9"
+  practice_hash: "#p=%C2%AC%28p%E2%88%A8q%29&c=%C2%ACp%E2%88%A7%C2%ACq"
+
+- id: "disj-15"
+  label: "p→¬(q∧r), q, ¬r→¬q ⊢ ¬p"
+  premises: ["p→¬(q∧r)", "q", "¬r→¬q"]
+  conclusion: "¬p"
+  worked_hash: "#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C+q%2C+%C2%ACr%E2%86%92%C2%ACq&c=%C2%ACp&pr=p%E2%86%92%C2%AC%28q%E2%88%A7r%29++++++P%0Aq+++++++++++++P%0A%C2%ACr%E2%86%92%C2%ACq+++++++++P%0A++p+++++++++++A%0A++%C2%AC%28q%E2%88%A7r%29++++++%E2%86%92E+1%2C+4%0A++++%C2%ACr++++++++A%0A++++%C2%ACq++++++++%E2%86%92E+3%2C+6%0A++++%E2%8A%A5+++++++++%C2%ACE+2%2C+7%0A++%C2%AC%C2%ACr+++++++++%C2%ACI+6-8%0A++r+++++++++++DN+9%0A++q%E2%88%A7r+++++++++%E2%88%A7I+2%2C+10%0A++%E2%8A%A5+++++++++++%C2%ACE+5%2C+11%0A%C2%ACp++++++++++++%C2%ACI+4-12"
+  practice_hash: "#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C+q%2C+%C2%ACr%E2%86%92%C2%ACq&c=%C2%ACp"
+
+- id: "disj-16"
+  label: "p→(¬q→¬r), p→¬q ⊢ r→¬p"
+  premises: ["p→(¬q→¬r)", "p→¬q"]
+  conclusion: "r→¬p"
+  worked_hash: "#p=p%E2%86%92%28%C2%ACq%E2%86%92%C2%ACr%29%2C+p%E2%86%92%C2%ACq&c=r%E2%86%92%C2%ACp&pr=p%E2%86%92%28%C2%ACq%E2%86%92%C2%ACr%29+++++++P%0Ap%E2%86%92%C2%ACq++++++++++++P%0A++r+++++++++++++A%0A++++p+++++++++++A+%0A++++%C2%ACq%E2%86%92%C2%ACr+++++++%E2%86%92E+4%2C+1%0A++++%C2%ACq++++++++++%E2%86%92E+4%2C+2%0A++++%C2%ACr++++++++++%E2%86%92E+5%2C+6%0A++++%E2%8A%A5+++++++++++%C2%ACE+3%2C+7%0A++%C2%ACp++++++++++++%C2%ACI+4-8%0Ar%E2%86%92%C2%ACp++++++++++++%E2%86%92I+3-9"
+  practice_hash: "#p=p%E2%86%92%28%C2%ACq%E2%86%92%C2%ACr%29%2C+p%E2%86%92%C2%ACq&c=r%E2%86%92%C2%ACp"
+
+- id: "disj-17"
+  label: "r→(p→q), p, q∨r ⊢ ¬¬q"
+  premises: ["r→(p→q)", "p", "q∨r"]
+  conclusion: "¬¬q"
+  worked_hash: "#p=r%E2%86%92%28p%E2%86%92q%29%2C+p%2C+q%E2%88%A8r&c=%C2%AC%C2%ACq&pr=r%E2%86%92%28p%E2%86%92q%29++++++P%0Ap++++++++++++P%0Aq%E2%88%A8r++++++++++P%0A++%C2%ACq+++++++++A%0A++++q++++++++A%0A++++q++++++++R+5%0A++q%E2%86%92q+++++++%E2%86%92I+5-6%0A++++r++++++++A%0A++++p%E2%86%92q++++++%E2%86%92E+1%2C+8%0A++++q++++++++%E2%86%92E+2%2C+9%0A++r%E2%86%92q++++++++%E2%86%92I+8-10%0A++q++++++++++%E2%88%A8E+3%2C+7%2C+11%0A++%E2%8A%A5++++++++++%C2%ACE+4%2C+12%0A%C2%AC%C2%ACq++++++++++%C2%ACI+4-13"
+  practice_hash: "#p=r%E2%86%92%28p%E2%86%92q%29%2C+p%2C+q%E2%88%A8r&c=%C2%AC%C2%ACq"
