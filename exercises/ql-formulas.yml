@@ -1,126 +1,215 @@
 # ql-formulas.yml
-# Scaffold entries for the QL Formula Checker
-# Base URL: https://ql-formula-checker.pplx.app
-# Hash format: #v1:<base64(UTF-8 JSON)>
-# JSON shape: { f: string }
+# QL Formula Checker exercises for the logic textbook
+# Base URL: https://gabriel-uzquiano.github.io/ql-formula-checker/
+# Hash format: #v1:<base64(UTF-8 JSON)>  where JSON = { "f": "<formula>" }
+#
+# Setup (index.Rmd):
+#   source("R/ql_formula_checker.R")
+#   qformulas <- qfc_load("exercises/ql-formulas.yml")
+#
+# Inline usage:
+#   `r qfc_embed_toggle(qformulas[["ch7-ex1a"]])`
 
 entries:
-  - id: atom-Pa
-    label: "Unary predicate atom"
-    formula: "Pa"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUGEifQ=="
 
-  - id: atom-Rab
-    label: "Binary predicate atom"
-    formula: "Rab"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUmFiIn0="
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Running examples
+  # ---------------------------------------------------------------------------
+  - id: ch7-eg1a
+    label: "Ch7 Example 7.1a — Pxy"
+    formula_hash: "#v1:eyJmIjoiUHh5In0="
 
-  - id: atom-Rabc
-    label: "Ternary predicate atom"
-    formula: "Rabc"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUmFiYyJ9"
+  - id: ch7-eg1b
+    label: "Ch7 Example 7.1b — Qabx"
+    formula_hash: "#v1:eyJmIjoiUWFieCJ9"
 
-  - id: atom-eq
-    label: "Identity statement"
-    formula: "a = b"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiYSA9IGIifQ=="
+  - id: ch7-eg1c
+    label: "Ch7 Example 7.1c — Rxaby₃"
+    formula_hash: "#v1:eyJmIjoiUnhhYnkzIn0="
 
-  - id: neg-Pa
-    label: "Negation of atom"
-    formula: "¬Pa"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqxQYSJ9"
+  - id: ch7-eg2a
+    label: "Ch7 Example 7.2a — (∀xPxy → ∃yQab)"
+    formula_hash: "#v1:eyJmIjoiKOKIgHhQeHkg4oaSIOKIg3lRYWIpIn0="
 
-  - id: neg-quant
-    label: "Negation of quantified formula"
-    formula: "¬∀xPx"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIB4UHgifQ=="
+  - id: ch7-eg2b
+    label: "Ch7 Example 7.2b — ∀xPxy"
+    formula_hash: "#v1:eyJmIjoi4oiAeFB4eSJ9"
 
-  - id: conj-ql
-    label: "Conjunction of atoms"
-    formula: "(Pa ∧ Qa)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiKFBhIOKIpyBRYSkifQ=="
+  - id: ch7-eg2c
+    label: "Ch7 Example 7.2c — ∃yQab"
+    formula_hash: "#v1:eyJmIjoi4oiDeVFhYiJ9"
 
-  - id: disj-ql
-    label: "Disjunction"
-    formula: "(Pa ∨ Pb)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiKFBhIOKIqCBQYikifQ=="
+  - id: ch7-eg3a
+    label: "Ch7 Example 7.3a — ∀x(Pxy → Qab)"
+    formula_hash: "#v1:eyJmIjoi4oiAeChQeHkg4oaSIFFhYikifQ=="
 
-  - id: univ-simple
-    label: "Simple universal"
-    formula: "∀xPx"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeFB4In0="
+  - id: ch7-eg3b
+    label: "Ch7 Example 7.3b — (Pxy → Qab)"
+    formula_hash: "#v1:eyJmIjoiKFB4eSDihpIgUWFiKSJ9"
 
-  - id: univ-cond
-    label: "Universal conditional"
-    formula: "∀x(Px → Qx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIgUXgpIn0="
+  - id: ch7-eg-free
+    label: "Ch7 Free occurrences — ∀x(Qxy → Ryx)"
+    formula_hash: "#v1:eyJmIjoi4oiAeChReHkg4oaSIFJ5eCkifQ=="
 
-  - id: univ-nested
-    label: "Nested universals"
-    formula: "∀x∀y(Rxy → Ryx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIgHkoUnh5IOKGkiBSeXgpIn0="
+  - id: ch7-eg4
+    label: "Ch7 Example 7.4 — Px → (Qxy → ∀xRxx)"
+    formula_hash: "#v1:eyJmIjoiUHgg4oaSIChReHkg4oaSIOKIgHhSeHgpIn0="
 
-  - id: univ-complex
-    label: "Universal with conjunction"
-    formula: "∀x(Px ∧ Qx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDiiKcgUXgpIn0="
+  - id: ch7-eg4a
+    label: "Ch7 Example 7.4a — Px → ∀xRxx"
+    formula_hash: "#v1:eyJmIjoiUHgg4oaSIOKIgHhSeHgifQ=="
 
-  - id: exist-simple
-    label: "Simple existential"
-    formula: "∃xPx"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeFB4In0="
+  - id: ch7-eg5
+    label: "Ch7 Example 7.5 — open formula (∀x∃yRxy ∨ Qyx)"
+    formula_hash: "#v1:eyJmIjoiKOKIgHjiiIN5Unh5IOKIqCBReXgpIn0="
 
-  - id: exist-conj
-    label: "Existential with conjunction"
-    formula: "∃x(Px ∧ Qx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeChQeCDiiKcgUXgpIn0="
+  - id: ch7-eg6
+    label: "Ch7 Example 7.6 — closed formula ∀x∃y(Rxy ∨ Qyx)"
+    formula_hash: "#v1:eyJmIjoi4oiAeOKIg3koUnh5IOKIqCBReXgpIn0="
 
-  - id: exist-nested
-    label: "Nested quantifiers"
-    formula: "∃x∀yRxy"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiDeOKIgHlSeHkifQ=="
+  - id: ch7-eg-nc1
+    label: "Ch7 Notational convention — ∀x(Rxa → Rax) (closed)"
+    formula_hash: "#v1:eyJmIjoi4oiAeChSeGEg4oaSIFJheCkifQ=="
 
-  - id: free-Px
-    label: "Open formula — x free"
-    formula: "Px"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiUHgifQ=="
+  - id: ch7-eg-nc2
+    label: "Ch7 Notational convention — (∀xRxa → Rax) (open)"
+    formula_hash: "#v1:eyJmIjoiKOKIgHhSeGEg4oaSIFJheCkifQ=="
 
-  - id: free-mixed
-    label: "Mixed free and bound"
-    formula: "∀x(Px → Qy)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIgUXkpIn0="
+  - id: ch7-eg7
+    label: "Ch7 Example 7.7 — abbrev ∀xRxa → Rax"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ4YSDihpIgUmF4In0="
 
-  - id: bound-all
-    label: "Closed formula"
-    formula: "∀x∃y(Rxy ∧ Px)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIg3koUnh5IOKIpyBQeCkifQ=="
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Exercise 1 — Atomic formulas of QL?
+  # ---------------------------------------------------------------------------
+  - id: ch7-ex1a
+    label: "Ch7 Ex 1a — ¬Rxy"
+    formula_hash: "#v1:eyJmIjoiwqxSeHkifQ=="
 
-  - id: free-scope
-    label: "Overlapping scopes"
-    formula: "∀xPx ∧ Qx"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeFB4IOKIpyBReCJ9"
+  - id: ch7-ex1b
+    label: "Ch7 Ex 1b — Rxy"
+    formula_hash: "#v1:eyJmIjoiUnh5In0="
 
-  - id: complex-1
-    label: "Alternating quantifiers"
-    formula: "∀x∃y(Rxy → Ryx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIg3koUnh5IOKGkiBSeXgpIn0="
+  - id: ch7-ex1c
+    label: "Ch7 Ex 1c — Aabx"
+    formula_hash: "#v1:eyJmIjoiQWFieCJ9"
 
-  - id: complex-2
-    label: "Embedded quantifier"
-    formula: "∀x(Px → ∃yRxy)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeChQeCDihpIg4oiDeVJ4eSkifQ=="
+  - id: ch7-ex1d
+    label: "Ch7 Ex 1d — Qe"
+    formula_hash: "#v1:eyJmIjoiUWUifQ=="
 
-  - id: complex-3
-    label: "De Morgan for quantifiers"
-    formula: "¬∀xPx"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIB4UHgifQ=="
+  - id: ch7-ex1e
+    label: "Ch7 Ex 1e — Pxyza"
+    formula_hash: "#v1:eyJmIjoiUHh5emEifQ=="
 
-  - id: complex-4
-    label: "Negated existential"
-    formula: "¬∃x(Px ∧ Qx)"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoiwqziiIN4KFB4IOKIpyBReCkifQ=="
+  - id: ch7-ex1f
+    label: "Ch7 Ex 1f — RPa"
+    formula_hash: "#v1:eyJmIjoiUlBhIn0="
 
-  - id: complex-5
-    label: "With identity"
-    formula: "∀x∀y(x = y → (Px → Py))"
-    url: "https://ql-formula-checker.pplx.app#v1:eyJmIjoi4oiAeOKIgHkoeCA9IHkg4oaSIChQeCDihpIgUHkpKSJ9"
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Exercise 2 — Formulas of QL?
+  # ---------------------------------------------------------------------------
+  - id: ch7-ex2a
+    label: "Ch7 Ex 2a — ¬¬Rxy"
+    formula_hash: "#v1:eyJmIjoiwqzCrFJ4eSJ9"
+
+  - id: ch7-ex2b
+    label: "Ch7 Ex 2b — (Pa → (Axy ∧ ∃xQx))"
+    formula_hash: "#v1:eyJmIjoiKFBhIOKGkiAoQXh5IOKIpyDiiIN4UXgpKSJ9"
+
+  - id: ch7-ex2c
+    label: "Ch7 Ex 2c — ∀xRyy"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ5eSJ9"
+
+  - id: ch7-ex2d
+    label: "Ch7 Ex 2d — ∃xy(P ∧ P(y))"
+    formula_hash: "#v1:eyJmIjoi4oiDeHkoUCDiiKcgUCh5KSkifQ=="
+
+  - id: ch7-ex2e
+    label: "Ch7 Ex 2e — ∀∀xRyx"
+    formula_hash: "#v1:eyJmIjoi4oiA4oiAeFJ5eCJ9"
+
+  - id: ch7-ex2f
+    label: "Ch7 Ex 2f — ∃x∃yRxy"
+    formula_hash: "#v1:eyJmIjoi4oiDeOKIg3lSeHkifQ=="
+
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Exercise 3 — Abbreviations for formulas of QL?
+  # ---------------------------------------------------------------------------
+  - id: ch7-ex3a
+    label: "Ch7 Ex 3a — ∃x∃yRxy → Px"
+    formula_hash: "#v1:eyJmIjoi4oiDeOKIg3lSeHkg4oaSIFB4In0="
+
+  - id: ch7-ex3b
+    label: "Ch7 Ex 3b — ∀xRx ∨ ∃yQyy"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ4IOKIqCDiiIN5UXl5In0="
+
+  - id: ch7-ex3c
+    label: "Ch7 Ex 3c — Px ∧ Qx ∨ Rxy"
+    formula_hash: "#v1:eyJmIjoiUHgg4oinIFF4IOKIqCBSeHkifQ=="
+
+  - id: ch7-ex3d
+    label: "Ch7 Ex 3d — Px ∧ Qx → Rxy"
+    formula_hash: "#v1:eyJmIjoiUHgg4oinIFF4IOKGkiBSeHkifQ=="
+
+  - id: ch7-ex3e
+    label: "Ch7 Ex 3e — ∃xPx ∧ ∃yQy ∧ ∃zRz"
+    formula_hash: "#v1:eyJmIjoi4oiDeFB4IOKIpyDiiIN5UXkg4oinIOKIg3pSeiJ9"
+
+  - id: ch7-ex3f
+    label: "Ch7 Ex 3f — ∃x∀y∃z(Px ∧ Qy ∧ Rxyz)"
+    formula_hash: "#v1:eyJmIjoi4oiDeOKIgHniiIN6KFB4IOKIpyBReSDiiKcgUnh5eikifQ=="
+
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Exercise 4 — Does x occur free?
+  # ---------------------------------------------------------------------------
+  - id: ch7-ex4a
+    label: "Ch7 Ex 4a — ∀x(Rxy ∧ Ryx)"
+    formula_hash: "#v1:eyJmIjoi4oiAeChSeHkg4oinIFJ5eCkifQ=="
+
+  - id: ch7-ex4b
+    label: "Ch7 Ex 4b — ∀xRxy ∧ Ryx"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ4eSDiiKcgUnl4In0="
+
+  - id: ch7-ex4c
+    label: "Ch7 Ex 4c — ∃x(Px ∧ Qx) → ∀yRxy"
+    formula_hash: "#v1:eyJmIjoi4oiDeChQeCDiiKcgUXgpIOKGkiDiiIB5Unh5In0="
+
+  - id: ch7-ex4d
+    label: "Ch7 Ex 4d — ∀x∃yRxy → ∃x∀yRyx"
+    formula_hash: "#v1:eyJmIjoi4oiAeOKIg3lSeHkg4oaSIOKIg3jiiIB5Unl4In0="
+
+  - id: ch7-ex4e
+    label: "Ch7 Ex 4e — ∀x∃yRxy → ∀yRyx"
+    formula_hash: "#v1:eyJmIjoi4oiAeOKIg3lSeHkg4oaSIOKIgHlSeXgifQ=="
+
+  - id: ch7-ex4f
+    label: "Ch7 Ex 4f — ∀x(∃yRxy → ∀yRyx)"
+    formula_hash: "#v1:eyJmIjoi4oiAeCjiiIN5Unh5IOKGkiDiiIB5Unl4KSJ9"
+
+  # ---------------------------------------------------------------------------
+  # Chapter 7 Exercise 5 — Open or closed?
+  # ---------------------------------------------------------------------------
+  - id: ch7-ex5a
+    label: "Ch7 Ex 5a — ∀xRxy ∧ Ryx"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ4eSDiiKcgUnl4In0="
+
+  - id: ch7-ex5b
+    label: "Ch7 Ex 5b — Rab"
+    formula_hash: "#v1:eyJmIjoiUmFiIn0="
+
+  - id: ch7-ex5c
+    label: "Ch7 Ex 5c — ∃x(Pax ∧ Qxa) → ∀yRxy"
+    formula_hash: "#v1:eyJmIjoi4oiDeChQYXgg4oinIFF4YSkg4oaSIOKIgHlSeHkifQ=="
+
+  - id: ch7-ex5d
+    label: "Ch7 Ex 5d — ∀xRyy"
+    formula_hash: "#v1:eyJmIjoi4oiAeFJ5eSJ9"
+
+  - id: ch7-ex5e
+    label: "Ch7 Ex 5e — ∀x∃y∀zRxyx"
+    formula_hash: "#v1:eyJmIjoi4oiAeOKIg3niiIB6Unh5eCJ9"
+
+  - id: ch7-ex5f
+    label: "Ch7 Ex 5f — Rax → ∀xRxx"
+    formula_hash: "#v1:eyJmIjoiUmF4IOKGkiDiiIB4Unh4In0="
