@@ -345,3 +345,150 @@
   conclusion: "¬¬q"
   worked_hash: "#p=r%E2%86%92%28p%E2%86%92q%29%2C+p%2C+q%E2%88%A8r&c=%C2%AC%C2%ACq&pr=r%E2%86%92%28p%E2%86%92q%29++++++P%0Ap++++++++++++P%0Aq%E2%88%A8r++++++++++P%0A++%C2%ACq+++++++++A%0A++++q++++++++A%0A++++q++++++++R+5%0A++q%E2%86%92q+++++++%E2%86%92I+5-6%0A++++r++++++++A%0A++++p%E2%86%92q++++++%E2%86%92E+1%2C+8%0A++++q++++++++%E2%86%92E+2%2C+9%0A++r%E2%86%92q++++++++%E2%86%92I+8-10%0A++q++++++++++%E2%88%A8E+3%2C+7%2C+11%0A++%E2%8A%A5++++++++++%C2%ACE+4%2C+12%0A%C2%AC%C2%ACq++++++++++%C2%ACI+4-13"
   practice_hash: "#p=r%E2%86%92%28p%E2%86%92q%29%2C+p%2C+q%E2%88%A8r&c=%C2%AC%C2%ACq"
+
+# ===========================================================================
+# Chapter 10 — Natural Deduction for Quantificational Logic
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# Example 10.1 — propositional rules only (MT)
+# ---------------------------------------------------------------------------
+- id: "ch10-eg1"
+  role: worked
+  label: "Ch10 Eg 10.1 — ∀xPx→∃xPx, ¬∃xPx ⊢ ¬∀xPx"
+  premises: "∀xPx→∃xPx, ¬∃xPx"
+  conclusion: "¬∀xPx"
+  proof: "∀xPx→∃xPx  P\n¬∃xPx  P\n  ∀xPx  A\n  ∃xPx  →E  1, 3\n  ⊥  ¬E  2, 4\n¬∀xPx  ¬I  3–5"
+
+# ---------------------------------------------------------------------------
+# Example 10.3 — Universal Elimination
+# ---------------------------------------------------------------------------
+- id: "ch10-eg3"
+  role: worked
+  label: "Ch10 Eg 10.3 — ∀x∀y(Px→Qy), Pa ⊢ Qb"
+  premises: "∀x∀y(Px→Qy), Pa"
+  conclusion: "Qb"
+  proof: "∀x∀y(Px→Qy)  P\nPa  P\n∀y(Pa→Qy)  ∀E  1\nPa→Qb  ∀E  3\nQb  →E  4, 2"
+
+# ---------------------------------------------------------------------------
+# Example 10.4 — Universal Elimination (two steps)
+# ---------------------------------------------------------------------------
+- id: "ch10-eg4"
+  role: worked
+  label: "Ch10 Eg 10.4 — ∀x∀yRxy ⊢ Raa"
+  premises: "∀x∀yRxy"
+  conclusion: "Raa"
+  proof: "∀x∀yRxy  P\n∀yRay  ∀E  1\nRaa  ∀E  2"
+
+# ---------------------------------------------------------------------------
+# Example 10.5 — Universal Introduction
+# ---------------------------------------------------------------------------
+- id: "ch10-eg5"
+  role: worked
+  label: "Ch10 Eg 10.5 — ∀x(Px→Qx), ∀x(Qx→Rx) ⊢ ∀x(Px→Rx)"
+  premises: "∀x(Px→Qx), ∀x(Qx→Rx)"
+  conclusion: "∀x(Px→Rx)"
+  proof: "∀x(Px→Qx)  P\n∀x(Qx→Rx)  P\nPa→Qa  ∀E  1\nQa→Ra  ∀E  2\n  Pa  A\n  Qa  →E  3, 5\n  Ra  →E  4, 6\nPa→Ra  →I  5–7\n∀x(Px→Rx)  ∀I  8"
+
+# ---------------------------------------------------------------------------
+# Example 10.6 — Universal Introduction with negation
+# ---------------------------------------------------------------------------
+- id: "ch10-eg6"
+  role: worked
+  label: "Ch10 Eg 10.6 — ∀x(Px→¬Px) ⊢ ∀x¬Px"
+  premises: "∀x(Px→¬Px)"
+  conclusion: "∀x¬Px"
+  proof: "∀x(Px→¬Px)  P\nPa→¬Pa  ∀E  1\n  Pa  A\n  ¬Pa  →E  2, 3\n  ⊥  ¬E  4, 3\n¬Pa  ¬I  3–5\n∀x¬Px  ∀I  6"
+
+# ---------------------------------------------------------------------------
+# Example 10.7 — Existential Introduction
+# ---------------------------------------------------------------------------
+- id: "ch10-eg7"
+  role: worked
+  label: "Ch10 Eg 10.7 — Rab ⊢ ∃x∃yRxy"
+  premises: "Rab"
+  conclusion: "∃x∃yRxy"
+  proof: "Rab  P\n∃yRay  ∃I  1\n∃x∃yRxy  ∃I  2"
+
+# ---------------------------------------------------------------------------
+# Example 10.8 — Existential Introduction with negation
+# ---------------------------------------------------------------------------
+- id: "ch10-eg8"
+  role: worked
+  label: "Ch10 Eg 10.8 — ¬∃x(Px∧Qx) ⊢ ¬∀x(Px∧Qx)"
+  premises: "¬∃x(Px∧Qx)"
+  conclusion: "¬∀x(Px∧Qx)"
+  proof: "¬∃x(Px∧Qx)  P\n  ∀x(Px∧Qx)  A\n  Pa∧Qa  ∀E  2\n  ∃x(Px∧Qx)  ∃I  3\n  ⊥  ¬E  1, 4\n¬∀x(Px∧Qx)  ¬I  2–5"
+
+# ---------------------------------------------------------------------------
+# Example 10.9 — Existential Elimination
+# ---------------------------------------------------------------------------
+- id: "ch10-eg9"
+  role: worked
+  label: "Ch10 Eg 10.9 — ∃x(Px∧¬Qx) ⊢ ¬∀x(Px→Qx)"
+  premises: "∃x(Px∧¬Qx)"
+  conclusion: "¬∀x(Px→Qx)"
+  proof: "∃x(Px∧¬Qx)  P\n  Pa∧¬Qa  A\n  Pa  ∧E  2\n  ¬Qa  ∧E  2\n    ∀x(Px→Qx)  A\n    Pa→Qa  ∀E  5\n    Qa  →E  6, 3\n    ⊥  ¬E  4, 7\n  ¬∀x(Px→Qx)  ¬I  5–8\n(Pa∧¬Qa)→¬∀x(Px→Qx)  →I  2–9\n¬∀x(Px→Qx)  ∃E  1, 10"
+
+# ---------------------------------------------------------------------------
+# Example 10.10 — Existential Elimination + Introduction
+# ---------------------------------------------------------------------------
+- id: "ch10-eg10"
+  role: worked
+  label: "Ch10 Eg 10.10 — ∀x(Px→Qx), ∃yPy ⊢ ∃zQz"
+  premises: "∀x(Px→Qx), ∃yPy"
+  conclusion: "∃zQz"
+  proof: "∀x(Px→Qx)  P\n∃yPy  P\nPa→Qa  ∀E  1\n  Pa  A\n  Qa  →E  3, 4\n  ∃zQz  ∃I  5\nPa→∃zQz  →I  4–6\n∃zQz  ∃E  2, 7"
+
+# ---------------------------------------------------------------------------
+# Example 10.11 — Mixed quantifiers
+# ---------------------------------------------------------------------------
+- id: "ch10-eg11"
+  role: worked
+  label: "Ch10 Eg 10.11 — ∃x∀yRxy, ∀x∀y(Rxy→Ryx) ⊢ ∃x∀yRyx"
+  premises: "∃x∀yRxy, ∀x∀y(Rxy→Ryx)"
+  conclusion: "∃x∀yRyx"
+  proof: "∃x∀yRxy  P\n∀x∀y(Rxy→Ryx)  P\n  ∀yRay  A\n  ∀y(Ray→Rya)  ∀E  2\n    Ray→Rya  ∀E  4\n    Ray  ∀E  3\n    Rya  →E  5, 6\n  ∀yRya  ∀I  7\n  ∃x∀yRyx  ∃I  8\n(∀yRay)→∃x∀yRyx  →I  3–9\n∃x∀yRyx  ∃E  1, 10"
+
+# ---------------------------------------------------------------------------
+# Example 10.12 — Universal distribution
+# ---------------------------------------------------------------------------
+- id: "ch10-eg12"
+  role: worked
+  label: "Ch10 Eg 10.12 — ∀x(Px→(Qxa→Rxb)) ⊢ ∀x(Px→Qxa)→∀x(Px→Rxb)"
+  premises: "∀x(Px→(Qxa→Rxb))"
+  conclusion: "∀x(Px→Qxa)→∀x(Px→Rxb)"
+  proof: "∀x(Px→(Qxa→Rxb))  P\n  ∀x(Px→Qxa)  A\n  Pa→(Qaa→Rab)  ∀E  1\n  Pa→Qaa  ∀E  2\n    Pa  A\n    Qaa→Rab  →E  3, 5\n    Qaa  →E  4, 5\n    Rab  →E  6, 7\n  Pa→Rab  →I  5–8\n  ∀x(Px→Rxb)  ∀I  9\n∀x(Px→Qxa)→∀x(Px→Rxb)  →I  2–10"
+
+# ---------------------------------------------------------------------------
+# Exercises
+# ---------------------------------------------------------------------------
+- id: "ch10-ex1"
+  role: practice
+  label: "Ch10 Ex 1 — ∃xPx→∃xQx, ∀xPx ⊢ ∃xQx"
+  premises: "∃xPx→∃xQx, ∀xPx"
+  conclusion: "∃xQx"
+
+- id: "ch10-ex2"
+  role: practice
+  label: "Ch10 Ex 2 — ∃xPx∧∃xQx, ¬∃x(Px∧Qx), ∀x(Rx→Px) ⊢ ∃x¬Rx"
+  premises: "∃xPx∧∃xQx, ¬∃x(Px∧Qx), ∀x(Rx→Px)"
+  conclusion: "∃x¬Rx"
+
+- id: "ch10-ex3"
+  role: practice
+  label: "Ch10 Ex 3 — ∀x(Px→¬Qx), ∀x(Rx→Qx) ⊢ ∀x(Rx→¬Px)"
+  premises: "∀x(Px→¬Qx), ∀x(Rx→Qx)"
+  conclusion: "∀x(Rx→¬Px)"
+
+- id: "ch10-ex4"
+  role: practice
+  label: "Ch10 Ex 4 — ∀x(Px→(∃yRxy→Qx)), ¬∃yQy ⊢ ∀y(Py→∀z¬Ryz)"
+  premises: "∀x(Px→(∃yRxy→Qx)), ¬∃yQy"
+  conclusion: "∀y(Py→∀z¬Ryz)"
+
+- id: "ch10-ex5"
+  role: practice
+  label: "Ch10 Ex 5 — ∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px) ⊢ ∃x(Qx∧∀y(Rxy→Py))"
+  premises: "∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px)"
+  conclusion: "∃x(Qx∧∀y(Rxy→Py))"
