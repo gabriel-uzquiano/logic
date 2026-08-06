@@ -492,3 +492,41 @@
   label: "Ch10 Ex 5 — ∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px) ⊢ ∃x(Qx∧∀y(Rxy→Py))"
   premises: "∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px)"
   conclusion: "∃x(Qx∧∀y(Rxy→Py))"
+
+# ---------------------------------------------------------------------------
+# Chapter 10 — Worked solutions
+# ---------------------------------------------------------------------------
+- id: "ch10-ex1-worked"
+  role: worked
+  label: "Ch10 Ex 1 worked — ∃xPx→∃xQx, ∀xPx ⊢ ∃xQx"
+  premises: "∃xPx→∃xQx, ∀xPx"
+  conclusion: "∃xQx"
+  proof: "∃xPx→∃xQx  P\n∀xPx  P\nPa  ∀E  2\n∃xPx  ∃I  3\n∃xQx  →E  1, 4"
+
+- id: "ch10-ex2-worked"
+  role: worked
+  label: "Ch10 Ex 2 worked — ∃xPx∧∃xQx, ¬∃x(Px∧Qx), ∀x(Rx→Px) ⊢ ∃x¬Rx"
+  premises: "∃xPx∧∃xQx, ¬∃x(Px∧Qx), ∀x(Rx→Px)"
+  conclusion: "∃x¬Rx"
+  proof: "∃xPx∧∃xQx  P\n¬∃x(Px∧Qx)  P\n∀x(Rx→Px)  P\n∃xQx  ∧E  1\n  Qc  A\n  Rc→Pc  ∀E  3\n    Rc  A\n    Pc  →E  6, 7\n    Pc∧Qc  ∧I  8, 5\n    ∃x(Px∧Qx)  ∃I  9\n    ⊥  ¬E  2, 10\n  ¬Rc  ¬I  7–11\n  ∃x¬Rx  ∃I  12\nQc→∃x¬Rx  →I  5–13\n∃x¬Rx  ∃E  4, 14"
+
+- id: "ch10-ex3-worked"
+  role: worked
+  label: "Ch10 Ex 3 worked — ∀x(Px→¬Qx), ∀x(Rx→Qx) ⊢ ∀x(Rx→¬Px)"
+  premises: "∀x(Px→¬Qx), ∀x(Rx→Qx)"
+  conclusion: "∀x(Rx→¬Px)"
+  proof: "∀x(Px→¬Qx)  P\n∀x(Rx→Qx)  P\nPa→¬Qa  ∀E  1\nRa→Qa  ∀E  2\n  Ra  A\n  Qa  →E  4, 5\n    Pa  A\n    ¬Qa  →E  3, 7\n    ⊥  ¬E  8, 6\n  ¬Pa  ¬I  7–9\nRa→¬Pa  →I  5–10\n∀x(Rx→¬Px)  ∀I  11"
+
+- id: "ch10-ex4-worked"
+  role: worked
+  label: "Ch10 Ex 4 worked — ∀x(Px→(∃yRxy→Qx)), ¬∃yQy ⊢ ∀y(Py→∀z¬Ryz)"
+  premises: "∀x(Px→(∃yRxy→Qx)), ¬∃yQy"
+  conclusion: "∀y(Py→∀z¬Ryz)"
+  proof: "∀x(Px→(∃yRxy→Qx))  P\n¬∃yQy  P\nPa→(∃yRay→Qa)  ∀E  1\n  Pa  A\n  ∃yRay→Qa  →E  3, 4\n    Rab  A\n    ∃yRay  ∃I  6\n    Qa  →E  5, 7\n    ∃yQy  ∃I  8\n    ⊥  ¬E  2, 9\n  ¬Rab  ¬I  6–10\n  ∀z¬Raz  ∀I  11\nPa→∀z¬Raz  →I  4–12\n∀y(Py→∀z¬Ryz)  ∀I  13"
+
+- id: "ch10-ex5-worked"
+  role: worked
+  label: "Ch10 Ex 5 worked — ∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px) ⊢ ∃x(Qx∧∀y(Rxy→Py))"
+  premises: "∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px)"
+  conclusion: "∃x(Qx∧∀y(Rxy→Py))"
+  proof: "∀x(Px→∀y(Rxy→Py))  P\n∃x(Qx∧Px)  P\nPa→∀y(Ray→Py)  ∀E  1\n  Qa∧Pa  A\n  Pa  ∧E  4\n  Qa  ∧E  4\n  ∀y(Ray→Py)  →E  3, 5\n  Qa∧∀y(Ray→Py)  ∧I  6, 7\n  ∃x(Qx∧∀y(Rxy→Py))  ∃I  8\n(Qa∧Pa)→∃x(Qx∧∀y(Rxy→Py))  →I  4–9\n∃x(Qx∧∀y(Rxy→Py))  ∃E  2, 10"
