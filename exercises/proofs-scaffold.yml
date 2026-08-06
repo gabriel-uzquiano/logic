@@ -448,7 +448,7 @@
   label: "Ch10 Eg 10.11 — ∃x∀yRxy, ∀x∀y(Rxy→Ryx) ⊢ ∃x∀yRyx"
   premises: "∃x∀yRxy, ∀x∀y(Rxy→Ryx)"
   conclusion: "∃x∀yRyx"
-  proof: "∃x∀yRxy  P\n∀x∀y(Rxy→Ryx)  P\n  ∀yRay  A\n  ∀y(Ray→Rya)  ∀E  2\n  Rab→Rba  ∀E  4\n  Rab  ∀E  3\n  Rba  →E  5, 6\n  ∀yRya  ∀I  7\n  ∃x∀yRyx  ∃I  8\n(∀yRay→∃x∀yRyx)  →I  3–9\n∃x∀yRyx  ∃E  1, 10"
+  proof: "∃x∀yRxy  P\n∀x∀y(Rxy→Ryx)  P\n  ∀yRcy  A\n  ∀y(Rcy→Ryc)  ∀E  2\n  Rcb→Rbc  ∀E  4\n  Rcb  ∀E  3\n  Rbc  →E  5, 6\n  ∀yRyc  ∀I  7\n  ∃x∀yRyx  ∃I  8\n(∀yRcy→∃x∀yRyx)  →I  3–9\n∃x∀yRyx  ∃E  1, 10"
 
 # ---------------------------------------------------------------------------
 # Example 10.12 — Universal distribution
