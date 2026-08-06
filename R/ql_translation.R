@@ -10,6 +10,7 @@
 #   `r qtr_link(qtrans[["trojans-1"]])`
 #   `r qtr_embed(qtrans[["trojans-1"]])`
 #   `r qtr_embed_toggle(qtrans[["trojans-1"]])`
+#   `r qtr_embed_toggle_cards(qtrans[["ch9-ex1a"]])`
 #
 # URL hash format: #v1:<base64(UTF-8 JSON)>
 #   JSON shape:
@@ -157,4 +158,69 @@ qtr_load <- function(file = "exercises/ql-translations.yml") {
   if (length(raw) == 0L) return(list())
   ids <- vapply(raw, function(e) qtr_str(e$id), character(1L))
   stats::setNames(raw, ids)
+}
+
+# ---------------------------------------------------------------------------
+# qtr_iframe_card() — embed showing only specific cards via ?card=
+# ---------------------------------------------------------------------------
+# card: comma-separated subset of "sentences", "worksheet", "translation"
+# e.g. card = "worksheet,translation" hides the Sentences card
+qtr_iframe_card <- function(ex, card = "worksheet,translation",
+                             solution = FALSE, instructor = FALSE, height = 480L) {
+  if (!knitr::is_html_output()) return(qtr_link(ex, solution = solution, instructor = instructor))
+  base_url <- qtr_url(ex, solution = solution, instructor = instructor)
+  # Insert ?card= before the # hash
+  hash_pos <- regexpr("#", base_url, fixed = TRUE)
+  if (hash_pos > 0) {
+    full_url <- paste0(substr(base_url, 1, hash_pos - 1),
+                       "?card=", URLencode(card, reserved = FALSE),
+                       substr(base_url, hash_pos, nchar(base_url)))
+  } else {
+    full_url <- paste0(base_url, "?card=", URLencode(card, reserved = FALSE))
+  }
+  src <- gsub("&", "&amp;", full_url, fixed = TRUE)
+  .as_html(sprintf(
+    '<div style="position:relative;margin:1em 0">
+  <a href="%s" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+    Open &#x2197;</a>
+  <iframe title="QL Translation" src="%s"
+          style="width:100%%;height:%dpx;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe>
+</div>',
+    base_url, src, as.integer(height)
+  ))
+}
+
+# ---------------------------------------------------------------------------
+# qtr_embed_toggle_cards() — worksheet+translation cards on top;
+#                            full worked app on click
+# ---------------------------------------------------------------------------
+# Standard pattern for exercises inside a numbered/lettered list:
+#   practice: card="worksheet,translation" — student fills key + formula
+#   solution: full app with all cards + worked answer
+#
+# `r qtr_embed_toggle_cards(qtrans[["ch9-ex1a"]])`
+qtr_embed_toggle_cards <- function(ex,
+                                    practice_height = 480L,
+                                    worked_height   = 580L,
+                                    summary         = "Show translation") {
+  if (!knitr::is_html_output()) return(qtr_link(ex, solution = FALSE))
+  practice <- qtr_iframe_card(ex, card = "worksheet,translation",
+                               solution = FALSE, height = practice_height)
+  worked   <- qtr_iframe(ex, solution = TRUE, height = worked_height)
+  .as_html(sprintf(
+    '%s
+<details style="margin-top:0.25em">
+  <summary style="display:flex;align-items:center;gap:0.3em;list-style:none;cursor:pointer;
+                  color:#7a003c;font-size:0.88em;padding:3px 0;user-select:none">
+    <span style="display:inline-block">&#9654;</span>
+    <span>%s</span>
+  </summary>
+  %s
+</details>',
+    practice, summary, worked
+  ))
 }
