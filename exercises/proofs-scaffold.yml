@@ -458,7 +458,7 @@
   label: "Ch10 Eg 10.12 — ∀x(Px→(Qxa→Rxb)) ⊢ ∀x(Px→Qxa)→∀x(Px→Rxb)"
   premises: "∀x(Px→(Qxa→Rxb))"
   conclusion: "∀x(Px→Qxa)→∀x(Px→Rxb)"
-  proof: "∀x(Px→(Qxa→Rxb))  P\n  ∀x(Px→Qxa)  A\n  Pa→(Qaa→Rab)  ∀E  1\n  Pa→Qaa  ∀E  2\n    Pa  A\n    Qaa→Rab  →E  3, 5\n    Qaa  →E  4, 5\n    Rab  →E  6, 7\n  Pa→Rab  →I  5–8\n  ∀x(Px→Rxb)  ∀I  9\n∀x(Px→Qxa)→∀x(Px→Rxb)  →I  2–10"
+  proof: "∀x(Px→(Qxa→Rxb))  P\n  ∀x(Px→Qxa)  A\n  Pc→(Qca→Rcb)  ∀E  1\n  Pc→Qca  ∀E  2\n    Pc  A\n    Qca→Rcb  →E  3, 5\n    Qca  →E  4, 5\n    Rcb  →E  6, 7\n  Pc→Rcb  →I  5–8\n  ∀x(Px→Rxb)  ∀I  9\n∀x(Px→Qxa)→∀x(Px→Rxb)  →I  2–10"
 
 # ---------------------------------------------------------------------------
 # Exercises
