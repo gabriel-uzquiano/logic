@@ -41,7 +41,7 @@
 #     student_hash: "#v1:eyJz..."   # sentence loaded, worksheet + translation blank
 #     worked_hash:  "#v1:eyJz..."   # sentence + key + worked translation
 
-QTR_BASE <- "https://ql-translation.pplx.app/"
+QTR_BASE <- "https://gabriel-uzquiano.github.io/ql-translation/"
 
 
 # Return x unchanged — HTML rendering requires a results='asis' chunk
