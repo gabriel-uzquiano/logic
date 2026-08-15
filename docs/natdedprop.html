@@ -9,7 +9,7 @@
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
-<meta name="github-repo" content="rstudio/bookdown-demo" />
+<meta name="github-repo" content="gabriel-uzquiano/logic" />
 
 <meta name="author" content="Gabriel Uzquiano" />
 
@@ -128,19 +128,6 @@ MathJax.Hub.Config({
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
 <li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
-<li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
-<ul>
-<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
-<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
-</ul></li>
 </ul>
 </div>
 </div>
@@ -159,7 +146,7 @@ MathJax.Hub.Config({
 <p>A <em>derivation</em> is a finite sequence of formulas, some of which may be marked as <em>premises</em> and <em>assumptions</em>. Other formulas in the sequence will be licensed by the application of a rule of inference to one or more prior formulas in the series. The last formula in the sequence will be its <em>conclusion</em>.</p>
 </dd>
 </dl>
-<p>This preliminary characterization of a derivation will remain incomplete until we specify the rules of inference for the system, which we will do next. Once the rules of inference are in place, we will be able to check a purported derivation to make sure that each step accords to one of the rules and that the chain of inferences qualifies as a derivation.</p>
+<p>This preliminary characterization of a derivation will remain incomplete until we specify the rules of inference for the system, which we will do next. Once the rules of inference are in place, we will be able to check a purported derivation to make sure that each step accords with one of the rules and that the chain of inferences qualifies as a derivation.</p>
 <p>Derivations will take the form of a numbered series of formulas that begin with the assumptions of the argument. We do this in order to be able to refer back to prior formulas in the proof, and we will draw a horizontal line after the premises. While formulas above the line are <em>assumptions</em>, the formulas that follow will be explicitly licensed by the rules of inference of the system or will on occasion be another assumption, which will be labelled as such.</p>
 <dl>
 <dt>Derivability</dt>
@@ -172,7 +159,7 @@ MathJax.Hub.Config({
 <h2>Natural Deduction Rules</h2>
 <p>Most natural deduction rules constrain either the introduction or the elimination of a connective in some complex formula of propositional logic. Each connective is governed by an introduction rule, which specifies the conditions under which a complex formula with that connective may be introduced into the derivation, and an elimination rule, which explains how to exploit a complex formula with that connective.</p>
 <p>There is one important exception. We have a single structural rule, which enables us to repeat a formula from an earlier available line.</p>
-<p><label for="tufte-mn-33" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-33" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/Repetition.png"><br />
+<p><label for="tufte-mn-31" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-31" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/Repetition.png"><br />
 Repetition</span></span></p>
 <dl>
 <dt>Repetition</dt>
@@ -183,14 +170,23 @@ Repetition</span></span></p>
 <p>The annotation indicates that we are allowed to repeat the formula on line <span class="math inline">\(n\)</span> at a later line <span class="math inline">\(m\)</span>.</p>
 <p>This is perhaps the simplest derivation you will ever encounter.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 5.1  </strong></span><span class="math inline">\(p \vdash p\)</span>
-<img src="images/4.%20ex%20repetition.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 5.1  </strong></span><span class="math inline">\(p \vdash p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p&c=p&pr=p%20%20P%0Ap%20%20R%20%201" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p&amp;c=p&amp;pr=p%20%20P%0Ap%20%20R%20%201"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 </div>
 <div id="conjunction-and-conditional" class="section level2 unnumbered">
 <h2>Conjunction and Conditional</h2>
 <p>We will now specify introduction and elimination rules for conjunction and the conditional, and we will postpone the discussion of similar rules for disjunction and negation until later.</p>
-<p><label for="tufte-mn-34" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-34" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/conj%20intro.png"><br />
+<p><label for="tufte-mn-32" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-32" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/conj%20intro.png"><br />
 Conjunction Introduction</span></span></p>
 <dl>
 <dt>Conjunction Introduction</dt>
@@ -198,28 +194,46 @@ Conjunction Introduction</span></span></p>
 <p>You may write a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> on a line if <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are available at prior lines in the derivation.</p>
 </dd>
 </dl>
-<p>To illustrate the rule, notice how the introduction rule for conjunction suffices for a derivation of <span class="math inline">\(p \wedge (r \wedge q)\)</span> from three premises <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, and <span class="math inline">\(r\)</span>:</p>
+<p>To illustrate the rule, notice how conjunction introduction suffices for a derivation of <span class="math inline">\(p \wedge (r \wedge q)\)</span> from the premises <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, and <span class="math inline">\(r\)</span>:</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-36" class="example"><strong>Example 5.2  </strong></span><span class="math inline">\(p, q, r \vdash p \wedge (r \wedge q)\)</span></p>
-<p><img src="images/4.%20ex%20conj%20intro.png" style="display:block; margin: 0 auto;"></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%2C%20q%2C%20r&c=p%E2%88%A7%28r%E2%88%A7q%29&pr=p%20%20P%0Aq%20%20P%0Ar%20%20P%0Ar%E2%88%A7q%20%20%E2%88%A7I%20%203%2C%202%0Ap%E2%88%A7%28r%E2%88%A7q%29%20%20%E2%88%A7I%20%201%2C%204" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%2C%20q%2C%20r&amp;c=p%E2%88%A7%28r%E2%88%A7q%29&amp;pr=p%20%20P%0Aq%20%20P%0Ar%20%20P%0Ar%E2%88%A7q%20%20%E2%88%A7I%20%203%2C%202%0Ap%E2%88%A7%28r%E2%88%A7q%29%20%20%E2%88%A7I%20%201%2C%204"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p><label for="tufte-mn-35" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-35" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/conj%20elim.png"><br />
+</div>
+<p><label for="tufte-mn-33" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-33" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/conj%20elim.png"><br />
 Conjunction Elimination</span></span></p>
 <dl>
 <dt>Conjunction Elimination</dt>
 <dd>
-<p>You may write a conjunct <span class="math inline">\(\varphi\)</span> on a line if a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> is available at a prior line</p>
+<p>You may write a conjunct <span class="math inline">\(\varphi\)</span> on a line if a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> is available at a prior line.</p>
 </dd>
 <dd>
-<p>You may write a conjunct <span class="math inline">\(\psi\)</span> on a line if a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> is available at a prior line</p>
+<p>You may write a conjunct <span class="math inline">\(\psi\)</span> on a line if a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> is available at a prior line.</p>
 </dd>
 </dl>
-<p>By way of illustration, note how the elimination rule for conjunction suffices for a derivation of <span class="math inline">\(r\)</span> from three premises <span class="math inline">\(p \wedge (r \wedge q)\)</span>:</p>
+<p>By way of illustration, note how conjunction elimination suffices for a derivation of <span class="math inline">\(r\)</span> from the premise <span class="math inline">\(p \wedge (r \wedge q)\)</span>:</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-37" class="example"><strong>Example 5.3  </strong></span><span class="math inline">\(p \wedge (r \wedge q) \vdash r\)</span></p>
-<p><img src="images/4%20ex%20conj%20elim%201.png" style="display:block; margin: 0 auto;"></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%88%A7%28r%E2%88%A7q%29&c=r&pr=p%E2%88%A7%28r%E2%88%A7q%29%20%20P%0Ar%E2%88%A7q%20%20%E2%88%A7E%20%201%0Ar%20%20%E2%88%A7E%20%202" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%E2%88%A7%28r%E2%88%A7q%29&amp;c=r&amp;pr=p%E2%88%A7%28r%E2%88%A7q%29%20%20P%0Ar%E2%88%A7q%20%20%E2%88%A7E%20%201%0Ar%20%20%E2%88%A7E%20%202"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p><label for="tufte-mn-36" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-36" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20elim.png"><br />
+</div>
+<p><label for="tufte-mn-34" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-34" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20elim.png"><br />
 Conditional Elimination</span></span></p>
 <dl>
 <dt>Conditional Elimination</dt>
@@ -230,31 +244,76 @@ Conditional Elimination</span></span></p>
 <p>We may now produce derivations for more sophisticated arguments.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-38" class="example"><strong>Example 5.4  </strong></span><span class="math inline">\(p, \ p \to (q \wedge r), \ q \to (s \wedge t) \vdash r \wedge t\)</span></p>
-<p><img src="images/4%20ex%20cond%20elim%201.png" style="display:block; margin: 0 auto;"></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%2C%20p%E2%86%92%28q%E2%88%A7r%29%2C%20q%E2%86%92%28s%E2%88%A7t%29&c=r%E2%88%A7t&pr=p%20%20P%0Ap%E2%86%92%28q%E2%88%A7r%29%20%20P%0Aq%E2%86%92%28s%E2%88%A7t%29%20%20P%0Aq%E2%88%A7r%20%20%E2%86%92E%20%202%2C%201%0Aq%20%20%E2%88%A7E%20%204%0Ar%20%20%E2%88%A7E%20%204%0As%E2%88%A7t%20%20%E2%86%92E%20%203%2C%205%0At%20%20%E2%88%A7E%20%207%0Ar%E2%88%A7t%20%20%E2%88%A7I%20%206%2C%208" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%2C%20p%E2%86%92%28q%E2%88%A7r%29%2C%20q%E2%86%92%28s%E2%88%A7t%29&amp;c=r%E2%88%A7t&amp;pr=p%20%20P%0Ap%E2%86%92%28q%E2%88%A7r%29%20%20P%0Aq%E2%86%92%28s%E2%88%A7t%29%20%20P%0Aq%E2%88%A7r%20%20%E2%86%92E%20%202%2C%201%0Aq%20%20%E2%88%A7E%20%204%0Ar%20%20%E2%88%A7E%20%204%0As%E2%88%A7t%20%20%E2%86%92E%20%203%2C%205%0At%20%20%E2%88%A7E%20%207%0Ar%E2%88%A7t%20%20%E2%88%A7I%20%206%2C%208"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p><label for="tufte-mn-37" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-37" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20intro.png"><br />
+</div>
+<p><label for="tufte-mn-35" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-35" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/cond%20intro.png"><br />
 Conditional Introduction</span></span></p>
 <dl>
 <dt>Conditional Introduction</dt>
 <dd>
-<p>You may write <span class="math inline">\(\varphi \to \psi\)</span> if you are able to derive <span class="math inline">\(\psi\)</span> from the assumption that <span class="math inline">\(\varphi\)</span>. Once you do, you should bracket the lines employed in your auxiliary derivation of <span class="math inline">\(\psi\)</span> from the assumption that <span class="math inline">\(\varphi\)</span> and never ever appeal to them again.</p>
+<p>You may write <span class="math inline">\(\varphi \to \psi\)</span> if you are able to derive <span class="math inline">\(\psi\)</span> from the assumption that <span class="math inline">\(\varphi\)</span>. Once you do, you should bracket the lines employed in your auxiliary derivation of <span class="math inline">\(\psi\)</span> from the assumption that <span class="math inline">\(\varphi\)</span> and never appeal to them again.</p>
 </dd>
 </dl>
-<p>The thought behind the rule is simple. We are entitled to write the conditional <span class="math inline">\(\varphi \to \psi\)</span> by itself in a line if we convince ourselves that we may eventually reach <span class="math inline">\(\psi\)</span> on the assumption that <span class="math inline">\(\varphi\)</span>.</p>
-<p>Let us look at assorted applications of this rule:</p>
+<p>The thought behind the rule is simple. We are entitled to write the conditional <span class="math inline">\(\varphi \to \psi\)</span> by itself on a line if we convince ourselves that we may eventually reach <span class="math inline">\(\psi\)</span> on the assumption that <span class="math inline">\(\varphi\)</span>.</p>
+<p>Let us look at two applications of this rule:</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-39" class="example"><strong>Example 5.5  </strong></span><span class="math inline">\(p \to (q \wedge r) \vdash p \to (r \wedge q)\)</span></p>
-<p><img src="images/4%20ex%20cond%20intro%201.png" style="display:block; margin: 0 auto;"></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%28q%E2%88%A7r%29&c=p%E2%86%92%28r%E2%88%A7q%29&pr=p%E2%86%92%28q%E2%88%A7r%29%20%20P%0A%20%20p%20%20A%0A%20%20q%E2%88%A7r%20%20%E2%86%92E%20%201%2C%202%0A%20%20q%20%20%E2%88%A7E%20%203%0A%20%20r%20%20%E2%88%A7E%20%203%0A%20%20r%E2%88%A7q%20%20%E2%88%A7I%20%205%2C%204%0Ap%E2%86%92%28r%E2%88%A7q%29%20%20%E2%86%92I%20%202%E2%80%936" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%E2%86%92%28q%E2%88%A7r%29&amp;c=p%E2%86%92%28r%E2%88%A7q%29&amp;pr=p%E2%86%92%28q%E2%88%A7r%29%20%20P%0A%20%20p%20%20A%0A%20%20q%E2%88%A7r%20%20%E2%86%92E%20%201%2C%202%0A%20%20q%20%20%E2%88%A7E%20%203%0A%20%20r%20%20%E2%88%A7E%20%203%0A%20%20r%E2%88%A7q%20%20%E2%88%A7I%20%205%2C%204%0Ap%E2%86%92%28r%E2%88%A7q%29%20%20%E2%86%92I%20%202%E2%80%936"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<div class="example">
-<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 5.6  </strong></span><span class="math inline">\(p \wedge q \vdash p \to q\)</span></p>
-<p><img src="images/4%20ex%20cond%20intro%202.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="practice">
+<p><span class="practice-label"><strong>Practice</strong>. </span><span class="math inline">\(p \wedge q \vdash p \to q\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%88%A7q&c=q%E2%86%92p" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%E2%88%A7q&amp;c=q%E2%86%92p"
+          style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+                  cursor:pointer;color:#7a003c;font-size:0.88em;
+                  padding:3px 0;user-select:none">
+<span style="display:inline-block">▶</span>
+<span>Show solution</span>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%88%A7q&c=p%E2%86%92q&pr=p%E2%88%A7q%20%20P%0A%20%20p%20%20A%0A%20%20q%20%20%E2%88%A7E%20%201%0Ap%E2%86%92q%20%20%E2%86%92I%20%202%E2%80%933" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%E2%88%A7q&amp;c=p%E2%86%92q&amp;pr=p%E2%88%A7q%20%20P%0A%20%20p%20%20A%0A%20%20q%20%20%E2%88%A7E%20%201%0Ap%E2%86%92q%20%20%E2%86%92I%20%202%E2%80%933"
+          style="width:100%;height:220px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+</details>
 </div>
 </div>
 <div id="disjunction-and-negation" class="section level2 unnumbered">
 <h2>Disjunction and Negation</h2>
 <p>The introduction and elimination rules for disjunction and negation require more care. We start with the rules for disjunction and postpone the discussion of negation until the end.</p>
-<p><label for="tufte-mn-38" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-38" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/disj%20intro.png"><br />
+<p><label for="tufte-mn-36" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-36" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/disj%20intro.png"><br />
 Disjunction Introduction</span></span></p>
 <dl>
 <dt>Disjunction Introduction</dt>
@@ -262,9 +321,9 @@ Disjunction Introduction</span></span></p>
 <p>You may write a disjunction <span class="math inline">\(\varphi \vee \psi\)</span> if a disjunct becomes available at a prior line.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-39" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-39" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/disj%20elim.png"><br />
+<p><label for="tufte-mn-37" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-37" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/disj%20elim.png"><br />
 Disjunction Elimination</span></span></p>
-<p>The thought is that a disjunction must be the case if one of its disjuncts is the case. If Pluto is a planet, then Pluto is a planet or the Sun is a planet. For remember that it all takes for a disjunction to be the case is that one of its disjuncts is the case.</p>
+<p>The thought is that a disjunction must be the case if one of its disjuncts is the case. If Pluto is a planet, then Pluto is a planet or the Sun is a planet. For remember that all it takes for a disjunction to be the case is that one of its disjuncts is the case.</p>
 <dl>
 <dt>Disjunction Elimination</dt>
 <dd>
@@ -274,37 +333,82 @@ Disjunction Elimination</span></span></p>
 <p>By way of motivation, notice that if <span class="math inline">\(\varphi \vee \psi\)</span> is the case, then there are two horns to consider. If <span class="math inline">\(\varphi \to \chi\)</span>, then one horn leads to <span class="math inline">\(\chi\)</span>, and if <span class="math inline">\(\psi \to \chi\)</span>, then the other horn leads to <span class="math inline">\(\chi\)</span>. But now, if both horns lead to <span class="math inline">\(\chi\)</span>, then we should be able to conclude <span class="math inline">\(\chi\)</span> on the basis of the disjunction <span class="math inline">\(\varphi \vee \psi\)</span> and the two conditionals above.</p>
 <p>Here is an example of the elimination rule in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 5.7  </strong></span><span class="math inline">\((p \wedge q) \vee (q \wedge p)  \vdash p\)</span></p>
-<p><img src="images/4.%20ex%20disj%20elim.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 5.6  </strong></span><span class="math inline">\((p \wedge q) \vee (q \wedge p) \vdash p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%28p%E2%88%A7q%29%E2%88%A8%28q%E2%88%A7p%29&c=p&pr=%28p%E2%88%A7q%29%E2%88%A8%28q%E2%88%A7p%29%20%20P%0A%20%20p%E2%88%A7q%20%20A%0A%20%20p%20%20%E2%88%A7E%20%202%0A%28p%E2%88%A7q%29%E2%86%92p%20%20%E2%86%92I%20%202%E2%80%933%0A%20%20q%E2%88%A7p%20%20A%0A%20%20p%20%20%E2%88%A7E%20%205%0A%28q%E2%88%A7p%29%E2%86%92p%20%20%E2%86%92I%20%205%E2%80%936%0Ap%20%20%E2%88%A8E%20%201%2C%204%2C%207" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%28p%E2%88%A7q%29%E2%88%A8%28q%E2%88%A7p%29&amp;c=p&amp;pr=%28p%E2%88%A7q%29%E2%88%A8%28q%E2%88%A7p%29%20%20P%0A%20%20p%E2%88%A7q%20%20A%0A%20%20p%20%20%E2%88%A7E%20%202%0A%28p%E2%88%A7q%29%E2%86%92p%20%20%E2%86%92I%20%202%E2%80%933%0A%20%20q%E2%88%A7p%20%20A%0A%20%20p%20%20%E2%88%A7E%20%205%0A%28q%E2%88%A7p%29%E2%86%92p%20%20%E2%86%92I%20%205%E2%80%936%0Ap%20%20%E2%88%A8E%20%201%2C%204%2C%207"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <p>We finally introduce natural deduction rules for negation, which is the last connective left to consider. To reason with negation, it will be convenient to introduce a <em>new</em> symbol into the deductive system: <span class="math inline">\(\bot\)</span>. This symbol, which is sometimes called <em>falsum</em> or <em>bottom</em> or <em>bot</em>, is designed to record the fact that we have arrived at a contradiction, and though it is not an official symbol of the language of propositional logic, it will play an auxiliary role in the formulation of the introduction and elimination rules for negation.</p>
-<p><label for="tufte-mn-40" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-40" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/neg%20elim.png"><br />
+<p><label for="tufte-mn-38" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-38" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/neg%20elim.png"><br />
 Negation Elimination</span></span></p>
 <dl>
 <dt>Negation Elimination</dt>
 <dd>
-<p>You may write <span class="math inline">\(\bot\)</span> once a formula and its negation have become available in prior lines.</p>
+<p>You may write <span class="math inline">\(\bot\)</span> once a formula and its negation have become available at prior lines.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-41" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-41" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/neg%20intro.png"><br />
-Negation Introduction</span></span></p>
 <p>One way to understand the rule is as a permission to write the symbol for absurdity in the presence of a formula and its negation.</p>
+<p><label for="tufte-mn-39" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-39" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/neg%20intro.png"><br />
+Negation Introduction</span></span></p>
 <dl>
 <dt>Negation Introduction</dt>
 <dd>
-<p>You may write a negation <span class="math inline">\(\neg \varphi\)</span> if you are able to derive <span class="math inline">\(\bot\)</span> from the assumption that <span class="math inline">\(\varphi\)</span>. Once you do, you should bracket the lines employed in your auxiliary derivation of <span class="math inline">\(\bot\)</span> from the assumption that <span class="math inline">\(\varphi\)</span> and never ever appeal to them again.</p>
+<p>You may write a negation <span class="math inline">\(\neg \varphi\)</span> if you are able to derive <span class="math inline">\(\bot\)</span> from the assumption that <span class="math inline">\(\varphi\)</span>. Once you do, you should bracket the lines employed in your auxiliary derivation of <span class="math inline">\(\bot\)</span> from the assumption that <span class="math inline">\(\varphi\)</span> and never appeal to them again.</p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 5.8  </strong></span><span class="math inline">\(p  \vdash \neg \neg p\)</span></p>
-<p><img src="images/4%20ex%20neg%20intro%201.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 5.7  </strong></span><span class="math inline">\(p \vdash \neg \neg p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p&c=%C2%AC%C2%ACp&pr=p%20%20P%0A%20%20%C2%ACp%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%202%0A%C2%AC%C2%ACp%20%20%C2%ACI%20%202%E2%80%933" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p&amp;c=%C2%AC%C2%ACp&amp;pr=p%20%20P%0A%20%20%C2%ACp%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%202%0A%C2%AC%C2%ACp%20%20%C2%ACI%20%202%E2%80%933"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p>This rule requires some explanation. What motivates it is the thought that we should conclude a negation of the form <span class="math inline">\(\neg \varphi\)</span> if we find that we are able to reach an absurdity on the assumption that <span class="math inline">\(\varphi\)</span> is the case. How do we know that the square root of <span class="math inline">\(2\)</span> is <em>not</em> rational? Because we are able to reach an absurdity from the assumption that <span class="math inline">\(\sqrt{2}\)</span> is a ratio of two integers <span class="math inline">\(\frac{p}{q}\)</span> without a common factor.<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> If <span class="math inline">\(\sqrt{2} = \frac{p}{q}\)</span>, then <span class="math inline">\(2 = \frac{p^2}{q^2}\)</span> and <span class="math inline">\(p^2 = 2q^2\)</span>. That means that <span class="math inline">\(p^2\)</span> is even, which requires <span class="math inline">\(p\)</span> to be even. It follows that <span class="math inline">\(p^2\)</span> is divisible by <span class="math inline">\(4\)</span> making <span class="math inline">\(q^2\)</span> and <span class="math inline">\(q\)</span> even. So, <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are both even, which means that they share a common factor. That is absurd, since we began with the assumption that they have no factors in common.</span></p>
-<div class="example">
-<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 5.9  </strong></span><span class="math inline">\(p \to q,  \neg q \vdash \neg p\)</span></p>
-<p><img src="images/4%20ex%20neg%20intro%202.png" style="display:block; margin: 0 auto;"></p>
 </div>
-<p><label for="tufte-mn-42" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-42" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/EFSQ.png"><br />
+<p>This rule requires some explanation. What motivates it is the thought that we should conclude a negation of the form <span class="math inline">\(\neg \varphi\)</span> if we find that we are able to reach an absurdity on the assumption that <span class="math inline">\(\varphi\)</span> is the case. How do we know that the square root of <span class="math inline">\(2\)</span> is <em>not</em> rational? Because we are able to reach an absurdity from the assumption that <span class="math inline">\(\sqrt{2}\)</span> is a ratio of two integers <span class="math inline">\(\frac{p}{q}\)</span> without a common factor.<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> If <span class="math inline">\(\sqrt{2} = \frac{p}{q}\)</span>, then <span class="math inline">\(2 = \frac{p^2}{q^2}\)</span> and <span class="math inline">\(p^2 = 2q^2\)</span>. That means that <span class="math inline">\(p^2\)</span> is even, which requires <span class="math inline">\(p\)</span> to be even. It follows that <span class="math inline">\(p^2\)</span> is divisible by <span class="math inline">\(4\)</span>, making <span class="math inline">\(q^2\)</span> and <span class="math inline">\(q\)</span> even. So <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are both even, which means that they share a common factor. That is absurd, since we began with the assumption that they have no factors in common.</span></p>
+<div class="practice">
+<p><span class="practice-label"><strong>Practice</strong>. </span><span class="math inline">\(p \to q, \neg q \vdash \neg p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%28q%E2%88%A7r%29%2C%20%C2%ACq&c=%C2%ACp" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%E2%86%92%28q%E2%88%A7r%29%2C%20%C2%ACq&amp;c=%C2%ACp"
+          style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+                  cursor:pointer;color:#7a003c;font-size:0.88em;
+                  padding:3px 0;user-select:none">
+<span style="display:inline-block">▶</span>
+<span>Show solution</span>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92q%2C%20%C2%ACq&c=%C2%ACp&pr=p%E2%86%92q%20%20P%0A%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20q%20%20%E2%86%92E%20%201%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%204%0A%C2%ACp%20%20%C2%ACI%20%203%E2%80%935" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%E2%86%92q%2C%20%C2%ACq&amp;c=%C2%ACp&amp;pr=p%E2%86%92q%20%20P%0A%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20q%20%20%E2%86%92E%20%201%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%204%0A%C2%ACp%20%20%C2%ACI%20%203%E2%80%935"
+          style="width:100%;height:220px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+</details>
+</div>
+<p><label for="tufte-mn-40" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-40" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/EFSQ.png"><br />
 Ex Falso Sequitur Quodlibet</span></span></p>
 <dl>
 <dt>Ex Falso Sequitur Quodlibet</dt>
@@ -312,17 +416,53 @@ Ex Falso Sequitur Quodlibet</span></span></p>
 <p>You may write any formula once <span class="math inline">\(\bot\)</span> becomes available at a prior line.</p>
 </dd>
 </dl>
-<p>The Latin phrase <em>Ex Falso Sequitur Quodlibet</em> means that anything at all follows from a contradiction, and we will use the initials EFSQ to abbreviate the rule that enables to write an arbitrary formula after a contradiction.</p>
+<p>The Latin phrase <em>Ex Falso Sequitur Quodlibet</em> means that anything at all follows from a contradiction, and we will use the abbreviation EFSQ for the rule that enables us to write an arbitrary formula after a contradiction.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 5.10  </strong></span><span class="math inline">\(p \vee q, \neg p  \vdash q\)</span></p>
-<p><img src="images/4%20ex%20EFSQ%201.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-42" class="example"><strong>Example 5.8  </strong></span><span class="math inline">\(p \vee q, \neg p \vdash q\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%88%A8q%2C%20%C2%ACp&c=q&pr=p%E2%88%A8q%20%20P%0A%C2%ACp%20%20P%0A%20%20p%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%203%0A%20%20q%20%20EFSQ%20%204%0Ap%E2%86%92q%20%20%E2%86%92I%20%203%E2%80%935%0A%20%20q%20%20A%0Aq%E2%86%92q%20%20%E2%86%92I%20%207%E2%80%937%0Aq%20%20%E2%88%A8E%20%201%2C%206%2C%208" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=p%E2%88%A8q%2C%20%C2%ACp&amp;c=q&amp;pr=p%E2%88%A8q%20%20P%0A%C2%ACp%20%20P%0A%20%20p%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%203%0A%20%20q%20%20EFSQ%20%204%0Ap%E2%86%92q%20%20%E2%86%92I%20%203%E2%80%935%0A%20%20q%20%20A%0Aq%E2%86%92q%20%20%E2%86%92I%20%207%E2%80%937%0Aq%20%20%E2%88%A8E%20%201%2C%206%2C%208"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<div class="example">
-<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 5.11  </strong></span><span class="math inline">\(\neg p  \vdash p \to q\)</span></p>
-<p><img src="images/4%20ex%20EFSQ%202.png" style="display:block; margin: 0 auto;"></p>
+</div>
+<div class="practice">
+<p><span class="practice-label"><strong>Practice</strong>. </span><span class="math inline">\(\neg p \vdash p \to q\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%C2%ACp&c=p%E2%86%92r" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%C2%ACp&amp;c=p%E2%86%92r"
+          style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+                  cursor:pointer;color:#7a003c;font-size:0.88em;
+                  padding:3px 0;user-select:none">
+<span style="display:inline-block">▶</span>
+<span>Show solution</span>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%C2%ACp&c=p%E2%86%92q&pr=%C2%ACp%20%20P%0A%20%20p%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%202%0A%20%20q%20%20EFSQ%20%203%0Ap%E2%86%92q%20%20%E2%86%92I%20%202%E2%80%934" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%C2%ACp&amp;c=p%E2%86%92q&amp;pr=%C2%ACp%20%20P%0A%20%20p%20%20A%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%202%0A%20%20q%20%20EFSQ%20%203%0Ap%E2%86%92q%20%20%E2%86%92I%20%202%E2%80%934"
+          style="width:100%;height:220px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+</details>
 </div>
 <p>We require one more rule in order to be able to cancel a double negation. That is, we want a rule designed to help us move from <span class="math inline">\(\neg \neg \varphi\)</span> to <span class="math inline">\(\varphi\)</span>.</p>
-<p><label for="tufte-mn-43" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-43" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/double%20negation.png"><br />
+<p><label for="tufte-mn-41" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-41" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/double%20negation.png"><br />
 Double Negation</span></span></p>
 <dl>
 <dt>Double Negation</dt>
@@ -331,38 +471,187 @@ Double Negation</span></span></p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 5.12  </strong></span><span class="math inline">\(\vdash p \vee \neg p\)</span></p>
-<p><img src="images/4%20ex%20DN%201.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 5.9  </strong></span><span class="math inline">\(\vdash p \vee \neg p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=&c=p%E2%88%A8%C2%ACp&pr=%20%20%C2%AC%28p%E2%88%A8%C2%ACp%29%20%20A%0A%20%20%20%20p%20%20A%0A%20%20%20%20p%E2%88%A8%C2%ACp%20%20%E2%88%A8I%20%202%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%203%0A%20%20%C2%ACp%20%20%C2%ACI%20%202%E2%80%934%0A%20%20p%E2%88%A8%C2%ACp%20%20%E2%88%A8I%20%205%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%206%0A%C2%AC%C2%AC%28p%E2%88%A8%C2%ACp%29%20%20%C2%ACI%20%201%E2%80%937%0Ap%E2%88%A8%C2%ACp%20%20DN%20%208" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=&amp;c=p%E2%88%A8%C2%ACp&amp;pr=%20%20%C2%AC%28p%E2%88%A8%C2%ACp%29%20%20A%0A%20%20%20%20p%20%20A%0A%20%20%20%20p%E2%88%A8%C2%ACp%20%20%E2%88%A8I%20%202%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%203%0A%20%20%C2%ACp%20%20%C2%ACI%20%202%E2%80%934%0A%20%20p%E2%88%A8%C2%ACp%20%20%E2%88%A8I%20%205%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%206%0A%C2%AC%C2%AC%28p%E2%88%A8%C2%ACp%29%20%20%C2%ACI%20%201%E2%80%937%0Ap%E2%88%A8%C2%ACp%20%20DN%20%208"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p>That completes the list of natural deduction rules for propositional logic. They suffice for the purpose of deriving a conclusion from the premises of a valid argument of propositional logic.</p>
+</div>
+<p>That completes the list of natural deduction rules for propositional logic. They suffice for the purpose of deriving a conclusion from the premises of any valid argument of propositional logic.</p>
 </div>
 <div id="how-to-construct-proofs" class="section level2 unnumbered">
 <h2>How to Construct Proofs</h2>
 <p>There is no algorithm we can use in order to find a proof of a conclusion from a set of given premises, but sustained practice will help you develop a sense of how to proceed in each case. There are, however, some strategies to keep in mind when you first encounter a problem.</p>
 <p>Your plan for a proof will require you to work backwards from what you want.</p>
 <ul>
-<li><p>If the conclusion of the argument is a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span>, then you should plan to be able to use the rule of conjunction introduction. In order to do that, you will aim to produce an auxiliary derivation of <span class="math inline">\(\varphi\)</span> and an auxiliary derivation of <span class="math inline">\(\psi\)</span>. Once they are in place, you will be able to write the conjunction by itself on a line citing the rule of conjunction introduction.</p></li>
-<li><p>If the conclusion of the argument is a conditional <span class="math inline">\(\varphi \to \psi\)</span>, then you should generally plan to use the rule of conditional introduction. That is, you should plan to construct an auxiliary derivation of the consequent of the conditional from the assumption of the antecedent. The derivation in question will therefore begin with <span class="math inline">\(\varphi\)</span> as an assumption and end with <span class="math inline">\(\psi\)</span> as a conclusion. Given such a derivation, the rule of conditional introduction will license us to write the conditional on a line.</p></li>
-<li><p>If the conclusion is a negation of the form <span class="math inline">\(\neg \varphi\)</span>, then you will plan to use the rule of negation introduction. In order to be able to apply it, you will start an auxiliary derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\varphi\)</span> as an assumption. Once the derivation is complete, you will be able to write the negation by itself on the basis of the rule of negation introduction.</p></li>
+<li><p>If the conclusion of the argument is a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span>, then you should plan to use the rule of conjunction introduction. In order to do that, you will aim to produce an auxiliary derivation of <span class="math inline">\(\varphi\)</span> and an auxiliary derivation of <span class="math inline">\(\psi\)</span>. Once they are in place, you will be able to write the conjunction by itself on a line citing conjunction introduction.</p></li>
+<li><p>If the conclusion of the argument is a conditional <span class="math inline">\(\varphi \to \psi\)</span>, then you should generally plan to use the rule of conditional introduction. That is, you should plan to construct an auxiliary derivation of the consequent from the assumption of the antecedent. The derivation in question will therefore begin with <span class="math inline">\(\varphi\)</span> as an assumption and end with <span class="math inline">\(\psi\)</span> as a conclusion. Given such a derivation, conditional introduction will license us to write the conditional on a line.</p></li>
+<li><p>If the conclusion is a negation of the form <span class="math inline">\(\neg \varphi\)</span>, then you will plan to use the rule of negation introduction. In order to be able to apply it, you will start an auxiliary derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\varphi\)</span> as an assumption. Once the derivation is complete, you will be able to write the negation by itself on the basis of negation introduction.</p></li>
 </ul>
-<p>Once you have devised a plan for a proof, you will work forward from your premises and/or assumptions in order to fill the gaps in the arguments. The elimination rules for each connective allow you to exploit them in order to complete some of the intermediate steps from the premises and assumptions to desired conclusions.</p>
+<p>Once you have devised a plan for a proof, you will work forward from your premises and/or assumptions in order to fill the gaps in the argument. The elimination rules for each connective allow you to exploit them in order to complete some of the intermediate steps from the premises and assumptions to the desired conclusions.</p>
 <ul>
-<li><p>Given a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span>, you may use the rule of conjunction elimination in order to write each conjunct by itself on a line, which may in turn be one of the intermediate steps required for the argument.</p></li>
-<li><p>Given a disjunction <span class="math inline">\(\varphi \vee \psi\)</span>, you may use the rule of disjunction elimination, which is designed to capture a familiar type of reasoning. If we are able to prove a sentence <span class="math inline">\(\chi\)</span> from each disjunct, then we are entitled to write <span class="math inline">\(\chi\)</span> by itself as a line on the basis of the disjunction.</p></li>
-<li><p>To exploit a conditional <span class="math inline">\(\varphi \to \psi\)</span>, we aim to find <span class="math inline">\(\varphi\)</span> by itself on a line because we know that the rule of conditional elimination will enable us to write <span class="math inline">\(\psi\)</span> by itself on a line.</p></li>
-<li><p>The case of negation <span class="math inline">\(\neg \varphi\)</span> is more delicate. We know that we are able to introduce <span class="math inline">\(\bot\)</span> by itself on a line if we are able to find an auxiliary derivation of <span class="math inline">\(\varphi\)</span>, which becomes the new subgoal in order to exploit the original negation.</p></li>
+<li><p>Given a conjunction <span class="math inline">\(\varphi \wedge \psi\)</span>, you may use conjunction elimination in order to write each conjunct by itself on a line, which may in turn be one of the intermediate steps required for the argument.</p></li>
+<li><p>Given a disjunction <span class="math inline">\(\varphi \vee \psi\)</span>, you may use disjunction elimination, which is designed to capture a familiar type of reasoning: if we are able to prove a sentence <span class="math inline">\(\chi\)</span> from each disjunct, then we are entitled to write <span class="math inline">\(\chi\)</span> by itself on the basis of the disjunction.</p></li>
+<li><p>To exploit a conditional <span class="math inline">\(\varphi \to \psi\)</span>, we aim to find <span class="math inline">\(\varphi\)</span> by itself on a line, because we know that conditional elimination will then enable us to write <span class="math inline">\(\psi\)</span> by itself on a line.</p></li>
+<li><p>The case of negation <span class="math inline">\(\neg \varphi\)</span> is more delicate. We know that we are able to introduce <span class="math inline">\(\bot\)</span> by itself on a line if we are able to find an auxiliary derivation of <span class="math inline">\(\varphi\)</span>, which then becomes the new subgoal in order to exploit the original negation.</p></li>
 </ul>
 </div>
 <div id="exercises-4" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
-<li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>
+<li><p>Provide a natural deduction proof to justify each of the claims below. Try each in the proof checker, then use the link to check your work.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(p, \neg q \vdash p \to (\neg q \vee r)\)</span></p></li>
-<li><p><span class="math inline">\(p \leftrightarrow (q \vee r), \neg q, \neg r \vdash \neg p\)</span></p></li>
-<li><p><span class="math inline">\(p \to \neg(q \wedge r), q, \neg r \to \neg q \vdash \neg p\)</span></p></li>
-<li><p><span class="math inline">\(p \leftrightarrow q, q \vee r, r \to (p \vee q) \vdash q\)</span></p></li>
-<li><p><span class="math inline">\((p \wedge q) \leftrightarrow (q \vee r), \neg r \to (\neg p \to q) \vdash p\)</span></p></li>
+<li><p><span class="math inline">\(p, \neg q \vdash p \to (\neg q \vee r)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%2C%20%C2%ACq&c=p%E2%86%92%28%C2%ACq%E2%88%A8r%29" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%2C%20%C2%ACq&amp;c=p%E2%86%92%28%C2%ACq%E2%88%A8r%29"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%2C%20%C2%ACq&c=p%E2%86%92%28%C2%ACq%E2%88%A8r%29&pr=p%20%20P%0A%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20%C2%ACq%E2%88%A8r%20%20%E2%88%A8I%20%202%0Ap%E2%86%92%28%C2%ACq%E2%88%A8r%29%20%20%E2%86%92I%20%203%E2%80%934" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%2C%20%C2%ACq&amp;c=p%E2%86%92%28%C2%ACq%E2%88%A8r%29&amp;pr=p%20%20P%0A%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20%C2%ACq%E2%88%A8r%20%20%E2%88%A8I%20%202%0Ap%E2%86%92%28%C2%ACq%E2%88%A8r%29%20%20%E2%86%92I%20%203%E2%80%934"
+   style="width:100%;height:380px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(p \to (q \vee r), \neg q, \neg r \vdash \neg p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%28q%E2%88%A8r%29%2C%20%C2%ACq%2C%20%C2%ACr&c=%C2%ACp" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%E2%86%92%28q%E2%88%A8r%29%2C%20%C2%ACq%2C%20%C2%ACr&amp;c=%C2%ACp"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%28q%E2%88%A8r%29%2C%20%C2%ACq%2C%20%C2%ACr&c=%C2%ACp&pr=p%E2%86%92%28q%E2%88%A8r%29%20%20P%0A%C2%ACq%20%20P%0A%C2%ACr%20%20P%0A%20%20p%20%20A%0A%20%20q%E2%88%A8r%20%20%E2%86%92E%20%201%2C%204%0A%20%20%20%20q%20%20A%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%206%0A%20%20q%E2%86%92%E2%8A%A5%20%20%E2%86%92I%20%206%E2%80%937%0A%20%20%20%20r%20%20A%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20r%E2%86%92%E2%8A%A5%20%20%E2%86%92I%20%209%E2%80%9310%0A%20%20%E2%8A%A5%20%20%E2%88%A8E%20%205%2C%208%2C%2011%0A%C2%ACp%20%20%C2%ACI%20%204%E2%80%9312" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%E2%86%92%28q%E2%88%A8r%29%2C%20%C2%ACq%2C%20%C2%ACr&amp;c=%C2%ACp&amp;pr=p%E2%86%92%28q%E2%88%A8r%29%20%20P%0A%C2%ACq%20%20P%0A%C2%ACr%20%20P%0A%20%20p%20%20A%0A%20%20q%E2%88%A8r%20%20%E2%86%92E%20%201%2C%204%0A%20%20%20%20q%20%20A%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%206%0A%20%20q%E2%86%92%E2%8A%A5%20%20%E2%86%92I%20%206%E2%80%937%0A%20%20%20%20r%20%20A%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20r%E2%86%92%E2%8A%A5%20%20%E2%86%92I%20%209%E2%80%9310%0A%20%20%E2%8A%A5%20%20%E2%88%A8E%20%205%2C%208%2C%2011%0A%C2%ACp%20%20%C2%ACI%20%204%E2%80%9312"
+   style="width:100%;height:380px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(p \to \neg(q \wedge r), q, \neg r \to \neg q \vdash \neg p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C%20q%2C%20%C2%ACr%E2%86%92%C2%ACq&c=%C2%ACp" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C%20q%2C%20%C2%ACr%E2%86%92%C2%ACq&amp;c=%C2%ACp"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C%20q%2C%20%C2%ACr%E2%86%92%C2%ACq&c=%C2%ACp&pr=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%20%20P%0Aq%20%20P%0A%C2%ACr%E2%86%92%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20%C2%AC%28q%E2%88%A7r%29%20%20%E2%86%92E%20%201%2C%204%0A%20%20%20%20r%20%20A%0A%20%20%20%20q%E2%88%A7r%20%20%E2%88%A7I%20%202%2C%206%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%205%2C%207%0A%20%20%C2%ACr%20%20%C2%ACI%20%206%E2%80%938%0A%20%20%C2%ACq%20%20%E2%86%92E%20%203%2C%209%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%2010%0A%C2%ACp%20%20%C2%ACI%20%204%E2%80%9311" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%2C%20q%2C%20%C2%ACr%E2%86%92%C2%ACq&amp;c=%C2%ACp&amp;pr=p%E2%86%92%C2%AC%28q%E2%88%A7r%29%20%20P%0Aq%20%20P%0A%C2%ACr%E2%86%92%C2%ACq%20%20P%0A%20%20p%20%20A%0A%20%20%C2%AC%28q%E2%88%A7r%29%20%20%E2%86%92E%20%201%2C%204%0A%20%20%20%20r%20%20A%0A%20%20%20%20q%E2%88%A7r%20%20%E2%88%A7I%20%202%2C%206%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%205%2C%207%0A%20%20%C2%ACr%20%20%C2%ACI%20%206%E2%80%938%0A%20%20%C2%ACq%20%20%E2%86%92E%20%203%2C%209%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%2010%0A%C2%ACp%20%20%C2%ACI%20%204%E2%80%9311"
+   style="width:100%;height:380px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(p \to q, q \vee r, r \to (p \vee q) \vdash q\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92q%2C%20q%E2%88%A8r%2C%20r%E2%86%92%28p%E2%88%A8q%29&c=q" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=p%E2%86%92q%2C%20q%E2%88%A8r%2C%20r%E2%86%92%28p%E2%88%A8q%29&amp;c=q"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=p%E2%86%92q%2C%20q%E2%88%A8r%2C%20r%E2%86%92%28p%E2%88%A8q%29&c=q&pr=p%E2%86%92q%20%20P%0Aq%E2%88%A8r%20%20P%0Ar%E2%86%92%28p%E2%88%A8q%29%20%20P%0A%20%20q%20%20A%0A%20%20q%20%20R%20%204%0Aq%E2%86%92q%20%20%E2%86%92I%20%204%E2%80%935%0A%20%20r%20%20A%0A%20%20p%E2%88%A8q%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20p%20%20A%0A%20%20%20%20q%20%20%E2%86%92E%20%201%2C%209%0A%20%20p%E2%86%92q%20%20%E2%86%92I%20%209%E2%80%9310%0A%20%20%20%20q%20%20A%0A%20%20%20%20q%20%20R%20%2012%0A%20%20q%E2%86%92q%20%20%E2%86%92I%20%2012%E2%80%9313%0A%20%20q%20%20%E2%88%A8E%20%208%2C%2011%2C%2014%0Ar%E2%86%92q%20%20%E2%86%92I%20%207%E2%80%9315%0Aq%20%20%E2%88%A8E%20%202%2C%206%2C%2016" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=p%E2%86%92q%2C%20q%E2%88%A8r%2C%20r%E2%86%92%28p%E2%88%A8q%29&amp;c=q&amp;pr=p%E2%86%92q%20%20P%0Aq%E2%88%A8r%20%20P%0Ar%E2%86%92%28p%E2%88%A8q%29%20%20P%0A%20%20q%20%20A%0A%20%20q%20%20R%20%204%0Aq%E2%86%92q%20%20%E2%86%92I%20%204%E2%80%935%0A%20%20r%20%20A%0A%20%20p%E2%88%A8q%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20p%20%20A%0A%20%20%20%20q%20%20%E2%86%92E%20%201%2C%209%0A%20%20p%E2%86%92q%20%20%E2%86%92I%20%209%E2%80%9310%0A%20%20%20%20q%20%20A%0A%20%20%20%20q%20%20R%20%2012%0A%20%20q%E2%86%92q%20%20%E2%86%92I%20%2012%E2%80%9313%0A%20%20q%20%20%E2%88%A8E%20%208%2C%2011%2C%2014%0Ar%E2%86%92q%20%20%E2%86%92I%20%207%E2%80%9315%0Aq%20%20%E2%88%A8E%20%202%2C%206%2C%2016"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\((p \wedge q) \to (q \vee r), \neg r \to (\neg p \to q) \vdash p\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%2C%20%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29&c=p" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%2C%20%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29&amp;c=p"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%2C%20%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29&c=p&pr=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%20%20P%0A%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29%20%20P%0A%20%20%C2%ACp%20%20A%0A%20%20%20%20%C2%ACr%20%20A%0A%20%20%20%20%C2%ACp%E2%86%92q%20%20%E2%86%92E%20%202%2C%204%0A%20%20%20%20q%20%20%E2%86%92E%20%205%2C%203%0A%20%20%20%20q%E2%88%A8r%20%20%E2%88%A8I%20%206%0A%20%20%20%20p%E2%88%A7q%20%20%E2%86%92E%20%201%2C%207%0A%20%20%20%20p%20%20%E2%88%A7E%20%208%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20%C2%AC%C2%ACr%20%20%C2%ACI%20%204%E2%80%9310%0A%20%20r%20%20DN%20%2011%0A%20%20q%E2%88%A8r%20%20%E2%88%A8I%20%2012%0A%20%20p%E2%88%A7q%20%20%E2%86%92E%20%201%2C%2013%0A%20%20p%20%20%E2%88%A7E%20%2014%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%2015%0A%C2%AC%C2%ACp%20%20%C2%ACI%20%203%E2%80%9316%0Ap%20%20DN%20%2017" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%2C%20%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29&amp;c=p&amp;pr=%28q%E2%88%A8r%29%E2%86%92%28p%E2%88%A7q%29%20%20P%0A%C2%ACr%E2%86%92%28%C2%ACp%E2%86%92q%29%20%20P%0A%20%20%C2%ACp%20%20A%0A%20%20%20%20%C2%ACr%20%20A%0A%20%20%20%20%C2%ACp%E2%86%92q%20%20%E2%86%92E%20%202%2C%204%0A%20%20%20%20q%20%20%E2%86%92E%20%205%2C%203%0A%20%20%20%20q%E2%88%A8r%20%20%E2%88%A8I%20%206%0A%20%20%20%20p%E2%88%A7q%20%20%E2%86%92E%20%201%2C%207%0A%20%20%20%20p%20%20%E2%88%A7E%20%208%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20%C2%AC%C2%ACr%20%20%C2%ACI%20%204%E2%80%9310%0A%20%20r%20%20DN%20%2011%0A%20%20q%E2%88%A8r%20%20%E2%88%A8I%20%2012%0A%20%20p%E2%88%A7q%20%20%E2%86%92E%20%201%2C%2013%0A%20%20p%20%20%E2%88%A7E%20%2014%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%2015%0A%C2%AC%C2%ACp%20%20%C2%ACI%20%203%E2%80%9316%0Ap%20%20DN%20%2017"
+   style="width:100%;height:500px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
 </ol></li>
 </ol>
 
