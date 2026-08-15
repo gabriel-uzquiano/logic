@@ -18,7 +18,7 @@
 # Usage:
 #   ./publish.sh "Add identity chapter + polish"
 
-set -euo pipefail
+set -eo pipefail
 
 if [[ $# -lt 1 ]]; then
   echo "Usage: $0 \"commit message\"" >&2
@@ -58,25 +58,27 @@ echo "→ Pushing source to origin…"
 git push origin source
 
 # ---- 3. Publish docs/ to main via a temporary worktree ----
-TMPDIR="$(mktemp -d -t logic-publish-XXXXXX)"
-trap 'rm -rf "$TMPDIR"' EXIT
+WORKTREE_DIR="$(mktemp -d /tmp/logic-publish-XXXXXX)"
+trap 'rm -rf "${WORKTREE_DIR:-}"' EXIT
 
-echo "→ Creating a temporary worktree on main at $TMPDIR…"
+echo "→ Creating a temporary worktree on main at $WORKTREE_DIR…"
 git fetch origin main
-git worktree add "$TMPDIR" main
+# Worktree add needs the dir to NOT exist yet, so remove the mktemp shell first
+rmdir "$WORKTREE_DIR"
+git worktree add "$WORKTREE_DIR" main
 
 echo "→ Replacing docs/ on main with the freshly-built docs/…"
 # Wipe the old docs/ in the main worktree, then copy the new one over.
-rm -rf "$TMPDIR/docs"
-cp -R docs "$TMPDIR/docs"
+rm -rf "$WORKTREE_DIR/docs"
+cp -R docs "$WORKTREE_DIR/docs"
 
 # Also keep .nojekyll present on main (needed for GitHub Pages to serve _files with underscore names)
-if [[ -f .nojekyll ]] && [[ ! -f "$TMPDIR/.nojekyll" ]]; then
-  cp .nojekyll "$TMPDIR/.nojekyll"
+if [[ -f .nojekyll ]] && [[ ! -f "$WORKTREE_DIR/.nojekyll" ]]; then
+  cp .nojekyll "$WORKTREE_DIR/.nojekyll"
 fi
 
 (
-  cd "$TMPDIR"
+  cd "$WORKTREE_DIR"
   git add -A
   if git diff --cached --quiet; then
     echo "  (docs/ on main already matches; nothing to publish)"
@@ -89,7 +91,7 @@ fi
 
 # ---- 4. Cleanup ----
 echo "→ Removing temporary worktree…"
-git worktree remove "$TMPDIR"
+git worktree remove "$WORKTREE_DIR"
 
 echo "✓ Done. You are still on branch source."
 echo "  Give GitHub Pages ~1 minute to redeploy."
