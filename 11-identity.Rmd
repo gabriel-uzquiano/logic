@@ -109,32 +109,23 @@ Then:
 
 The rest of the definition of truth in a model relative to an assignment and truth in a model carries over to  quantificational logic with identity without incident. So do the definitions of logical truth, equivalence, consistency, and validity.
 
-```{marginfigure, echo=TRUE}
-<img src="images/ex 9.4.png" style="display:block; margin: 0 auto;">\
-
-$P: \text{enclosed by a circle}$ \
-$a : p_1$ \
-$b: p_2$
-```
 
 ::: {.example}
 The formula $(Pa \to Pb) \to \forall x (x = a \to x = b)$ is *not* a logical truth. 
 
-The model depicted by the diagram verifies the antecedent of the conditional  but not the consequent.
+`r mc_margin_graph(models[["ch11-eg1-counter"]], zoom = 0.8)`
 
-- The formula $Pa \to Pb$ is true in the model because $p_1$ and $p_2$ are each enclosed by a circle.
+`r mc_iframe_card(models[["ch11-eg1-counter"]], card = "model", solution = TRUE, height = 600L)`
 
-- The formula $\forall x (x = a \to x = b)$ is not true in the model because $x = a \to x = b$ is not true no matter what we assign to $x$. That is because $a$ and $b$ denote different objects in the model.
+
+The model verifies the antecedent of the conditional  but not the consequent.
+
+- The formula $Pa \to Pb$ is true in the model because $p_1$ and $p_2$ are each in $I(P)$.
+
+- The formula $\forall x (x = a \to x = b)$ is not true in the model because $x = a \to x = b$ is not true when we assign $p_1$ to $x$. That is because $a$ and $b$ denote different objects in the model.
 :::
 
 
-```{marginfigure, echo=TRUE}
-<img src="images/ex 9.6.png" style="display:block; margin: 0 auto;">\
-
-$P: \text{enclosed by a circle}$ \
-$a : p_1$ \
-$b: p_1$
-```
 
 ::: {.example}
 Consider the following argument:
@@ -143,44 +134,32 @@ Consider the following argument:
 2. $a = b$
 3. $\forall x (Px \to x = b)$
 
-The model depicted by the diagram verifies the premises but falsifies the conclusion.
+The model below verifies the premises but falsifies the conclusion.
+
+`r mc_margin_graph(models[["ch11-eg2-counter"]], zoom = 0.8)`
+
+`r mc_iframe_card(models[["ch11-eg2-counter"]], card = "model", solution = TRUE, height = 565)`
 
 
-- The formula $\forall x (x = a \to Px)$ is true in the model because $(x = a \to Px)$ is true no matter what we assign to $x$: if we assign $p_1$ to $x$, then both antecedent and consequent come out true, but if we assign $p_2$ to $x$, the antecedent is false making the conditional true. 
+- The formula $\forall x (x = a \to Px)$ is true in the model because $(x = a \to Px)$ is true whatever we assign to $x$: if we assign $p_1$ to $x$, then antecedent and consequent come out true, but if we assign $p_2$ to $x$, then the antecedent is false making the conditional true. 
 
-- The formula $a =b$ is true in the model because the denotation of $a$ in the model is one and the same object as the denotation of $b$ in the model.
+- The formula $a =b$ is true in the model because the denotation of $a$ in the model is the same object as the denotation of $b$ in the model, namely, $p_1$.
 
-- The formula $\forall x (Px \to x = b)$ is false in the model because $(Px \to x = b)$ is not true when we assign $p_2$ to $x$: $p_2$ is enclosed by a circle, but it is not one and the same object as the denotation of $b$. We conclude that the argument is invalid.
+- The formula $\forall x (Px \to x = b)$ is false in the model because $(Px \to x = b)$ is not true when we assign $p_2$ to $x$: $p_2$ in in $I(P)$, but it is not one and the same object as the denotation of $b$. 
+
+We conclude that the argument is invalid.
 :::
 
 
-```{marginfigure, echo=TRUE}
-<img src="images/ex 9.7.png" style="display:block; margin: 0 auto;">\
 
-$R: \text{points to}$ \
-$a : p_1$ \
-$b: p_2$ \
-$c: p_3$ \
-$d: p_1$
-```
-
-::: {.example}
-Consider the following argument:
+::: {.practice}
+Use a model to establish the invalidity of the argument:
 
 1. $Rab \wedge \neg Rac$
 2. $\exists x Rcx \wedge \neg Rad$
 3. $\neg a = d$
 
-
-The model depicted by the  diagram verifies the premises but not the conclusion.
-
-- The formula $Rab \wedge \neg Rac$ is true in the  model because the denotation of $a$ in the model, namely, $p_1$, points to the denotation of $b$ in the model, namely, $p_2$, but $p_1$, does *not* point to the denotation of $c$ in the model, namely, $p_3$. 
-
-- The formula $\exists x Rcx \wedge \neg Rad$ is true in the model because the denotation of $c$ in the model, namely, $p_3$, points to something but the denotation of $a$ in the  model, namely, $p_1$, does not point to the denotation of $d$ in the model, namely $p_1$. 
-
-- The formula  $\neg a = d$ is false in the model because the denotation of $a$ in the model is one and the same object as the denotation of $d$ in the model, namely, $p_1$. 
-
-We conclude that the argument is invalid.
+`r mc_embed_counter(models[["ch11-eg3-counter"]], height = 420L, summary = "Show a countermodel")`
 :::
 
 
@@ -204,8 +183,7 @@ The rationale for this rule is that since as a matter of logic, all objects are 
 :::{.example}
 $\forall x (x = x \to x = b) \vdash \forall x \ x = b$.
 
-
-<img src="images/ex 9.11.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch11-eg4"]], card = "verify", solution = TRUE)`
 :::
 
 
@@ -225,8 +203,7 @@ The rationale for the elimination rule is that given $\tau_1 = \tau_2$, $\tau_1$
 :::{.example}
 $\forall x (\neg Rbx \to (Px \to x = b)), Rab \wedge \neg Raa, Rba \to \neg Rab \vdash \neg Pa$
 
-
-<img src="images/ex 9.10.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch11-eg5"]], card = "verify", solution = TRUE)`
 :::
 
 
@@ -344,26 +321,37 @@ relative to a translation key on which $a$ translates '*Huckleberry Finn*', $R$ 
 
 ## Exercises {-}
 
-1. For each set of formulas below, find a model we can  use to justify the fact that the set is consistent. Please justify your answers.
+1. For each set of formulas below, find a model we can use to justify the fact that the set is consistent. Please justify your answers.
 
-     a. $\{\forall x (Px \leftrightarrow Qx), Pa, Qb, \neg a = b\}$
+    a. $\{\forall x (Px \leftrightarrow Qx), Pa, Qb, \neg a = b\}$
 
-     #. $\{\forall x (Rax \to Rbx), \neg Raa, Rba \}$
-     
-     
-#.  For each argument below, find a model we can  use to justify the fact that the argument is invalid. Please justify your answers.
+        `r mc_embed_counter(models[["ch11-ex1a"]], height = 420L, summary = "Show a model")`
+
+    #. $\{\forall x (Rax \to Rbx), \neg Raa, Rba \}$
+
+        `r mc_embed_counter(models[["ch11-ex1b"]], height = 420L, summary = "Show a model")`
+
+
+#.  For each argument below, find a model we can use to justify the fact that the argument is invalid. Please justify your answers.
 
     a. $\forall x (Px \to Qx), \neg Qa \vdash a = b \to Rab$
-    
+
+        `r mc_embed_counter(models[["ch11-ex2a"]], height = 420L, summary = "Show a countermodel")`
+
     #. $\exists x Px, \exists x Qx \vdash \exists x \exists y \neg x = y$
-    
-    
+
+        `r mc_embed_counter(models[["ch11-ex2b"]], height = 420L, summary = "Show a countermodel")`
+
+
+<!-- Ex 3.2 uses ↔, which the current proof-checker rejects at parser.js:284;
+     keep it as plain LaTeX until the biconditional is supported. -->
+
 #.  Provide a natural deduction proof to justify each of the claims below:
 
     a.  $\forall x (Px \to Qx), \neg Qa, Pb \vdash a = b \to Rab$
-    
-    #.  $\exists x \forall y (Px \leftrightarrow y = x), Pa \vdash \forall x (Px \to x = a)$
-    
-    #. $\exists x Px, \exists x Qx, \neg \exists x (Px \wedge Qx) \vdash \exists x \exists y \neg x = y$
-    
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch11-ex3a"]], proofs[["ch11-ex3a-worked"]], worked_height = 360L)`
+
+    #.  $\exists x Px, \exists x Qx, \neg \exists x (Px \wedge Qx) \vdash \exists x \exists y \neg x = y$
+
+        `r pc_embed_toggle_cards(proofs[["ch11-ex3c"]], proofs[["ch11-ex3c-worked"]], worked_height = 540L)`

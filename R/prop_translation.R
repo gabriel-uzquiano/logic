@@ -64,20 +64,19 @@ ptr_link <- function(ex, solution = FALSE, instructor = FALSE, label = NULL) {
 ptr_iframe <- function(ex, solution = FALSE, instructor = FALSE, height = 520L) {
   url <- ptr_url(ex, solution = solution, instructor = instructor)
   src <- gsub("&", "&amp;", url, fixed = TRUE)
-  sprintf(
-    '<div style="margin:0.5em 0 1em 0">
-  <div style="text-align:right;margin-bottom:2px">
-    <a href="%s" target="_blank"
-       style="font-size:0.72em;background:#fff;padding:2px 7px;
-              border:1px solid #ccc;border-radius:4px;
-              text-decoration:none;color:#444">Open &#x2197;</a>
-  </div>
+  .as_html(sprintf(
+    '<div style="position:relative;margin:1em 0">
+  <a href="%s" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+    Open &#x2197;</a>
   <iframe title="Propositional Translation" src="%s"
           style="width:100%%;height:%dpx;border:1px solid #ddd;border-radius:8px;display:block"
           loading="lazy" allow="fullscreen"></iframe>
 </div>',
     url, src, as.integer(height)
-  )
+  ))
 }
 
 # ---------------------------------------------------------------------------
@@ -99,20 +98,19 @@ ptr_iframe_card <- function(ex, card = "worksheet,translation",
     full_url <- paste0(base_url, "?card=", URLencode(card, reserved = FALSE))
   }
   src <- gsub("&", "&amp;", full_url, fixed = TRUE)
-  sprintf(
-    '<div style="margin:0.5em 0 1em 0">
-  <div style="text-align:right;margin-bottom:2px">
-    <a href="%s" target="_blank"
-       style="font-size:0.72em;background:#fff;padding:2px 7px;
-              border:1px solid #ccc;border-radius:4px;
-              text-decoration:none;color:#444">Open &#x2197;</a>
-  </div>
+  .as_html(sprintf(
+    '<div style="position:relative;margin:1em 0">
+  <a href="%s" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+    Open &#x2197;</a>
   <iframe title="Propositional Translation" src="%s"
           style="width:100%%;height:%dpx;border:1px solid #ddd;border-radius:8px;display:block"
           loading="lazy"></iframe>
 </div>',
     base_url, src, as.integer(height)
-  )
+  ))
 }
 
 # ---------------------------------------------------------------------------
@@ -153,17 +151,7 @@ ptr_embed_toggle <- function(ex, height = 520L, summary = "Show translation") {
   if (!knitr::is_html_output()) return(ptr_link(ex, solution = FALSE))
   practice <- ptr_iframe(ex, solution = FALSE, height = height)
   worked   <- ptr_iframe(ex, solution = TRUE,  height = height)
-  sprintf(
-    '%s
-<details style="margin-top:0.25em">
-  <summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
-                  cursor:pointer;color:#7a003c;font-size:0.88em;
-                  padding:3px 0;user-select:none">
-    <span style="display:inline-block">&#9654;</span>
-    <span>%s</span>
-  </summary>
-  %s
-</details>',
+  sprintf('%s<details style="margin-top:0.25em"><summary style="display:flex;align-items:center;gap:0.3em;list-style:none;cursor:pointer;color:#7a003c;font-size:0.88em;padding:3px 0;user-select:none"><span style="display:inline-block">&#9654;</span> <span>%s</span></summary>%s</details>',
     practice, summary, worked
   )
 }
@@ -185,17 +173,7 @@ ptr_embed_toggle_cards <- function(ex,
   practice <- ptr_iframe_card(ex, card = "worksheet,translation",
                                solution = FALSE, height = practice_height)
   worked   <- ptr_iframe(ex, solution = TRUE, height = worked_height)
-  sprintf(
-    '%s
-<details style="margin-top:0.25em">
-  <summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
-                  cursor:pointer;color:#7a003c;font-size:0.88em;
-                  padding:3px 0;user-select:none">
-    <span style="display:inline-block">&#9654;</span>
-    <span>%s</span>
-  </summary>
-  %s
-</details>',
+  sprintf('%s<details style="margin-top:0.25em"><summary style="display:flex;align-items:center;gap:0.3em;list-style:none;cursor:pointer;color:#7a003c;font-size:0.88em;padding:3px 0;user-select:none"><span style="display:inline-block">&#9654;</span> <span>%s</span></summary>%s</details>',
     practice, summary, worked
   )
 }

@@ -287,3 +287,127 @@
     - "∀x ∀y(Rxy → Ryx) → ∀x Rxx"
   worked_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IC0+IFJ5eCkg4oaSIOKIgHggUnh4Il0sImQiOlsiMSIsIjIiXSwiaSI6eyJSIjpbWyIxIiwiMiJdLFsiMiIsIjEiXV19LCJzIjp7fX0="
   practice_hash: "#v2:eyJmIjpbIuKIgHgg4oiAeSAoUnh5IC0+IFJ5eCkg4oaSIOKIgHggUnh4Il0sImQiOltdLCJpIjp7fSwicyI6e319"
+
+# --- Chapter 9 body examples: countermodels for Examples 9.1 and 9.2 ---------
+# Both arguments are quantificationally INVALID, so each entry is a
+# countermodel: every premise true, conclusion false.  Formulas are listed
+# premises-first, conclusion last.  Domain elements 1, 2, 3 correspond to the
+# nodes p1, p2, p3 of the diagrams already printed in the chapter.
+
+# Example 9.1 -- All physicists admire Newton; Newton admires some
+# mathematicians; so some physicists admire some mathematicians.
+#   P = _ is a physicist, Q = _ is a mathematician, R = _ admires _, a = Newton
+# Matches figure images/7.13.png: P = {p1}, Q = {p3}, R = {(p1,p2), (p2,p3)}.
+# NOTE: the interpretation below sets a = p2, NOT the a = p1 printed in the
+# chapter's margin key.  With a = p1 both premises come out FALSE, since the
+# only physicist p1 would have to admire itself.  The margin key needs fixing.
+# (Exercise entry inv-5 is the same argument, but its worked countermodel is
+#  vacuous -- P is empty -- so it is less useful in the body of the text.)
+- id: "ch9-eg1-counter"
+  mode: "validity"
+  label: "Countermodel: ∀x(Px→Rxa), ∃x(Qx∧Rax) ⊢ ∃x(Px∧∃y(Qy∧Rxy))"
+  formulas:
+    - "∀x(Px→Rxa)"
+    - "∃x(Qx∧Rax)"
+    - "∃x(Px∧∃y(Qy∧Rxy))"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJSeGEpIiwi4oiDeChReOKIp1JheCkiLCLiiIN4KFB44oin4oiDeShReeKIp1J4eSkpIl0sImQiOlsiMSIsIjIiLCIzIl0sImkiOnsiYSI6IjIiLCJQIjpbIjEiXSwiUSI6WyIzIl0sIlIiOltbIjEiLCIyIl0sWyIyIiwiMyJdXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJSeGEpIiwi4oiDeChReOKIp1JheCkiLCLiiIN4KFB44oin4oiDeShReeKIp1J4eSkpIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+
+# Example 9.2 -- Some LA landmark is more beautiful than some NY landmark; the
+# Griffith Observatory is an LA landmark and Times Square is a NY landmark; so
+# the Griffith Observatory is more beautiful than Times Square.
+#   P = _ is an LA landmark, Q = _ is a NY landmark,
+#   R = _ is more beautiful than _, a = Griffith Observatory, b = Times Square
+# Matches figure images/7.14.png exactly, margin key included:
+#   a = p1, b = p2, P = {p1}, Q = {p2, p3}, R = {(p1,p3)}.
+#   Some LA landmark is more beautiful than the NY landmark p3, but the
+#   Griffith Observatory is not more beautiful than Times Square.
+- id: "ch9-eg2-counter"
+  mode: "validity"
+  label: "Countermodel: ∃x(Px∧∃y(Qy∧Rxy)), Pa∧Qb ⊢ Rab"
+  formulas:
+    - "∃x(Px∧∃y(Qy∧Rxy))"
+    - "Pa∧Qb"
+    - "Rab"
+  worked_hash: "#v2:eyJmIjpbIuKIg3goUHjiiKfiiIN5KFF54oinUnh5KSkiLCJQYeKIp1FiIiwiUmFiIl0sImQiOlsiMSIsIjIiLCIzIl0sImkiOnsiYSI6IjEiLCJiIjoiMiIsIlAiOlsiMSJdLCJRIjpbIjIiLCIzIl0sIlIiOltbIjEiLCIzIl1dfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIg3goUHjiiKfiiIN5KFF54oinUnh5KSkiLCJQYeKIp1FiIiwiUmFiIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+
+
+# --- Chapter 11 (Identity) exercises -----------------------------------------
+# Ex 1: find a model showing the set is CONSISTENT (worked model = a witness).
+# Ex 2: find a countermodel showing the argument is INVALID.
+# All formulas use plain ASCII "=" for identity (per model-checker syntax).
+
+- id: "ch11-ex1a"
+  label: "Ch11 Ex 1.1 — {∀x(Px↔Qx), Pa, Qb, ¬a=b}"
+  formulas:
+    - "∀x(Px↔Qx)"
+    - "Pa"
+    - "Qb"
+    - "¬a=b"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiLCIyIl0sIlEiOlsiMSIsIjIiXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "ch11-ex1b"
+  label: "Ch11 Ex 1.2 — {∀x(Rax→Rbx), ¬Raa, Rba}"
+  formulas:
+    - "∀x(Rax→Rbx)"
+    - "¬Raa"
+    - "Rba"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJhIjoiMSIsImIiOiIyIiwiUiI6W1siMiIsIjEiXSxbIjIiLCIyIl1dfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+
+- id: "ch11-ex2a"
+  mode: "validity"
+  label: "Countermodel: ∀x(Px→Qx), ¬Qa ⊢ a=b→Rab"
+  formulas:
+    - "∀x(Px→Qx)"
+    - "¬Qa"
+    - "a=b→Rab"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOlsiMSJdLCJpIjp7ImEiOiIxIiwiYiI6IjEiLCJQIjpbXSwiUSI6W10sIlIiOltdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+
+- id: "ch11-ex2b"
+  mode: "validity"
+  label: "Countermodel: ∃xPx, ∃xQx ⊢ ∃x∃y¬x=y"
+  formulas:
+    - "∃xPx"
+    - "∃xQx"
+    - "∃x∃y¬x=y"
+  worked_hash: "#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6WyIxIl0sImkiOnsiUCI6WyIxIl0sIlEiOlsiMSJdfSwicyI6e319"
+  practice_hash: "#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+# --- Chapter 11 (Identity) body examples ------------------------------------
+# Countermodels for the three examples worked out in the Semantics section:
+#   ch11-eg1-counter  — (Pa→Pb)→∀x(x=a→x=b) is not a logical truth
+#   ch11-eg2-counter  — argument ∀x(x=a→Px), a=b ⊢ ∀x(Px→x=b) is invalid
+#   ch11-eg3-counter  — argument Rab∧¬Rac, ∃xRcx∧¬Rad ⊢ ¬a=d is invalid
+# Domains use the same p1/p2/p3 labels as the diagrams in images/ex 9.4.png,
+# images/ex 9.6.png, and images/ex 9.7.png.
+
+- id: "ch11-eg1-counter"
+  label: "Countermodel: (Pa→Pb)→∀x(x=a→x=b)"
+  formulas:
+    - "(Pa→Pb)→∀x(x=a→x=b)"
+  worked_hash: "#v2:eyJmIjpbIihQYeKGklBiKeKGkuKIgHgoeD1h4oaSeD1iKSJdLCJkIjpbInAxIiwicDIiXSwiaSI6eyJhIjoicDEiLCJiIjoicDIiLCJQIjpbInAxIiwicDIiXX0sInMiOnt9fQ=="
+  practice_hash: "#v2:eyJmIjpbIihQYeKGklBiKeKGkuKIgHgoeD1h4oaSeD1iKSJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+
+- id: "ch11-eg2-counter"
+  mode: "validity"
+  label: "Countermodel: ∀x(x=a→Px), a=b ⊢ ∀x(Px→x=b)"
+  formulas:
+    - "∀x(x=a→Px)"
+    - "a=b"
+    - "∀x(Px→x=b)"
+  worked_hash: "#v2:eyJmIjpbIuKIgHgoeD1h4oaSUHgpIiwiYT1iIiwi4oiAeChQeOKGkng9YikiXSwiZCI6WyJwMSIsInAyIl0sImkiOnsiYSI6InAxIiwiYiI6InAxIiwiUCI6WyJwMSIsInAyIl19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIuKIgHgoeD1h4oaSUHgpIiwiYT1iIiwi4oiAeChQeOKGkng9YikiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+
+- id: "ch11-eg3-counter"
+  mode: "validity"
+  label: "Countermodel: Rab∧¬Rac, ∃x(Rcx)∧¬Rad ⊢ ¬a=d"
+  formulas:
+    - "Rab∧¬Rac"
+    - "∃x(Rcx)∧¬Rad"
+    - "¬a=d"
+  worked_hash: "#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbInAxIiwicDIiLCJwMyJdLCJpIjp7ImEiOiJwMSIsImIiOiJwMiIsImMiOiJwMyIsImQiOiJwMSIsIlIiOltbInAxIiwicDIiXSxbInAzIiwicDIiXV19LCJzIjp7fX0="
+  practice_hash: "#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="

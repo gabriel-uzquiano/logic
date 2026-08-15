@@ -302,11 +302,11 @@ Once you have devised a plan for a proof, you will work forward from your premis
 
     a. $p, \neg q \vdash p \to (\neg q \vee r)$
     
-        `r pc_embed_toggle_cards(proofs[["ex5-a-worked"]], worked_height = 380L)`
+          `r pc_embed_toggle_cards(proofs[["ex5-a-worked"]], worked_height = 380L)`
     
     #. $p \to (q \vee r), \neg q, \neg r \vdash \neg p$
     
-        `r pc_embed_toggle_cards(proofs[["ex5-b-worked"]], worked_height = 380L)`
+          `r pc_embed_toggle_cards(proofs[["ex5-b-worked"]], worked_height = 380L)`
     
     #. $p \to \neg(q \wedge r), q, \neg r \to \neg q \vdash \neg p$
     

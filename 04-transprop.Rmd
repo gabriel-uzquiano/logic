@@ -88,6 +88,11 @@ We replace each simple sentence with a propositional variable in accordance with
 :::{argument}
 $(\neg p \wedge (q \to r))$.
 :::
+
+In practice, we will begin with the identification of the propositional atoms and proceed from there:
+
+`r ptr_embed(ptrans[["ch4-ex-smith-negotiator"]], solution = TRUE)`
+
 :::
 
 It will be helpful to look at a more complex example.
@@ -126,8 +131,7 @@ Step 3
 In practice, we will begin with the identification of the propositional atoms and proceed from there:
 
 
-
-`r ptr_embed_toggle(ptrans[["ch4-ex-cobalt"]], height = 560L)`
+`r ptr_embed(ptrans[["ch4-ex-cobalt"]], solution = TRUE)`
 
 :::
 
@@ -206,32 +210,35 @@ The next issue arises from the question of how much force to apply to the origin
 
 $\dots$ only if $\dots$
 
-:   I will win the lottery only if I buy a ticket.
+:   I will be on time only if I set my alarm.
 
 Despite the superficial similarity between 'only if' and 'if', they achieve very different effects. Compare the sentence above with the conditional:
 
 :::{.argument}
-I will win the lottery *if* I buy a ticket.
+I will be on time *if* I set up my alarm.
 :::
-This sentence tells us that the purchase of a ticket is a *sufficient* condition for a win and it may be paraphrased:
+This sentence tells us that setting my alarm is a *sufficient* condition for my being on time and it may be paraphrased:
 
 :::{.argument}
-If I buy a ticket, then I will win the lottery.
+If I set up my alarm, then I will be on time.
 :::
 
-The target sentence is quite different: it states that I must buy a ticket in order to have a chance to win the lottery. Otherwise put, the *only if* sentences says that the purchase is in fact a *necessary* condition for a win, and it should be paraphrased:
+The target sentence is quite different: it states that I *must* set up my alarm in order to be on time. Otherwise put, the *only if* sentences says that setting my alarm is in fact a *necessary* condition for my being on time, and it should be paraphrased:
 
 ```{marginfigure, echo=TRUE}
 *Translation key*\
-$p$: I will win the lottery.\
-$q$: I buy a ticket.\
+$p$: I will be on time.\
+$q$: I set up my alarm.\
 ```
 
 :::{.argument}
-If I will win the lottery, then I will have bought a ticket.\
+If I will be on time, then I will have set up my alarm.\
 $p \to q$
 :::
 
+:::{.practice}
+`r ptr_embed_toggle(ptrans[["ch4-onlyif-lottery"]], height = 560L)`
+:::
 
 
 
@@ -241,21 +248,21 @@ $p \to q$
 
 $\dots$ if and only if $\dots$
 
-:   The deal will be completed if, and only if, both parties agree to it.
+:   The car will start if, and only if, there is gas in the tank.
 
 It is not uncommon to combine 'if' and 'only if' into 'if and only if', which we should be able to parse as a conjunction:
 
 ```{marginfigure, echo=TRUE}
 *Translation key*\
-$p$: The deal will be completed.\
-$q$: Both parties agree to it.\
+$p$: The car will start.\
+$q$: There is gas in the tank.\
 ```
 
 :::{.argument}
-The deal will be completed if both parties agree to it, *and* the deal will be completed only if both parties agree to it.\
+The car will start if there is gas in the tank, *and* the car will start only if there is gas in the tank.\
 $(q \to p) \wedge (p \to q)$
 :::
-That means that both parties' agreement is both a *necessary* and *sufficient* condition for the deal to be completed.
+That means that the presence of gas in the tank is both a *necessary* and *sufficient* condition for the car to start.
 
 We will sometimes use the symbol $\leftrightarrow$ in order to abbreviate formulas of that form. In general:
 $$
@@ -264,7 +271,8 @@ $$
 It would be acceptable to use that symbol as an abbreviation as we translate from English into the language of propositional logic:
 
 :::{.argument}
-The deal will be completed if both parties agree to it, *and* the deal will be completed only if both partiess agree to it.\
+The car will start if there is gas in the tank, *and* the car will start only if there is gas in the tank.\
+
 $(q \to p) \wedge (p \to q)$.\
 $(p \leftrightarrow q)$
 :::
@@ -274,40 +282,51 @@ $(p \leftrightarrow q)$
 **Neither $\dots$ nor $\dots$**
 ```
 
+:::{.practice}
+`r ptr_embed_toggle(ptrans[["ch4-iff-deal"]], height = 560L)`
+:::
+
+
+
 Neither $\dots$ nor $\dots$ 
 
-:   Neither Jones nor Smith is in the office.
+:   Neither France nor Argentina won the World Cup title.
 
 The goal now is to find a paraphrase constructed from familiar truth-functional connectives that is true if, and only if, the original sentence is true. There is more than one option at this point:
 
 :::{.argument}
-Jones is not in the office and Smith is not in the office.
+France did not win the World Cup and Argentina did not win the World Cup.
 :::
 :::{.argument}
-It is not the case that Jones is in the office or Smith is in the office
+It is not the case that France or Argentina won the World Cup.
 :::
 
 In the first case, we turn the original sentence into a conjunction of two negations:
 
 ```{marginfigure, echo=TRUE}
 *Translation key*\
-$p$: Jones is in the office.\
-$q$: Smith is in the office.\
+$p$: France won the World Cup.\
+$q$: Argentina won the World Cup.\
 ```
 
 :::{.argument}
-(It is not the case that Jones is in the office and it is not the case that Smith is in the office).\
+(It is not the case that France won the World Cup and it is not the case that Argentina won the World Cup).\
 $(\neg p \wedge \neg q)$
 :::
 
 In the second case, we paraphrase the original sentence into the negation of a disjunction:
 
 :::{.argument}
-It is not the case that (Jones is in the office or Smith is in the office).\
+It is not the case that (France won the World Cup or Argentina won the World Cup).\
 $\neg (p \vee q)$
 :::
 
 Both paraphrases are true in exactly the same circumstances, which coincide with the circumstances in which the target sentence is true. That is why both are adequate paraphrases of the original sentence.
+
+:::{.practice}
+`r ptr_embed_toggle(ptrans[["ch4-neither-jones-smith"]], height = 560L)`
+:::
+
 
 
 ```{marginfigure, echo=TRUE}
@@ -316,27 +335,34 @@ Both paraphrases are true in exactly the same circumstances, which coincide with
 
 Unless 
 
-:   The deal will fall through unless Smith is in attendance.
+:   I will be rained on unless I carry an umbrella.
 
 The problem is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. We have at least two options:
 
 ```{marginfigure, echo=TRUE}
 *Translation key*\
-$p$: The deal will fall through.\
-$q$: Smith is in attendance.\
+$p$: I will be rained on.\
+$q$: I carry an umbrella.\
 ```
 
 :::{.argument}
-If Smith is not in attendance, then the deal will fall through.\
+If I do not carry an umbrella, then I will be rained on.\
 $\neg q \to p$
 :::
 
 :::{.argument}
-The deal will fall through or Smith is in attendance.\
+I will be rained on or I carry an umbrella.\
 $p \vee q$
 :::
 
 In the first case, we translate 'unless' as 'if not', whereas in the second case we translate it as 'or'. The paraphrases turn out to be  equivalent in that they are true in exactly the same circumstances, which is what is wanted.
+
+
+:::{.practice}
+`r ptr_embed_toggle(ptrans[["ch4-unless-deal"]], height = 560L)`
+:::
+
+
 
 ```{marginfigure, echo=TRUE}
 **Otherwise**
@@ -344,19 +370,23 @@ In the first case, we translate 'unless' as 'if not', whereas in the second case
 
 Otherwise
 
-:   Smith will be in attendance; otherwise, the deal will fall through.
+:   I will carry an umbrella; otherwise, I will be rained on.
 
 The task now is to find a paraphrase constructed from familiar truth-functional connectives that is true in exactly the same circumstances as the original sentence. For example:
 
 ```{marginfigure, echo=TRUE}
 *Translation key*\
-$p$: Smith is in attendance.\
-$q$: The deal will fall through.\
+$p$: I will carry an umbrella.\
+$q$: I will be rained on.\
 ```
 
 :::{.argument}
-Smith will be in attendance, and if Smith is not in attendance, then the deal will fall through.\
+I will carry an umbrella, and if I do not carry an umbrella, then I will be rained on.\
 $p \wedge (\neg p \to q)$
+:::
+
+:::{.practice}
+`r ptr_embed_toggle(ptrans[["ch4-otherwise-smith"]], height = 560L)`
 :::
 
 ## Application {-}

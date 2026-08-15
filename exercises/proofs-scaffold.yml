@@ -530,3 +530,61 @@
   premises: "∀x(Px→∀y(Rxy→Py)), ∃x(Qx∧Px)"
   conclusion: "∃x(Qx∧∀y(Rxy→Py))"
   proof: "∀x(Px→∀y(Rxy→Py))  P\n∃x(Qx∧Px)  P\nPa→∀y(Ray→Py)  ∀E  1\n  Qa∧Pa  A\n  Pa  ∧E  4\n  Qa  ∧E  4\n  ∀y(Ray→Py)  →E  3, 5\n  Qa∧∀y(Ray→Py)  ∧I  6, 7\n  ∃x(Qx∧∀y(Rxy→Py))  ∃I  8\n(Qa∧Pa)→∃x(Qx∧∀y(Rxy→Py))  →I  4–9\n∃x(Qx∧∀y(Rxy→Py))  ∃E  2, 10"
+# ---------------------------------------------------------------------------
+# Chapter 11 (Identity) — practice scaffolds
+# Worked solutions require identity rules (=I, =E) which are not yet
+# implemented in the proof-checker. Once the tool is extended, add
+# ch11-ex3a-worked, ch11-ex3b-worked, ch11-ex3c-worked entries below.
+# ---------------------------------------------------------------------------
+- id: "ch11-ex3a"
+  role: practice
+  label: "Ch11 Ex 3.1 — ∀x(Px→Qx), ¬Qa, Pb ⊢ a=b→Rab"
+  premises: "∀x(Px→Qx), ¬Qa, Pb"
+  conclusion: "a=b→Rab"
+
+- id: "ch11-ex3a-worked"
+  role: worked
+  label: "Ch11 Ex 3.1 worked — ∀x(Px→Qx), ¬Qa, Pb ⊢ a=b→Rab"
+  premises: "∀x(Px→Qx), ¬Qa, Pb"
+  conclusion: "a=b→Rab"
+  proof: "∀x(Px→Qx)  P\n¬Qa  P\nPb  P\n  a=b  A\n  ¬Qb  =E  4, 2\n  Pb→Qb  ∀E  1\n  Qb  →E  6, 3\n  ⊥  ¬E  5, 7\n  Rab  EFSQ  8\na=b→Rab  →I  4–9"
+
+- id: "ch11-ex3b"
+  role: practice
+  label: "Ch11 Ex 3.2 — ∃x∀y(Py↔y=x), Pa ⊢ ∀x(Px→x=a)"
+  premises: "∃x∀y(Py↔y=x), Pa"
+  conclusion: "∀x(Px→x=a)"
+
+# NOTE: no ch11-ex3b-worked yet — the current proof-checker rejects ↔ at
+# parser.js:284. Add a worked entry once the biconditional lands (either as a
+# first-class connective, or auto-expanded to (→)∧(→)).
+
+- id: "ch11-ex3c"
+  role: practice
+  label: "Ch11 Ex 3.3 — ∃xPx, ∃xQx, ¬∃x(Px∧Qx) ⊢ ∃x∃y¬x=y"
+  premises: "∃xPx, ∃xQx, ¬∃x(Px∧Qx)"
+  conclusion: "∃x∃y¬x=y"
+
+- id: "ch11-ex3c-worked"
+  role: worked
+  label: "Ch11 Ex 3.3 worked — ∃xPx, ∃xQx, ¬∃x(Px∧Qx) ⊢ ∃x∃y¬x=y"
+  premises: "∃xPx, ∃xQx, ¬∃x(Px∧Qx)"
+  conclusion: "∃x∃y¬x=y"
+  proof: "∃xPx  P\n∃xQx  P\n¬∃x(Px∧Qx)  P\n  Pa  A\n    Qb  A\n      a=b  A\n      Pb  =E  6, 4\n      Pb∧Qb  ∧I  7, 5\n      ∃x(Px∧Qx)  ∃I  8\n      ⊥  ¬E  3, 9\n    ¬a=b  ¬I  6–10\n    ∃y¬a=y  ∃I  11\n    ∃x∃y¬x=y  ∃I  12\n  Qb→∃x∃y¬x=y  →I  5–13\n  ∃x∃y¬x=y  ∃E  2, 14\nPa→∃x∃y¬x=y  →I  4–15\n∃x∃y¬x=y  ∃E  1, 16"
+
+# ---------------------------------------------------------------------------
+# Chapter 11 (Identity) — body-example proofs (illustrate =I and =E)
+# ---------------------------------------------------------------------------
+- id: "ch11-eg4"
+  role: worked
+  label: "Ch11 body: ∀x(x=x → x=b) ⊢ ∀x x=b  (uses =I)"
+  premises: "∀x(x=x→x=b)"
+  conclusion: "∀x x=b"
+  proof: "∀x(x=x→x=b)  P\na=a→a=b  ∀E  1\na=a  =I\na=b  →E  2, 3\n∀x x=b  ∀I  4"
+
+- id: "ch11-eg5"
+  role: worked
+  label: "Ch11 body: ∀x(¬Rbx→(Px→x=b)), Rab∧¬Raa, Rba→¬Rab ⊢ ¬Pa  (uses =E)"
+  premises: "∀x(¬Rbx→(Px→x=b)), Rab∧¬Raa, Rba→¬Rab"
+  conclusion: "¬Pa"
+  proof: "∀x(¬Rbx→(Px→x=b))  P\nRab∧¬Raa  P\nRba→¬Rab  P\nRab  ∧E  2\n¬Raa  ∧E  2\n  Pa  A\n    Rba  A\n    ¬Rab  →E  3, 7\n    ⊥  ¬E  4, 8\n  ¬Rba  ¬I  7–9\n  ¬Rba→(Pa→a=b)  ∀E  1\n  Pa→a=b  →E  11, 10\n  a=b  →E  12, 6\n  ¬Rab  =E  13, 5\n  ⊥  ¬E  4, 14\n¬Pa  ¬I  6–15"

@@ -185,7 +185,7 @@ tt_embed_toggle <- function(ex, height = 440L, worked_height = NULL,
 </div>', practice_url, practice_src, as.integer(height))
 
   worked_iframe <- sprintf(
-    '<div style="position:relative;margin:0.5em 0">
+    '<div style="position:relative;margin:1em 0">
   <a href="%s" target="_blank"
      style="position:absolute;top:8px;right:8px;font-size:0.72em;
             background:#fff;padding:2px 7px;border:1px solid #ccc;

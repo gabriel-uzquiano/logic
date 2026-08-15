@@ -1,16 +1,27 @@
-# Bookdown output — only push docs/ to main when ready to publish
-docs/
-_book/
-_bookdown_files/
-*.html
-
 # R session artifacts
 .RData
 .Rhistory
 .Rproj.user/
+
+# Bookdown intermediate build folders (NOT the final docs/ output)
+_book/
+_bookdown_files/
+
+# LaTeX / PDF build byproducts
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+_main.tex
 
 # OS
 .DS_Store
 
 # R package cache
 *.Rcheck/
+
+# Local archive folder (zips we do not want committed)
+.archive/

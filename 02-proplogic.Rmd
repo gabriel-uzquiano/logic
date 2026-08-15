@@ -113,7 +113,7 @@ It will be helpful to look at concrete uses of the characterization in order to 
 
 
 :::{.example}
-Consider the expression: $((p \vee q) \to \neg r)$. This is an official formula of the language. `r pfc_margin_tree(pformulas[["disj-cond-neg"]])`
+Consider the expression: $((p \vee q) \to \neg r)$. This is an official formula of the language. `r pfc_margin_tree(pformulas[["disj-cond-neg"]], height = 500L)`
 Here is a justification:
 
 :::{.argument}

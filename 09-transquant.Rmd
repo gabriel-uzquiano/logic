@@ -35,6 +35,11 @@ $R$ \_  \_ : \_  talked to \_
 $Rab \wedge Rbc$
 :::
 
+In practice, we will begin with the identification of constants and predicates and proceed from there:
+
+`r qtr_embed(qtrans[["ch9-eg-alice"]], solution = TRUE)`
+
+
 
 
 Quantifier phrases require more discussion. We will look at the case of simple quantifier expressions such as 'something' and 'everything' and we will then move to more complex quantifier phrases such as 'some apple' and 'every computer', which require separate discussion.
@@ -62,6 +67,8 @@ Some *thing* is such that *it* is heavy.\
 $\exists x Px$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-heavy"]], solution = TRUE)`
+
 
 Similarly for the sentence:
 
@@ -81,6 +88,7 @@ Every *thing* is such that *it* is a material object.\
 $\forall x Qx$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-material"]], solution = TRUE)`
 
 Similarly for predicates with more than one argument place:
 
@@ -96,7 +104,7 @@ Some *thing* is such that *it* is south of San Francisco.\
 $\exists x Rxa$
 :::
 
-
+`r qtr_embed(qtrans[["ch9-eg-south-sf"]], solution = TRUE)`
 
 **Common quantifier phrases**
 
@@ -142,21 +150,12 @@ Some *thing* is such that *it* is an apple and *it* is delicious.\
 $\exists x (Px \wedge Qx)$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-apples"]], solution = TRUE)`
 
 
-Similarly for the sentence:
 
-```{marginfigure, echo=TRUE}
-*Translation key*\
-$a$:  San Francisco\
-$P$ \_ :  \_ is a city\
-$R$ \_ \_ : \_ is south of \_
-```
-
-:::{.argument}
-Some city is south of San Francisco\
-Some *thing* is such that *it* is a city and *it* is south of San Francisco.\
-$\exists x (Px \wedge Rxa)$
+:::{.practice}
+`r qtr_embed_toggle(qtrans[["ch9-eg-city-south"]], height = 560L)`
 :::
 
 
@@ -193,23 +192,12 @@ Every *thing* is such that if *it* is a computer, then *it* is expensive.\
 $\forall x (Px \to Qx)$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-computer"]], solution = TRUE)`
 
-Similarly for the sentence:
 
-```{marginfigure, echo=TRUE}
-*Translation key*\
-$P$ \_ : \_  is a computer\
-$R$ \_ \_ : \_ is connected to \_ \
-$a$: The network
-```
-
-:::{.argument}
-Every computer is connected to the network.\
-Every *thing* is such that if *it* is a computer, then *it* is connected to the network.\
-$\forall x (Px \to Rxa)$
+:::{.practice}
+`r qtr_embed_toggle(qtrans[["ch9-eg-network"]], height = 560L)`
 :::
-
-
 
 **Multiple Generality**
 
@@ -241,6 +229,8 @@ Some *thing$_x$* is such that some *thing$_y$* is such that *it$_x$* is south of
 $\exists x \exists  y  Rxy$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-south-south"]], solution = TRUE)`
+
 Consider now the sentence:
 
 :::{.argument}
@@ -261,25 +251,13 @@ Some *thing$_x$* is such that *it$_x$* is a city and some *thing$_y$* is such th
 $\exists x (Px \wedge  \exists  y  Rxy)$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-south-something"]], solution = TRUE)`
 
-For yet another example, consider the sentence:
 
-:::{.argument}
-Some city is south of some city.
+:::{.practice}
+`r qtr_embed_toggle(qtrans[["ch9-eg-city-south-city"]], height = 560L)`
 :::
 
-We now paraphrase the sentence:
-
-```{marginfigure, echo=TRUE}
-*Translation key*\
-$P$ \_ :  \_ is a city\
-$R$ \_ \_ : \_ is south of \_
-```
-
-:::{.argument}
-Some *thing$_x$* is such that *it$_x$* is a city and some *thing$_y$* is such that *it$_x$* is a city and *it$_x$* is south of *it$_y$*.\
-$\exists x (Px \wedge  \exists  y  (Py \wedge Rxy))$
-:::
 
 
 Some sentences combine a universal and existential quantifier phrases.
@@ -314,6 +292,8 @@ Every *thing$_x$* is such that if *it$_x$* is a student, then some *thing$_y$* i
 $\forall x (Px \to \exists y (Qy \wedge Rxy))$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-student-course"]], solution = TRUE)`
+
 
 
 Consider now the sentence:
@@ -337,27 +317,12 @@ Every *thing$_x$* is such that if *it$_x$* is a student, then every *thing$_y$* 
 $\forall x (Px \to \forall y (Qy \to Rxy))$.
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-student-every-course"]], solution = TRUE)`
 
-For another example, consider the sentence:
-
-:::{.argument}
-Some course is taken by every student.
+:::{.practice}
+`r qtr_embed_toggle(qtrans[["ch9-eg-course-every-student"]], height = 560L)`
 :::
 
-We now paraphrase the sentence in stages:
-
-```{marginfigure, echo=TRUE}
-*Translation key*\
-$P$ \_ : \_ is a student\
-$Q$ \_ : \_ is a course\
-$R$ \_ \_ : \_ takes \_
-```
-
-:::{.argument}
-Some *thing$_x$* is such that *it$_x$* is a course and every student takes *it$_x$*.\
-Some *thing$_x$* is such that *it$_x$* is a course and every *thing$_y$* is such that if *it$_y$* is a student, then *it$_y$* takes *it$_x$*\
-$\exists x (Qx \wedge \forall y (Py \to Ryx))$
-:::
 
 
 ## Issues with Translation {-}
@@ -396,6 +361,7 @@ Every *thing* is such that if *it* is a whale, then *it* lives underwater.\
 $\forall x (Px \to Qx)$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-whale"]], solution = TRUE)`
 
 On the other hand, the second sentence is generally used to express an existential claim:
 
@@ -406,11 +372,14 @@ $R$ \_ \_ : \_ aces \_ \
 $a$: The Midterm
 ```
 
+
 :::{.argument}
 A student aced the midterm.\
 Some *thing* is such that *it* is a student and *it* aced the midterm.\
 $\exists x (Px \wedge Rxa)$.
 :::
+
+`r qtr_embed(qtrans[["ch9-eg-student-midterm"]], solution = TRUE)`
 
 
 Any
@@ -442,6 +411,8 @@ $Q$ \_ : \_ thinks
 - $\forall x (Px \to Qx)$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-any-philosopher"]], solution = TRUE)`
+
 
 On the other hand, the second sentence suggests an existential quantifier:
 
@@ -458,6 +429,7 @@ If some *thing* is such that *it* is a philosopher and *it* thinks, then Hegel t
 $\exists x (Px \wedge Qx) \to Qa$
 :::
 
+`r qtr_embed(qtrans[["ch9-eg-if-any-philosopher"]], solution = TRUE)`
 
 Only 
 
@@ -477,6 +449,8 @@ All eligible for the prize are seniors \
 Every *thing* is such that if *it* is eligible for the prize, then *it* is a senior  \
 $\forall x (Qx \to Px)$
 :::
+
+`r qtr_embed(qtrans[["ch9-eg-only-seniors"]], solution = TRUE)`
 
 
 The interaction between quantification and negation requires some care as well.
@@ -500,7 +474,7 @@ Every *thing* is such that if *it* is a student, then *it* is *not* eligible for
 $\forall x (Px \to \neg Qx)$
 :::
 
-
+`r qtr_embed(qtrans[["ch9-eg-no-student"]], solution = TRUE)`
 
 For an alternative interpretation of the original sentence, consider:
 
@@ -622,18 +596,13 @@ $a$ \_ : Newton
 3. $\exists x (Px \wedge \exists y (Qy \wedge Rxy))$
 
 
-The next step is to search for a model in which the premises are true and the conclusion false:
+`r qtr_embed(qtrans[["ch9-eg1"]], solution = TRUE)`
 
-```{marginfigure, echo=TRUE}
-$P$ \_ : \_  is enclosed by a circle \
-$Q$ \_ : \_ is enclosed by a diamond \
-$R$ \_ \_ : \_ points to \_\
-$a : p_1$
-```
+Next, we search for a model in which the premises are true and the conclusion false:
 
-
-<img src="images/7.13.png" style="display:block; margin: 0 auto;">
+`r mc_embed_counter(models[["ch9-eg1-counter"]], height = 420L, summary = "Show a countermodel")`
 :::
+
 
 
 ::: {.example} 
@@ -656,54 +625,75 @@ $R$ \_ \_ : \_ is more beautiful than \_
 2. $Pa \wedge Qb$
 3. $Rab$
 
+`r qtr_embed(qtrans[["ch9-eg2"]], solution = TRUE)`
 
+Next, we search for a model in which the premises are true and the conclusion false:
 
-The next step is to search for a model in which the premises are true and the conclusion false:
-
-```{marginfigure, echo=TRUE}
-$P$ \_ : \_ enclosed by a circle \
-$Q$ \_ : \_ is enclosed by a diamond \
-$R$ \_ \_ : \_ points to \_ \
-$a : p_1$\
-$b: p_2$
-```
-
-<img src="images/7.14.png" style="display:block; margin: 0 auto;">
+`r mc_embed_counter(models[["ch9-eg2-counter"]], height = 420L, summary = "Show a countermodel")`
 :::
 
 
 ## Exercises {-}
 
-1. Translate the following sentences into the language of quantificational logic.
+1.  Translate the following sentences into the language of quantificational logic.
 
-      a.  Some Trojans fear Achilles, but Achilles fears every Trojan.
-      
-      #.  All Trojans are courageous.
-      
-      #. Only Trojans come from Troy.
-      
-      #. No Greek comes from Troy.
-      
-      #. Achilles fears Paris, but Paris fears no one.
-      
-      #. Some Greeks fears some Trojans, and some Trojans fear some Greeks.
-      
-      
+    a.  Some Trojans fear Achilles, but Achilles fears every Trojan.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1a"]])`
+
+    #.  All Trojans are courageous.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1b"]])`
+
+    #.  Only Trojans come from Troy.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1c"]])`
+
+    #.  No Greek comes from Troy.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1d"]])`
+
+    #.  Achilles fears Paris, but Paris fears no one.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1e"]])`
+
+    #.  Some Greeks fear some Trojans, and some Trojans fear some Greeks.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex1f"]])`
+
+
+
 #.  Assess the following arguments for quantificational validity.
 
-      a. All poisonous frogs are amphibians. Kermit is a poisonous amphibian. Therefore, Kermit is a frog.
-      
-      #.  Aristotle admired anyone who taught for free. Socrates taught for free, but no sophist did ever teach for free. So, Aristotle did not admire a sophist.
-      
-      #. No weekday comes after Saturday. Monday is a weekday, but Sunday is not. Therefore, Monday does not come after Sunday.
-      
-      #. Some cube is green all over and some cube is red all over. No cube is both green all over and red all over. Some sphere is green all over. So, some sphere is not red all over.
-      
-      #. No Trojan fears Achilles, but Achilles fears some Trojans. Paris is a Trojan. So, Achilles fears Paris but Paris does not fear Achilles.
-      
-      #. Some stadium is close to University Park. The Coliseum is a stadium. Therefore, the  Coliseum is close to University Park.
-      
-      #. Los Angeles is connected by direct flight to London. London is connected by direct flight to every major European city. Barcelona is a major European city. Therefore, Los Angeles is connected by direct flight to Barcelona.
-      
-      #. All Greeks feared Hector or Paris. Paris feared no Greek who feared Hector. Therefore, some Greeks feared Paris.
-      
+    a.  All poisonous frogs are amphibians. Kermit is a poisonous amphibian. Therefore, Kermit is a frog.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2a"]])`
+
+    #.  Aristotle admired anyone who taught for free. Socrates taught for free, but no sophist did ever teach for free. So, Aristotle did not admire a sophist.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2b"]])`
+
+    #.  No weekday comes after Saturday. Monday is a weekday, but Sunday is not. Therefore, Monday does not come after Sunday.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2c"]])`
+
+    #.  Some cube is green all over and some cube is red all over. No cube is both green all over and red all over. Some sphere is green all over. So, some sphere is not red all over.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2d"]])`
+
+    #.  No Trojan fears Achilles, but Achilles fears some Trojans. Paris is a Trojan. So, Achilles fears Paris but Paris does not fear Achilles.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2e"]])`
+
+    #.  Some stadium is close to University Park. The Coliseum is a stadium. Therefore, the Coliseum is close to University Park.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2f"]])`
+
+    #.  Los Angeles is connected by direct flight to London. London is connected by direct flight to every major European city. Barcelona is a major European city. Therefore, Los Angeles is connected by direct flight to Barcelona.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2g"]])`
+
+    #.  All Greeks feared Hector or Paris. Paris feared no Greek who feared Hector. Therefore, some Greeks feared Paris.
+
+        `r qtr_embed_toggle_cards(qtrans[["ch9-ex2h"]])`
+

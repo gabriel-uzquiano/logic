@@ -9,7 +9,7 @@
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
-<meta name="github-repo" content="rstudio/bookdown-demo" />
+<meta name="github-repo" content="gabriel-uzquiano/logic" />
 
 <meta name="author" content="Gabriel Uzquiano" />
 
@@ -128,19 +128,6 @@ MathJax.Hub.Config({
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
 <li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
-<li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
-<ul>
-<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
-<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
-</ul></li>
 </ul>
 </div>
 </div>
@@ -150,12 +137,21 @@ MathJax.Hub.Config({
 <div id="natural-deduction" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> Natural Deduction</h1>
 <p>We have effective means to determine, in a finite number of steps, whether an argument formulated in propositional logic is valid. We may, for example, devise a complete truth table for the argument and look for an assignment corresponding to one of the rows of the truth table on which the premises are true and the conclusion is false. If no such assignment is found, then the argument is valid; otherwise, the argument is invalid. The procedure may be overly complex in certain cases, especially when the argument in question happens to involve a high number of propositional variables, but it will nevertheless produce a verdict in a <em>finite</em> number of steps.</p>
-<p>Matters are more complicated for quantificational logic. For we are not of course in a position to survey <em>every</em> model for the relevant fragment of the language in order to determine wether or not there is one on which the premises true and the conclusion false. There is an infinite number of them, and there is no effective procedure we can use to survey them all in a finite number of steps. To be sure, if the argument is invalid, we should be able to find a model in which the premises are true and the conclusion is false, but we may not be sure at times whether a temporary failure to find such a model may be due to a lack of imagination rather than to the invalidity of the argument.</p>
+<p>Matters are more complicated for quantificational logic. For we are not of course in a position to survey <em>every</em> model for the relevant fragment of the language in order to determine whether there is one on which the premises are true and the conclusion is false. There is an infinite number of them, and there is no effective procedure we can use to survey them all in a finite number of steps. To be sure, if the argument is invalid, we should be able to find a model in which the premises are true and the conclusion is false, but we may not be sure at times whether a temporary failure to find such a model may be due to a lack of imagination rather than to the invalidity of the argument.</p>
 <p>Instead, we will develop a natural deduction system for quantificational logic, one which adapts and extends the framework we developed for propositional logic. Once the natural deduction system is in place, we will establish the validity of an argument in the language of quantificational logic by means of a proof of the conclusion from the premises of the argument.</p>
 <p>Since quantificational logic includes the usual propositional connectives, we will just import and adapt the introduction and elimination rules we devised for them to the new framework. That is enough to enable us to establish the validity of <em>some</em> arguments in the language of quantificational logic.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 10.1  </strong></span><span class="math inline">\(\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px\)</span>.</p>
-<p><img src="images/qex%201.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 10.1  </strong></span><span class="math inline">\(\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80xPx%E2%86%92%E2%88%83xPx%2C%20%C2%AC%E2%88%83xPx&c=%C2%AC%E2%88%80xPx&pr=%E2%88%80xPx%E2%86%92%E2%88%83xPx%20%20P%0A%C2%AC%E2%88%83xPx%20%20P%0A%20%20%E2%88%80xPx%20%20A%0A%20%20%E2%88%83xPx%20%20%E2%86%92E%20%201%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%204%0A%C2%AC%E2%88%80xPx%20%20%C2%ACI%20%203%E2%80%935" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80xPx%E2%86%92%E2%88%83xPx%2C%20%C2%AC%E2%88%83xPx&amp;c=%C2%AC%E2%88%80xPx&amp;pr=%E2%88%80xPx%E2%86%92%E2%88%83xPx%20%20P%0A%C2%AC%E2%88%83xPx%20%20P%0A%20%20%E2%88%80xPx%20%20A%0A%20%20%E2%88%83xPx%20%20%E2%86%92E%20%201%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%204%0A%C2%AC%E2%88%80xPx%20%20%C2%ACI%20%203%E2%80%935"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <p>Notice that it suffices in this case to deploy natural deduction rules for negation and the conditional, which we adapt from the natural deduction system for propositional logic.</p>
 <p>On the other hand, we are not yet in a position to provide derivations that exploit the behavior of the quantifiers. We require additional natural deduction rules for that purpose.</p>
@@ -169,7 +165,7 @@ MathJax.Hub.Config({
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 10.2  </strong></span>Some examples:</p>
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 10.2  </strong></span>Some examples:</p>
 <ul>
 <li><span class="math inline">\(Pc\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Px\)</span>.</li>
 <li><span class="math inline">\(Ray\)</span> is an instance of the universal quantification <span class="math inline">\(\forall x Rxy\)</span>.</li>
@@ -178,7 +174,7 @@ MathJax.Hub.Config({
 </ul>
 </div>
 <p>We start now with the elimination rule for the universal quantifier.</p>
-<p><label for="tufte-mn-101" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-101" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ue.png"><br />
+<p><label for="tufte-mn-78" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-78" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ue.png"><br />
 Universal Elimination</span></span></p>
 <dl>
 <dt>Universal Elimination</dt>
@@ -189,15 +185,33 @@ Universal Elimination</span></span></p>
 <p>The rationale for universal elimination is that we are entitled to write that an individual <span class="math inline">\(a\)</span> satisfies a given condition if we are given that <em>all</em> individuals do.</p>
 <p>Let us look at the universal elimination rule in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 10.3  </strong></span><span class="math inline">\(\forall x \forall y(Px \to Qy), Pa, \vdash Qb\)</span>.</p>
-<p><img src="images/qex%20ue1.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 10.3  </strong></span><span class="math inline">\(\forall x \forall y(Px \to Qy), Pa, \vdash Qb\)</span>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%E2%88%80y%28Px%E2%86%92Qy%29%2C%20Pa&c=Qb&pr=%E2%88%80x%E2%88%80y%28Px%E2%86%92Qy%29%20%20P%0APa%20%20P%0A%E2%88%80y%28Pa%E2%86%92Qy%29%20%20%E2%88%80E%20%201%0APa%E2%86%92Qb%20%20%E2%88%80E%20%203%0AQb%20%20%E2%86%92E%20%204%2C%202" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%E2%88%80y%28Px%E2%86%92Qy%29%2C%20Pa&amp;c=Qb&amp;pr=%E2%88%80x%E2%88%80y%28Px%E2%86%92Qy%29%20%20P%0APa%20%20P%0A%E2%88%80y%28Pa%E2%86%92Qy%29%20%20%E2%88%80E%20%201%0APa%E2%86%92Qb%20%20%E2%88%80E%20%203%0AQb%20%20%E2%86%92E%20%204%2C%202"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 10.4  </strong></span><span class="math inline">\(\forall x \forall y Rxy \vdash Raa\)</span>.</p>
-<p><img src="images/qex%20ue2.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 10.4  </strong></span><span class="math inline">\(\forall x \forall y Rxy \vdash Raa\)</span>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%E2%88%80yRxy&c=Raa&pr=%E2%88%80x%E2%88%80yRxy%20%20P%0A%E2%88%80yRay%20%20%E2%88%80E%20%201%0ARaa%20%20%E2%88%80E%20%202" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%E2%88%80yRxy&amp;c=Raa&amp;pr=%E2%88%80x%E2%88%80yRxy%20%20P%0A%E2%88%80yRay%20%20%E2%88%80E%20%201%0ARaa%20%20%E2%88%80E%20%202"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <p>The introduction rule for the universal quantifier requires more care. In order to be able to write <span class="math inline">\(\forall x \varphi(x)\)</span> by itself on a line, we should convince ourselves we have the means to establish some <em>arbitrary</em> instance <span class="math inline">\(\varphi(a/x)\)</span> where the constant <span class="math inline">\(a\)</span> does not occur in an undischarged assumption.</p>
-<p><label for="tufte-mn-102" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-102" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ui.png"><br />
+<p><label for="tufte-mn-79" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-79" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ui.png"><br />
 Universal Introduction</span></span></p>
 <dl>
 <dt>Universal Introduction</dt>
@@ -207,51 +221,105 @@ Universal Introduction</span></span></p>
 </dl>
 <p>Let us look at some applications of the rule.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 10.5  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)\)</span>.</p>
-<p><img src="images/qex%20ui1.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 10.5  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)\)</span>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%E2%88%80x%28Qx%E2%86%92Rx%29&c=%E2%88%80x%28Px%E2%86%92Rx%29&pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%E2%88%80x%28Qx%E2%86%92Rx%29%20%20P%0APa%E2%86%92Qa%20%20%E2%88%80E%20%201%0AQa%E2%86%92Ra%20%20%E2%88%80E%20%202%0A%20%20Pa%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%203%2C%205%0A%20%20Ra%20%20%E2%86%92E%20%204%2C%206%0APa%E2%86%92Ra%20%20%E2%86%92I%20%205%E2%80%937%0A%E2%88%80x%28Px%E2%86%92Rx%29%20%20%E2%88%80I%20%208" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%E2%88%80x%28Qx%E2%86%92Rx%29&amp;c=%E2%88%80x%28Px%E2%86%92Rx%29&amp;pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%E2%88%80x%28Qx%E2%86%92Rx%29%20%20P%0APa%E2%86%92Qa%20%20%E2%88%80E%20%201%0AQa%E2%86%92Ra%20%20%E2%88%80E%20%202%0A%20%20Pa%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%203%2C%205%0A%20%20Ra%20%20%E2%86%92E%20%204%2C%206%0APa%E2%86%92Ra%20%20%E2%86%92I%20%205%E2%80%937%0A%E2%88%80x%28Px%E2%86%92Rx%29%20%20%E2%88%80I%20%208"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 10.6  </strong></span><span class="math inline">\(\forall x (Px \to \neg Px) \vdash \forall x \neg Px)\)</span></p>
-<p><img src="images/qex%20ui2.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-77" class="example"><strong>Example 10.6  </strong></span><span class="math inline">\(\forall x (Px \to \neg Px) \vdash \forall x \neg Px\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%C2%ACPx%29&c=%E2%88%80x%C2%ACPx&pr=%E2%88%80x%28Px%E2%86%92%C2%ACPx%29%20%20P%0APa%E2%86%92%C2%ACPa%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20%C2%ACPa%20%20%E2%86%92E%20%202%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%203%0A%C2%ACPa%20%20%C2%ACI%20%203%E2%80%935%0A%E2%88%80x%C2%ACPx%20%20%E2%88%80I%20%206" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28Px%E2%86%92%C2%ACPx%29&amp;c=%E2%88%80x%C2%ACPx&amp;pr=%E2%88%80x%28Px%E2%86%92%C2%ACPx%29%20%20P%0APa%E2%86%92%C2%ACPa%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20%C2%ACPa%20%20%E2%86%92E%20%202%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%203%0A%C2%ACPa%20%20%C2%ACI%20%203%E2%80%935%0A%E2%88%80x%C2%ACPx%20%20%E2%88%80I%20%206"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 </div>
 <div id="existential-quantification" class="section level2 unnumbered">
 <h2>Existential Quantification</h2>
 <p>We now introduce introduction and elimination rules for the existential quantifier.</p>
-<p><label for="tufte-mn-103" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-103" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ei.png"><br />
+<p><label for="tufte-mn-80" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-80" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ei.png"><br />
 Existential Introduction</span></span></p>
 <dl>
 <dt>Existential Introduction</dt>
 <dd>
-<p>You may write an existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> provided an instance <span class="math inline">\(\varphi(a/v)\)</span> is available on a prior line of the derivation</p>
+<p>You may write an existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> provided an instance <span class="math inline">\(\varphi(a/x)\)</span> is available on a prior line of the derivation</p>
 </dd>
 </dl>
 <p>The rationale for existential introduction is that we are entitled to write that something satisfies a condition if we are given that an individual <span class="math inline">\(a\)</span> does.</p>
 <p>Here is the rule of existential introduction in action.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 10.7  </strong></span><span class="math inline">\(Rab \vdash \exists x\exists y Rxy\)</span></p>
-<p><img src="images/qex%20ei1.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 10.7  </strong></span><span class="math inline">\(Rab \vdash \exists x\exists y Rxy\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=Rab&c=%E2%88%83x%E2%88%83yRxy&pr=Rab%20%20P%0A%E2%88%83yRay%20%20%E2%88%83I%20%201%0A%E2%88%83x%E2%88%83yRxy%20%20%E2%88%83I%20%202" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=Rab&amp;c=%E2%88%83x%E2%88%83yRxy&amp;pr=Rab%20%20P%0A%E2%88%83yRay%20%20%E2%88%83I%20%201%0A%E2%88%83x%E2%88%83yRxy%20%20%E2%88%83I%20%202"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 10.8  </strong></span><span class="math inline">\(\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)\)</span></p>
-<p><img src="images/qex%20ei2.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 10.8  </strong></span><span class="math inline">\(\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&c=%C2%AC%E2%88%80x%28Px%E2%88%A7Qx%29&pr=%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%20%20%E2%88%80x%28Px%E2%88%A7Qx%29%20%20A%0A%20%20Pa%E2%88%A7Qa%20%20%E2%88%80E%20%202%0A%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%204%0A%C2%AC%E2%88%80x%28Px%E2%88%A7Qx%29%20%20%C2%ACI%20%202%E2%80%935" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&amp;c=%C2%AC%E2%88%80x%28Px%E2%88%A7Qx%29&amp;pr=%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%20%20%E2%88%80x%28Px%E2%88%A7Qx%29%20%20A%0A%20%20Pa%E2%88%A7Qa%20%20%E2%88%80E%20%202%0A%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%201%2C%204%0A%C2%AC%E2%88%80x%28Px%E2%88%A7Qx%29%20%20%C2%ACI%20%202%E2%80%935"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p>The elimination rule for the existential quantifier is more subtle. Suppose we want to reason from an existential generalization of the form <span class="math inline">\(\exists x \varphi(x)\)</span> to some formula <span class="math inline">\(\psi\)</span>. The elimination rule for the existential tells us that the step is justified if we have the means to establish a conditional <span class="math inline">\(\varphi(a/v) \to \psi\)</span> where <span class="math inline">\(a\)</span> is a constant that occurs neither in <span class="math inline">\(\psi\)</span> nor <span class="math inline">\(\exists x \varphi\)</span> nor in an earlier open assumption.</p>
-<p><label for="tufte-mn-104" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-104" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ee.png"><br />
+</div>
+<p>The elimination rule for the existential quantifier is more subtle. Suppose we want to reason from an existential generalization of the form <span class="math inline">\(\exists x \varphi(x)\)</span> to some formula <span class="math inline">\(\psi\)</span>. The elimination rule for the existential tells us that the step is justified if we have the means to establish a conditional <span class="math inline">\(\varphi(a/x) \to \psi\)</span> where <span class="math inline">\(a\)</span> is a constant that occurs neither in <span class="math inline">\(\psi\)</span> nor <span class="math inline">\(\exists x \varphi\)</span> nor in an earlier open assumption.</p>
+<p><label for="tufte-mn-81" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-81" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ee.png"><br />
 Existential Elimination</span></span></p>
 <dl>
 <dt>Existential Elimination</dt>
 <dd>
-<p>You may write <span class="math inline">\(\psi\)</span> if the existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> and the conditional <span class="math inline">\(\varphi(a/x) \to \psi\)</span> are available at prior lines provided that <span class="math inline">\(a\)</span> occurs neither in neither in <span class="math inline">\(\psi\)</span> nor in <span class="math inline">\(\exists x \varphi\)</span> nor in an undischarged assumption.</p>
+<p>You may write <span class="math inline">\(\psi\)</span> if the existentially quantified formula <span class="math inline">\(\exists x \varphi\)</span> and the conditional <span class="math inline">\(\varphi(a/x) \to \psi\)</span> are available on a prior line provided that <span class="math inline">\(a\)</span> occurs neither in <span class="math inline">\(\psi\)</span> nor in <span class="math inline">\(\exists x \varphi\)</span> nor in an undischarged assumption.</p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 10.9  </strong></span><span class="math inline">\(\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)\)</span></p>
-<p><img src="images/qex%20ee1.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 10.9  </strong></span><span class="math inline">\(\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83x%28Px%E2%88%A7%C2%ACQx%29&c=%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29&pr=%E2%88%83x%28Px%E2%88%A7%C2%ACQx%29%20%20P%0A%20%20Pa%E2%88%A7%C2%ACQa%20%20A%0A%20%20Pa%20%20%E2%88%A7E%20%202%0A%20%20%C2%ACQa%20%20%E2%88%A7E%20%202%0A%20%20%20%20%E2%88%80x%28Px%E2%86%92Qx%29%20%20A%0A%20%20%20%20Pa%E2%86%92Qa%20%20%E2%88%80E%20%205%0A%20%20%20%20Qa%20%20%E2%86%92E%20%206%2C%203%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%207%0A%20%20%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%C2%ACI%20%205%E2%80%938%0A%28Pa%E2%88%A7%C2%ACQa%29%E2%86%92%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%E2%86%92I%20%202%E2%80%939%0A%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%E2%88%83E%20%201%2C%2010" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%83x%28Px%E2%88%A7%C2%ACQx%29&amp;c=%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29&amp;pr=%E2%88%83x%28Px%E2%88%A7%C2%ACQx%29%20%20P%0A%20%20Pa%E2%88%A7%C2%ACQa%20%20A%0A%20%20Pa%20%20%E2%88%A7E%20%202%0A%20%20%C2%ACQa%20%20%E2%88%A7E%20%202%0A%20%20%20%20%E2%88%80x%28Px%E2%86%92Qx%29%20%20A%0A%20%20%20%20Pa%E2%86%92Qa%20%20%E2%88%80E%20%205%0A%20%20%20%20Qa%20%20%E2%86%92E%20%206%2C%203%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%207%0A%20%20%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%C2%ACI%20%205%E2%80%938%0A%28Pa%E2%88%A7%C2%ACQa%29%E2%86%92%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%E2%86%92I%20%202%E2%80%939%0A%C2%AC%E2%88%80x%28Px%E2%86%92Qx%29%20%20%E2%88%83E%20%201%2C%2010"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 10.10  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz\)</span></p>
-<p><img src="images/qex%20ee2.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-81" class="example"><strong>Example 10.10  </strong></span><span class="math inline">\(\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%E2%88%83yPy&c=%E2%88%83zQz&pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%E2%88%83yPy%20%20P%0APa%E2%86%92Qa%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%203%2C%204%0A%20%20%E2%88%83zQz%20%20%E2%88%83I%20%205%0APa%E2%86%92%E2%88%83zQz%20%20%E2%86%92I%20%204%E2%80%936%0A%E2%88%83zQz%20%20%E2%88%83E%20%202%2C%207" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%E2%88%83yPy&amp;c=%E2%88%83zQz&amp;pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%E2%88%83yPy%20%20P%0APa%E2%86%92Qa%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%203%2C%204%0A%20%20%E2%88%83zQz%20%20%E2%88%83I%20%205%0APa%E2%86%92%E2%88%83zQz%20%20%E2%86%92I%20%204%E2%80%936%0A%E2%88%83zQz%20%20%E2%88%83E%20%202%2C%207"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 </div>
 <div id="common-mistakes-and-strategies" class="section level2 unnumbered">
@@ -261,12 +329,30 @@ Existential Elimination</span></span></p>
 <p>One more potential pitfall is the failure to apply the rules for quantification once at a time. The elimination rule for the universal quantifier does <em>not</em> allow an immediate transition from a formula such as <span class="math inline">\(\forall x \forall y Rxy\)</span> to <span class="math inline">\(Rab\)</span>. We should instead distinguish two steps: one from the original formula to <span class="math inline">\(\forall y Rxy\)</span> and a further one from this formula to the instance <span class="math inline">\(Rab\)</span>.</p>
 <p>Let us now look at some further examples.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 10.11  </strong></span><span class="math inline">\(\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx\)</span></p>
-<p><img src="images/qex%20cex1.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 10.11  </strong></span><span class="math inline">\(\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83x%E2%88%80yRxy%2C%20%E2%88%80x%E2%88%80y%28Rxy%E2%86%92Ryx%29&c=%E2%88%83x%E2%88%80yRyx&pr=%E2%88%83x%E2%88%80yRxy%20%20P%0A%E2%88%80x%E2%88%80y%28Rxy%E2%86%92Ryx%29%20%20P%0A%20%20%E2%88%80yRcy%20%20A%0A%20%20%E2%88%80y%28Rcy%E2%86%92Ryc%29%20%20%E2%88%80E%20%202%0A%20%20Rcb%E2%86%92Rbc%20%20%E2%88%80E%20%204%0A%20%20Rcb%20%20%E2%88%80E%20%203%0A%20%20Rbc%20%20%E2%86%92E%20%205%2C%206%0A%20%20%E2%88%80yRyc%20%20%E2%88%80I%20%207%0A%20%20%E2%88%83x%E2%88%80yRyx%20%20%E2%88%83I%20%208%0A%28%E2%88%80yRcy%E2%86%92%E2%88%83x%E2%88%80yRyx%29%20%20%E2%86%92I%20%203%E2%80%939%0A%E2%88%83x%E2%88%80yRyx%20%20%E2%88%83E%20%201%2C%2010" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%83x%E2%88%80yRxy%2C%20%E2%88%80x%E2%88%80y%28Rxy%E2%86%92Ryx%29&amp;c=%E2%88%83x%E2%88%80yRyx&amp;pr=%E2%88%83x%E2%88%80yRxy%20%20P%0A%E2%88%80x%E2%88%80y%28Rxy%E2%86%92Ryx%29%20%20P%0A%20%20%E2%88%80yRcy%20%20A%0A%20%20%E2%88%80y%28Rcy%E2%86%92Ryc%29%20%20%E2%88%80E%20%202%0A%20%20Rcb%E2%86%92Rbc%20%20%E2%88%80E%20%204%0A%20%20Rcb%20%20%E2%88%80E%20%203%0A%20%20Rbc%20%20%E2%86%92E%20%205%2C%206%0A%20%20%E2%88%80yRyc%20%20%E2%88%80I%20%207%0A%20%20%E2%88%83x%E2%88%80yRyx%20%20%E2%88%83I%20%208%0A%28%E2%88%80yRcy%E2%86%92%E2%88%83x%E2%88%80yRyx%29%20%20%E2%86%92I%20%203%E2%80%939%0A%E2%88%83x%E2%88%80yRyx%20%20%E2%88%83E%20%201%2C%2010"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 10.12  </strong></span><span class="math inline">\(\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px \to Rxb)\)</span></p>
-<p><img src="images/qex%20cex2.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 10.12  </strong></span><span class="math inline">\(\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px \to Rxb)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%28Qxa%E2%86%92Rxb%29%29&c=%E2%88%80x%28Px%E2%86%92Qxa%29%E2%86%92%E2%88%80x%28Px%E2%86%92Rxb%29&pr=%E2%88%80x%28Px%E2%86%92%28Qxa%E2%86%92Rxb%29%29%20%20P%0A%20%20%E2%88%80x%28Px%E2%86%92Qxa%29%20%20A%0A%20%20Pc%E2%86%92%28Qca%E2%86%92Rcb%29%20%20%E2%88%80E%20%201%0A%20%20Pc%E2%86%92Qca%20%20%E2%88%80E%20%202%0A%20%20%20%20Pc%20%20A%0A%20%20%20%20Qca%E2%86%92Rcb%20%20%E2%86%92E%20%203%2C%205%0A%20%20%20%20Qca%20%20%E2%86%92E%20%204%2C%205%0A%20%20%20%20Rcb%20%20%E2%86%92E%20%206%2C%207%0A%20%20Pc%E2%86%92Rcb%20%20%E2%86%92I%20%205%E2%80%938%0A%20%20%E2%88%80x%28Px%E2%86%92Rxb%29%20%20%E2%88%80I%20%209%0A%E2%88%80x%28Px%E2%86%92Qxa%29%E2%86%92%E2%88%80x%28Px%E2%86%92Rxb%29%20%20%E2%86%92I%20%202%E2%80%9310" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28Px%E2%86%92%28Qxa%E2%86%92Rxb%29%29&amp;c=%E2%88%80x%28Px%E2%86%92Qxa%29%E2%86%92%E2%88%80x%28Px%E2%86%92Rxb%29&amp;pr=%E2%88%80x%28Px%E2%86%92%28Qxa%E2%86%92Rxb%29%29%20%20P%0A%20%20%E2%88%80x%28Px%E2%86%92Qxa%29%20%20A%0A%20%20Pc%E2%86%92%28Qca%E2%86%92Rcb%29%20%20%E2%88%80E%20%201%0A%20%20Pc%E2%86%92Qca%20%20%E2%88%80E%20%202%0A%20%20%20%20Pc%20%20A%0A%20%20%20%20Qca%E2%86%92Rcb%20%20%E2%86%92E%20%203%2C%205%0A%20%20%20%20Qca%20%20%E2%86%92E%20%204%2C%205%0A%20%20%20%20Rcb%20%20%E2%86%92E%20%206%2C%207%0A%20%20Pc%E2%86%92Rcb%20%20%E2%86%92I%20%205%E2%80%938%0A%20%20%E2%88%80x%28Px%E2%86%92Rxb%29%20%20%E2%88%80I%20%209%0A%E2%88%80x%28Px%E2%86%92Qxa%29%E2%86%92%E2%88%80x%28Px%E2%86%92Rxb%29%20%20%E2%86%92I%20%202%E2%80%9310"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 </div>
 <div id="exercises-9" class="section level2 unnumbered">
@@ -274,11 +360,151 @@ Existential Elimination</span></span></p>
 <ol style="list-style-type: decimal">
 <li><p>Provide a natural deduction proof in order to justify each of the claims below:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\exists x Px \to \exists x Qx, \forall x Px \vdash \exists x Qx\)</span></p></li>
-<li><p><span class="math inline">\(\exists x Px \wedge \exists x Qx, \neg \exists x(Px \wedge Qx), \forall x (Rx \to Px) \vdash \exists x \neg Rx\)</span></p></li>
-<li><p><span class="math inline">\(\forall x (Px \to \neg Qx), \forall x (Rx \to Qx) \vdash \forall x (Rx \to \neg Px)\)</span></p></li>
-<li><p><span class="math inline">\(\forall x (Px \to (\exists y Rxy \to Qx)), \neg \exists y Qy \vdash \forall y (Py \to \forall z \neg Ryz)\)</span></p></li>
-<li><p><span class="math inline">\(\forall x (Px \to \forall y (Rxy \to Py), \exists x (Qx \wedge Px) \vdash \exists x (Qx \wedge \forall y (Rxy \to Py))\)</span></p></li>
+<li><p><span class="math inline">\(\exists x Px \to \exists x Qx, \forall x Px \vdash \exists x Qx\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%E2%86%92%E2%88%83xQx%2C%20%E2%88%80xPx&c=%E2%88%83xQx" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%83xPx%E2%86%92%E2%88%83xQx%2C%20%E2%88%80xPx&amp;c=%E2%88%83xQx"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%E2%86%92%E2%88%83xQx%2C%20%E2%88%80xPx&c=%E2%88%83xQx&pr=%E2%88%83xPx%E2%86%92%E2%88%83xQx%20%20P%0A%E2%88%80xPx%20%20P%0APa%20%20%E2%88%80E%20%202%0A%E2%88%83xPx%20%20%E2%88%83I%20%203%0A%E2%88%83xQx%20%20%E2%86%92E%20%201%2C%204" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%83xPx%E2%86%92%E2%88%83xQx%2C%20%E2%88%80xPx&amp;c=%E2%88%83xQx&amp;pr=%E2%88%83xPx%E2%86%92%E2%88%83xQx%20%20P%0A%E2%88%80xPx%20%20P%0APa%20%20%E2%88%80E%20%202%0A%E2%88%83xPx%20%20%E2%88%83I%20%203%0A%E2%88%83xQx%20%20%E2%86%92E%20%201%2C%204"
+   style="width:100%;height:210px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\exists x Px \wedge \exists x Qx, \neg \exists x(Px \wedge Qx), \forall x (Rx \to Px) \vdash \exists x \neg Rx\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%2C%20%E2%88%80x%28Rx%E2%86%92Px%29&c=%E2%88%83x%C2%ACRx" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%2C%20%E2%88%80x%28Rx%E2%86%92Px%29&amp;c=%E2%88%83x%C2%ACRx"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%2C%20%E2%88%80x%28Rx%E2%86%92Px%29&c=%E2%88%83x%C2%ACRx&pr=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%20%20P%0A%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%E2%88%80x%28Rx%E2%86%92Px%29%20%20P%0A%E2%88%83xQx%20%20%E2%88%A7E%20%201%0A%20%20Qc%20%20A%0A%20%20Rc%E2%86%92Pc%20%20%E2%88%80E%20%203%0A%20%20%20%20Rc%20%20A%0A%20%20%20%20Pc%20%20%E2%86%92E%20%206%2C%207%0A%20%20%20%20Pc%E2%88%A7Qc%20%20%E2%88%A7I%20%208%2C%205%0A%20%20%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%209%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%2010%0A%20%20%C2%ACRc%20%20%C2%ACI%20%207%E2%80%9311%0A%20%20%E2%88%83x%C2%ACRx%20%20%E2%88%83I%20%2012%0AQc%E2%86%92%E2%88%83x%C2%ACRx%20%20%E2%86%92I%20%205%E2%80%9313%0A%E2%88%83x%C2%ACRx%20%20%E2%88%83E%20%204%2C%2014" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%2C%20%E2%88%80x%28Rx%E2%86%92Px%29&amp;c=%E2%88%83x%C2%ACRx&amp;pr=%E2%88%83xPx%E2%88%A7%E2%88%83xQx%20%20P%0A%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%E2%88%80x%28Rx%E2%86%92Px%29%20%20P%0A%E2%88%83xQx%20%20%E2%88%A7E%20%201%0A%20%20Qc%20%20A%0A%20%20Rc%E2%86%92Pc%20%20%E2%88%80E%20%203%0A%20%20%20%20Rc%20%20A%0A%20%20%20%20Pc%20%20%E2%86%92E%20%206%2C%207%0A%20%20%20%20Pc%E2%88%A7Qc%20%20%E2%88%A7I%20%208%2C%205%0A%20%20%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%209%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%2010%0A%20%20%C2%ACRc%20%20%C2%ACI%20%207%E2%80%9311%0A%20%20%E2%88%83x%C2%ACRx%20%20%E2%88%83I%20%2012%0AQc%E2%86%92%E2%88%83x%C2%ACRx%20%20%E2%86%92I%20%205%E2%80%9313%0A%E2%88%83x%C2%ACRx%20%20%E2%88%83E%20%204%2C%2014"
+   style="width:100%;height:510px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\forall x (Px \to \neg Qx), \forall x (Rx \to Qx) \vdash \forall x (Rx \to \neg Px)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%2C%20%E2%88%80x%28Rx%E2%86%92Qx%29&c=%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%2C%20%E2%88%80x%28Rx%E2%86%92Qx%29&amp;c=%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%2C%20%E2%88%80x%28Rx%E2%86%92Qx%29&c=%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29&pr=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%20%20P%0A%E2%88%80x%28Rx%E2%86%92Qx%29%20%20P%0APa%E2%86%92%C2%ACQa%20%20%E2%88%80E%20%201%0ARa%E2%86%92Qa%20%20%E2%88%80E%20%202%0A%20%20Ra%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%204%2C%205%0A%20%20%20%20Pa%20%20A%0A%20%20%20%20%C2%ACQa%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%208%2C%206%0A%20%20%C2%ACPa%20%20%C2%ACI%20%207%E2%80%939%0ARa%E2%86%92%C2%ACPa%20%20%E2%86%92I%20%205%E2%80%9310%0A%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29%20%20%E2%88%80I%20%2011" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%2C%20%E2%88%80x%28Rx%E2%86%92Qx%29&amp;c=%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29&amp;pr=%E2%88%80x%28Px%E2%86%92%C2%ACQx%29%20%20P%0A%E2%88%80x%28Rx%E2%86%92Qx%29%20%20P%0APa%E2%86%92%C2%ACQa%20%20%E2%88%80E%20%201%0ARa%E2%86%92Qa%20%20%E2%88%80E%20%202%0A%20%20Ra%20%20A%0A%20%20Qa%20%20%E2%86%92E%20%204%2C%205%0A%20%20%20%20Pa%20%20A%0A%20%20%20%20%C2%ACQa%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%208%2C%206%0A%20%20%C2%ACPa%20%20%C2%ACI%20%207%E2%80%939%0ARa%E2%86%92%C2%ACPa%20%20%E2%86%92I%20%205%E2%80%9310%0A%E2%88%80x%28Rx%E2%86%92%C2%ACPx%29%20%20%E2%88%80I%20%2011"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\forall x (Px \to (\exists y Rxy \to Qx)), \neg \exists y Qy \vdash \forall y (Py \to \forall z \neg Ryz)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%2C%20%C2%AC%E2%88%83yQy&c=%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%2C%20%C2%AC%E2%88%83yQy&amp;c=%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%2C%20%C2%AC%E2%88%83yQy&c=%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29&pr=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%20%20P%0A%C2%AC%E2%88%83yQy%20%20P%0APa%E2%86%92%28%E2%88%83yRay%E2%86%92Qa%29%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20%E2%88%83yRay%E2%86%92Qa%20%20%E2%86%92E%20%203%2C%204%0A%20%20%20%20Rab%20%20A%0A%20%20%20%20%E2%88%83yRay%20%20%E2%88%83I%20%206%0A%20%20%20%20Qa%20%20%E2%86%92E%20%205%2C%207%0A%20%20%20%20%E2%88%83yQy%20%20%E2%88%83I%20%208%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%209%0A%20%20%C2%ACRab%20%20%C2%ACI%20%206%E2%80%9310%0A%20%20%E2%88%80z%C2%ACRaz%20%20%E2%88%80I%20%2011%0APa%E2%86%92%E2%88%80z%C2%ACRaz%20%20%E2%86%92I%20%204%E2%80%9312%0A%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29%20%20%E2%88%80I%20%2013" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%2C%20%C2%AC%E2%88%83yQy&amp;c=%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29&amp;pr=%E2%88%80x%28Px%E2%86%92%28%E2%88%83yRxy%E2%86%92Qx%29%29%20%20P%0A%C2%AC%E2%88%83yQy%20%20P%0APa%E2%86%92%28%E2%88%83yRay%E2%86%92Qa%29%20%20%E2%88%80E%20%201%0A%20%20Pa%20%20A%0A%20%20%E2%88%83yRay%E2%86%92Qa%20%20%E2%86%92E%20%203%2C%204%0A%20%20%20%20Rab%20%20A%0A%20%20%20%20%E2%88%83yRay%20%20%E2%88%83I%20%206%0A%20%20%20%20Qa%20%20%E2%86%92E%20%205%2C%207%0A%20%20%20%20%E2%88%83yQy%20%20%E2%88%83I%20%208%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%202%2C%209%0A%20%20%C2%ACRab%20%20%C2%ACI%20%206%E2%80%9310%0A%20%20%E2%88%80z%C2%ACRaz%20%20%E2%88%80I%20%2011%0APa%E2%86%92%E2%88%80z%C2%ACRaz%20%20%E2%86%92I%20%204%E2%80%9312%0A%E2%88%80y%28Py%E2%86%92%E2%88%80z%C2%ACRyz%29%20%20%E2%88%80I%20%2013"
+   style="width:100%;height:480px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\forall x (Px \to \forall y (Rxy \to Py)), \exists x (Qx \wedge Px) \vdash \exists x (Qx \wedge \forall y (Rxy \to Py))\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%2C%20%E2%88%83x%28Qx%E2%88%A7Px%29&c=%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%2C%20%E2%88%83x%28Qx%E2%88%A7Px%29&amp;c=%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+           cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%2C%20%E2%88%83x%28Qx%E2%88%A7Px%29&c=%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29&pr=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20P%0A%E2%88%83x%28Qx%E2%88%A7Px%29%20%20P%0APa%E2%86%92%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%88%80E%20%201%0A%20%20Qa%E2%88%A7Pa%20%20A%0A%20%20Pa%20%20%E2%88%A7E%20%204%0A%20%20Qa%20%20%E2%88%A7E%20%204%0A%20%20%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%86%92E%20%203%2C%205%0A%20%20Qa%E2%88%A7%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%88%A7I%20%206%2C%207%0A%20%20%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%88%83I%20%208%0A%28Qa%E2%88%A7Pa%29%E2%86%92%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%86%92I%20%204%E2%80%939%0A%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%88%83E%20%202%2C%2010" target="_blank"
+  style="position:absolute;top:0;right:0;font-size:0.72em;
+     background:#fff;padding:2px 7px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%2C%20%E2%88%83x%28Qx%E2%88%A7Px%29&amp;c=%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29&amp;pr=%E2%88%80x%28Px%E2%86%92%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20P%0A%E2%88%83x%28Qx%E2%88%A7Px%29%20%20P%0APa%E2%86%92%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%88%80E%20%201%0A%20%20Qa%E2%88%A7Pa%20%20A%0A%20%20Pa%20%20%E2%88%A7E%20%204%0A%20%20Qa%20%20%E2%88%A7E%20%204%0A%20%20%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%86%92E%20%203%2C%205%0A%20%20Qa%E2%88%A7%E2%88%80y%28Ray%E2%86%92Py%29%20%20%E2%88%A7I%20%206%2C%207%0A%20%20%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%88%83I%20%208%0A%28Qa%E2%88%A7Pa%29%E2%86%92%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%86%92I%20%204%E2%80%939%0A%E2%88%83x%28Qx%E2%88%A7%E2%88%80y%28Rxy%E2%86%92Py%29%29%20%20%E2%88%83E%20%202%2C%2010"
+   style="width:100%;height:390px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
 </ol></li>
 </ol>
 

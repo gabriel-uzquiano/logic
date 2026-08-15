@@ -72,10 +72,10 @@ pc_link <- function(ex, solution = FALSE, label = NULL) {
 pc_iframe <- function(ex, solution = FALSE, height = 480L) {
   src <- gsub("&", "&amp;", pc_url(ex, solution = solution), fixed = TRUE)
   url <- pc_url(ex, solution = solution)
-  sprintf(
+  .as_html(sprintf(
     '<div style="position:relative;margin:1em 0">
   <a href="%s" target="_blank"
-     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+     style="position:absolute;top:0;right:0;font-size:0.72em;
             background:#fff;padding:2px 7px;border:1px solid #ccc;
             border-radius:4px;z-index:10;text-decoration:none;color:#444">
     Open &#x2197;</a>
@@ -84,7 +84,7 @@ pc_iframe <- function(ex, solution = FALSE, height = 480L) {
           loading="lazy" allow="fullscreen"></iframe>
 </div>',
     url, src, height
-  )
+  ))
 }
 
 # ---------------------------------------------------------------------------
@@ -193,20 +193,19 @@ pc_iframe_card <- function(ex, card = "verify", solution = FALSE, height = 300L)
   open_url <- paste0(PC_BASE, hash)                                      # full app
   full_url <- paste0(PC_BASE, "?card=", URLencode(card, reserved = FALSE), hash)
   src      <- gsub("&", "&amp;", full_url, fixed = TRUE)
-  sprintf(
-    '<div style="margin:0.5em 0">
-  <div style="text-align:right;margin-bottom:2px">
-    <a href="%s" target="_blank"
-       style="font-size:0.7em;background:#fff;padding:1px 6px;
-              border:1px solid #ccc;border-radius:4px;
-              text-decoration:none;color:#666">Open &#x2197;</a>
-  </div>
+  .as_html(sprintf(
+    '<div style="position:relative;margin:1em 0">
+  <a href="%s" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+    Open &#x2197;</a>
   <iframe title="Proof Checker" src="%s"
           style="width:100%%;height:%dpx;border:1px solid #ddd;border-radius:6px;display:block"
           loading="lazy"></iframe>
 </div>',
     open_url, src, height
-  )
+  ))
 }
 
 # ---------------------------------------------------------------------------

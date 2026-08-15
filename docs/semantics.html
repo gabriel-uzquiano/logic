@@ -9,7 +9,7 @@
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
-<meta name="github-repo" content="rstudio/bookdown-demo" />
+<meta name="github-repo" content="gabriel-uzquiano/logic" />
 
 <meta name="author" content="Gabriel Uzquiano" />
 
@@ -128,19 +128,6 @@ MathJax.Hub.Config({
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
 <li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
-<li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
-<ul>
-<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
-<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
-</ul></li>
 </ul>
 </div>
 </div>
@@ -177,7 +164,7 @@ MathJax.Hub.Config({
 <p>Given a sentence <span class="math inline">\(\varphi\)</span>, the truth value of the negation <span class="math inline">\(\neg \varphi\)</span> under an assignment is a function of the truth value of <span class="math inline">\(\varphi\)</span> under the assignment.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-10" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-10" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\neg\)</span></span></strong></span></span>
+<p><label for="tufte-mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\neg\)</span></span></strong></span></span>
 <span class="math display">\[
 \begin{array}{|c|c|}
 \hline
@@ -194,7 +181,7 @@ F  &amp; T \\
 <p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the conjunction <span class="math inline">\((\varphi \wedge \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-11" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-11" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\wedge\)</span></span></strong></span></span>
+<p><label for="tufte-mn-9" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-9" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\wedge\)</span></span></strong></span></span>
 <span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
@@ -213,7 +200,7 @@ F &amp; F  &amp; F \\
 <p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the disjunction <span class="math inline">\((\varphi \vee \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-12" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-12" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\vee\)</span></span></strong></span></span>
+<p><label for="tufte-mn-10" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-10" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\vee\)</span></span></strong></span></span>
 <span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
@@ -232,7 +219,7 @@ F &amp; F  &amp; F \\
 <p>Given two sentences <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, the truth value of the conditional <span class="math inline">\((\varphi \to \psi)\)</span> under an assignment is a function of the truth values of <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> under the assignment.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-13" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-13" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\to\)</span></span></strong></span></span>
+<p><label for="tufte-mn-11" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-11" class="margin-toggle"><span class="marginnote"><span style="display: block;"><strong>Truth table for <span class="math inline"><span class="math inline">\(\to\)</span></span></strong></span></span>
 <span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
@@ -247,65 +234,74 @@ F &amp; F  &amp;  T \\
 \]</span></p>
 <p>We may use these rules to calculate the truth values of complex sentences of propositional logic relative to every assignment of truth values to its propositional variables.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 3.1  </strong></span>We may calculate the truth value of the sentence
-<span class="math display">\[
-\neg (p \wedge q)
-\]</span>
-relative to every assignment in two stages, which correspond to the way in which the sentence has been constructed from simpler constituents:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|}
-\hline
-p  &amp; q &amp; (p \wedge q) &amp;  \neg  (p \wedge q)   \\
-\hline
-T &amp; T  &amp; T &amp; \color{red}{F} \\
-T &amp; F  &amp; F &amp; \color{red}{T}\\
-F &amp; T  &amp; F &amp; \color{red}{T}\\
-F &amp; F  &amp; F &amp; \color{red}{T} \\
-\hline
-\end{array}
-\]</span>
-That means that the sentence is false when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are mapped into the truth value <span class="math inline">\(T\)</span> and true otherwise.</p>
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 3.1  </strong></span>We may now calculate the truth value of the sentence <span class="math inline">\(\neg (p \wedge q)\)</span>:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&solved=1&v=2#v1:eyJidWlsZCI6IsKsKHAg4oinIHEpIn0=" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table" src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&amp;solved=1&amp;v=2#v1:eyJidWlsZCI6IsKsKHAg4oinIHEpIn0="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+</div>
+<div class="practice">
+<p><span class="practice-label"><strong>Practice</strong>. </span>Complete the truth table for the formula <span class="math inline">\((p \wedge q) \to r\)</span>:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&v=2#v1:eyJidWlsZCI6IigocCDiiKcgcSkg4oaSIHIpIn0=" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table" src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&amp;v=2#v1:eyJidWlsZCI6IigocCDiiKcgcSkg4oaSIHIpIn0="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+                  padding:3px 0;user-select:none">
+Show worked table
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&solved=1&v=2#v1:eyJidWlsZCI6IigocCDiiKcgcSkg4oaSIHIpIn0=" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Worked Truth Table" src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&amp;solved=1&amp;v=2#v1:eyJidWlsZCI6IigocCDiiKcgcSkg4oaSIHIpIn0="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+</details>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 3.2  </strong></span>We may calculate the truth value of the sentence
-<span class="math display">\[
-\neg (q \to p)
-\]</span>
-relative to every assignment in two stages:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|}
-\hline
-p  &amp; q &amp; (q  \to p) &amp; \neg (q \to p) \\
-\hline
-T &amp; T  &amp; T &amp; \color{red}{F} \\
-T &amp; F  &amp; T &amp; \color{red}{F}\\
-F &amp; T  &amp; F &amp; \color{red}{T}\\
-F &amp; F  &amp; T &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-That means that the sentence is true if <span class="math inline">\(p\)</span> is false and <span class="math inline">\(q\)</span> is true relative to an assignment and false otherwise.</p>
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 3.2  </strong></span>We may now calculate the truth value of the sentence <span class="math inline">\(\neg (q \to p)\)</span>:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&solved=1&v=2#v1:eyJidWlsZCI6IsKsKHEg4oaSIHApIn0=" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table" src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&amp;solved=1&amp;v=2#v1:eyJidWlsZCI6IsKsKHEg4oaSIHApIn0="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 3.3  </strong></span>We may now combine the two truth tables in order to produce a truth table for the complex sentence:
-<span class="math display">\[
-\neg (p \wedge q) \vee \neg (q \to p)
-\]</span>
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; \neg (p \wedge q) &amp; \neg (q \to p) &amp; (\neg (p \wedge q) \vee \neg (q \to p)) \\
-\hline
-T &amp; T  &amp; F &amp; F  &amp;  \color{red}{F}\\
-T &amp; F  &amp; T &amp; F &amp;  \color{red}{T}\\
-F &amp; T  &amp; T &amp; T &amp;  \color{red}{T}\\
-F &amp; F  &amp; T &amp; F  &amp; \color{red}{T}\\
-\hline
-\end{array}
-\]</span></p>
-<p>That means that the formula is true under an assignment unless it assigns the truth value <span class="math inline">\(T\)</span> to both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>., which is the situation depicted by the first row of the truth table.</p>
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 3.3  </strong></span>We may now combine the truth tables above in order to produce one for the more complex sentence <span class="math inline">\(\neg (p \wedge q) \vee \neg (q \to p)\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&solved=1&v=2#v1:eyJidWlsZCI6IijCrChwIOKIpyBxKSDiiKggwqwocSDihpIgcCkpIn0=" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table" src="https://gabriel-uzquiano.github.io/prop-truth-table/?card=table&amp;solved=1&amp;v=2#v1:eyJidWlsZCI6IijCrChwIOKIpyBxKSDiiKggwqwocSDihpIgcCkpIn0="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
 </div>
-<p><label for="tufte-mn-14" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-14" class="margin-toggle"><span class="marginnote"><span style="display: block;">How to construct a truth table</span></span>
+</div>
+<p><label for="tufte-mn-12" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-12" class="margin-toggle"><span class="marginnote"><span style="display: block;">How to construct a truth table</span></span>
 We want to develop a systematic procedure for constructing a complete truth table for a target sentence. We proceed in three steps:</p>
 <ol style="list-style-type: decimal">
 <li><p>We devote a column for each propositional variable occurring in a sentence followed by a column for each subsentence for the target sentence.</p></li>
@@ -322,23 +318,17 @@ We want to develop a systematic procedure for constructing a complete truth tabl
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 3.4  </strong></span>The formula
-<span class="math display">\[
-(p \to q) \vee (q \to p)
-\]</span>
-is a tautology.
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; (p \to q) &amp; (q \to p) &amp; (p \to  q) \vee (q \to p) \\
-\hline
-T &amp; T  &amp; T &amp; T  &amp;  \color{red}{T}\\
-T &amp; F  &amp; F &amp; T &amp;  \color{red}{T}\\
-F &amp; T  &amp; T &amp; F &amp;  \color{red}{T}\\
-F &amp; F  &amp; T &amp; T  &amp; \color{red}{T}\\
-\hline
-\end{array}
-\]</span></p>
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 3.4  </strong></span>The sentence <span class="math inline">\((p \to q) \vee (q \to p)\)</span> is a <em>tautology</em>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology&autorun=1#v1:eyJmb3JtdWxhcyI6WyIoKHAg4oaSIHEpIOKIqCAocSDihpIgcCkpIl19" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology&amp;autorun=1#v1:eyJmb3JtdWxhcyI6WyIoKHAg4oaSIHEpIOKIqCAocSDihpIgcCkpIl19"
+          style="width:100%;height:380px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
 </div>
 <dl>
 <dt>Contradiction</dt>
@@ -347,23 +337,17 @@ F &amp; F  &amp; T &amp; T  &amp; \color{red}{T}\\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 3.5  </strong></span>The formula
-<span class="math display">\[
-\neg  (p \to  q) \wedge (q \vee \neg  p)
-\]</span>
-is a contradiction.
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; \neg (p \to  q) &amp; (q \vee \neg p) &amp; \neg (p \to  q) \wedge (q \vee \neg p) \\
-\hline
-T &amp; T  &amp; F &amp; T  &amp;  \color{red}{F}\\
-T &amp; F  &amp; T &amp; F &amp;  \color{red}{F}\\
-F &amp; T  &amp; F &amp; T &amp;  \color{red}{F}\\
-F &amp; F  &amp; F &amp; T  &amp; \color{red}{F}\\
-\hline
-\end{array}
-\]</span></p>
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 3.5  </strong></span>The formula <span class="math inline">\(p \wedge \neg p\)</span> is a <em>contradiction</em>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology&autorun=1&type=contradiction#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgwqxwKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=tautology&amp;autorun=1&amp;type=contradiction#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgwqxwKSJdfQ=="
+          style="width:100%;height:340px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
 </div>
 </div>
 <div id="equivalence-and-consistency" class="section level2 unnumbered">
@@ -376,18 +360,16 @@ F &amp; F  &amp; F &amp; T  &amp; \color{red}{F}\\
 </dl>
 <div class="example">
 <p><span id="exm:unlabeled-div-23" class="example"><strong>Example 3.6  </strong></span>The formulas <span class="math inline">\(p \to q\)</span> and <span class="math inline">\(\neg p \vee q\)</span> are equivalent because they are true under exactly the same assignments.</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|c|c|}
-\hline
-p  &amp; q &amp; p \to  q &amp; \neg  p \vee  q  \\
-\hline
-T &amp; T  &amp; \color{red}{T} &amp;  \color{red}{T}\\
-T &amp; F  &amp; \color{red}{F}  &amp;   \color{red}{F}\\
-F &amp; T  &amp; \color{red}{T} &amp;   \color{red}{T}\\
-F &amp; F  &amp; \color{red}{T} &amp;  \color{red}{T} \\
-\hline
-\end{array}
-\]</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=equivalence&autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIowqxwIOKIqCBxKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=equivalence&amp;autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIowqxwIOKIqCBxKSJdfQ=="
+          style="width:100%;height:340px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
 </div>
 <dl>
 <dt>Consistency</dt>
@@ -396,23 +378,17 @@ F &amp; F  &amp; \color{red}{T} &amp;  \color{red}{T} \\
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 3.7  </strong></span>The set <span class="math inline">\(\{p \to q, q \to r, r \to \neg  p\}\)</span> consists of three formulas: <span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \to r\)</span> and <span class="math inline">\(r \to \neg p\)</span>. Now, the set is consistent because there is at least one assignment under which they are all true.
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \to  q &amp; q \to r &amp; r \to \neg p \\
-\hline
-T &amp; T  &amp; T  &amp; T &amp; T  &amp;  F\\
-T &amp; T &amp; F  &amp; T &amp; F &amp;  T\\
-T &amp; F &amp; T &amp; F &amp; T &amp;  F\\
-T &amp; F &amp; F &amp; F &amp; T  &amp; T\\
-F &amp; T &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
-F &amp; T &amp; F &amp; T &amp; F  &amp; T\\
-F &amp; F &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{T}\\
-F &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{T}\\
-\hline
-\end{array}
-\]</span></p>
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 3.7  </strong></span>The set <span class="math inline">\(\{p \to q, q \to r, r \to \neg  p\}\)</span> consists of three formulas: <span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \to r\)</span> and <span class="math inline">\(r \to \neg p\)</span>. Now, the set is consistent because there is at least one assignment under which they are all true.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=consistency&autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIocSDihpIgcikiLCIociDihpIgwqxwKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=consistency&amp;autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgcSkiLCIocSDihpIgcikiLCIociDihpIgwqxwKSJdfQ=="
+          style="width:100%;height:340px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
 </div>
 </div>
 <div id="validity" class="section level2 unnumbered">
@@ -430,24 +406,18 @@ F &amp; F &amp; F &amp; \color{red}{T} &amp; \color{red}{T} &amp; \color{red}{T}
 <span class="math inline">\(p \to \neg r\)</span><br />
 <span class="math inline">\(\neg r  \vee p\)</span></p>
 </div>
-<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \vee  q &amp; p \to \neg r &amp; \neg r \vee p \\
-\hline
-T &amp; T  &amp; T  &amp; T &amp; F  &amp;  T\\
-T &amp; T &amp; F  &amp; T &amp; T &amp;  T\\
-T &amp; F &amp; T &amp; T &amp; F &amp;  T\\
-T &amp; F &amp; F &amp; T &amp; T  &amp; T\\
-F &amp; T &amp; T &amp; \color{red}{T} &amp; \color{red}{T}  &amp; \color{red}{F}\\
-F &amp; T &amp; F &amp; T &amp; T  &amp; T\\
-F &amp; F &amp; T &amp; F &amp; T  &amp;  F\\
-F &amp; F &amp; F &amp; F &amp; T &amp; T\\
-\hline
-\end{array}
-\]</span>
-The fifth row in the truth table corresponds to an assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>invalid</em>.</p>
+<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity&autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCIocCDihpIgwqxyKSIsIijCrHIg4oioIHApIl19" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity&amp;autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCIocCDihpIgwqxyKSIsIijCrHIg4oioIHApIl19"
+          style="width:100%;height:340px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+<p>The fifth row in the truth table corresponds to an assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>invalid</em>.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-26" class="example"><strong>Example 3.9  </strong></span>Consider the argument given below:</p>
@@ -456,26 +426,20 @@ The fifth row in the truth table corresponds to an assignment on which the two p
 <span class="math inline">\(\neg (p \wedge  r)\)</span><br />
 <span class="math inline">\(r  \to q\)</span></p>
 </div>
-<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \vee  q &amp; \neg  (p \wedge r) &amp; r \to q \\
-\hline
-T &amp; T  &amp; T  &amp; T &amp; F  &amp;  T\\
-T &amp; T &amp; F  &amp; T &amp; T &amp;  T\\
-T &amp; F &amp; T &amp; T &amp; F &amp;  F\\
-T &amp; F &amp; F &amp; T &amp; T  &amp; T\\
-F &amp; T &amp; T &amp; T &amp; T  &amp; T\\
-F &amp; T &amp; F &amp; T &amp; T  &amp; T\\
-F &amp; F &amp; T &amp; F &amp; T  &amp;  F\\
-F &amp; F &amp; F &amp; F &amp; T &amp; T\\
-\hline
-\end{array}
-\]</span>
-There is in this case no assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>valid</em>.</p>
+<p>To assess its validity, we use a truth table to check whether there is some assignment on which the premises are true and the conclusion false:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity&autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCLCrChwIOKIpyByKSIsIihyIOKGkiBxKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Truth Table Check" src="https://gabriel-uzquiano.github.io/prop-truth-table/?mode=validity&amp;autorun=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKggcSkiLCLCrChwIOKIpyByKSIsIihyIOKGkiBxKSJdfQ=="
+          style="width:100%;height:340px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
 </div>
-<p><label for="tufte-mn-15" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-15" class="margin-toggle"><span class="marginnote"><span style="display: block;">The Search for Counterexample Method</span></span></p>
+<p>There is in this case no assignment on which the two premises are true and the conclusion is false. So, we conclude that the argument is <em>valid</em>.</p>
+</div>
+<p><label for="tufte-mn-13" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-13" class="margin-toggle"><span class="marginnote"><span style="display: block;">The Search for Counterexample Method</span></span></p>
 <p>The method of truth tables is perfectly general, since it enables one to survey all assignments of truth values to the sentence letters involved in the argument. One issue, however, is that it may require one to draw very complex and cumbersome truth tables in cases in which more than 3 propositional variables are involved in the argument. A truth table for an argument in which 5 propositional variables occur requires <span class="math inline">\(2^5\)</span>, i.e., 32, rows; <span class="math inline">\(2^6\)</span>, i.e., 64 rows, if the argument involves 6 propositional variables, etc.</p>
 <p>In those cases, we may proceed differently: we search for a counterexample. That is, we set out to construct an assignment on which the conclusion is false and the premises are true. There are two eventual outcomes to this procedure. If we succeed, then the argument is invalid; if the construction of the assignment breaks down, then the argument is valid.</p>
 <div class="example">
@@ -485,47 +449,18 @@ There is in this case no assignment on which the two premises are true and the c
 <span class="math inline">\(r \to \neg q\)</span><br />
 <span class="math inline">\(p \to r\)</span></p>
 </div>
-<p>We proceed to outline an assignment that makes the conclusion false:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \wedge  q &amp; r\to \neg q &amp; p \to r \\
-\hline
-&amp;   &amp;  &amp;  &amp;   &amp;  \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-That requires <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span> to be true and false, respectively:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \wedge  q &amp; r \to \neg q &amp; p \to q \\
-\hline
-T &amp;   &amp; F &amp;  &amp;   &amp;  \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-Once we do, we set out to make the premises true. In particular, we realize we must make <span class="math inline">\(q\)</span> true in order to verify <span class="math inline">\(p \wedge q\)</span>:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \wedge  q &amp; r \to \neg q &amp; p \to r \\
-\hline
-T &amp; T  &amp; F &amp; \color{red}{T}  &amp;   &amp;  \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-On that assignment, we find that <span class="math inline">\(r \to \neg q\)</span> comes out true as well.
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p \wedge  q &amp; r \to \neg q &amp; p \to r \\
-\hline
-T &amp; T  &amp; F &amp; \color{red}{T}  &amp;  \color{red}{T} &amp;  \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-So, we found an assignment on which all the premises are true and the conclusion is false. The argument is <em>invalid</em>.</p>
+<p>We only consider rows corresponding to assignments on which the conclusion is false. Since the conclusion is a conditional <span class="math inline">\(p \to r\)</span>, we need only look at assignments on which <span class="math inline">\(p\)</span> and <span class="math inline">\(r\)</span> are true and false, respectively:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgcSkiLCIociDihpIgwqxxKSIsIihwIOKGkiByKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Counterexample Search" src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDiiKcgcSkiLCIociDihpIgwqxxKSIsIihwIOKGkiByKSJdfQ=="
+          style="width:100%;height:380px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+<p>Once we do, we check if the premises can be true on either assignment, and we find that at least one assignment verifies both premises. So, we found an assignment on which all the premises are true and the conclusion is false. The argument is <em>invalid</em>.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-28" class="example"><strong>Example 3.11  </strong></span>Consider the argument given below:</p>
@@ -535,89 +470,54 @@ So, we found an assignment on which all the premises are true and the conclusion
 <span class="math inline">\((r \to p_2) \wedge (p_2 \to q)\)</span><br />
 <span class="math inline">\(q \vee r\)</span></p>
 </div>
-<p>We set out to make the conclusion false:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to \neg (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
-\hline
-&amp;  &amp;  &amp;   &amp;   &amp; &amp; &amp; &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-That requires <span class="math inline">\(q\)</span> and <span class="math inline">\(r\)</span> to be respectively false.
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to \neg (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
-\hline
-&amp; F &amp; F  &amp;   &amp;   &amp; &amp; &amp; &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-That in turn makes <span class="math inline">\((q \rightarrow r)\)</span> true and <span class="math inline">\(\neg (q \rightarrow r)\)</span> false. In order to make the first premise true, we must make <span class="math inline">\(p\)</span> false:
-<span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to \neg (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
-\hline
-F &amp; F &amp; F  &amp;   &amp;   &amp; \color{red}{T} &amp; &amp; &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span></p>
-<p>But notice that the second premise will now come out <em>false</em> under the assignment. Since <span class="math inline">\(p\)</span> is false, <span class="math inline">\(\neg p\)</span> will be true as well as the disjunction <span class="math inline">\(\neg p_1 \vee \neg p\)</span>, which makes its negation false.</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|c|c|c|c|c|c|c|}
-\hline
-p  &amp; q &amp; r &amp; p_1 &amp; p_2 &amp; p \to \neg (q \rightarrow r) &amp; \neg (\neg p_1 \vee \neg p) &amp; (r \to p_2) \wedge (p_2 \to q) &amp; q \vee r \\
-\hline
-F &amp; F &amp; F  &amp;   &amp;   &amp; \color{red}{T} &amp; \color{red}{F \ !}  &amp; &amp; \color{red}{F} \\
-\hline
-\end{array}
-\]</span>
-We conclude that there is <em>no</em> assignment under which the premises are true and the conclusion is false. So, the argument is valid.</p>
+<p>We set out to make the conclusion false:</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgwqwocSDihpIgcikpIiwiwqwowqxw4oKBIOKIqCDCrHApIiwiKChyIOKGkiBw4oKCKSDiiKcgKHDigoIg4oaSIHEpKSIsIihxIOKIqCByKSJdfQ==" target="_blank"
+     style="position:absolute;top:8px;right:8px;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Counterexample Search" src="https://gabriel-uzquiano.github.io/prop-truth-table/?search=1#v1:eyJmb3JtdWxhcyI6WyIocCDihpIgwqwocSDihpIgcikpIiwiwqwowqxw4oKBIOKIqCDCrHApIiwiKChyIOKGkiBw4oKCKSDiiKcgKHDigoIg4oaSIHEpKSIsIihxIOKIqCByKSJdfQ=="
+          style="width:100%;height:440px;border:1px solid #ddd;border-radius:8px;display:block"
+          loading="lazy" allow="fullscreen"></iframe></p>
+</div>
+<p>In this case, we find that there are at least 8 rows on which the conclusion is false. That in turn makes <span class="math inline">\((q \rightarrow r)\)</span> true and <span class="math inline">\(\neg (q \rightarrow r)\)</span> false. In order to make the first premise true, we must make <span class="math inline">\(p\)</span> false. So, we can restrict attention to the last 4 rows of the partial truth table. But notice that the second premise will now come out <em>false</em> under the assignment. Since <span class="math inline">\(p\)</span> is false, <span class="math inline">\(\neg p\)</span> will be true as well as the disjunction <span class="math inline">\(\neg p_1 \vee \neg p\)</span>, which makes its negation false. We conclude that there is <em>no</em> assignment under which the premises are true and the conclusion is false. So, the argument is valid.</p>
 </div>
 </div>
 <div id="exercises-2" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
-<li><p>Add quotation marks to the following sentences in order to obtain a true sentence of English. If there is more than one solution, make sure to explain why.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Los Angeles names a city in Southern California.</p></li>
-<li><p>Los is part of Los Angeles.</p></li>
-<li><p>Snow is white is a grammatical sentence of English.</p></li>
-<li><p>What is monosyllabic but whatever is polysyllabic.</p></li>
-</ol></li>
-<li><p>Determine whether each of the following expressions is a sentence of propositional logic.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\neg \neg A\)</span></p></li>
-<li><p><span class="math inline">\((p \to (\neg q))\)</span></p></li>
-<li><p><span class="math inline">\((p)\)</span></p></li>
-<li><p><span class="math inline">\((q \to (\neg  \neg  p \vee r))\)</span></p></li>
-</ol></li>
-<li><p>Determine whether each of the following expressions is an <em>abbreviation</em> for a sentence of propositional logic.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(p \to (q \wedge r)\)</span></p></li>
-<li><p><span class="math inline">\(p \to q \to r\)</span></p></li>
-<li><p><span class="math inline">\(p \vee (q \wedge r)\)</span></p></li>
-<li><p><span class="math inline">\(p \to (q\wedge r \to q)\)</span></p></li>
-</ol></li>
 <li><p>Use the truth table method to determine whether each of the following sentences is a <em>tautology</em>, a <em>contradiction</em>, or neither a tautology or a contradiction.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(((p \vee q) \to \neg (p \to q))\)</span></p></li>
 <li><p><span class="math inline">\(p \to (q \to p)\)</span></p></li>
 <li><p><span class="math inline">\(q \to (q \to p)\)</span></p></li>
-</ol></li>
+</ol>
+<div style="margin:1em 0">
+<p><iframe title="Truth Table App" src="https://gabriel-uzquiano.github.io/prop-truth-table/?v=2&mode=tautology"
+       style="width:100%;height:700px;border:1px solid #ddd;border-radius:8px;display:block"
+       loading="lazy" allow="fullscreen"></iframe></p>
+</div></li>
 <li><p>Use the truth table method to determine whether the following pairs of sentences are logically equivalent.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(p \to q\)</span>, <span class="math inline">\(q \wedge \neg (p \vee q)\)</span></p></li>
 <li><p><span class="math inline">\(p \to p\)</span>, <span class="math inline">\(q \to q\)</span></p></li>
-</ol></li>
+</ol>
+<div style="margin:1em 0">
+<p><iframe title="Truth Table App" src="https://gabriel-uzquiano.github.io/prop-truth-table/?v=2&mode=equivalence"
+       style="width:100%;height:500px;border:1px solid #ddd;border-radius:8px;display:block"
+       loading="lazy" allow="fullscreen"></iframe></p>
+</div></li>
 <li><p>Use the truth table method to determine whether the following sets of sentences are consistent.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(\{ p, q, \neg (p \wedge q)\}\)</span></p></li>
 <li><p><span class="math inline">\(\{p \vee q, q \to r, \neg (p \wedge r)\}\)</span></p></li>
-</ol></li>
+</ol>
+<div style="margin:1em 0">
+<p><iframe title="Truth Table App" src="https://gabriel-uzquiano.github.io/prop-truth-table/?v=2&mode=consistency"
+       style="width:100%;height:500px;border:1px solid #ddd;border-radius:8px;display:block"
+       loading="lazy" allow="fullscreen"></iframe></p>
+</div></li>
 <li><p>Use the truth table method to determine whether the following arguments are valid.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(p \to q\)</span><br />
@@ -626,7 +526,12 @@ We conclude that there is <em>no</em> assignment under which the premises are tr
 <li><p><span class="math inline">\(q \vee (p \wedge r)\)</span><br />
 <span class="math inline">\(\neg q\)</span><br />
 <span class="math inline">\(r\)</span></p></li>
-</ol></li>
+</ol>
+<div style="margin:1em 0">
+<p><iframe title="Truth Table App" src="https://gabriel-uzquiano.github.io/prop-truth-table/?v=2&mode=validity"
+       style="width:100%;height:500px;border:1px solid #ddd;border-radius:8px;display:block"
+       loading="lazy" allow="fullscreen"></iframe></p>
+</div></li>
 <li><p>Use the search-for-counterexample method to determine whether the following arguments are valid.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(p \to (q \vee r)\)</span><br />

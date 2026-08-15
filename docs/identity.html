@@ -9,7 +9,7 @@
 <meta property="og:type" content="book" />
 
 <meta property="og:description" content="This is a textbook for PHIL 220g. Introduction to Logic." />
-<meta name="github-repo" content="rstudio/bookdown-demo" />
+<meta name="github-repo" content="gabriel-uzquiano/logic" />
 
 <meta name="author" content="Gabriel Uzquiano" />
 
@@ -128,19 +128,6 @@ MathJax.Hub.Config({
 <li><a href="identity.html#uses-of-identity" id="toc-uses-of-identity">Uses of Identity</a></li>
 <li><a href="identity.html#exercises-10" id="toc-exercises-10">Exercises</a></li>
 </ul></li>
-<li class="part"><span><b>IV Appendix</b></span></li>
-<li class="has-sub"><a href="solutions-to-selected-exercises.html#solutions-to-selected-exercises" id="toc-solutions-to-selected-exercises"><span class="toc-section-number">12</span> Solutions to Selected Exercises</a>
-<ul>
-<li><a href="solutions-to-selected-exercises.html#reason-and-argument" id="toc-reason-and-argument">1. Reason and Argument</a></li>
-<li><a href="solutions-to-selected-exercises.html#propositional-logic" id="toc-propositional-logic">2. Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-propositional-logic" id="toc-translation-into-propositional-logic">3. Translation into Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-propositional-logic" id="toc-natural-deduction-for-propositional-logic">4. Natural Deduction for Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-language-and-propositional-logic-1" id="toc-natural-language-and-propositional-logic-1">5. Natural Language and Propositional Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#quantificational-logic" id="toc-quantificational-logic">6. Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#translation-into-quantificational-logic" id="toc-translation-into-quantificational-logic">7. Translation into Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#natural-deduction-for-quantificational-logic" id="toc-natural-deduction-for-quantificational-logic">8. Natural Deduction for Quantificational Logic</a></li>
-<li><a href="solutions-to-selected-exercises.html#identity-1" id="toc-identity-1">10. Identity</a></li>
-</ul></li>
 </ul>
 </div>
 </div>
@@ -194,7 +181,7 @@ is an <em>atomic formula</em> of quantificational logic and identity.</p>
 </dd>
 </dl>
 <div class="example">
-<p><span id="exm:unlabeled-div-90" class="example"><strong>Example 11.1  </strong></span>Each of the expressions below are atomic formulas of quantificational logic with identity:
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 11.1  </strong></span>Each of the expressions below are atomic formulas of quantificational logic with identity:
 <span class="math display">\[
 \begin{array}{c}
 x = y \\ a = x\\ a = b\\ \dots
@@ -230,7 +217,7 @@ is a <em>formula</em>.<br />
 <p>Atomic Formulas</p>
 <p><span class="math inline">\(\tau_1 = \tau_2\)</span> is true in a model <span class="math inline">\(M\)</span> under an assignment <span class="math inline">\(\alpha\)</span> if the denotation of <span class="math inline">\(\tau_1\)</span> relative to <span class="math inline">\(\alpha\)</span> is one and the same object as the denotation of <span class="math inline">\(\tau_2\)</span> relative to <span class="math inline">\(\alpha\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 11.2  </strong></span><label for="tufte-mn-105" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-105" class="margin-toggle"><span class="marginnote"><span style="display: block;"><span class="math inline"><span class="math inline">\(D = \{1, 2\}\)</span></span><br />
+<p><span id="exm:unlabeled-div-85" class="example"><strong>Example 11.2  </strong></span><label for="tufte-mn-82" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-82" class="margin-toggle"><span class="marginnote"><span style="display: block;"><span class="math inline"><span class="math inline">\(D = \{1, 2\}\)</span></span><br />
 <span class="math inline"><span class="math inline">\(I(P) = \{1, 2\}\)</span></span><br />
 <span class="math inline"><span class="math inline">\(I(Q) = \{2\}\)</span></span><br />
 <span class="math inline"><span class="math inline">\(I(R) = \{\langle 1,
@@ -253,68 +240,91 @@ Then:</p>
 </ul>
 </div>
 <p>The rest of the definition of truth in a model relative to an assignment and truth in a model carries over to quantificational logic with identity without incident. So do the definitions of logical truth, equivalence, consistency, and validity.</p>
-<p><label for="tufte-mn-106" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-106" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.4.png" style="display:block; margin: 0 auto;"><br />
-</span>
-<span style="display: block;"><span class="math inline"><span class="math inline">\(P: \text{enclosed by a
-circle}\)</span></span><br />
-<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
-<span class="math inline"><span class="math inline">\(b: p_2\)</span></span></span></span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 11.3  </strong></span>The formula <span class="math inline">\((Pa \to Pb) \to \forall x (x = a \to x = b))\)</span> is <em>not</em> a logical truth.</p>
-<p>The model depicted by the diagram verifies the antecedent of the conditional but not the consequent.</p>
+<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 11.3  </strong></span>The formula <span class="math inline">\((Pa \to Pb) \to \forall x (x = a \to x = b)\)</span> is <em>not</em> a logical truth.</p>
+<p><label for="mc-mn-12" class="margin-toggle">&#8853;</label> <input type="checkbox" id="mc-mn-12" class="margin-toggle"/> <span class="marginnote">   <iframe title="Model graph" src="https://gabriel-uzquiano.github.io/model-checker/?card=graph&amp;zoom=0.8#v2:eyJmIjpbIihQYeKGklBiKeKGkuKIgHgoeD1h4oaSeD1iKSJdLCJkIjpbInAxIiwicDIiXSwiaSI6eyJhIjoicDEiLCJiIjoicDIiLCJQIjpbInAxIiwicDIiXX0sInMiOnt9fQ=="           style="width:100%;min-width:0;height:560px;border:1px solid #ddd;                  border-radius:6px;display:block"           loading="lazy"></iframe> </span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/#v2:eyJmIjpbIihQYeKGklBiKeKGkuKIgHgoeD1h4oaSeD1iKSJdLCJkIjpbInAxIiwicDIiXSwiaSI6eyJhIjoicDEiLCJiIjoicDIiLCJQIjpbInAxIiwicDIiXX0sInMiOnt9fQ==" target="_blank"
+     style="position:absolute;top:6px;right:6px;font-size:0.7em;
+            background:#fff;padding:1px 6px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model#v2:eyJmIjpbIihQYeKGklBiKeKGkuKIgHgoeD1h4oaSeD1iKSJdLCJkIjpbInAxIiwicDIiXSwiaSI6eyJhIjoicDEiLCJiIjoicDIiLCJQIjpbInAxIiwicDIiXX0sInMiOnt9fQ=="
+          style="width:100%;height:600px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+<p>The model verifies the antecedent of the conditional but not the consequent.</p>
 <ul>
-<li><p>The formula <span class="math inline">\(Pa \to Pb\)</span> is true in the model because <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> are each enclosed by a circle.</p></li>
-<li><p>The formula <span class="math inline">\(\forall x (x = a \to x = b)\)</span> is not true in the model because <span class="math inline">\(x = a \to x = b\)</span> is not true no matter what we assign to <span class="math inline">\(x\)</span>. That is because <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote different objects in the model.</p></li>
+<li><p>The formula <span class="math inline">\(Pa \to Pb\)</span> is true in the model because <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> are each in <span class="math inline">\(I(P)\)</span>.</p></li>
+<li><p>The formula <span class="math inline">\(\forall x (x = a \to x = b)\)</span> is not true in the model because <span class="math inline">\(x = a \to x = b\)</span> is not true when we assign <span class="math inline">\(p_1\)</span> to <span class="math inline">\(x\)</span>. That is because <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote different objects in the model.</p></li>
 </ul>
 </div>
-<p><label for="tufte-mn-107" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-107" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.6.png" style="display:block; margin: 0 auto;"><br />
-</span>
-<span style="display: block;"><span class="math inline"><span class="math inline">\(P: \text{enclosed by a
-circle}\)</span></span><br />
-<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
-<span class="math inline"><span class="math inline">\(b: p_1\)</span></span></span></span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-93" class="example"><strong>Example 11.4  </strong></span>Consider the following argument:</p>
+<p><span id="exm:unlabeled-div-87" class="example"><strong>Example 11.4  </strong></span>Consider the following argument:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\forall x (x = a \to Px)\)</span></li>
 <li><span class="math inline">\(a = b\)</span></li>
 <li><span class="math inline">\(\forall x (Px \to x = b)\)</span></li>
 </ol>
-<p>The model depicted by the diagram verifies the premises but falsifies the conclusion.</p>
-<ul>
-<li><p>The formula <span class="math inline">\(\forall x (x = a \to Px)\)</span> is true in the model because <span class="math inline">\((x = a \to P^1x)\)</span> is true no matter what we assign to <span class="math inline">\(x\)</span>: if we assign <span class="math inline">\(p_1\)</span> to <span class="math inline">\(x\)</span>, then both antecedent and consequent come out true, but if we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>, the antecedent is false making the conditional true.</p></li>
-<li><p>The formula <span class="math inline">\(a =b\)</span> is true in the model because the denotation of <span class="math inline">\(a\)</span> in the model is one and the same object as the denotation of <span class="math inline">\(b\)</span> in the model.</p></li>
-<li><p>The formula <span class="math inline">\(\forall x (Px \to x = b)\)</span> is false in the model because <span class="math inline">\((Px \to x = a)\)</span> is not true when we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>: <span class="math inline">\(p_2\)</span> is enclosed by a circle, but it is not one and the same object as the denotation of <span class="math inline">\(a\)</span>. We conclude that the argument is invalid.</p></li>
-</ul>
+<p>The model below verifies the premises but falsifies the conclusion.</p>
+<p><label for="mc-mn-13" class="margin-toggle">&#8853;</label> <input type="checkbox" id="mc-mn-13" class="margin-toggle"/> <span class="marginnote">   <iframe title="Model graph" src="https://gabriel-uzquiano.github.io/model-checker/?card=graph&amp;zoom=0.8&amp;mode=validity#v2:eyJmIjpbIuKIgHgoeD1h4oaSUHgpIiwiYT1iIiwi4oiAeChQeOKGkng9YikiXSwiZCI6WyJwMSIsInAyIl0sImkiOnsiYSI6InAxIiwiYiI6InAxIiwiUCI6WyJwMSIsInAyIl19LCJzIjp7fX0="           style="width:100%;min-width:0;height:560px;border:1px solid #ddd;                  border-radius:6px;display:block"           loading="lazy"></iframe> </span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIuKIgHgoeD1h4oaSUHgpIiwiYT1iIiwi4oiAeChQeOKGkng9YikiXSwiZCI6WyJwMSIsInAyIl0sImkiOnsiYSI6InAxIiwiYiI6InAxIiwiUCI6WyJwMSIsInAyIl19LCJzIjp7fX0=" target="_blank"
+     style="position:absolute;top:6px;right:6px;font-size:0.7em;
+            background:#fff;padding:1px 6px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model&amp;mode=validity#v2:eyJmIjpbIuKIgHgoeD1h4oaSUHgpIiwiYT1iIiwi4oiAeChQeOKGkng9YikiXSwiZCI6WyJwMSIsInAyIl0sImkiOnsiYSI6InAxIiwiYiI6InAxIiwiUCI6WyJwMSIsInAyIl19LCJzIjp7fX0="
+          style="width:100%;height:565px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p><label for="tufte-mn-108" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-108" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ex%209.7.png" style="display:block; margin: 0 auto;"><br />
-</span>
-<span style="display: block;"><span class="math inline"><span class="math inline">\(R: \text{points to}\)</span></span><br />
-<span class="math inline"><span class="math inline">\(a : p_1\)</span></span><br />
-<span class="math inline"><span class="math inline">\(b: p_2\)</span></span><br />
-<span class="math inline"><span class="math inline">\(c: p_3\)</span></span><br />
-<span class="math inline"><span class="math inline">\(d: p_1\)</span></span></span></span></p>
-<div class="example">
-<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 11.5  </strong></span>Consider the following argument:</p>
+<ul>
+<li><p>The formula <span class="math inline">\(\forall x (x = a \to Px)\)</span> is true in the model because <span class="math inline">\((x = a \to Px)\)</span> is true whatever we assign to <span class="math inline">\(x\)</span>: if we assign <span class="math inline">\(p_1\)</span> to <span class="math inline">\(x\)</span>, then antecedent and consequent come out true, but if we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>, then the antecedent is false making the conditional true.</p></li>
+<li><p>The formula <span class="math inline">\(a =b\)</span> is true in the model because the denotation of <span class="math inline">\(a\)</span> in the model is the same object as the denotation of <span class="math inline">\(b\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>.</p></li>
+<li><p>The formula <span class="math inline">\(\forall x (Px \to x = b)\)</span> is false in the model because <span class="math inline">\((Px \to x = b)\)</span> is not true when we assign <span class="math inline">\(p_2\)</span> to <span class="math inline">\(x\)</span>: <span class="math inline">\(p_2\)</span> in in <span class="math inline">\(I(P)\)</span>, but it is not one and the same object as the denotation of <span class="math inline">\(b\)</span>.</p></li>
+</ul>
+<p>We conclude that the argument is invalid.</p>
+</div>
+<div class="practice">
+<p><span class="practice-label"><strong>Practice</strong>. </span>Use a model to establish the invalidity of the argument:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(Rab \wedge \neg Rac\)</span></li>
 <li><span class="math inline">\(\exists x Rcx \wedge \neg Rad\)</span></li>
 <li><span class="math inline">\(\neg a = d\)</span></li>
 </ol>
-<p>This model depicted by the diagram verifies the premises but not the conclusion.</p>
-<ul>
-<li><p>The formula <span class="math inline">\(Rab \wedge \neg Rac\)</span> is true in thhe model because the denotation of <span class="math inline">\(a\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>, points to the denotation of <span class="math inline">\(b\)</span> in the model, namely, <span class="math inline">\(p_2\)</span>, but <span class="math inline">\(p_1\)</span>, does <em>not</em> point to the denotation of <span class="math inline">\(c\)</span> in the model, namely, <span class="math inline">\(p_3\)</span>.</p></li>
-<li><p>The formula <span class="math inline">\(\exists x Rcx \wedge \neg Rad\)</span> is true in the model because the denotation of <span class="math inline">\(c\)</span> in the model, namely, <span class="math inline">\(p_3\)</span>, points to something but the denotation of <span class="math inline">\(a\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>, does not point to the denotation of <span class="math inline">\(d\)</span> in the model, namely <span class="math inline">\(p_1\)</span>.</p></li>
-<li><p>The formula <span class="math inline">\(\neg a = d\)</span> is false in the model because the denotation of <span class="math inline">\(a\)</span> in the model is one and the same object as the denotation of <span class="math inline">\(d\)</span> in the model, namely, <span class="math inline">\(p_1\)</span>.</p></li>
-</ul>
-<p>We conclude that the argument is invalid.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ==" target="_blank"
+     style="position:absolute;top:6px;right:6px;font-size:0.7em;
+            background:#fff;padding:1px 6px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbXSwiaSI6e30sInMiOnt9fQ=="
+          style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+                  padding:3px 0;user-select:none">
+Show a countermodel
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbInAxIiwicDIiLCJwMyJdLCJpIjp7ImEiOiJwMSIsImIiOiJwMiIsImMiOiJwMyIsImQiOiJwMSIsIlIiOltbInAxIiwicDIiXSxbInAzIiwicDIiXV19LCJzIjp7fX0=" target="_blank"
+     style="position:absolute;top:6px;right:6px;font-size:0.7em;
+            background:#fff;padding:1px 6px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIlJhYuKIp8KsUmFjIiwi4oiDeChSY3gp4oinwqxSYWQiLCLCrGE9ZCJdLCJkIjpbInAxIiwicDIiLCJwMyJdLCJpIjp7ImEiOiJwMSIsImIiOiJwMiIsImMiOiJwMyIsImQiOiJwMSIsIlIiOltbInAxIiwicDIiXSxbInAzIiwicDIiXV19LCJzIjp7fX0="
+          style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
+</details>
 </div>
 </div>
 <div id="natural-deduction-1" class="section level2 unnumbered">
 <h2>Natural Deduction</h2>
 <p>We now expand the natural deduction system for quantificational logic with introduction and elimination rules for identity.</p>
 <p>There is a simple introduction rule for identity:</p>
-<p><label for="tufte-mn-109" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-109" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/idi.png"><br />
+<p><label for="tufte-mn-83" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-83" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/idi.png"><br />
 Identity Introduction</span></span></p>
 <dl>
 <dt>Identity Introduction</dt>
@@ -322,12 +332,21 @@ Identity Introduction</span></span></p>
 <p>You may write an identity <span class="math inline">\(\tau = \tau\)</span> by itself on a line.</p>
 </dd>
 </dl>
-<p>The rationale for this rule is that since as a matter of logic, all objects are self-identical, whatevery <span class="math inline">\(\tau\)</span> may be, it will likewise identical to itself.</p>
+<p>The rationale for this rule is that since as a matter of logic, all objects are self-identical, whatever <span class="math inline">\(\tau\)</span> may be, it will likewise identical to itself.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 11.6  </strong></span><span class="math inline">\(\forall x (x = x \to x = b) \vdash \forall x \ x = b\)</span>.</p>
-<p><img src="images/ex%209.11.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 11.5  </strong></span><span class="math inline">\(\forall x (x = x \to x = b) \vdash \forall x \ x = b\)</span>.</p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28x%3Dx%E2%86%92x%3Db%29&c=%E2%88%80x%20x%3Db&pr=%E2%88%80x%28x%3Dx%E2%86%92x%3Db%29%20%20P%0Aa%3Da%E2%86%92a%3Db%20%20%E2%88%80E%20%201%0Aa%3Da%20%20%3DI%0Aa%3Db%20%20%E2%86%92E%20%202%2C%203%0A%E2%88%80x%20x%3Db%20%20%E2%88%80I%20%204" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28x%3Dx%E2%86%92x%3Db%29&amp;c=%E2%88%80x%20x%3Db&amp;pr=%E2%88%80x%28x%3Dx%E2%86%92x%3Db%29%20%20P%0Aa%3Da%E2%86%92a%3Db%20%20%E2%88%80E%20%201%0Aa%3Da%20%20%3DI%0Aa%3Db%20%20%E2%86%92E%20%202%2C%203%0A%E2%88%80x%20x%3Db%20%20%E2%88%80I%20%204"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
 </div>
-<p><label for="tufte-mn-110" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-110" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ide.png"><br />
+</div>
+<p><label for="tufte-mn-84" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-84" class="margin-toggle"><span class="marginnote"><span style="display: block;"><img src="images/ide.png"><br />
 Identity Elimination</span></span></p>
 <dl>
 <dt>Identity Elimination</dt>
@@ -337,8 +356,17 @@ Identity Elimination</span></span></p>
 </dl>
 <p>The rationale for the elimination rule is that given <span class="math inline">\(\tau_1 = \tau_2\)</span>, <span class="math inline">\(\tau_1\)</span> is one the same object as <span class="math inline">\(\tau_2\)</span>, which means that whatever is true of one should remain true of the other.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-96" class="example"><strong>Example 11.7  </strong></span><span class="math inline">\(\forall x (\neg Rbx \to (Px \to x = b)), Rab \wedge \neg Raa, Rba \to \neg Rab \vdash \neg Pa\)</span></p>
-<p><img src="images/ex%209.10.png" style="display:block; margin: 0 auto;"></p>
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 11.6  </strong></span><span class="math inline">\(\forall x (\neg Rbx \to (Px \to x = b)), Rab \wedge \neg Raa, Rba \to \neg Rab \vdash \neg Pa\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28%C2%ACRbx%E2%86%92%28Px%E2%86%92x%3Db%29%29%2C%20Rab%E2%88%A7%C2%ACRaa%2C%20Rba%E2%86%92%C2%ACRab&c=%C2%ACPa&pr=%E2%88%80x%28%C2%ACRbx%E2%86%92%28Px%E2%86%92x%3Db%29%29%20%20P%0ARab%E2%88%A7%C2%ACRaa%20%20P%0ARba%E2%86%92%C2%ACRab%20%20P%0ARab%20%20%E2%88%A7E%20%202%0A%C2%ACRaa%20%20%E2%88%A7E%20%202%0A%20%20Pa%20%20A%0A%20%20%20%20Rba%20%20A%0A%20%20%20%20%C2%ACRab%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%208%0A%20%20%C2%ACRba%20%20%C2%ACI%20%207%E2%80%939%0A%20%20%C2%ACRba%E2%86%92%28Pa%E2%86%92a%3Db%29%20%20%E2%88%80E%20%201%0A%20%20Pa%E2%86%92a%3Db%20%20%E2%86%92E%20%2011%2C%2010%0A%20%20a%3Db%20%20%E2%86%92E%20%2012%2C%206%0A%20%20%C2%ACRab%20%20%3DE%20%2013%2C%205%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%2014%0A%C2%ACPa%20%20%C2%ACI%20%206%E2%80%9315" target="_blank"
+     style="position:absolute;top:0;right:0;font-size:0.72em;
+            background:#fff;padding:2px 7px;border:1px solid #ccc;
+            border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=verify#p=%E2%88%80x%28%C2%ACRbx%E2%86%92%28Px%E2%86%92x%3Db%29%29%2C%20Rab%E2%88%A7%C2%ACRaa%2C%20Rba%E2%86%92%C2%ACRab&amp;c=%C2%ACPa&amp;pr=%E2%88%80x%28%C2%ACRbx%E2%86%92%28Px%E2%86%92x%3Db%29%29%20%20P%0ARab%E2%88%A7%C2%ACRaa%20%20P%0ARba%E2%86%92%C2%ACRab%20%20P%0ARab%20%20%E2%88%A7E%20%202%0A%C2%ACRaa%20%20%E2%88%A7E%20%202%0A%20%20Pa%20%20A%0A%20%20%20%20Rba%20%20A%0A%20%20%20%20%C2%ACRab%20%20%E2%86%92E%20%203%2C%207%0A%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%208%0A%20%20%C2%ACRba%20%20%C2%ACI%20%207%E2%80%939%0A%20%20%C2%ACRba%E2%86%92%28Pa%E2%86%92a%3Db%29%20%20%E2%88%80E%20%201%0A%20%20Pa%E2%86%92a%3Db%20%20%E2%86%92E%20%2011%2C%2010%0A%20%20a%3Db%20%20%E2%86%92E%20%2012%2C%206%0A%20%20%C2%ACRab%20%20%3DE%20%2013%2C%205%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%204%2C%2014%0A%C2%ACPa%20%20%C2%ACI%20%206%E2%80%9315"
+          style="width:100%;height:300px;border:1px solid #ddd;border-radius:6px;display:block"
+          loading="lazy"></iframe></p>
+</div>
 </div>
 </div>
 <div id="uses-of-identity" class="section level2 unnumbered">
@@ -351,7 +379,7 @@ Identity Elimination</span></span></p>
 <p>Only you arrived on time</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-111" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-111" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<p><label for="tufte-mn-85" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-85" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
 <span class="math inline"><span class="math inline">\(P\)</span></span>: arrived on time<br />
 <span class="math inline"><span class="math inline">\(a\)</span></span>: you</span></span></p>
 <div class="argument">
@@ -364,7 +392,7 @@ Identity Elimination</span></span></p>
 <p>You arrived on time, but someone else did as well.</p>
 </dd>
 </dl>
-<p><label for="tufte-mn-112" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-112" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
+<p><label for="tufte-mn-86" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-86" class="margin-toggle"><span class="marginnote"><span style="display: block;"><em>Translation key</em><br />
 <span class="math inline"><span class="math inline">\(P\)</span></span>: arrived on time<br />
 <span class="math inline"><span class="math inline">\(a\)</span></span>: you</span></span></p>
 <div class="argument">
@@ -390,7 +418,7 @@ Identity Elimination</span></span></p>
 <p>There is of course no reason to use identity to translate ‘there is at least one book’ as <span class="math inline">\(\exists x Px\)</span> relative to a translation key on which <span class="math inline">\(P\)</span> translates ‘book’. On the other hand, neither <span class="math inline">\(\exists x \exists y (Px \wedge Py)\)</span> nor <span class="math inline">\(\exists x Px \wedge \exists y Py\)</span> are adequate translations of the statement ‘there are at least two books’ relative to that translation key. For they merely state that something is a book and something is a book, which is compatible with one and the same witness for each existential generalization. We do better with the help of identity, since we are able to offer the following translations for sentences in the first group:</p>
 <ul>
 <li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge \neg x =y)\)</span></li>
-<li><span class="math inline">\(\exists x \exists y (Px \wedge Py \wedge Pz \wedge \neg x =y \wedge \neg x = z \wedge \neg y = z)\)</span></li>
+<li><span class="math inline">\(\exists x \exists y \exists z (Px \wedge Py \wedge Pz \wedge \neg x = y \wedge \neg x = z \wedge \neg y = z)\)</span></li>
 </ul>
 <p>It is not difficult to generalize to other numbers, e.g., ‘there are at least four books’, etc. We are similarly able to offer the following translations for the sentences in the second group:</p>
 <ul>
@@ -439,37 +467,196 @@ Identity Elimination</span></span></p>
 <ul>
 <li><span class="math inline">\(\exists x (Rxa \wedge \forall y (Rya \to x =y) \wedge Px)\)</span>,</li>
 </ul>
-<p>relative to a translation key on which <span class="math inline">\(a\)</span> tranlates ‘<em>Huckleberry Finn</em>’, <span class="math inline">\(R\)</span> translates ‘authors’ and <span class="math inline">\(P\)</span> translates ‘American’.</p>
+<p>relative to a translation key on which <span class="math inline">\(a\)</span> translates ‘<em>Huckleberry Finn</em>’, <span class="math inline">\(R\)</span> translates ‘authors’ and <span class="math inline">\(P\)</span> translates ‘American’.</p>
 </div>
 <div id="exercises-10" class="section level2 unnumbered">
 <h2>Exercises</h2>
 <ol style="list-style-type: decimal">
 <li><p>For each set of formulas below, find a model we can use to justify the fact that the set is consistent. Please justify your answers.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\{\forall x (Px \leftrightarrow Qx), Pa, Qb, \neg a = b\}\)</span></p></li>
-<li><p><span class="math inline">\(\{\forall x (Rax \to Rbx, \neg Raa, Rba \}\)</span></p></li>
+<li><p><span class="math inline">\(\{\forall x (Px \leftrightarrow Qx), Pa, Qb, \neg a = b\}\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0=" target="_blank"
+  style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p>Show a model</p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiLCIyIl0sIlEiOlsiMSIsIjIiXX0sInMiOnt9fQ==" target="_blank"
+  style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph#v2:eyJmIjpbIuKIgHgoUHjihpRReCkiLCJQYSIsIlFiIiwiwqxhPWIiXSwiZCI6WyIxIiwiMiJdLCJpIjp7ImEiOiIxIiwiYiI6IjIiLCJQIjpbIjEiLCIyIl0sIlEiOlsiMSIsIjIiXX0sInMiOnt9fQ=="
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\{\forall x (Rax \to Rbx), \neg Raa, Rba \}\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOltdLCJpIjp7fSwicyI6e319" target="_blank"
+  style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p>Show a model</p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJhIjoiMSIsImIiOiIyIiwiUiI6W1siMiIsIjEiXSxbIjIiLCIyIl1dfSwicyI6e319" target="_blank"
+  style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph#v2:eyJmIjpbIuKIgHgoUmF44oaSUmJ4KSIsIsKsUmFhIiwiUmJhIl0sImQiOlsiMSIsIjIiXSwiaSI6eyJhIjoiMSIsImIiOiIyIiwiUiI6W1siMiIsIjEiXSxbIjIiLCIyIl1dfSwicyI6e319"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
 </ol></li>
 <li><p>For each argument below, find a model we can use to justify the fact that the argument is invalid. Please justify your answers.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa \vdash a = b \to Rab\)</span></p></li>
-<li><p><span class="math inline">\(\exists x Px, \exists x Qx \vdash \exists x \exists y \neg x = y\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa \vdash a = b \to Rab\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOltdLCJpIjp7fSwicyI6e319" target="_blank"
+ style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOltdLCJpIjp7fSwicyI6e319"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p>Show a countermodel</p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOlsiMSJdLCJpIjp7ImEiOiIxIiwiYiI6IjEiLCJQIjpbXSwiUSI6W10sIlIiOltdfSwicyI6e319" target="_blank"
+ style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIuKIgHgoUHjihpJReCkiLCLCrFFhIiwiYT1i4oaSUmFiIl0sImQiOlsiMSJdLCJpIjp7ImEiOiIxIiwiYiI6IjEiLCJQIjpbXSwiUSI6W10sIlIiOltdfSwicyI6e319"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\exists x Px, \exists x Qx \vdash \exists x \exists y \neg x = y\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0=" target="_blank"
+ style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6W10sImkiOnt9LCJzIjp7fX0="
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="cursor:pointer;color:#7a003c;font-size:0.88em;
+           padding:3px 0;user-select:none">
+<p>Show a countermodel</p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/model-checker/?mode=validity#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6WyIxIl0sImkiOnsiUCI6WyIxIl0sIlEiOlsiMSJdfSwicyI6e319" target="_blank"
+ style="position:absolute;top:6px;right:6px;font-size:0.7em;
+     background:#fff;padding:1px 6px;border:1px solid #ccc;
+     border-radius:4px;z-index:10;text-decoration:none;color:#666">
+Open ↗</a>
+<iframe title="Model Checker" src="https://gabriel-uzquiano.github.io/model-checker/?card=model,graph&amp;mode=validity#v2:eyJmIjpbIuKIg3hQeCIsIuKIg3hReCIsIuKIg3jiiIN5wqx4PXkiXSwiZCI6WyIxIl0sImkiOnsiUCI6WyIxIl0sIlEiOlsiMSJdfSwicyI6e319"
+   style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+   loading="lazy"></iframe></p>
+</div>
+</details></li>
 </ol></li>
+</ol>
+<!-- Ex 3.2 uses ↔, which the current proof-checker rejects at parser.js:284;
+     keep it as plain LaTeX until the biconditional is supported. -->
+<ol>
 <li><p>Provide a natural deduction proof to justify each of the claims below:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa, Pb \vdash a = b \to Rab\)</span></p></li>
-<li><p><span class="math inline">\(\exists x \forall y (Px \leftrightarrow y = x), Pa \vdash \forall x (Px \to x = a)\)</span></p></li>
-<li><p><span class="math inline">\(\exists x Px, \exists x Qx, \neg \exists x (Px \wedge Qx) \vdash \exists x \exists y \neg x = y\)</span></p></li>
+<li><p><span class="math inline">\(\forall x (Px \to Qx), \neg Qa, Pb \vdash a = b \to Rab\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%C2%ACQa%2C%20Pb&c=a%3Db%E2%86%92Rab" target="_blank"
+ style="position:absolute;top:0;right:0;font-size:0.72em;
+    background:#fff;padding:2px 7px;border:1px solid #ccc;
+    border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%C2%ACQa%2C%20Pb&amp;c=a%3Db%E2%86%92Rab"
+  style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+  loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+          cursor:pointer;color:#7a003c;font-size:0.88em;
+          padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%C2%ACQa%2C%20Pb&c=a%3Db%E2%86%92Rab&pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%C2%ACQa%20%20P%0APb%20%20P%0A%20%20a%3Db%20%20A%0A%20%20%C2%ACQb%20%20%3DE%20%204%2C%202%0A%20%20Pb%E2%86%92Qb%20%20%E2%88%80E%20%201%0A%20%20Qb%20%20%E2%86%92E%20%206%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%205%2C%207%0A%20%20Rab%20%20EFSQ%20%208%0Aa%3Db%E2%86%92Rab%20%20%E2%86%92I%20%204%E2%80%939" target="_blank"
+ style="position:absolute;top:0;right:0;font-size:0.72em;
+    background:#fff;padding:2px 7px;border:1px solid #ccc;
+    border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%80x%28Px%E2%86%92Qx%29%2C%20%C2%ACQa%2C%20Pb&amp;c=a%3Db%E2%86%92Rab&amp;pr=%E2%88%80x%28Px%E2%86%92Qx%29%20%20P%0A%C2%ACQa%20%20P%0APb%20%20P%0A%20%20a%3Db%20%20A%0A%20%20%C2%ACQb%20%20%3DE%20%204%2C%202%0A%20%20Pb%E2%86%92Qb%20%20%E2%88%80E%20%201%0A%20%20Qb%20%20%E2%86%92E%20%206%2C%203%0A%20%20%E2%8A%A5%20%20%C2%ACE%20%205%2C%207%0A%20%20Rab%20%20EFSQ%20%208%0Aa%3Db%E2%86%92Rab%20%20%E2%86%92I%20%204%E2%80%939"
+  style="width:100%;height:360px;border:1px solid #ddd;border-radius:6px;display:block"
+  loading="lazy"></iframe></p>
+</div>
+</details></li>
+<li><p><span class="math inline">\(\exists x Px, \exists x Qx, \neg \exists x (Px \wedge Qx) \vdash \exists x \exists y \neg x = y\)</span></p>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%2C%20%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&c=%E2%88%83x%E2%88%83y%C2%ACx%3Dy" target="_blank"
+ style="position:absolute;top:0;right:0;font-size:0.72em;
+    background:#fff;padding:2px 7px;border:1px solid #ccc;
+    border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=sequent,proof#p=%E2%88%83xPx%2C%20%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&amp;c=%E2%88%83x%E2%88%83y%C2%ACx%3Dy"
+  style="width:100%;height:420px;border:1px solid #ddd;border-radius:6px;display:block"
+  loading="lazy"></iframe></p>
+</div>
+<details style="margin-top:0.25em">
+<summary style="display:flex;align-items:center;gap:0.3em;list-style:none;
+          cursor:pointer;color:#7a003c;font-size:0.88em;
+          padding:3px 0;user-select:none">
+<p><span style="display:inline-block">▶</span>
+<span>Show solution</span></p>
+</summary>
+<div style="position:relative;margin:1em 0">
+<p><a href="https://gabriel-uzquiano.github.io/proof-checker/#p=%E2%88%83xPx%2C%20%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&c=%E2%88%83x%E2%88%83y%C2%ACx%3Dy&pr=%E2%88%83xPx%20%20P%0A%E2%88%83xQx%20%20P%0A%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%20%20Pa%20%20A%0A%20%20%20%20Qb%20%20A%0A%20%20%20%20%20%20a%3Db%20%20A%0A%20%20%20%20%20%20Pb%20%20%3DE%20%206%2C%204%0A%20%20%20%20%20%20Pb%E2%88%A7Qb%20%20%E2%88%A7I%20%207%2C%205%0A%20%20%20%20%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%208%0A%20%20%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20%20%20%C2%ACa%3Db%20%20%C2%ACI%20%206%E2%80%9310%0A%20%20%20%20%E2%88%83y%C2%ACa%3Dy%20%20%E2%88%83I%20%2011%0A%20%20%20%20%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83I%20%2012%0A%20%20Qb%E2%86%92%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%86%92I%20%205%E2%80%9313%0A%20%20%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83E%20%202%2C%2014%0APa%E2%86%92%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%86%92I%20%204%E2%80%9315%0A%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83E%20%201%2C%2016" target="_blank"
+ style="position:absolute;top:0;right:0;font-size:0.72em;
+    background:#fff;padding:2px 7px;border:1px solid #ccc;
+    border-radius:4px;z-index:10;text-decoration:none;color:#444">
+Open ↗</a>
+<iframe title="Proof Checker" src="https://gabriel-uzquiano.github.io/proof-checker/?card=proof,verify#p=%E2%88%83xPx%2C%20%E2%88%83xQx%2C%20%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29&amp;c=%E2%88%83x%E2%88%83y%C2%ACx%3Dy&amp;pr=%E2%88%83xPx%20%20P%0A%E2%88%83xQx%20%20P%0A%C2%AC%E2%88%83x%28Px%E2%88%A7Qx%29%20%20P%0A%20%20Pa%20%20A%0A%20%20%20%20Qb%20%20A%0A%20%20%20%20%20%20a%3Db%20%20A%0A%20%20%20%20%20%20Pb%20%20%3DE%20%206%2C%204%0A%20%20%20%20%20%20Pb%E2%88%A7Qb%20%20%E2%88%A7I%20%207%2C%205%0A%20%20%20%20%20%20%E2%88%83x%28Px%E2%88%A7Qx%29%20%20%E2%88%83I%20%208%0A%20%20%20%20%20%20%E2%8A%A5%20%20%C2%ACE%20%203%2C%209%0A%20%20%20%20%C2%ACa%3Db%20%20%C2%ACI%20%206%E2%80%9310%0A%20%20%20%20%E2%88%83y%C2%ACa%3Dy%20%20%E2%88%83I%20%2011%0A%20%20%20%20%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83I%20%2012%0A%20%20Qb%E2%86%92%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%86%92I%20%205%E2%80%9313%0A%20%20%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83E%20%202%2C%2014%0APa%E2%86%92%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%86%92I%20%204%E2%80%9315%0A%E2%88%83x%E2%88%83y%C2%ACx%3Dy%20%20%E2%88%83E%20%201%2C%2016"
+  style="width:100%;height:540px;border:1px solid #ddd;border-radius:6px;display:block"
+  loading="lazy"></iframe></p>
+</div>
+</details></li>
 </ol></li>
 </ol>
 
 </div>
 </div>
-
-
-
 <p style="text-align: center;">
 <a href="natural-deduction.html"><button class="btn btn-default">Previous</button></a>
-<a href="solutions-to-selected-exercises.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

@@ -8,12 +8,13 @@ Instead, we will develop a natural deduction system for quantificational logic, 
 
 Since quantificational logic includes the usual propositional connectives, we will just import and adapt the introduction and elimination rules we devised for them to the new framework. That is enough to enable us to establish the validity of *some* arguments in the language of quantificational logic.
 
+
 :::{.example}
-$\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px$.
+$\forall x Px \to \exists x Px, \neg \exists x Px \vdash \neg \forall x Px$
 
-
-<img src="images/qex 1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg1"]], card = "verify", solution = TRUE)` 
 :::
+
 
 Notice that it suffices in this case to deploy natural deduction rules for negation and the conditional, which we adapt from the natural deduction system for propositional logic. 
 
@@ -57,20 +58,18 @@ The rationale for universal elimination is that we are entitled to write that an
 
 Let us look at the universal elimination rule in action.
 
+
 :::{.example}
 $\forall x \forall y(Px \to Qy), Pa, \vdash Qb$.
 
-<img src="images/qex ue1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg3"]], card = "verify", solution = TRUE)` 
 :::
-
-
 
 :::{.example}
 $\forall x \forall y Rxy \vdash Raa$.
 
-<img src="images/qex ue2.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg4"]], card = "verify", solution = TRUE)` 
 :::
-
 
 The introduction rule for the universal quantifier requires more care. In order to be able to write $\forall x \varphi(x)$ by itself on a line, we should convince ourselves we have the means to establish some *arbitrary* instance $\varphi(a/x)$ where the constant $a$ does not occur in an undischarged assumption.
 
@@ -91,7 +90,7 @@ Let us look at some applications of the rule.
 :::{.example}
 $\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)$.
 
-<img src="images/qex ui1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg5"]], card = "verify", solution = TRUE)` 
 :::
 
 
@@ -99,7 +98,7 @@ $\forall x (Px \to Qx), \forall x (Qx \to Rx) \vdash \forall x (Px \to Rx)$.
 $\forall x (Px \to \neg Px) \vdash \forall x \neg Px$
 
 
-<img src="images/qex ui2.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg6"]], card = "verify", solution = TRUE)` 
 :::
 
 ## Existential Quantification {-}
@@ -125,14 +124,14 @@ Here is the rule of existential introduction in action.
 :::{.example}
 $Rab \vdash \exists x\exists y Rxy$
 
-<img src="images/qex ei1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg7"]], card = "verify", solution = TRUE)` 
 :::
 
 
 :::{.example}
 $\neg \exists x (Px \wedge Qx) \vdash \neg \forall x (Px \wedge Qx)$
 
-<img src="images/qex ei2.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg8"]], card = "verify", solution = TRUE)` 
 :::
 
 
@@ -154,7 +153,7 @@ Existential Elimination
 :::{.example}
 $\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)$
 
-<img src="images/qex ee1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg9"]], card = "verify", solution = TRUE)` 
 :::
 
 
@@ -162,7 +161,7 @@ $\exists x (Px \wedge \neg Qx) \vdash \neg \forall  x (Px \to Qx)$
 $\forall x (Px \to Qx), \exists y Py \vdash \exists z Qz$
 
 
-<img src="images/qex ee2.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg10"]], card = "verify", solution = TRUE)`
 :::
 
 
@@ -179,7 +178,7 @@ Let us now look at some further examples.
 :::{.example}
 $\exists x \forall y Rxy, \forall x \forall y (Rxy \to Ryx) \vdash \exists x \forall y Ryx$
 
-<img src="images/qex cex1.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg11"]], card = "verify", solution = TRUE)`
 
 :::
 
@@ -188,7 +187,7 @@ $\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px
 
 
 
-<img src="images/qex cex2.png" style="display:block; margin: 0 auto;">
+`r pc_iframe_card(proofs[["ch10-eg12"]], card = "verify", solution = TRUE)` 
 :::
 
 ## Exercises {-}
@@ -196,12 +195,22 @@ $\forall x (Px \to (Qxa \to Rxb)) \vdash \forall x (Px \to Qxa) \to \forall x(Px
 1. Provide a natural deduction proof in order to justify each of the claims below:
 
     a. $\exists x Px \to \exists x Qx, \forall x Px \vdash \exists x Qx$
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch10-ex1"]], proofs[["ch10-ex1-worked"]], worked_height = 210L)`
+
     #. $\exists x Px \wedge \exists x Qx, \neg \exists x(Px \wedge Qx), \forall x (Rx \to Px) \vdash \exists x \neg Rx$
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch10-ex2"]], proofs[["ch10-ex2-worked"]], worked_height = 510L)`
+
     #. $\forall x (Px \to \neg Qx), \forall x (Rx \to Qx) \vdash \forall x (Rx \to \neg Px)$
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch10-ex3"]], proofs[["ch10-ex3-worked"]], worked_height = 420L)`
+
     #. $\forall x (Px \to (\exists y Rxy \to Qx)), \neg \exists y Qy \vdash \forall y (Py \to \forall z \neg Ryz)$
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch10-ex4"]], proofs[["ch10-ex4-worked"]], worked_height = 480L)`
+
     #. $\forall x (Px \to \forall y (Rxy \to Py)), \exists x (Qx \wedge Px) \vdash \exists x (Qx \wedge \forall y (Rxy \to Py))$
-    
+
+        `r pc_embed_toggle_cards(proofs[["ch10-ex5"]], proofs[["ch10-ex5-worked"]], worked_height = 390L)`
+

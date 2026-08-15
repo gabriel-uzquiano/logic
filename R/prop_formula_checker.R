@@ -124,7 +124,7 @@ pfc_tree_iframe <- function(ex, solution = FALSE, height = 360L) {
   full_url      <- paste0(PFC_BASE, "?card=tree", hash)
   src           <- gsub("&", "&amp;", full_url, fixed = TRUE)
   sprintf(
-    '<div style="position:relative;margin:0.5em 0">
+    '<div style="position:relative;margin:1em 0">
   <a href="%s" target="_blank"
      style="position:absolute;top:8px;right:8px;font-size:0.72em;
             background:#fff;padding:2px 7px;border:1px solid #ccc;

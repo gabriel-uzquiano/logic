@@ -76,6 +76,10 @@ ol ol, ol ul, ul ol, ul ul, ol table, ul table, ol hr, ul hr {
   width: 91%;
 }
 
+ol, ul {
+  margin-bottom: 1.5rem;
+}
+
 @media screen and (max-width: 760px) { 
   ol, ul { width: 90%; }
   ul { width: 85%; }
@@ -87,4 +91,43 @@ div.proof:after {
   width: 55%;
   font-size: 1.4rem;
   content: "∎";
+}
+
+div.practice {
+  border-left: 3px double teal;
+  padding-left: 1rem;
+}
+
+div.practice > p:first-child {
+  margin-top: 0;
+}
+
+details.solution {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+details.solution summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: teal;
+  list-style: none; /* remove default triangle in most browsers */
+}
+details.solution summary::-webkit-details-marker {
+  display: none; /* remove default triangle in Chrome/Safari */
+}
+details.solution summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+details.solution[open] summary::before {
+  transform: rotate(90deg);
+}
+details.solution[open] summary {
+  margin-bottom: 0.5rem;
+}
+details.solution > *:not(summary) {
+  border-left: 1px solid teal;
+  padding-left: 1rem;
+  margin-left: 0.3rem;
 }

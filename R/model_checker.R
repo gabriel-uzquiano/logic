@@ -17,6 +17,11 @@
 #   `r mc_embed(models[["validity"]], height = 380)`            -> compact embed
 #   `r mc_embed_toggle(models[["validity"]])`                   -> practice + hidden solution
 #   `r mc_embed_labeled(models[["validity"]], solution = TRUE)` -> embed with caption
+#   `r mc_embed(models[["inv-5"]], solution = TRUE, mode = "validity")`
+#                                                     -> verdict worded as a
+#                                                        counterexample to
+#                                                        validity rather than
+#                                                        as (in)consistency
 #
 # Suggested heights by context:
 #   380  — closed sentences, no variable assignment needed
@@ -45,31 +50,62 @@ mc_str <- function(x) {
   x
 }
 
+# ---------------------------------------------------------------------------
+# Verdict mode (?mode=) — how the app words its summary line
+# ---------------------------------------------------------------------------
+#   "consistency" (app default) -> "Consistent / Inconsistent — all formulas..."
+#   "validity"                  -> "Counterexample found — all premises are
+#                                   true and the conclusion is false..."
+#   "equivalence"               -> "...the sentences differ in truth value..."
+#
+# Validity and equivalence mode need at least two formulas.  In validity mode
+# the LAST formula is read as the conclusion and all earlier ones as premises,
+# matching the convention used by tt_embed_search() for truth tables.
+#
+# Set it per entry in the YAML with a `mode:` field, or override at the call
+# site with mode = "validity".  An explicit argument wins over the field.
+mc_mode <- function(ex, mode = NULL) {
+  m <- if (!is.null(mode)) mode else mc_str(ex$mode)
+  if (is.null(m) || !nzchar(m)) "" else gsub(" ", "", m)
+}
+
+# Assemble MC_BASE + query string + hash.  `params` is a named character
+# vector of query parameters; empty ones are dropped.  The query string must
+# precede the hash, since the app reads location.search and location.hash
+# separately.
+.mc_build <- function(hash, params = character(0)) {
+  params <- params[nzchar(params)]
+  q <- if (length(params)) {
+    paste0("?", paste0(names(params), "=", params, collapse = "&"))
+  } else ""
+  paste0(MC_BASE, q, hash)
+}
+
 # Build the URL: append the stored hash to MC_BASE.
 #   solution = TRUE  -> worked_hash  (formulas + a worked interpretation)
 #   solution = FALSE -> practice_hash (formulas loaded, model blank for the student)
 # If the requested hash is empty, the bare checker URL is returned.
-mc_url <- function(ex, solution = FALSE) {
+mc_url <- function(ex, solution = FALSE, mode = NULL) {
   hash <- if (solution) mc_str(ex$worked_hash) else mc_str(ex$practice_hash)
-  paste0(MC_BASE, hash)
+  .mc_build(hash, c(mode = mc_mode(ex, mode)))
 }
 
 # ---------------------------------------------------------------------------
 # mc_link() — plain hyperlink (works in both HTML and PDF)
 # ---------------------------------------------------------------------------
 # Pass label = NULL to use the entry's label field.
-mc_link <- function(ex, solution = FALSE, label = NULL) {
+mc_link <- function(ex, solution = FALSE, label = NULL, mode = NULL) {
   txt <- if (is.null(label)) mc_str(ex$label) else label
   if (!nzchar(txt)) txt <- mc_str(ex$id)
-  sprintf("[%s](%s)", txt, mc_url(ex, solution = solution))
+  sprintf("[%s](%s)", txt, mc_url(ex, solution = solution, mode = mode))
 }
 
 # ---------------------------------------------------------------------------
 # mc_iframe() — raw <iframe> with an "Open" button in the top-right corner
 # ---------------------------------------------------------------------------
-mc_iframe <- function(ex, solution = FALSE, height = 560L) {
-  src <- gsub("&", "&amp;", mc_url(ex, solution = solution), fixed = TRUE)
-  url <- mc_url(ex, solution = solution)
+mc_iframe <- function(ex, solution = FALSE, height = 560L, mode = NULL) {
+  url <- mc_url(ex, solution = solution, mode = mode)
+  src <- gsub("&", "&amp;", url, fixed = TRUE)
   sprintf(
     '<div style="position:relative;margin:1em 0">
   <a href="%s" target="_blank"
@@ -90,11 +126,11 @@ mc_iframe <- function(ex, solution = FALSE, height = 560L) {
 # ---------------------------------------------------------------------------
 #   `r mc_embed(models[["validity"]], solution = TRUE)`
 #   `r mc_embed(models[["validity"]], height = 380)`   # compact
-mc_embed <- function(ex, solution = FALSE, height = 560L) {
+mc_embed <- function(ex, solution = FALSE, height = 560L, mode = NULL) {
   if (knitr::is_html_output()) {
-    mc_iframe(ex, solution = solution, height = height)
+    mc_iframe(ex, solution = solution, height = height, mode = mode)
   } else {
-    mc_link(ex, solution = solution)
+    mc_link(ex, solution = solution, mode = mode)
   }
 }
 
@@ -103,10 +139,11 @@ mc_embed <- function(ex, solution = FALSE, height = 560L) {
 # ---------------------------------------------------------------------------
 #   `r mc_embed_labeled(models[["validity"]], solution = TRUE)`
 #   `r mc_embed_labeled(models[["validity"]], caption = "Try building your own model")`
-mc_embed_labeled <- function(ex, solution = FALSE, height = 560L, caption = NULL) {
-  if (!knitr::is_html_output()) return(mc_link(ex, solution = solution))
+mc_embed_labeled <- function(ex, solution = FALSE, height = 560L, caption = NULL,
+                             mode = NULL) {
+  if (!knitr::is_html_output()) return(mc_link(ex, solution = solution, mode = mode))
   cap <- if (!is.null(caption)) caption else mc_str(ex$label)
-  iframe <- mc_iframe(ex, solution = solution, height = height)
+  iframe <- mc_iframe(ex, solution = solution, height = height, mode = mode)
   if (nzchar(cap)) {
     paste0(
       '<p style="font-size:0.82em;color:#666;margin:0.25em 0 2px 2px">',
@@ -127,10 +164,10 @@ mc_embed_labeled <- function(ex, solution = FALSE, height = 560L, caption = NULL
 #   `r mc_embed_toggle(models[["validity"]])`
 #   `r mc_embed_toggle(models[["validity"]], summary = "Reveal countermodel", height = 460)`
 mc_embed_toggle <- function(ex, height = 560L,
-                             summary = "Show solution") {
-  if (!knitr::is_html_output()) return(mc_link(ex, solution = FALSE))
-  practice <- mc_iframe(ex, solution = FALSE, height = height)
-  worked   <- mc_iframe(ex, solution = TRUE,  height = height)
+                             summary = "Show solution", mode = NULL) {
+  if (!knitr::is_html_output()) return(mc_link(ex, solution = FALSE, mode = mode))
+  practice <- mc_iframe(ex, solution = FALSE, height = height, mode = mode)
+  worked   <- mc_iframe(ex, solution = TRUE,  height = height, mode = mode)
   sprintf(
     '%s
 <details style="margin-top:0.25em">
@@ -169,14 +206,16 @@ mc_load <- function(file = "exercises/models.yml") {
 #
 #   Show model inputs + graph together:
 #     `r mc_iframe_card(models[["ex-model-1"]], card = "model,graph", height = 380L)`
-mc_iframe_card <- function(ex, card = "graph", solution = FALSE, height = 300L) {
-  if (!knitr::is_html_output()) return(mc_link(ex, solution = solution))
+mc_iframe_card <- function(ex, card = "graph", solution = FALSE, height = 300L,
+                           mode = NULL) {
+  if (!knitr::is_html_output()) return(mc_link(ex, solution = solution, mode = mode))
   hash     <- if (solution) mc_str(ex$worked_hash) else mc_str(ex$practice_hash)
-  open_url <- paste0(MC_BASE, hash)                                      # full app
-  full_url <- paste0(MC_BASE, "?card=", gsub(" ", "", card), hash)
+  m        <- mc_mode(ex, mode)
+  open_url <- .mc_build(hash, c(mode = m))                               # full app
+  full_url <- .mc_build(hash, c(card = gsub(" ", "", card), mode = m))
   src      <- gsub("&", "&amp;", full_url, fixed = TRUE)
   sprintf(
-    '<div style="position:relative;margin:0.5em 0">
+    '<div style="position:relative;margin:1em 0">
   <a href="%s" target="_blank"
      style="position:absolute;top:6px;right:6px;font-size:0.7em;
             background:#fff;padding:1px 6px;border:1px solid #ccc;
@@ -210,14 +249,16 @@ mc_iframe_card <- function(ex, card = "graph", solution = FALSE, height = 300L) 
 # ---------------------------------------------------------------------------
 .mc_margin_counter <- local({ n <- 0L; function() { n <<- n + 1L; n } })
 
-mc_margin_graph <- function(ex, solution = TRUE, height = 560L, zoom = 0.75) {
+mc_margin_graph <- function(ex, solution = TRUE, height = 560L, zoom = 0.75,
+                            mode = NULL) {
   if (!knitr::is_html_output()) {
-    link <- mc_link(ex, solution = solution)
+    link <- mc_link(ex, solution = solution, mode = mode)
     return(sprintf("(see [model](%s))", link))
   }
   hash     <- if (solution) mc_str(ex$worked_hash) else mc_str(ex$practice_hash)
-  open_url <- paste0(MC_BASE, hash)
-  full_url <- paste0(MC_BASE, "?card=graph&zoom=", zoom, hash)
+  m        <- mc_mode(ex, mode)
+  open_url <- .mc_build(hash, c(mode = m))
+  full_url <- .mc_build(hash, c(card = "graph", zoom = as.character(zoom), mode = m))
   src      <- gsub("&", "&amp;", full_url, fixed = TRUE)
   id       <- paste0("mc-mn-", .mc_margin_counter())
   html <- sprintf(
@@ -251,10 +292,11 @@ mc_embed_toggle_cards <- function(ex,
                                    main_card    = "model,graph",
                                    graph_height = 260L,
                                    main_height  = 380L,
-                                   summary      = "Show graph only") {
-  if (!knitr::is_html_output()) return(mc_link(ex))
-  main  <- mc_iframe_card(ex, card = main_card,  height = main_height)
-  graph <- mc_iframe_card(ex, card = "graph",    height = graph_height)
+                                   summary      = "Show graph only",
+                                   mode         = NULL) {
+  if (!knitr::is_html_output()) return(mc_link(ex, mode = mode))
+  main  <- mc_iframe_card(ex, card = main_card, height = main_height, mode = mode)
+  graph <- mc_iframe_card(ex, card = "graph",   height = graph_height, mode = mode)
   sprintf(
     '%s
 <details style="margin-top:0.25em">
@@ -275,12 +317,18 @@ mc_embed_toggle_cards <- function(ex,
 #
 #   `r mc_embed_counter(models[["countermodel"]])`
 #   `r mc_embed_counter(models[["countermodel"]], summary = "Show a countermodel", height = 420L)`
+# For an invalid argument, set mode = "validity" (or a `mode: "validity"` field
+# on the entry) so the verdict reads "Counterexample found — all premises are
+# true and the conclusion is false in this model" instead of "Inconsistent".
 mc_embed_counter <- function(ex,
                               height  = 420L,
-                              summary = "Show a countermodel") {
-  if (!knitr::is_html_output()) return(mc_link(ex, solution = FALSE))
-  practice <- mc_iframe_card(ex, card = "model,graph", solution = FALSE, height = height)
-  worked   <- mc_iframe_card(ex, card = "model,graph", solution = TRUE,  height = height)
+                              summary = "Show a countermodel",
+                              mode    = NULL) {
+  if (!knitr::is_html_output()) return(mc_link(ex, solution = FALSE, mode = mode))
+  practice <- mc_iframe_card(ex, card = "model,graph", solution = FALSE,
+                             height = height, mode = mode)
+  worked   <- mc_iframe_card(ex, card = "model,graph", solution = TRUE,
+                             height = height, mode = mode)
   sprintf(
     '%s
 <details style="margin-top:0.25em">
