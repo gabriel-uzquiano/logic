@@ -59,10 +59,22 @@ git push origin source
 
 # ---- 3. Publish docs/ to main via a temporary worktree ----
 WORKTREE_DIR="$(mktemp -d /tmp/logic-publish-XXXXXX)"
-trap 'rm -rf "${WORKTREE_DIR:-}"' EXIT
+trap 'rm -rf "${WORKTREE_DIR:-}"; git worktree prune 2>/dev/null || true' EXIT
+
+echo "→ Fetching origin/main…"
+git fetch origin main
+
+# Sync local main to match origin/main so the worktree is based on what is deployed.
+# Any local main-only commits (which shouldn't exist in a healthy setup) are discarded
+# here — origin/main is the source of truth for the published site.
+echo "→ Syncing local main to origin/main…"
+if git show-ref --verify --quiet refs/heads/main; then
+  git branch -f main origin/main
+else
+  git branch main origin/main
+fi
 
 echo "→ Creating a temporary worktree on main at $WORKTREE_DIR…"
-git fetch origin main
 # Worktree add needs the dir to NOT exist yet, so remove the mktemp shell first
 rmdir "$WORKTREE_DIR"
 git worktree add "$WORKTREE_DIR" main
