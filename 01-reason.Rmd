@@ -2,7 +2,7 @@
 
 # Reason and Argument {#reason}
 
-When we reason, we generally move from a body of statements, which we call *premises*, to another statement they support, which we call the *conclusion*. We will eventually refer to these inferences as *arguments*. We begin with the observation that some arguments appear to display a special feature: there is *no risk* that the conclusion may be false if the premises are true; given the form of the argument, the truth of the premises guarantees the truth of the conclusion. That seems to be the case with the first and fourth arguments below, but not with the others.
+When we reason, we generally move from a body of statements, which we call *premises*, to another statement they support, which we call the *conclusion*. We will refer to these inferences as *arguments*. We begin with the observation that some arguments appear to display a special feature: there is *no risk* that the conclusion may be false if the premises are true; given the form of the argument, the truth of the premises guarantees the truth of the conclusion. That seems to be the case with the first and fourth arguments below, but not with the others.
 
 :::{.argument}
 All Spanish citizens are EU citizens.\ No EU citizen requires a visa to enter Switzerland.\ Therefore, no Spanish citizen requires a visa to enter Switzerland.
